@@ -18,13 +18,14 @@ public class Mascota {
     private Date FechaDeEncontradoPerdido; 
     private String montoDeRecompensa; 
     private ArrayList<String>notas;  
-    private Estados estado; 
+    private String estado; 
     private String tamanio; 
     private Usuario usuario;  
     private int id;  
     private static int cantidadDeMascotas= 0; 
 
-    public Mascota(String nombre, String tipo, String Color, Date FechaDeEcontradoPerdido, Estados estado, String tamanio, Usuario usuario){
+    public Mascota(String nombre, String tipo, String Color, Date FechaDeEcontradoPerdido, 
+                    String estado, String tamanio, Usuario usuario){
         this.nombre = nombre; 
         this.tipo = tipo; 
         this.Color = Color; 
@@ -192,14 +193,14 @@ public class Mascota {
     /**
      * @return the estado
      */
-    public Estados getEstado() {
+    public String getEstado() {
         return estado;
     }
 
     /**
      * @param estado the estado to set
      */
-    public void setEstado(Estados estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
     

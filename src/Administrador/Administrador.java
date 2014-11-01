@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import Usuario.Usuario;
 import adoptante.Adoptante; 
 import casaCuna.CasaCuna; 
-import mascota.Mascota;  
-import mascota.Estados; 
+import mascota.Mascota;   
 import java.util.Date;  
 
 
@@ -17,6 +16,7 @@ public class Administrador {
     public static ArrayList<Mascota> ListaDeMascotas;
     public static ArrayList<Usuario> ListaDeUsuarios;
     
+    // REGISTRO 
     
     public static void RegistrarUsuario(String Nombre, String Apellido, String Username,
                                         String Contrasenia, boolean esAdmin, String Correo){
@@ -25,7 +25,7 @@ public class Administrador {
     }
     
     public static void RegistrarMascota(String nombre, String tipo, String Color, Date FechaDeEcontradoPerdido, 
-                                        Estados estado, String tamanio, Usuario usuario){ 
+                                        String estado, String tamanio, Usuario usuario){ 
         Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, estado, tamanio, usuario); 
         ListaDeMascotas.add(mascota);
         
@@ -42,6 +42,13 @@ public class Administrador {
        TipoDeMascota tipoDeMascota = new TipoDeMascota(nombreDeMascota); 
        ListaDeTiposMascotas.add(tipoDeMascota);
     } 
+    
+    public static void RegistrarAdoptante(String correo, String telefono, String lugarDeResidencia,
+                                          String cantidadDeEspacio, Boolean reportado, Usuario usuario){
+        Adoptante adoptante = new Adoptante(correo, telefono, lugarDeResidencia, cantidadDeEspacio, reportado, usuario); 
+        ListaDeAdoptantes.add(adoptante); 
+        
+    }
     
     public static void RegistrarTipoRazas(int posicionDeMascotaEnLista, String TipoRaza){ 
         ListaDeTiposMascotas.get(posicionDeMascotaEnLista).agregarTipoDeRaza(TipoRaza);

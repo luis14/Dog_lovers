@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Adoptante { 
     private int calificacion; 
-    private String coreo; 
+    private String correo; 
     private String telefono; 
     private String lugarDeResidencia; 
     private String cantidadDeEsapcio; 
@@ -22,7 +22,13 @@ public class Adoptante {
     private int id;  
     private static int cantidadDeAdoptantes = 0; 
 
-    public Adoptante(){ 
+    public Adoptante(String correo, String telefono, String lugarDeResidencia, String cantidadDeEspacio, Boolean reportado, Usuario usuario){ 
+        this.correo = correo; 
+        this.telefono = telefono; 
+        this.lugarDeResidencia = lugarDeResidencia; 
+        this.cantidadDeEsapcio = cantidadDeEspacio; 
+        this.reportado = reportado; 
+        this.usuario = usuario; 
         id = cantidadDeAdoptantes++; 
     }
     
@@ -45,14 +51,14 @@ public class Adoptante {
      * @return the coreo
      */
     public String getCoreo() {
-        return coreo;
+        return correo;
     }
 
     /**
      * @param coreo the coreo to set
      */
     public void setCoreo(String coreo) {
-        this.coreo = coreo;
+        this.correo = coreo;
     }
 
     /**
