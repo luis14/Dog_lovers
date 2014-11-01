@@ -44,21 +44,23 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="UsuarioLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="UsuarioText" min="-2" pref="138" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="LogInButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="ContraLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ContraLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="UsuarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ErrorLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="UsuarioText" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="ErrorLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                               <Component id="ContraText" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -110,6 +112,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="LogInButton">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/1410683128_key_16.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Log in"/>
           </Properties>
           <Events>
@@ -118,6 +123,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/1410309424_list-add-user.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Registrar"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>

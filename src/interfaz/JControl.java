@@ -87,8 +87,10 @@ public class JControl extends javax.swing.JFrame {
         DatosActualesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         DatosActualesLabel.setText("Datos Actuales");
 
+        MascotasPerdidasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830314_Help.png"))); // NOI18N
         MascotasPerdidasButton.setText("Mascotas Perdidas");
 
+        MascotasEncontradasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         MascotasEncontradasButton.setText("Mascota Encontrada");
 
         CantidadLabel.setText("Cantidad :");
@@ -138,7 +140,7 @@ public class JControl extends javax.swing.JFrame {
                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(CantidadLabel)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
                         .addComponent(LogoItem, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PrincipalPanelLayout.createSequentialGroup()
                         .addContainerGap()
@@ -193,6 +195,7 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        MascotaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830492_Pets.png"))); // NOI18N
         MascotaItem.setText("Mascotas");
         MascotaItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +204,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Registro.add(MascotaItem);
 
+        CasaCunaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830410_home-16.png"))); // NOI18N
         CasaCunaItem.setText("Casa Cuna");
         CasaCunaItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +213,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Registro.add(CasaCunaItem);
 
+        AdoptanteItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684212_preferences-desktop-user.png"))); // NOI18N
         AdoptanteItem.setText("Adoptante");
         AdoptanteItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,6 +226,7 @@ public class JControl extends javax.swing.JFrame {
 
         Editar.setText("Editar");
 
+        MascotasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830492_Pets.png"))); // NOI18N
         MascotasItem.setText("Mascotas");
         MascotasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,9 +235,11 @@ public class JControl extends javax.swing.JFrame {
         });
         Editar.add(MascotasItem);
 
+        CasaCunaItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830410_home-16.png"))); // NOI18N
         CasaCunaItem1.setText("Casa Cuna");
         Editar.add(CasaCunaItem1);
 
+        AdoptanteItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684212_preferences-desktop-user.png"))); // NOI18N
         AdoptanteItem1.setText("Adoptante");
         Editar.add(AdoptanteItem1);
 
@@ -274,6 +282,7 @@ public class JControl extends javax.swing.JFrame {
 
         Configuracion.setText("Configuración");
 
+        FechaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830523_date_task.png"))); // NOI18N
         FechaItem.setText("Fecha");
         Configuracion.add(FechaItem);
 

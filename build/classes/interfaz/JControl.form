@@ -25,6 +25,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="MascotaItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1414830492_Pets.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Mascotas"/>
               </Properties>
               <Events>
@@ -33,6 +36,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="CasaCunaItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1414830410_home-16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Casa Cuna"/>
               </Properties>
               <Events>
@@ -41,6 +47,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="AdoptanteItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1410684212_preferences-desktop-user.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Adoptante"/>
               </Properties>
               <Events>
@@ -56,6 +65,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="MascotasItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1414830492_Pets.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Mascotas"/>
               </Properties>
               <Events>
@@ -64,11 +76,17 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="CasaCunaItem1">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1414830410_home-16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Casa Cuna"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="AdoptanteItem1">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1410684212_preferences-desktop-user.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Adoptante"/>
               </Properties>
             </MenuItem>
@@ -129,6 +147,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="FechaItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1414830523_date_task.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Fecha"/>
               </Properties>
             </MenuItem>
@@ -253,7 +274,7 @@
                                   <Component id="CantidadLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="355" max="32767" attributes="0"/>
+                          <EmptySpace pref="315" max="32767" attributes="0"/>
                           <Component id="LogoItem" min="-2" pref="268" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -385,11 +406,17 @@
         </Component>
         <Component class="javax.swing.JButton" name="MascotasPerdidasButton">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/1414830314_Help.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Mascotas Perdidas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="MascotasEncontradasButton">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/1410328586_search.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Mascota Encontrada"/>
           </Properties>
         </Component>

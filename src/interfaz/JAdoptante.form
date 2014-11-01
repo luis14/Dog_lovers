@@ -33,7 +33,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="CancelarLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="402" max="32767" attributes="0"/>
+                      <EmptySpace pref="362" max="32767" attributes="0"/>
                       <Component id="AceptarLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -48,7 +48,7 @@
               <Component id="AdoptanteLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace pref="126" max="32767" attributes="0"/>
+              <EmptySpace pref="125" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="CancelarLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AceptarLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -71,6 +71,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="CancelarLabel">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/1410312667_button_cancel.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
       <Events>
@@ -79,6 +82,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="AceptarLabel">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/1410684280_Check.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
     </Component>

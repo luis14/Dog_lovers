@@ -26,6 +26,7 @@ public class JAdoptante extends javax.swing.JFrame {
         AdoptanteLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         AdoptanteLabel.setText("Adoptante");
 
+        CancelarLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312667_button_cancel.png"))); // NOI18N
         CancelarLabel.setText("Cancelar");
         CancelarLabel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -33,6 +34,7 @@ public class JAdoptante extends javax.swing.JFrame {
             }
         });
 
+        AceptarLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
         AceptarLabel.setText("Aceptar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -48,7 +50,7 @@ public class JAdoptante extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(CancelarLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 402, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
                         .addComponent(AceptarLabel)))
                 .addContainerGap())
         );
@@ -59,7 +61,7 @@ public class JAdoptante extends javax.swing.JFrame {
                 .addComponent(AdoptanteLabel)
                 .addGap(61, 61, 61)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelarLabel)
                     .addComponent(AceptarLabel))
