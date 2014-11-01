@@ -11,19 +11,21 @@ public class Usuario {
     private String Nombre;
     private String Apellido;
     private String Username;
-    private String Contra;
+    private String Contrasenia;
     private boolean esAdmin;
-    private int ID;
+    private int ID;  
+    private static int cantidadDeUsuarios = 0;     
     
-    public Usuario(String nombre, String apellido, String username,
-                   String contra, boolean esadmin, int id){
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.Username = username;
-        this.Contra = contra;
-        this.esAdmin = esadmin;
-        this.ID = id;
-    }
+    public Usuario(String Nombre, String Apellido, String Username,
+                                        String Contrasenia, boolean esAdmin, int ID){ 
+        this.Nombre = Nombre; 
+        this.Apellido = Apellido; 
+        this.Username =Username; 
+        this.Contrasenia = Contrasenia; 
+        this.esAdmin = esAdmin; 
+        ID = cantidadDeUsuarios++;   
+    } 
+    
     public String getNombre() {
         return Nombre;
     }
@@ -48,12 +50,12 @@ public class Usuario {
         this.Username = Username;
     }
 
-    public String getContra() {
-        return Contra;
+    public String getContrasenia() {
+        return Contrasenia;
     }
     
-    public void setContra(String Contra) {
-        this.Contra = Contra;
+    public void setContra(String Contrasenia) {
+        this.Contrasenia = Contrasenia;
     }
     
     public boolean isEsAdmin() {
@@ -64,10 +66,15 @@ public class Usuario {
         this.esAdmin = esAdmin;
     }
 
-    public int getID() {
-        return ID;
+    public String getID() {
+        String id = Integer.toString(ID);
+        return id;
     }
     public void setID(int ID) {
         this.ID = ID;
-    }
+    } 
+    public int getCantidadDeClientes(){
+        return cantidadDeUsuarios; 
+    } 
+    
 }

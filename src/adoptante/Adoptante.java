@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package adoptante;
-import Usuario.Usuario;
+import Usuario.Usuario; 
+import java.util.ArrayList; 
 /**
  *
  * @author miuyin
@@ -16,13 +17,19 @@ public class Adoptante {
     private String lugarDeResidencia; 
     private String cantidadDeEsapcio; 
     private Boolean reportado; 
-    private String notas; 
+    private ArrayList<String>notas; 
     private Usuario usuario; 
-    private int id; 
+    private int id;  
+    private static int cantidadDeAdoptantes = 0; 
 
+    public Adoptante(){ 
+        id = cantidadDeAdoptantes++; 
+    }
+    
     /**
      * @return the calificacion
-     */
+     */ 
+    
     public int getCalificacion() {
         return calificacion;
     }
@@ -107,14 +114,14 @@ public class Adoptante {
     /**
      * @return the notas
      */
-    public String getNotas() {
+    public ArrayList<String> getNotas() {
         return notas;
     }
 
     /**
      * @param notas the notas to set
      */
-    public void setNotas(String notas) {
+    public void setNotas(ArrayList<String> notas) {
         this.notas = notas;
     }
 
@@ -145,4 +152,10 @@ public class Adoptante {
     public void setId(int id) {
         this.id = id;
     }
+    
+    public String getCantidadDeAdoptantes(){
+        String ID = Integer.toString(id); 
+        return ID; 
+    }
+  
 }

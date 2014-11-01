@@ -44,6 +44,12 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
 
         ContraLabel.setText("Contraseña");
 
+        NombreText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreTextActionPerformed(evt);
+            }
+        });
+
         CorreoLabel.setText("Correo");
 
         AceptarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
@@ -153,6 +159,10 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
         usuario.setVisible(true);
         dispose();
     }//GEN-LAST:event_AceptarButtonActionPerformed
+
+    private void NombreTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreTextActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButton;

@@ -18,8 +18,12 @@ public class CasaCuna {
     private String requerimientos;  
     private Usuario Usuario;   
     private String telefono;  
-    private int id; 
+    private int id;  
+    private static int cantidadDeCasaCunas = 0; 
 
+    public CasaCuna(){
+        id = cantidadDeCasaCunas++; 
+    }
     /**
      * @return the tipo
      */
@@ -130,6 +134,11 @@ public class CasaCuna {
      */
     public void setId(int id) {
         this.id = id;
+    } 
+    
+    public String getCantidadDeCasaCunas(){
+        String ID = Integer.toString(id); 
+        return ID; 
     }
     
 }

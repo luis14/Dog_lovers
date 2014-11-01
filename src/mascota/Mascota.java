@@ -2,7 +2,9 @@
 package mascota;
 
 import Usuario.Usuario;
-import java.util.Date;
+import java.util.Date; 
+import java.util.ArrayList;
+
 /**
  *
  * @author miuyin
@@ -15,15 +17,20 @@ public class Mascota {
     private String Color; 
     private Date FechaDeEncontradoPerdido; 
     private String montoDeRecompensa; 
-    private String notas;  
+    private ArrayList<String>notas;  
     private Estados estado; 
     private String tamanio; 
     private Usuario usuario;  
-    private int id; 
+    private int id;  
+    private static int cantidadDeMascotas= 0; 
 
+    public Mascota(){
+        id = cantidadDeMascotas++; 
+    } 
+     
     /**
      * @return the nombre
-     */
+     */ 
     public String getNombre() {
         return nombre;
     }
@@ -122,14 +129,14 @@ public class Mascota {
     /**
      * @return the notas
      */
-    public String getNotas() {
+    public ArrayList<String> getNotas() {
         return notas;
     }
 
     /**
      * @param notas the notas to set
      */
-    public void setNotas(String notas) {
+    public void setNotas(ArrayList<String> notas) {
         this.notas = notas;
     }
 
@@ -189,6 +196,10 @@ public class Mascota {
         this.estado = estado;
     }
     
+    public String getCantidadDeMascotas(){
+        String ID = Integer.toString(id);
+        return ID; 
+    }
     
     
     
