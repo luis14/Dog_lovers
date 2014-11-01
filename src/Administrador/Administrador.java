@@ -43,9 +43,9 @@ public class Administrador {
        ListaDeTiposMascotas.add(tipoDeMascota);
     } 
     
-    public static void RegistrarAdoptante(String correo, String telefono, String lugarDeResidencia,
+    public static void RegistrarAdoptante(String nombre, String correo, String telefono, String lugarDeResidencia,
                                           String cantidadDeEspacio, Boolean reportado, Usuario usuario){
-        Adoptante adoptante = new Adoptante(correo, telefono, lugarDeResidencia, cantidadDeEspacio, reportado, usuario); 
+        Adoptante adoptante = new Adoptante(nombre, correo, telefono, lugarDeResidencia, cantidadDeEspacio, reportado, usuario); 
         ListaDeAdoptantes.add(adoptante); 
         
     }

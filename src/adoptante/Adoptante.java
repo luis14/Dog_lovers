@@ -18,11 +18,13 @@ public class Adoptante {
     private String cantidadDeEsapcio; 
     private Boolean reportado; 
     private ArrayList<String>notas; 
-    private Usuario usuario; 
+    private Usuario usuario;  
+    private String nombre;
     private int id;  
     private static int cantidadDeAdoptantes = 0; 
 
-    public Adoptante(String correo, String telefono, String lugarDeResidencia, String cantidadDeEspacio, Boolean reportado, Usuario usuario){ 
+    public Adoptante(String nombre, String correo, String telefono, String lugarDeResidencia, String cantidadDeEspacio, Boolean reportado, Usuario usuario){ 
+        this.nombre = nombre; 
         this.correo = correo; 
         this.telefono = telefono; 
         this.lugarDeResidencia = lugarDeResidencia; 
@@ -36,8 +38,9 @@ public class Adoptante {
      * @return the calificacion
      */ 
     
-    public int getCalificacion() {
-        return calificacion;
+    public String getCalificacion() { 
+        String Calificacion = Integer.toString(calificacion);
+        return Calificacion;
     }
 
     /**
@@ -50,14 +53,14 @@ public class Adoptante {
     /**
      * @return the coreo
      */
-    public String getCoreo() {
+    public String getCorreo() {
         return correo;
     }
 
     /**
      * @param coreo the coreo to set
      */
-    public void setCoreo(String coreo) {
+    public void setCorreo(String coreo) {
         this.correo = coreo;
     }
 
@@ -159,9 +162,38 @@ public class Adoptante {
         this.id = id;
     }
     
-    public String getCantidadDeAdoptantes(){
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+     public String getCantidadDeAdoptantes(){
         String ID = Integer.toString(id); 
         return ID; 
-    }
-  
+    }  
+     
+     public String getListaNegra(){
+         if(reportado == true){
+             return "Reportado";
+         } 
+         else{ 
+             return "No esta reportado";
+         }
+     }
+    
+     public String[] arreglo(){
+        String[]msg = {getNombre(), getTelefono(), getCorreo(), getListaNegra(), getCalificacion()}; 
+        return msg;
+    } 
+     
 }

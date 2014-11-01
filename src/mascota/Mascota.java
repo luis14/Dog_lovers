@@ -209,6 +209,9 @@ public class Mascota {
         return ID; 
     }
     
-    
+    public String[] arreglo(){
+        String[]msg = {getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
+        return msg;
+    }
     
 }

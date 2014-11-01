@@ -56,8 +56,13 @@ public class CasaCuna {
     /**
      * @return the necesitaAlimentacion
      */
-    public Boolean getNecesitaAlimentacion() {
-        return necesitaAlimentacion;
+    public String getNecesitaAlimentacion() {
+        if(necesitaAlimentacion == true){
+            return "Si";
+        } 
+        else{
+             return "No"; 
+        }
     }
 
     /**
@@ -140,6 +145,11 @@ public class CasaCuna {
     public String getCantidadDeCasaCunas(){
         String ID = Integer.toString(id); 
         return ID; 
+    } 
+    
+    public String[] arreglo(){
+        String[]msg = {getTipo(), getRaza(), getTamanio(), getNecesitaAlimentacion(), getTelefono(),getRequerimientos()};
+        return msg;
     }
     
 }
