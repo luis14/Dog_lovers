@@ -24,7 +24,14 @@ public class Mascota {
     private int id;  
     private static int cantidadDeMascotas= 0; 
 
-    public Mascota(){
+    public Mascota(String nombre, String tipo, String Color, Date FechaDeEcontradoPerdido, Estados estado, String tamanio, Usuario usuario){
+        this.nombre = nombre; 
+        this.tipo = tipo; 
+        this.Color = Color; 
+        this.FechaDeEncontradoPerdido = FechaDeEcontradoPerdido; 
+        this.estado = estado; 
+        this.tamanio = tamanio; 
+        this.usuario = usuario; 
         id = cantidadDeMascotas++; 
     } 
      

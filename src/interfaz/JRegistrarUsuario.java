@@ -50,6 +50,12 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
             }
         });
 
+        ApellidoText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApellidoTextActionPerformed(evt);
+            }
+        });
+
         CorreoLabel.setText("Correo");
 
         AceptarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
@@ -153,8 +159,8 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_AtrasButtonActionPerformed
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        Administrador.RegistrarUsuario(NombreLabel.getText(),ApellidoLabel.getText(),UsernameLabel.getText(),
-                                       ContraLabel.getText(),false,0);
+        Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
+                                       ContraText.getText(),false, CorreoText.getText());
         JUsuario usuario = new JUsuario();
         usuario.setVisible(true);
         dispose();
@@ -163,6 +169,10 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
     private void NombreTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreTextActionPerformed
+
+    private void ApellidoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApellidoTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ApellidoTextActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButton;

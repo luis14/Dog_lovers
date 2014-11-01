@@ -21,7 +21,15 @@ public class CasaCuna {
     private int id;  
     private static int cantidadDeCasaCunas = 0; 
 
-    public CasaCuna(){
+    public CasaCuna(String tipo, String raza, Boolean necesitaAlimentacion, 
+            String Tamanio, String requerimientos, Usuario Usuario, String Telefono){
+        this.tipo = tipo; 
+        this.raza = raza; 
+        this.necesitaAlimentacion = necesitaAlimentacion; 
+        this.Tamanio = Tamanio; 
+        this.requerimientos = requerimientos; 
+        this.Usuario = Usuario;
+        this.telefono = Telefono; 
         id = cantidadDeCasaCunas++; 
     }
     /**

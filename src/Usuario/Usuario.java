@@ -12,17 +12,19 @@ public class Usuario {
     private String Apellido;
     private String Username;
     private String Contrasenia;
+    private String Correo;
     private boolean esAdmin;
-    private int ID;  
+    private int ID;   
     private static int cantidadDeUsuarios = 0;     
     
     public Usuario(String Nombre, String Apellido, String Username,
-                                        String Contrasenia, boolean esAdmin, int ID){ 
+                                        String Contrasenia, boolean esAdmin, String correo){ 
         this.Nombre = Nombre; 
         this.Apellido = Apellido; 
         this.Username =Username; 
         this.Contrasenia = Contrasenia; 
-        this.esAdmin = esAdmin; 
+        this.esAdmin = esAdmin;  
+        this.Correo = correo;
         ID = cantidadDeUsuarios++;   
     } 
     
@@ -76,5 +78,19 @@ public class Usuario {
     public int getCantidadDeClientes(){
         return cantidadDeUsuarios; 
     } 
+
+    /**
+     * @return the Correo
+     */
+    public String getCorreo() {
+        return Correo;
+    }
+
+    /**
+     * @param Correo the Correo to set
+     */
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
     
 }
