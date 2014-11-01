@@ -253,6 +253,7 @@ public class JControl extends javax.swing.JFrame {
 
         Consultas.setText("Consultas");
 
+        MascotasItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830492_Pets.png"))); // NOI18N
         MascotasItem1.setText("Mascotas");
         MascotasItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,9 +262,11 @@ public class JControl extends javax.swing.JFrame {
         });
         Consultas.add(MascotasItem1);
 
+        CasaCunaItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830410_home-16.png"))); // NOI18N
         CasaCunaItem2.setText("Casa Cuna");
         Consultas.add(CasaCunaItem2);
 
+        AdoptanteItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684212_preferences-desktop-user.png"))); // NOI18N
         AdoptanteItem2.setText("Adoptante");
         Consultas.add(AdoptanteItem2);
 
