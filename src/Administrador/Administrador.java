@@ -1,6 +1,7 @@
 package Administrador;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
+import Usuario.Usuario;
 
 public class Administrador {
   
