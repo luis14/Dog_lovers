@@ -14,7 +14,8 @@ public class Administrador {
     public static ArrayList<Adoptante> ListaDeAdoptantes = new ArrayList<>();
     public static ArrayList<CasaCuna> ListaDeCasaCuna = new ArrayList<>();
     public static ArrayList<Mascota> ListaDeMascotas = new ArrayList<>();
-    public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>();
+    public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>(); 
+    public static ArrayList<String> ListaDeColores = new ArrayList<>();
     
     // REGISTRO 
     
@@ -53,5 +54,9 @@ public class Administrador {
     public static void RegistrarTipoRazas(int posicionDeMascotaEnLista, String TipoRaza){ 
         ListaDeTiposMascotas.get(posicionDeMascotaEnLista).agregarTipoDeRaza(TipoRaza);
      
+    } 
+    
+    public static void RegistrarColores(String color){
+        ListaDeColores.add(color);
     }
 }

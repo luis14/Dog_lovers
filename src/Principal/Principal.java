@@ -20,6 +20,26 @@ public class Principal {
         Administrador.RegistrarCasaCuna("Perros", "Golden", true , "small", "ninguno", Administrador.ListaDeUsuarios.get(0) , "2234251"); 
         
         Administrador.RegistrarAdoptante("Miuyin", "miuyinyong@yahoo.com", "88223422", "Santa Anna", "100 metros", false, Administrador.ListaDeUsuarios.get(0));
+        
+        Administrador.RegistrarColores("Blanco");
+        Administrador.RegistrarColores("Negro");
+        Administrador.RegistrarColores("Cafe"); 
+        Administrador.RegistrarColores("Golden");  
+        
+        Administrador.RegistrarTipoMascotas("Perro");
+        Administrador.RegistrarTipoMascotas("Gato"); 
+        Administrador.RegistrarTipoMascotas("Caballos"); 
+        Administrador.RegistrarTipoMascotas("Loras");  
+        //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getId());
+        //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getNombre());
+        
+        Administrador.RegistrarTipoRazas(0, "Golden Retriever"); 
+        Administrador.RegistrarTipoRazas(0, "Poodle");
+        Administrador.RegistrarTipoRazas(0, "Chiwawa"); 
+        Administrador.RegistrarTipoRazas(0, "Yorkie"); 
+        Administrador.RegistrarTipoRazas(0, "Shitzu");
+        
+        //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getTipoDeRazas().get(0));
     }
     
 }

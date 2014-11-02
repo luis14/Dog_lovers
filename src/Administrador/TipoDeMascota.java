@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class TipoDeMascota { 
     private static int cantidadTipoDeMascotas = 0; 
     private final int id; 
-    private ArrayList<String> tipoDeRazas;  
+    private ArrayList<String> TipoDeRazas = new ArrayList<>();  
     private String Nombre;
     
     public TipoDeMascota(String Nombre){
@@ -22,7 +22,7 @@ public class TipoDeMascota {
     } 
     
     public void agregarTipoDeRaza(String Raza){
-        getTipoDeRazas().add(Raza); 
+        TipoDeRazas.add(Raza);  
     }  
 
     /**
@@ -36,7 +36,7 @@ public class TipoDeMascota {
      * @return the tipoDeRazas
      */
     public ArrayList<String> getTipoDeRazas() {
-        return tipoDeRazas;
+        return TipoDeRazas;
     }
 
     /**
