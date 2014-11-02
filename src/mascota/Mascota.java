@@ -33,7 +33,7 @@ public class Mascota {
         this.estado = estado; 
         this.tamanio = tamanio; 
         this.usuario = usuario; 
-        id = cantidadDeMascotas++; 
+        id = ++cantidadDeMascotas; 
     } 
      
     /**

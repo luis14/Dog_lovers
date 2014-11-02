@@ -25,7 +25,7 @@ public class Usuario {
         this.Contrasenia = Contrasenia; 
         this.esAdmin = esAdmin;  
         this.Correo = correo;
-        ID = cantidadDeUsuarios++;   
+        ID = ++cantidadDeUsuarios;   
     } 
     
     public String getNombre() {
@@ -56,7 +56,7 @@ public class Usuario {
         return Contrasenia;
     }
     
-    public void setContra(String Contrasenia) {
+    public void setContrasenia(String Contrasenia) {
         this.Contrasenia = Contrasenia;
     }
     

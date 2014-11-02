@@ -10,17 +10,17 @@ import java.util.Date;
 
 public class Administrador {
   
-    public static ArrayList<TipoDeMascota> ListaDeTiposMascotas;
-    public static ArrayList<Adoptante> ListaDeAdoptantes;
-    public static ArrayList<CasaCuna> ListaDeCasaCuna;
-    public static ArrayList<Mascota> ListaDeMascotas;
-    public static ArrayList<Usuario> ListaDeUsuarios;
+    public static ArrayList<TipoDeMascota> ListaDeTiposMascotas = new ArrayList<>();
+    public static ArrayList<Adoptante> ListaDeAdoptantes = new ArrayList<>();
+    public static ArrayList<CasaCuna> ListaDeCasaCuna = new ArrayList<>();
+    public static ArrayList<Mascota> ListaDeMascotas = new ArrayList<>();
+    public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>();
     
     // REGISTRO 
     
     public static void RegistrarUsuario(String Nombre, String Apellido, String Username,
                                         String Contrasenia, boolean esAdmin, String Correo){
-        Usuario usuario = new Usuario(Nombre, Apellido, Username, Contrasenia, esAdmin, Correo);
+        Usuario usuario = new Usuario(Nombre, Apellido, Username, Contrasenia, esAdmin, Correo); 
         ListaDeUsuarios.add(usuario);
     }
     

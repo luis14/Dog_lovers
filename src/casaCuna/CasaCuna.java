@@ -23,7 +23,7 @@ public class CasaCuna {
         this.requerimientos = requerimientos; 
         this.Usuario = Usuario;
         this.telefono = Telefono; 
-        id = cantidadDeCasaCunas++; 
+        id = ++cantidadDeCasaCunas; 
     }
     /**
      * @return the tipo

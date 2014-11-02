@@ -31,7 +31,7 @@ public class Adoptante {
         this.cantidadDeEsapcio = cantidadDeEspacio; 
         this.reportado = reportado; 
         this.usuario = usuario; 
-        id = cantidadDeAdoptantes++; 
+        id = ++cantidadDeAdoptantes; 
     }
     
     /**
