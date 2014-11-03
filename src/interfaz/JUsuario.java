@@ -121,12 +121,11 @@ public class JUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
-        if("Admin".equals(UsuarioText.getText()) && "Admin".equals(ContraText.getText())){
-            JControl  control = new JControl();
+        if(VerificaUsuario()){
+            JControl control = new JControl();
             control.setVisible(true);
             dispose();
-        }
-        else{
+        }else{
             ErrorLabel.setVisible(true);
         }
     }//GEN-LAST:event_LogInButtonActionPerformed
@@ -152,13 +151,15 @@ public class JUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    /**
-   private boolean VerificaUsuario(){
-       for(int i = 0; i < Administrador.Usuarios.getSize(); i++){
-           if()
-       }
-       .equals(UsuarioText.getText()) && "Admin".equals(ContraText.getText());
-   }
-   */
+    private boolean VerificaUsuario(){
+        for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){
+            if(UsuarioText.getText().equals(Administrador.ListaDeUsuarios.get(i).getUsername()) &&
+               ContraText.getText().equals(Administrador.ListaDeUsuarios.get(i).getContrasenia())){
+                Administrador.setUsuarioActual(i);
+                return true;
+            }
+        }
+        return false;
+    }
 }
 

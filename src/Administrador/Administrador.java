@@ -16,7 +16,7 @@ public class Administrador {
     public static ArrayList<Mascota> ListaDeMascotas = new ArrayList<>();
     public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>(); 
     public static ArrayList<String> ListaDeColores = new ArrayList<>();
-    
+    public static int UsuarioActual;
     // REGISTRO 
     
     public static void RegistrarUsuario(String Nombre, String Apellido, String Username,
@@ -58,5 +58,13 @@ public class Administrador {
     
     public static void RegistrarColores(String color){
         ListaDeColores.add(color);
+    }
+
+    public static int getUsuarioActual() {
+        return UsuarioActual;
+    }
+
+    public static void setUsuarioActual(int aUsuarioActual) {
+        UsuarioActual = aUsuarioActual;
     }
 }
