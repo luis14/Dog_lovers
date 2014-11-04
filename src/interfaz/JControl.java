@@ -1,15 +1,25 @@
 package interfaz;
 
+import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
 public class JControl extends javax.swing.JFrame {
 
     public JControl() {
         initComponents();
+        DatosUsuario();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Pefil de Usuario");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+    }
+    
+    private void DatosUsuario(){
+        NombreLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getNombre());
+        ApellidoLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getApellido());
+        UsernameLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getUsername());
+        CorreoLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo());
+        TelLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
     }
 
     @SuppressWarnings("unchecked")
@@ -35,6 +45,8 @@ public class JControl extends javax.swing.JFrame {
         CantidadLabel = new javax.swing.JLabel();
         LogoItem = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jLabel1 = new javax.swing.JLabel();
+        TelLabel1 = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         Registro = new javax.swing.JMenu();
         MascotaItem = new javax.swing.JMenuItem();
@@ -97,6 +109,10 @@ public class JControl extends javax.swing.JFrame {
 
         LogoItem.setText("Logo");
 
+        jLabel1.setText("Teléfono :");
+
+        TelLabel1.setText("Telefono");
+
         javax.swing.GroupLayout PrincipalPanelLayout = new javax.swing.GroupLayout(PrincipalPanel);
         PrincipalPanel.setLayout(PrincipalPanelLayout);
         PrincipalPanelLayout.setHorizontalGroup(
@@ -121,7 +137,10 @@ public class JControl extends javax.swing.JFrame {
                                         .addComponent(FotoLabel)
                                         .addGap(34, 34, 34)
                                         .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(NombreLabel)
+                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
+                                                .addComponent(NombreLabel)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(NombreLabel1))
                                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
                                                 .addComponent(ApellidoLabel)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -135,8 +154,9 @@ public class JControl extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(CorreoLabel1))
                                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addGap(50, 50, 50)
-                                                .addComponent(NombreLabel1))))))
+                                                .addComponent(jLabel1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(TelLabel1))))))
                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(CantidadLabel)))
@@ -157,14 +177,13 @@ public class JControl extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NombreLabel1)
-                                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                        .addComponent(NombreLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(ApellidoLabel)
-                                            .addComponent(ApellidoLabel1))))
+                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(NombreLabel)
+                                    .addComponent(NombreLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ApellidoLabel)
+                                    .addComponent(ApellidoLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(UsernameLabel)
@@ -172,7 +191,11 @@ public class JControl extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(CorreoLabel)
-                                    .addComponent(CorreoLabel1)))
+                                    .addComponent(CorreoLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(TelLabel1)))
                             .addComponent(FotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -408,10 +431,12 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JPanel PrincipalPanel;
     private javax.swing.JMenu Registro;
     private javax.swing.JMenuItem SalirItem;
+    private javax.swing.JLabel TelLabel1;
     private javax.swing.JMenuItem TiposMascotasItem;
     private javax.swing.JMenuItem TiposRazasItem;
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel UsernameLabel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextPane jTextPane1;

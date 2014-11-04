@@ -1,5 +1,6 @@
 package interfaz;
 
+import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
 public class JCasaCuna extends javax.swing.JFrame {
@@ -24,16 +25,20 @@ public class JCasaCuna extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         TipoLabel = new javax.swing.JLabel();
         TipoComboBox = new javax.swing.JComboBox();
-        RazaComboBox = new javax.swing.JComboBox();
         RazaLabel = new javax.swing.JLabel();
-        ColorLabel = new javax.swing.JLabel();
-        ColorComboBox = new javax.swing.JComboBox();
         DonacionLabel = new javax.swing.JLabel();
         DanacionSiRadioButton = new javax.swing.JRadioButton();
         DonacionNoRadioButton = new javax.swing.JRadioButton();
         CancelarButton = new javax.swing.JButton();
         AceptarButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        TamanoText = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        RequerimientosText = new javax.swing.JTextArea();
+        ErrorLabel = new javax.swing.JLabel();
+        RazaComboBox = new javax.swing.JComboBox();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -59,18 +64,7 @@ public class JCasaCuna extends javax.swing.JFrame {
 
         TipoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        RazaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        RazaComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RazaComboBoxActionPerformed(evt);
-            }
-        });
-
         RazaLabel.setText("Raza:");
-
-        ColorLabel.setText("Color:");
-
-        ColorComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         DonacionLabel.setText("Requiere de una donación para la alimentación :");
 
@@ -88,6 +82,26 @@ public class JCasaCuna extends javax.swing.JFrame {
 
         AceptarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
         AceptarButton.setText("Aceptar");
+        AceptarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Tamaño :");
+
+        jLabel4.setText("Requerimientos :");
+
+        RequerimientosText.setColumns(20);
+        RequerimientosText.setRows(5);
+        jScrollPane1.setViewportView(RequerimientosText);
+
+        ErrorLabel.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        ErrorLabel.setForeground(new java.awt.Color(153, 0, 0));
+        ErrorLabel.setText("Todos los espacios deben estar llenos");
+        ErrorLabel.setVisible(false);
+
+        RazaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,35 +110,40 @@ public class JCasaCuna extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addComponent(jSeparator1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CancelarButton, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(DonacionLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(DanacionSiRadioButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(DonacionNoRadioButton)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AceptarButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(TipoLabel)
+                                .addGap(42, 42, 42)
+                                .addComponent(DanacionSiRadioButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(DonacionNoRadioButton))
+                            .addComponent(jLabel1)
+                            .addComponent(DonacionLabel)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(TipoLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(RazaLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TamanoText, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(CancelarButton)
                                 .addGap(53, 53, 53)
-                                .addComponent(ColorLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ColorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68)
-                                .addComponent(RazaLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))
-                        .addGap(0, 54, Short.MAX_VALUE)))
+                                .addComponent(AceptarButton)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ErrorLabel)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -132,22 +151,36 @@ public class JCasaCuna extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TipoLabel)
+                            .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RazaLabel)
+                            .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DonacionLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DonacionNoRadioButton)
+                            .addComponent(DanacionSiRadioButton))
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(TamanoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TipoLabel)
-                    .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ColorLabel)
-                    .addComponent(ColorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RazaLabel)
-                    .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DonacionLabel)
-                    .addComponent(DonacionNoRadioButton)
-                    .addComponent(DanacionSiRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ErrorLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelarButton)
                     .addComponent(AceptarButton))
@@ -161,32 +194,58 @@ public class JCasaCuna extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void RazaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RazaComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RazaComboBoxActionPerformed
-
     private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed
         dispose();
     }//GEN-LAST:event_CancelarButtonActionPerformed
 
+    private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
+        boolean donacion;
+        if(DanacionSiRadioButton.isSelected()){
+            donacion = true;
+        }else{
+            donacion = false;
+        }
+        if(VerificaDatos()){
+            Administrador.RegistrarCasaCuna("TipoComboBox.getSelectedItem()", "RazaComboBox.getSelectedItem()",
+                    donacion, TamanoText.getText(), RequerimientosText.getText(), 
+                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
+                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
+            dispose();
+        }else{
+            ErrorLabel.setVisible(true);
+        }
+    }//GEN-LAST:event_AceptarButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButton;
     private javax.swing.JButton CancelarButton;
-    private javax.swing.JComboBox ColorComboBox;
-    private javax.swing.JLabel ColorLabel;
     private javax.swing.JRadioButton DanacionSiRadioButton;
     private javax.swing.JLabel DonacionLabel;
     private javax.swing.JRadioButton DonacionNoRadioButton;
+    private javax.swing.JLabel ErrorLabel;
     private javax.swing.JComboBox RazaComboBox;
     private javax.swing.JLabel RazaLabel;
+    private javax.swing.JTextArea RequerimientosText;
+    private javax.swing.JTextField TamanoText;
     private javax.swing.JComboBox TipoComboBox;
     private javax.swing.JLabel TipoLabel;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    private boolean VerificaDatos(){
+        if("".equals(TamanoText.getText()) || "".equals(RequerimientosText.getText())){
+            return false;
+        }
+        return true;
+    }
+
 }
