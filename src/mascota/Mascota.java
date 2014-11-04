@@ -15,7 +15,7 @@ public class Mascota {
     private String raza; 
     private String chip;
     private String Color; 
-    private Date FechaDeEncontradoPerdido; 
+    private String FechaDeEncontradoPerdido; 
     private String montoDeRecompensa; 
     private ArrayList<String>notas;  
     private String estado; 
@@ -24,7 +24,7 @@ public class Mascota {
     private int id;  
     private static int cantidadDeMascotas= 0; 
 
-    public Mascota(String nombre, String tipo, String Color, Date FechaDeEcontradoPerdido, 
+    public Mascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido, 
                     String estado, String tamanio, Usuario usuario){
         this.nombre = nombre; 
         this.tipo = tipo; 
@@ -109,14 +109,14 @@ public class Mascota {
     /**
      * @return the FechaDeEncontradoPerdido
      */
-    public Date getFechaDeEncontradoPerdido() {
+    public String getFechaDeEncontradoPerdido() {
         return FechaDeEncontradoPerdido;
     }
 
     /**
      * @param FechaDeEncontradoPerdido the FechaDeEncontradoPerdido to set
      */
-    public void setFechaDeEncontradoPerdido(Date FechaDeEncontradoPerdido) {
+    public void setFechaDeEncontradoPerdido(String FechaDeEncontradoPerdido) {
         this.FechaDeEncontradoPerdido = FechaDeEncontradoPerdido;
     }
 

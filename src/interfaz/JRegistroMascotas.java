@@ -1,5 +1,6 @@
 package interfaz;
 
+import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
 public class JRegistroMascotas extends javax.swing.JFrame {
@@ -47,8 +48,9 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        EmailText = new javax.swing.JTextField();
+        TamanlText = new javax.swing.JTextField();
         ImagenLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -79,13 +81,23 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
         jLabel6.setText("Teléfono:");
 
-        EmailLabel.setText("Email:");
+        EmailLabel.setText("Tamaño:");
 
         jLabel8.setText("Estado:");
 
         PerdidoRadio.setText("Perdido");
+        PerdidoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PerdidoRadioActionPerformed(evt);
+            }
+        });
 
         EncontradoRadio.setText("Encontrado");
+        EncontradoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EncontradoRadioActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Lugar:");
 
@@ -126,6 +138,14 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setText("Registro de Mascotas");
 
+        ImagenLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pets-128.png"))); // NOI18N
+        ImagenLabel.setFocusTraversalPolicyProvider(true);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setText("Todos los espacios deben estar llenos.");
+        jLabel1.setVisible(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,32 +163,31 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButton2))
                         .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(ChipLabel)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(ChipText))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(ChipLabel)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(ChipText))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(NombreLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(TipoLabel)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(RazaLabel)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ImagenLabel)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(ColorLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(CargarButton)
-                                            .addComponent(ColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(NombreLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(TipoLabel)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(RazaLabel)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(ImagenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(ColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGap(63, 63, 63)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel11)
@@ -188,14 +207,13 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                 .addComponent(FechaText, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                                 .addComponent(LugarText)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(EmailText)
-                                    .addGap(91, 91, 91))
-                                .addGroup(layout.createSequentialGroup()
                                     .addComponent(PerdidoRadio)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(EncontradoRadio)))))
+                                    .addComponent(EncontradoRadio))
+                                .addComponent(TamanlText, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addComponent(jLabel13))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +225,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                     .addComponent(TipoLabel)
                     .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EmailLabel)
-                    .addComponent(EmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TamanlText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RazaLabel)
@@ -240,10 +258,15 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                     .addComponent(DolaresRadio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ImagenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(8, 8, 8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImagenLabel))
+                        .addGap(14, 14, 14)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(TelText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,11 +287,30 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //if(VerificaMascota()){
-        //    Administrador.RegistrarMascota(TipoCombo.get, RazaCombo.get, ColorCombo.get,
-        //            );
-        //}
+        String estado;
+        if(PerdidoRadio.isSelected()){
+            estado = "Perdido";
+        }else{
+            estado = "Encontrado";
+        }
+
+        if(VerificaMascota()){
+            Administrador.RegistrarMascota(NombreLabel.getText(), TipoCombo.getSelectedItem(), 
+                    RazaCombo.getSelectedItem(), ColorCombo.getSelectedItem(),FechaText.getText(),
+                    estado,TamanlText.getText(),
+                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
+        }else{
+            jLabel1.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void PerdidoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerdidoRadioActionPerformed
+        EncontradoRadio.setSelected(false);
+    }//GEN-LAST:event_PerdidoRadioActionPerformed
+
+    private void EncontradoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncontradoRadioActionPerformed
+        PerdidoRadio.setSelected(false);
+    }//GEN-LAST:event_EncontradoRadioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargarButton;
@@ -280,7 +322,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private javax.swing.JTextArea DescripcionText;
     private javax.swing.JRadioButton DolaresRadio;
     private javax.swing.JLabel EmailLabel;
-    private javax.swing.JTextField EmailText;
     private javax.swing.JRadioButton EncontradoRadio;
     private javax.swing.JTextField FechaText;
     private javax.swing.JLabel ImagenLabel;
@@ -291,11 +332,13 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private javax.swing.JComboBox RazaCombo;
     private javax.swing.JLabel RazaLabel;
     private javax.swing.JTextField RecompensaText;
+    private javax.swing.JTextField TamanlText;
     private javax.swing.JTextField TelText;
     private javax.swing.JComboBox TipoCombo;
     private javax.swing.JLabel TipoLabel;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -312,7 +355,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     
     private boolean VerificaMascota(){
         if("".equals(NombreText.getText()) || "".equals(ChipText.getText()) ||
-           "".equals(EmailText.getText()) || "".equals(LugarText.getText()) ||
+           "".equals(TamanlText.getText()) || "".equals(LugarText.getText()) ||
            "".equals(FechaText.getText()) || "".equals(DescripcionText.getText())){
             return false;
         }

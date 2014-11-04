@@ -26,18 +26,16 @@ public class Administrador {
         ListaDeUsuarios.add(usuario);
     }
     
-    public static void RegistrarMascota(String nombre, String tipo, String Color, Date FechaDeEcontradoPerdido, 
+    public static void RegistrarMascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido, 
                                         String estado, String tamanio, Usuario usuario){ 
         Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, estado, tamanio, usuario); 
         ListaDeMascotas.add(mascota);
-        
     }
    
     public static void RegistrarCasaCuna(String tipo, String raza, Boolean necesitaAlimentacion, 
             String Tamanio, String requerimientos, Usuario Usuario, String Telefono){ 
         CasaCuna casaCuna = new CasaCuna(tipo, raza, necesitaAlimentacion, Tamanio, requerimientos, Usuario, Telefono); 
         ListaDeCasaCuna.add(casaCuna); 
-        
     } 
     
     public static void RegistrarTipoMascotas(String nombreDeMascota){  
@@ -48,13 +46,11 @@ public class Administrador {
     public static void RegistrarAdoptante(String nombre, String correo, String telefono, String lugarDeResidencia,
                                           String cantidadDeEspacio, Boolean reportado, Usuario usuario){
         Adoptante adoptante = new Adoptante(nombre, correo, telefono, lugarDeResidencia, cantidadDeEspacio, reportado, usuario); 
-        ListaDeAdoptantes.add(adoptante); 
-        
+        ListaDeAdoptantes.add(adoptante);
     }
     
     public static void RegistrarTipoRazas(int posicionDeMascotaEnLista, String TipoRaza){ 
         ListaDeTiposMascotas.get(posicionDeMascotaEnLista).agregarTipoDeRaza(TipoRaza);
-     
     } 
     
     public static void RegistrarColores(String color){
@@ -67,5 +63,9 @@ public class Administrador {
 
     public static void setUsuarioActual(int aUsuarioActual) {
         UsuarioActual = aUsuarioActual;
+    }
+
+    public static void RegistrarMascota(String text, Object selectedItem, Object selectedItem0, Object selectedItem1, String text0, String estado, String text1, Usuario get) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
