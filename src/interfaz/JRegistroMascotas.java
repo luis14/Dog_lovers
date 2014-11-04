@@ -177,7 +177,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setText("Registro de Mascotas");
 
-        ImagenLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pets-128.png"))); // NOI18N
         ImagenLabel.setFocusTraversalPolicyProvider(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
