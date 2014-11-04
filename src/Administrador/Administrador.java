@@ -20,9 +20,9 @@ public class Administrador {
     
     // REGISTRO 
     
-    public static void RegistrarUsuario(String Nombre, String Apellido, String Username,
+    public static void RegistrarUsuario(String Nombre, String Apellido, String Username,String Telefono,
                                         String Contrasenia, boolean esAdmin, String Correo){
-        Usuario usuario = new Usuario(Nombre, Apellido, Username, Contrasenia, esAdmin, Correo); 
+        Usuario usuario = new Usuario(Nombre, Apellido, Username, Telefono, Contrasenia, esAdmin, Correo); 
         ListaDeUsuarios.add(usuario);
     }
     

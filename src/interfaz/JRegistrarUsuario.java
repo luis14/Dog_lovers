@@ -30,6 +30,8 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
         CorreoText = new javax.swing.JTextField();
         AceptarButton = new javax.swing.JButton();
         AtrasButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        TelText = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +76,8 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Teléfono :");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -86,25 +90,27 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
                         .addComponent(NombreLabel)
                         .addGap(127, 127, 127)
                         .addComponent(ApellidoLabel))
-                    .addComponent(CorreoLabel)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(CorreoText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                            .addComponent(UsernameText, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NombreText, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UsernameLabel, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ContraLabel)
-                            .addComponent(ContraText, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                            .addComponent(ApellidoText))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(AtrasButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                            .addComponent(AceptarButton))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(CorreoText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(UsernameText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NombreText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(UsernameLabel, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(CorreoLabel))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1)
+                                .addComponent(ContraLabel)
+                                .addComponent(ContraText, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                .addComponent(ApellidoText)
+                                .addComponent(TelText)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(AtrasButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(AceptarButton)
-                .addGap(53, 53, 53))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,10 +134,14 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
                     .addComponent(UsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ContraText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(CorreoLabel)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CorreoLabel)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CorreoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CorreoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AtrasButton)
                     .addComponent(AceptarButton))
@@ -159,11 +169,13 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_AtrasButtonActionPerformed
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
-                                       ContraText.getText(),false, CorreoText.getText());
-        JUsuario usuario = new JUsuario();
-        usuario.setVisible(true);
-        dispose();
+        if(VerificaUsuario()){
+            Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
+                                       TelText.getText(), ContraText.getText(),false, CorreoText.getText());
+            JUsuario usuario = new JUsuario();
+            usuario.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_AceptarButtonActionPerformed
 
     private void NombreTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTextActionPerformed
@@ -186,8 +198,19 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel NombreLabel;
     private javax.swing.JTextField NombreText;
     private javax.swing.JLabel RegistroLabel;
+    private javax.swing.JTextField TelText;
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JTextField UsernameText;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private boolean VerificaUsuario(){
+        if("".equals(NombreText.getText()) || "".equals(ApellidoText.getText()) || 
+           "".equals(UsernameText.getText()) || "".equals(TelText.getText()) ||
+           "".equals(ContraText.getText()) || false || "".equals(CorreoText.getText())){
+            return false;
+        }
+        return true;
+    }
 }

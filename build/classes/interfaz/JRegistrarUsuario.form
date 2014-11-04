@@ -47,30 +47,34 @@
                           <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
                           <Component id="ApellidoLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="CorreoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="CorreoText" alignment="0" pref="146" max="32767" attributes="0"/>
-                              <Component id="UsernameText" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NombreText" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UsernameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="AtrasButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="141" max="32767" attributes="0"/>
+                              <Component id="AceptarButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="ContraLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="ContraText" alignment="0" pref="147" max="32767" attributes="0"/>
-                              <Component id="ApellidoText" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="CorreoText" alignment="0" pref="146" max="32767" attributes="0"/>
+                                      <Component id="UsernameText" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="NombreText" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="UsernameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="CorreoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ContraLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ContraText" alignment="0" pref="147" max="32767" attributes="0"/>
+                                  <Component id="ApellidoText" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TelText" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                  <Component id="AtrasButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
-                  <Component id="AceptarButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -100,10 +104,16 @@
                       <Component id="ContraText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="CorreoLabel" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="CorreoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="CorreoText" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="CorreoText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TelText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="38" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="AtrasButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="AceptarButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -184,6 +194,13 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtrasButtonActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tel&#xe9;fono :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TelText">
         </Component>
       </SubComponents>
     </Container>

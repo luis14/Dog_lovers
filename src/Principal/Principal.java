@@ -8,10 +8,10 @@ public class Principal {
     public static void main(String[] args) {
         JUsuario  usuario = new JUsuario();
         usuario.setVisible(true); 
-        Administrador.RegistrarUsuario("Miuyin", "Yong", "miumiu", "123", false, "miuyinyong@yahoo.com");
-        Administrador.RegistrarUsuario("Santiago", "Mendez", "Santi", "123", false, "SanitMendez@yahoo.com");
-        Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev", "123", true, "KevinQ@yahoo.com");
-        Administrador.RegistrarUsuario("Luis", "Alonso", "LuisA", "123", false, "LuisAlonso@yahoo.com");
+        Administrador.RegistrarUsuario("Miuyin", "Yong", "miumiu", "21212121", "123", false, "miuyinyong@yahoo.com");
+        Administrador.RegistrarUsuario("Santiago", "Mendez", "Santi", "111222111", "123", false, "SanitMendez@yahoo.com");
+        Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com");
+        Administrador.RegistrarUsuario("Luis", "Alonso", "LuisA", "1212121212",  "123",false, "LuisAlonso@yahoo.com");
         
         Administrador.RegistrarMascota("Chester", "Perro", "Golden", null, "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0));
         Administrador.RegistrarMascota("Bark", "Perro", "Negro", null, "Encontrado", "Pequenio", Administrador.ListaDeUsuarios.get(1));

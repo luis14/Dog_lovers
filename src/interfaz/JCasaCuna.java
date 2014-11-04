@@ -22,8 +22,6 @@ public class JCasaCuna extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        Texto2Label = new javax.swing.JLabel();
-        Texto1Label = new javax.swing.JLabel();
         TipoLabel = new javax.swing.JLabel();
         TipoComboBox = new javax.swing.JComboBox();
         RazaComboBox = new javax.swing.JComboBox();
@@ -56,12 +54,6 @@ public class JCasaCuna extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Casa Cuna");
-
-        Texto2Label.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        Texto2Label.setText("Ingrese los datos para conocer el tipo de mascota que prefieres cuidar.");
-
-        Texto1Label.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        Texto1Label.setText("Esta opción te permitirá poder servir como casa cuna. ");
 
         TipoLabel.setText("Tipo :");
 
@@ -131,8 +123,6 @@ public class JCasaCuna extends javax.swing.JFrame {
                                 .addComponent(RazaLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Texto2Label)
-                            .addComponent(Texto1Label)
                             .addComponent(jLabel1))
                         .addGap(0, 54, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -142,13 +132,9 @@ public class JCasaCuna extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(Texto1Label)
-                .addGap(4, 4, 4)
-                .addComponent(Texto2Label)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TipoLabel)
                     .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,8 +179,6 @@ public class JCasaCuna extends javax.swing.JFrame {
     private javax.swing.JRadioButton DonacionNoRadioButton;
     private javax.swing.JComboBox RazaComboBox;
     private javax.swing.JLabel RazaLabel;
-    private javax.swing.JLabel Texto1Label;
-    private javax.swing.JLabel Texto2Label;
     private javax.swing.JComboBox TipoComboBox;
     private javax.swing.JLabel TipoLabel;
     private javax.swing.JComboBox jComboBox1;
