@@ -15,7 +15,7 @@ import java.text.*;
 public class Calendario {
     Date ahora = new Date();
     DateFormat fecha_completa = DateFormat.getDateInstance(DateFormat.SHORT, new Locale("es"));
-        String fecha = fecha_completa.format(ahora);
+    String fecha = fecha_completa.format(ahora);
     
     public String getfecha(){
         return fecha;
