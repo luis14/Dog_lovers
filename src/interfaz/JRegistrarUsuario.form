@@ -67,9 +67,9 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <Component id="ContraLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ContraText" alignment="0" pref="147" max="32767" attributes="0"/>
-                                  <Component id="ApellidoText" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ApellidoText" alignment="0" pref="147" max="32767" attributes="0"/>
                                   <Component id="TelText" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ContraText" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -164,8 +164,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="UsernameText">
         </Component>
-        <Component class="javax.swing.JTextField" name="ContraText">
-        </Component>
         <Component class="javax.swing.JLabel" name="CorreoLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Correo"/>
@@ -201,6 +199,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelText">
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="ContraText">
         </Component>
       </SubComponents>
     </Container>

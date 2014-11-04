@@ -13,9 +13,9 @@ public class Principal {
         Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com");
         Administrador.RegistrarUsuario("Luis", "Alonso", "LuisA", "1212121212",  "123",false, "LuisAlonso@yahoo.com");
         
-        Administrador.RegistrarMascota("Chester", "Perro", "Golden", null, "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0));
-        Administrador.RegistrarMascota("Bark", "Perro", "Negro", null, "Encontrado", "Pequenio", Administrador.ListaDeUsuarios.get(1));
-        Administrador.RegistrarMascota("Mark", "Perro", "White", null, "Perdido", "Pequenio", Administrador.ListaDeUsuarios.get(2));
+        Administrador.RegistrarMascota("Chester", "Perro", "Golden", null, "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "12");
+        Administrador.RegistrarMascota("Bark", "Perro", "Negro", null, "Encontrado", "Pequenio", Administrador.ListaDeUsuarios.get(1), null);
+        Administrador.RegistrarMascota("Mark", "Perro", "White", null, "Perdido", "Pequenio", Administrador.ListaDeUsuarios.get(2), "563");
         
         Administrador.RegistrarCasaCuna("Perros", "Golden", true , "small", "ninguno", Administrador.ListaDeUsuarios.get(0) , "2234251"); 
         

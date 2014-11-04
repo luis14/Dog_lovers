@@ -25,13 +25,13 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
         NombreText = new javax.swing.JTextField();
         ApellidoText = new javax.swing.JTextField();
         UsernameText = new javax.swing.JTextField();
-        ContraText = new javax.swing.JTextField();
         CorreoLabel = new javax.swing.JLabel();
         CorreoText = new javax.swing.JTextField();
         AceptarButton = new javax.swing.JButton();
         AtrasButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         TelText = new javax.swing.JTextField();
+        ContraText = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,9 +107,9 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1)
                                 .addComponent(ContraLabel)
-                                .addComponent(ContraText, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                .addComponent(ApellidoText)
-                                .addComponent(TelText)))))
+                                .addComponent(ApellidoText, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                .addComponent(TelText)
+                                .addComponent(ContraText)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -192,7 +192,7 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField ApellidoText;
     private javax.swing.JButton AtrasButton;
     private javax.swing.JLabel ContraLabel;
-    private javax.swing.JTextField ContraText;
+    private javax.swing.JPasswordField ContraText;
     private javax.swing.JLabel CorreoLabel;
     private javax.swing.JTextField CorreoText;
     private javax.swing.JLabel NombreLabel;

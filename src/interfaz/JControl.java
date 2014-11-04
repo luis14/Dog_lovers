@@ -12,6 +12,15 @@ public class JControl extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Pefil de Usuario");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+        if(!esAdmin()){
+            TiposRazasItem.setVisible(false);
+            TiposMascotasItem.setVisible(false);
+            AdminItem.setVisible(false);
+        }
+    }
+    
+    private boolean esAdmin(){
+        return Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isEsAdmin();
     }
     
     private void DatosUsuario(){
