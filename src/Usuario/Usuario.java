@@ -79,9 +79,8 @@ public class Usuario {
         this.esAdmin = esAdmin;
     }
 
-    public String getId() {
-        String ID = Integer.toString(id);
-        return ID;
+    public int getId() {
+        return id;
     }
     public void setID(int ID) {
         this.id = ID;
@@ -107,7 +106,7 @@ public class Usuario {
     } 
     
     public String[] arreglo(){
-        String msg[] = {getId(),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono(), printEsAdmin()}; 
+        String msg[] = {Integer.toString(getId()),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono(), printEsAdmin()}; 
         return msg;
 }
     

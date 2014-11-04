@@ -187,7 +187,7 @@ public class Adoptante {
      }
     
      public String[] arreglo(){
-        String[]msg = {getNombre(), getTelefono(), getCorreo(), getCalificacion()}; 
+        String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getCalificacion()}; 
         return msg;
     } 
      
