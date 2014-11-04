@@ -62,8 +62,17 @@ public class Usuario {
         this.Contrasenia = Contrasenia;
     }
     
-    public boolean isEsAdmin() {
+    public boolean getEsAdmin() {
         return esAdmin;
+    } 
+    
+    public String printEsAdmin(){
+        if(esAdmin == true){
+            return "Es Admin";
+        } 
+        else{ 
+        return "No es Admin";
+        }
     }
     
     public void setEsAdmin(boolean esAdmin) {
@@ -98,7 +107,7 @@ public class Usuario {
     } 
     
     public String[] arreglo(){
-        String msg[] = {getId(),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono()}; 
+        String msg[] = {getId(),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono(), printEsAdmin()}; 
         return msg;
 }
     

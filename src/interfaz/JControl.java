@@ -20,7 +20,7 @@ public class JControl extends javax.swing.JFrame {
     }
     
     private boolean esAdmin(){
-        return Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isEsAdmin();
+        return Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getEsAdmin();
     }
     
     private void DatosUsuario(){

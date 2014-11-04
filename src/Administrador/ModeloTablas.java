@@ -6,7 +6,8 @@ import Usuario.Usuario;
 public class ModeloTablas { 
     private static DefaultTableModel modeloMascotas; 
     private static DefaultTableModel modeloCasaCuna; 
-    private static DefaultTableModel modeloAdoptantes; 
+    private static DefaultTableModel modeloAdoptantes;  
+    private static DefaultTableModel modeloUsuarios; 
     
     public static DefaultTableModel tablaMascotas(){ 
         String titulos[] = {"ID", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
@@ -114,6 +115,16 @@ public class ModeloTablas {
         }
         return modeloAdoptantes; 
     }  
+     
+     public static DefaultTableModel tablaUsuarios(){ 
+         String titulos[] = {"ID","Nombre", "Apellido", "Usuario", "Correo", "Telefono", "Si es Admin"}; 
+         String informacion[][] = {}; 
+         for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){ 
+                modeloUsuarios.addRow(Administrador.ListaDeUsuarios.get(i).arreglo());    
+        }
+        return modeloUsuarios; 
+         
+     }
      
      public static DefaultTableModel tablaListaNegra(){
         String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"}; 
