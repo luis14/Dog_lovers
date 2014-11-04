@@ -182,17 +182,12 @@ public class Adoptante {
         return ID; 
     }  
      
-     public String getListaNegra(){
-         if(reportado == true){
-             return "Reportado";
-         } 
-         else{ 
-             return "No esta reportado";
-         }
+     public Boolean getListaNegra(){
+         return reportado;
      }
     
      public String[] arreglo(){
-        String[]msg = {getNombre(), getTelefono(), getCorreo(), getListaNegra(), getCalificacion()}; 
+        String[]msg = {getNombre(), getTelefono(), getCorreo(), getCalificacion()}; 
         return msg;
     } 
      

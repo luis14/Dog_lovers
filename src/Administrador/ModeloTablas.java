@@ -116,7 +116,7 @@ public class ModeloTablas {
     }  
      
      public static DefaultTableModel tablaListaNegra(){
-        String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
+        String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"}; 
         String informacion[][] = {}; 
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
