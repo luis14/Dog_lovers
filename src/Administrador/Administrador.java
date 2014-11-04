@@ -1,10 +1,6 @@
 package Administrador;
 
 import java.util.ArrayList; 
-import Usuario.Usuario;
-import adoptante.Adoptante; 
-import casaCuna.CasaCuna; 
-import mascota.Mascota;   
 import java.util.Date;  
 
 
@@ -15,7 +11,8 @@ public class Administrador {
     public static ArrayList<CasaCuna> ListaDeCasaCuna = new ArrayList<>();
     public static ArrayList<Mascota> ListaDeMascotas = new ArrayList<>();
     public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>(); 
-    public static ArrayList<String> ListaDeColores = new ArrayList<>();
+    public static ArrayList<String> ListaDeColores = new ArrayList<>(); 
+    public static ArrayList<Asociacion> ListaDeAsociaciones = new ArrayList<>(); 
     public static int UsuarioActual;
     
     // REGISTRO 
@@ -36,7 +33,14 @@ public class Administrador {
             String Tamanio, String requerimientos, Usuario Usuario, String Telefono){ 
         CasaCuna casaCuna = new CasaCuna(tipo, raza, necesitaAlimentacion, Tamanio, requerimientos, Usuario, Telefono); 
         ListaDeCasaCuna.add(casaCuna); 
-    } 
+    }  
+    
+    public static void RegistrarAsociacion(String nombre, String mission,
+            String cedulaJuridica, String telefono, String correo, String paginaWeb){  
+        Asociacion asociacion = new Asociacion(nombre, mission, cedulaJuridica, telefono, correo, paginaWeb);  
+        ListaDeAsociaciones.add(asociacion);
+        
+    }
     
     public static void RegistrarTipoMascotas(String nombreDeMascota){  
        TipoDeMascota tipoDeMascota = new TipoDeMascota(nombreDeMascota); 
@@ -64,6 +68,7 @@ public class Administrador {
     public static void setUsuarioActual(int aUsuarioActual) {
         UsuarioActual = aUsuarioActual;
     }
+    
 
     public static void RegistrarMascota(String text, Object selectedItem, Object selectedItem0, Object selectedItem1, String text0, String estado, String text1, Usuario get) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

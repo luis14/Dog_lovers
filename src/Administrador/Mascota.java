@@ -1,7 +1,6 @@
 
-package mascota;
+package Administrador;
 
-import Usuario.Usuario;
 import java.util.Date; 
 import java.util.ArrayList;
 

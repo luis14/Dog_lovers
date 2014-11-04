@@ -1,7 +1,6 @@
 package Administrador;
 
 import javax.swing.table.DefaultTableModel;
-import Usuario.Usuario;
 
 public class ModeloTablas { 
     private static DefaultTableModel modeloMascotas; 

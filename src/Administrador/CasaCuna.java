@@ -1,6 +1,4 @@
-package casaCuna; 
-
-import Usuario.Usuario;
+package Administrador; 
 
 
 public class CasaCuna { 
