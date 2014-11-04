@@ -180,8 +180,9 @@ public class Mascota {
     /**
      * @return the id
      */
-    public int getId() {
-        return id;
+    public String getId() { 
+        String ID = Integer.toString(id);
+        return ID;
     }
 
     /**
@@ -211,7 +212,7 @@ public class Mascota {
     }
     
     public String[] arreglo(){
-        String[]msg = {getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
+        String[]msg = {getId(), getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
         return msg;
     }
     

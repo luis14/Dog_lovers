@@ -131,8 +131,9 @@ public class CasaCuna {
     /**
      * @return the id
      */
-    public int getId() {
-        return id;
+    public String getId() { 
+        String ID = Integer.toString(id);
+        return ID;
     }
 
     /**
@@ -148,7 +149,7 @@ public class CasaCuna {
     } 
     
     public String[] arreglo(){
-        String[]msg = {getTipo(), getRaza(), getTamanio(), getNecesitaAlimentacion(), getTelefono(),getRequerimientos()};
+        String[]msg = {getId(), getTipo(), getRaza(), getTamanio(), getNecesitaAlimentacion(), getTelefono(),getRequerimientos()};
         return msg;
     }
     

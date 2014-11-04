@@ -9,7 +9,7 @@ public class ModeloTablas {
     private static DefaultTableModel modeloAdoptantes; 
     
     public static DefaultTableModel tablaMascotas(){ 
-        String titulos[] = {"Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){
@@ -20,7 +20,7 @@ public class ModeloTablas {
     }  
     
       public static DefaultTableModel tablaMascotas(Usuario usuario, String estado){ 
-        String titulos[] = {"Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
@@ -32,7 +32,7 @@ public class ModeloTablas {
     } 
       
        public static DefaultTableModel tablaMascotas(String TipoDeConsulta, String Consulta){ 
-        String titulos[] = {"Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID","Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);  
         //ArrayList<Mascota> tipodemascota = Administrador.ListaDeMascotas;
@@ -62,7 +62,7 @@ public class ModeloTablas {
     } 
     
     public static DefaultTableModel tablaCasaCuna(){  
-        String titulos[] = {"Tipo", "Raza", "Tamanio", "NecesitaAlimentacion", "Telefono", "Requerimientos"}; 
+        String titulos[] = {"ID", "Tipo", "Raza", "Tamanio", "NecesitaAlimentacion", "Telefono", "Requerimientos"}; 
         String informacion[][] = {}; 
         modeloCasaCuna= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeCasaCuna.size(); i++){
@@ -72,7 +72,7 @@ public class ModeloTablas {
     } 
     
      public static DefaultTableModel tablaCasaCuna(String TipoDeConsulta, String Consulta){ 
-        String titulos[] = {"Tipo", "Raza", "Tamanio", "NecesitaAlimentacion", "Telefono", "Requerimientos"};  
+        String titulos[] = {"ID","Tipo", "Raza", "Tamanio", "NecesitaAlimentacion", "Telefono", "Requerimientos"};  
         String informacion[][] = {}; 
         modeloCasaCuna = new DefaultTableModel(informacion, titulos);  
         for(int i = 0; i < Administrador.ListaDeCasaCuna.size(); i++){ 
@@ -93,7 +93,7 @@ public class ModeloTablas {
     } 
     
     public static DefaultTableModel tablaAdoptantes(){
-        String titulos[] = {"Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
+        String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
         String informacion[][] = {}; 
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){
@@ -104,7 +104,7 @@ public class ModeloTablas {
     
  
      public static DefaultTableModel tablaAdoptantes(String Calificacion){
-        String titulos[] = {"Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
+        String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
         String informacion[][] = {}; 
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
@@ -116,7 +116,7 @@ public class ModeloTablas {
     }  
      
      public static DefaultTableModel tablaListaNegra(){
-        String titulos[] = {"Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
+        String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
         String informacion[][] = {}; 
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 

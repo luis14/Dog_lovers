@@ -15,7 +15,7 @@ public class Usuario {
     private String Correo;
     private String Telefono;
     private boolean esAdmin;
-    private int ID;   
+    private int id;   
     private static int cantidadDeUsuarios = 0;     
     
     public Usuario(String Nombre, String Apellido, String Username, String Telefono,
@@ -27,7 +27,7 @@ public class Usuario {
         this.esAdmin = esAdmin;  
         this.Correo = correo;
         this.Telefono = Telefono;
-        ID = ++cantidadDeUsuarios;   
+        id = ++cantidadDeUsuarios;   
     } 
     
     public String getNombre() {
@@ -70,12 +70,12 @@ public class Usuario {
         this.esAdmin = esAdmin;
     }
 
-    public String getID() {
-        String id = Integer.toString(ID);
-        return id;
+    public String getId() {
+        String ID = Integer.toString(id);
+        return ID;
     }
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     } 
     public int getCantidadDeClientes(){
         return cantidadDeUsuarios; 
@@ -95,6 +95,11 @@ public class Usuario {
 
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
-    }
+    } 
+    
+    public String[] arreglo(){
+        String msg[] = {getId(),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono()}; 
+        return msg;
+}
     
 }
