@@ -220,6 +220,7 @@ public class JCasaCuna extends javax.swing.JFrame {
                     donacion, TamanoText.getText(), RequerimientosText.getText(), 
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
+            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCuna(true);
             dispose();
         }else{
             ErrorLabel.setVisible(true);

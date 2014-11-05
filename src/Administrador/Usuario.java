@@ -16,7 +16,10 @@ public class Usuario {
     private String Telefono;
     private boolean esAdmin;
     private int id;   
-    private static int cantidadDeUsuarios = 0;     
+    private static int cantidadDeUsuarios = 0;   
+    private boolean adoptante;
+    private boolean casaCuna;
+    private boolean asociacion;
     
     public Usuario(String Nombre, String Apellido, String Username, String Telefono,
                    String Contrasenia, boolean esAdmin, String correo){ 
@@ -27,6 +30,9 @@ public class Usuario {
         this.esAdmin = esAdmin;  
         this.Correo = correo;
         this.Telefono = Telefono;
+        this.adoptante = false;
+        this.asociacion = false;
+        this.casaCuna = false;
         id = ++cantidadDeUsuarios;   
     } 
     
@@ -108,6 +114,30 @@ public class Usuario {
     public String[] arreglo(){
         String msg[] = {Integer.toString(getId()),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono(), printEsAdmin()}; 
         return msg;
-}
+    }
+
+    public boolean isAdoptante() {
+        return adoptante;
+    }
+
+    public void setAdoptante(boolean adoptante) {
+        this.adoptante = adoptante;
+    }
+
+    public boolean isCasaCuna() {
+        return casaCuna;
+    }
+
+    public void setCasaCuna(boolean casaCuna) {
+        this.casaCuna = casaCuna;
+    }
+
+    public boolean isAsociacion() {
+        return asociacion;
+    }
+
+    public void setAsociacion(boolean asociacion) {
+        this.asociacion = asociacion;
+    }
     
 }

@@ -61,6 +61,7 @@ public class JControl extends javax.swing.JFrame {
         MascotaItem = new javax.swing.JMenuItem();
         CasaCunaItem = new javax.swing.JMenuItem();
         AdoptanteItem = new javax.swing.JMenuItem();
+        Asociacion = new javax.swing.JMenuItem();
         Editar = new javax.swing.JMenu();
         MascotasItem = new javax.swing.JMenuItem();
         CasaCunaItem1 = new javax.swing.JMenuItem();
@@ -254,6 +255,14 @@ public class JControl extends javax.swing.JFrame {
         });
         Registro.add(AdoptanteItem);
 
+        Asociacion.setText("Asociación");
+        Asociacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AsociacionActionPerformed(evt);
+            }
+        });
+        Registro.add(Asociacion);
+
         Menu.add(Registro);
 
         Editar.setText("Editar");
@@ -380,8 +389,12 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_RegistroActionPerformed
 
     private void CasaCunaItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItemActionPerformed
-       JCasaCuna casacuna = new JCasaCuna();
-       casacuna.setVisible(true);
+        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna())){
+            JCasaCuna casacuna = new JCasaCuna();
+            casacuna.setVisible(true);
+        }else{
+            
+        }
     }//GEN-LAST:event_CasaCunaItemActionPerformed
 
     private void CerrarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarItemActionPerformed
@@ -395,14 +408,25 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirItemActionPerformed
 
     private void AdoptanteItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItemActionPerformed
-       JAdoptante adoptante = new JAdoptante();
-       adoptante.setVisible(true);
+        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante())){
+            JAdoptante adoptante = new JAdoptante();
+            adoptante.setVisible(true);
+        }else{
+            
+        }
     }//GEN-LAST:event_AdoptanteItemActionPerformed
 
     private void ListaNegraItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaNegraItemActionPerformed
        JListaNegra lista = new JListaNegra();
        lista.setVisible(true);
     }//GEN-LAST:event_ListaNegraItemActionPerformed
+
+    private void AsociacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsociacionActionPerformed
+        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion())){
+            JAsociacion asiciacion = new JAsociacion();
+            asiciacion.setVisible(true);
+        }
+    }//GEN-LAST:event_AsociacionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
@@ -411,6 +435,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JMenuItem AdoptanteItem2;
     private javax.swing.JLabel ApellidoLabel;
     private javax.swing.JLabel ApellidoLabel1;
+    private javax.swing.JMenuItem Asociacion;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JMenuItem CasaCunaItem;
     private javax.swing.JMenuItem CasaCunaItem1;
