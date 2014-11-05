@@ -13,6 +13,7 @@ public class Administrador {
     public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>(); 
     public static ArrayList<String> ListaDeColores = new ArrayList<>(); 
     public static ArrayList<Asociacion> ListaDeAsociaciones = new ArrayList<>(); 
+    public static ArrayList<Donaciones> ListaDeDonaciones = new ArrayList<>(); 
     public static int UsuarioActual;
     
     // REGISTRO 
@@ -40,6 +41,11 @@ public class Administrador {
         Asociacion asociacion = new Asociacion(nombre, mission, cedulaJuridica, telefono, correo, paginaWeb);  
         ListaDeAsociaciones.add(asociacion);
         
+    } 
+    
+    public static void RegistrarDonacion(Usuario usuario, Asociacion asociacion, int monto, String fecha){ 
+        Donaciones donaciones = new Donaciones(usuario, asociacion, monto, fecha);
+        ListaDeDonaciones.add(donaciones);
     }
     
     public static void RegistrarTipoMascotas(String nombreDeMascota){  
@@ -72,5 +78,5 @@ public class Administrador {
 
     public static void RegistrarMascota(String text, Object selectedItem, Object selectedItem0, Object selectedItem1, String text0, String estado, String text1, Usuario get) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    } 
 }
