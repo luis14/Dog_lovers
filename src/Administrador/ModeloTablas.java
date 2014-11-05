@@ -6,7 +6,8 @@ public class ModeloTablas {
     private static DefaultTableModel modeloMascotas; 
     private static DefaultTableModel modeloCasaCuna; 
     private static DefaultTableModel modeloAdoptantes;  
-    private static DefaultTableModel modeloUsuarios; 
+    private static DefaultTableModel modeloUsuarios;  
+    private static DefaultTableModel modeloDonaciones;
     
     
     public static DefaultTableModel tablaMascotas(){ 
@@ -182,7 +183,14 @@ public class ModeloTablas {
             }     
         }
         return modeloAdoptantes; 
-    }  
+    }   
+     
+     public static DefaultTableModel tablaDeDonaciones(){
+         String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
+         String informacion[][] = {}; 
+         modeloDonaciones = new DefaultTableModel(informacion, titulos); 
+         return modeloDonaciones;
+     }
      
 }
     
