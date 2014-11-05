@@ -147,9 +147,9 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="DonacionLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="DonacionNoRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="DanacionSiRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DanacionSiRadioButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -216,11 +216,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Si"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DanacionSiRadioButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="DonacionNoRadioButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="No"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DonacionNoRadioButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CancelarButton">
       <Properties>

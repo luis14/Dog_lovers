@@ -44,7 +44,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         RazaLabel = new javax.swing.JLabel();
         RazaCombo = new javax.swing.JComboBox();
         TipoLabel = new javax.swing.JLabel();
-        TipoCombo = new javax.swing.JComboBox();
         NombreLabel = new javax.swing.JLabel();
         NombreText = new javax.swing.JTextField();
         ChipLabel = new javax.swing.JLabel();
@@ -75,6 +74,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        TipoCombo = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -90,8 +90,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
         TipoLabel.setText("Tipo:");
 
-        TipoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         NombreLabel.setText("Nombre:");
 
         ChipLabel.setText("Chip:");
@@ -101,7 +99,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                 ChipTextActionPerformed(evt);
             }
         });
-        ChipText.setVisible(false);
 
         ColorLabel.setText("Color:");
 
@@ -192,6 +189,13 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         });
 
         jRadioButton2.setText("No");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        TipoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,13 +244,13 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(ChipLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(6, 6, 6)
                                         .addComponent(jRadioButton2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ChipText)
-                                        .addGap(51, 51, 51)))
+                                        .addGap(35, 35, 35)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,8 +397,11 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         jRadioButton2.setSelected(false);
-        ChipText.setVisible(false);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        jRadioButton1.setSelected(false);
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargarButton;

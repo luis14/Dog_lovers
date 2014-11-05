@@ -69,8 +69,18 @@ public class JCasaCuna extends javax.swing.JFrame {
         DonacionLabel.setText("Requiere de una donación para la alimentación :");
 
         DanacionSiRadioButton.setText("Si");
+        DanacionSiRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DanacionSiRadioButtonActionPerformed(evt);
+            }
+        });
 
         DonacionNoRadioButton.setText("No");
+        DonacionNoRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonacionNoRadioButtonActionPerformed(evt);
+            }
+        });
 
         CancelarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312667_button_cancel.png"))); // NOI18N
         CancelarButton.setText("Cancelar");
@@ -166,7 +176,7 @@ public class JCasaCuna extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DonacionLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DonacionNoRadioButton)
                             .addComponent(DanacionSiRadioButton))
                         .addGap(6, 6, 6)
@@ -215,6 +225,14 @@ public class JCasaCuna extends javax.swing.JFrame {
             ErrorLabel.setVisible(true);
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
+
+    private void DanacionSiRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanacionSiRadioButtonActionPerformed
+        DonacionNoRadioButton.setSelected(false);
+    }//GEN-LAST:event_DanacionSiRadioButtonActionPerformed
+
+    private void DonacionNoRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonacionNoRadioButtonActionPerformed
+        DanacionSiRadioButton.setSelected(false);
+    }//GEN-LAST:event_DonacionNoRadioButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButton;
