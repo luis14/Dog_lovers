@@ -36,5 +36,9 @@ public class TipoDeMascota {
     public static int getCantidadTipoDeMascotas() {
         return cantidadTipoDeMascotas;
     }
-
+    
+    public int getSize(){
+        return TipoDeRazas.size();
+    }
+    
 }

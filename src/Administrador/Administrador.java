@@ -89,6 +89,15 @@ public class Administrador {
         return nombresDeTipo.toArray(); 
     } 
     
+    public static Object[] HacerArrayDeRazas(int Index){
+        ArrayList<String> nombresDeRazas = new ArrayList<>();
+        for(int i = 0; i < ListaDeTiposMascotas.get(Index).getSize(); i++){
+            nombresDeRazas.add(ListaDeTiposMascotas.get(Index).getTipoDeRazas().get(i));
+        }
+        return nombresDeRazas.toArray();
+    }
+            
+            
     public static Object[] ColoresToArray(){ 
         return ListaDeColores.toArray();
     }
