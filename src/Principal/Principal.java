@@ -30,15 +30,15 @@ public class Principal {
         Administrador.RegistrarColores("Golden");  
         Administrador.RegistrarColores("Gris");
         Administrador.RegistrarColores("Any"); 
-        Administrador.RegistrarColores("Other");
+        Administrador.RegistrarColores("Otro");
         
         Administrador.RegistrarTipoMascotas("Perro");
         Administrador.RegistrarTipoMascotas("Gato");  
         Administrador.RegistrarTipoMascotas("Hamster"); 
         Administrador.RegistrarTipoMascotas("Conejo"); 
-        Administrador.RegistrarTipoMascotas("Caballos");   
+        Administrador.RegistrarTipoMascotas("Caballo");   
         Administrador.RegistrarTipoMascotas("Any"); 
-        Administrador.RegistrarTipoMascotas("Other");
+        Administrador.RegistrarTipoMascotas("Otro");
         //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getId());
         //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getNombre());
         
@@ -59,7 +59,7 @@ public class Principal {
         Administrador.RegistrarTipoRazas(0, "Akita");  
         Administrador.RegistrarTipoRazas(0, "Fox Terrier"); 
         Administrador.RegistrarTipoRazas(0, "Any"); 
-        Administrador.RegistrarTipoRazas(0, "Other"); 
+        Administrador.RegistrarTipoRazas(0, "Otro"); 
         
         Administrador.RegistrarTipoRazas(1, "SnowShoe");   
         Administrador.RegistrarTipoRazas(1, "Tonkinese");  
@@ -70,14 +70,14 @@ public class Principal {
         Administrador.RegistrarTipoRazas(1, "Bombay");  
         Administrador.RegistrarTipoRazas(1, "Garfield"); 
         Administrador.RegistrarTipoRazas(1, "Any"); 
-        Administrador.RegistrarTipoRazas(1, "Other"); 
+        Administrador.RegistrarTipoRazas(1, "Otro"); 
         
         Administrador.RegistrarTipoRazas(2, "Syrian"); 
         Administrador.RegistrarTipoRazas(2, "Russian"); 
         Administrador.RegistrarTipoRazas(2, "Roborovski Dwarf");
         Administrador.RegistrarTipoRazas(2, "Chinese");   
         Administrador.RegistrarTipoRazas(2, "Any"); 
-        Administrador.RegistrarTipoRazas(2, "Other"); 
+        Administrador.RegistrarTipoRazas(2, "Otro"); 
         
         Administrador.RegistrarTipoRazas(3, "Holland Lop");  
         Administrador.RegistrarTipoRazas(3, "Mini Lop"); 
@@ -86,7 +86,7 @@ public class Principal {
         Administrador.RegistrarTipoRazas(3, "Dutch rabbit"); 
         Administrador.RegistrarTipoRazas(3, "Miniature Lop"); 
         Administrador.RegistrarTipoRazas(3, "Any"); 
-        Administrador.RegistrarTipoRazas(3, "Other"); 
+        Administrador.RegistrarTipoRazas(3, "Otro"); 
         
         Administrador.RegistrarTipoRazas(4, "Arabian"); 
         Administrador.RegistrarTipoRazas(4, "Thoroughbred"); 
@@ -98,7 +98,7 @@ public class Principal {
         Administrador.RegistrarTipoRazas(4, "Falabella");
         Administrador.RegistrarTipoRazas(4, "Mongolian"); 
         Administrador.RegistrarTipoRazas(4, "Any"); 
-        Administrador.RegistrarTipoRazas(4, "Other"); 
+        Administrador.RegistrarTipoRazas(4, "Otro"); 
         
     }
     

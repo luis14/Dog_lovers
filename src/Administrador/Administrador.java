@@ -1,5 +1,6 @@
 package Administrador;
 
+
 import java.util.ArrayList; 
 import java.util.Date;  
 
@@ -78,5 +79,13 @@ public class Administrador {
 
     public static void RegistrarMascota(String text, Object selectedItem, Object selectedItem0, Object selectedItem1, String text0, String estado, String text1, Usuario get) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    } 
+    }  
+    
+    public static Object[] HacerArrayDeTipos(){  
+        ArrayList<String> nombresDeTipo = new ArrayList<>(); 
+        for(int i = 0; i < ListaDeTiposMascotas.size(); i++){
+            nombresDeTipo.add(ListaDeTiposMascotas.get(i).getNombre());
+        }
+        return nombresDeTipo.toArray(); 
+    }
 }
