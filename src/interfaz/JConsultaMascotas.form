@@ -32,23 +32,40 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="EstadoCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="ColorCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="TipoCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="TamanioCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="RazaCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chipTextField" min="-2" pref="116" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="BuscarButton" min="-2" pref="87" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="jScrollPane1" min="-2" pref="867" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="EstadoCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="estadoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ColorCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="colorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TipoCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="TipoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TamanioCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="Tamanio" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="RazaCombo" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="chipTextField" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="BuscarButton" min="-2" pref="87" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="RazaLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -59,17 +76,25 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="EstadoCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="estadoLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="colorLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="TipoLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="Tamanio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="RazaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="EstadoCombo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="ColorCombo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="TipoCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="TamanioCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="RazaCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="chipTextField" alignment="0" max="32767" attributes="0"/>
                   <Component id="BuscarButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="chipTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="395" max="-2" attributes="0"/>
@@ -167,6 +192,35 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Chip"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="estadoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Estado:"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="colorLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Color:"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="TipoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo:"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Tamanio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tamanio"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RazaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Raza:"/>
       </Properties>
     </Component>
   </SubComponents>

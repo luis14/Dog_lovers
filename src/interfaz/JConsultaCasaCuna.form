@@ -30,15 +30,29 @@
                   <Component id="CantidadText" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" alignment="0" min="-2" pref="779" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="TipoCombo" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TipoCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="TipoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="RazaCombo" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="RazaCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="RazaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="TamanioCombo" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TamanioCombo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="Tamanio" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="DonacionDeAlimentoCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="BuscarButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="DonacionDeAlimentoCombo" min="-2" pref="110" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="BuscarButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="donacionLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="43" max="32767" attributes="0"/>
@@ -50,7 +64,14 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="TipoLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="RazaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Tamanio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="donacionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="TipoCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="RazaCombo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -58,7 +79,7 @@
                   <Component id="DonacionDeAlimentoCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BuscarButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="382" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="CantidadText" min="-2" max="-2" attributes="0"/>
@@ -138,6 +159,28 @@
     <Component class="javax.swing.JLabel" name="CantidadText">
       <Properties>
         <Property name="text" type="java.lang.String" value=" Cantidad :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="TipoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo:"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Tamanio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tamanio"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RazaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Raza:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="donacionLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Para donativos:"/>
       </Properties>
     </Component>
   </SubComponents>

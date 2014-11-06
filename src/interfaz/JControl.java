@@ -459,8 +459,8 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_AsociacionActionPerformed
 
     private void DonacionesItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonacionesItemActionPerformed
-        //JDonaciones donaciones = new JDonaciones(); 
-       // donaciones.setVisible(true);
+        JDonaciones donaciones = new JDonaciones(); 
+        donaciones.setVisible(true);
     }//GEN-LAST:event_DonacionesItemActionPerformed
 
     private void AdoptanteItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItem2ActionPerformed
