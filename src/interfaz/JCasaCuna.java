@@ -24,7 +24,7 @@ public class JCasaCuna extends javax.swing.JFrame {
         jComboBox3 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         TipoLabel = new javax.swing.JLabel();
-        TipoComboBox = new javax.swing.JComboBox();
+        TipoCombo = new javax.swing.JComboBox();
         RazaLabel = new javax.swing.JLabel();
         DonacionLabel = new javax.swing.JLabel();
         DanacionSiRadioButton = new javax.swing.JRadioButton();
@@ -33,12 +33,12 @@ public class JCasaCuna extends javax.swing.JFrame {
         AceptarButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        TamanoText = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         RequerimientosText = new javax.swing.JTextArea();
         ErrorLabel = new javax.swing.JLabel();
-        RazaComboBox = new javax.swing.JComboBox();
+        RazaCombo = new javax.swing.JComboBox();
+        TamañoCombo = new javax.swing.JComboBox();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -62,7 +62,12 @@ public class JCasaCuna extends javax.swing.JFrame {
 
         TipoLabel.setText("Tipo :");
 
-        TipoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        TipoCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeTipos()));
+        TipoCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoComboActionPerformed(evt);
+            }
+        });
 
         RazaLabel.setText("Raza:");
 
@@ -111,7 +116,9 @@ public class JCasaCuna extends javax.swing.JFrame {
         ErrorLabel.setText("Todos los espacios deben estar llenos");
         ErrorLabel.setVisible(false);
 
-        RazaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(0)));
+
+        TamañoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,20 +144,20 @@ public class JCasaCuna extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(TipoLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(RazaLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TamanoText, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TamañoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(CancelarButton)
                                 .addGap(53, 53, 53)
                                 .addComponent(AceptarButton)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 4, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(ErrorLabel)))
@@ -168,11 +175,11 @@ public class JCasaCuna extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TipoLabel)
-                            .addComponent(TipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(RazaLabel)
-                            .addComponent(RazaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DonacionLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -182,10 +189,10 @@ public class JCasaCuna extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(TamanoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TamañoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -216,8 +223,8 @@ public class JCasaCuna extends javax.swing.JFrame {
             donacion = false;
         }
         if(VerificaDatos()){
-            Administrador.RegistrarCasaCuna("TipoComboBox.getSelectedItem()", "RazaComboBox.getSelectedItem()",
-                    donacion, TamanoText.getText(), RequerimientosText.getText(), 
+            Administrador.RegistrarCasaCuna((String)TipoCombo.getSelectedItem(), (String)RazaCombo.getSelectedItem(),
+                    donacion, (String)TamañoCombo.getSelectedItem(), RequerimientosText.getText(), 
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
             Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCuna(true);
@@ -235,6 +242,11 @@ public class JCasaCuna extends javax.swing.JFrame {
         DanacionSiRadioButton.setSelected(false);
     }//GEN-LAST:event_DonacionNoRadioButtonActionPerformed
 
+    private void TipoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoComboActionPerformed
+        int posicion = TipoCombo.getSelectedIndex();
+        RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(posicion)));
+    }//GEN-LAST:event_TipoComboActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButton;
     private javax.swing.JButton CancelarButton;
@@ -242,11 +254,11 @@ public class JCasaCuna extends javax.swing.JFrame {
     private javax.swing.JLabel DonacionLabel;
     private javax.swing.JRadioButton DonacionNoRadioButton;
     private javax.swing.JLabel ErrorLabel;
-    private javax.swing.JComboBox RazaComboBox;
+    private javax.swing.JComboBox RazaCombo;
     private javax.swing.JLabel RazaLabel;
     private javax.swing.JTextArea RequerimientosText;
-    private javax.swing.JTextField TamanoText;
-    private javax.swing.JComboBox TipoComboBox;
+    private javax.swing.JComboBox TamañoCombo;
+    private javax.swing.JComboBox TipoCombo;
     private javax.swing.JLabel TipoLabel;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
@@ -261,7 +273,7 @@ public class JCasaCuna extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private boolean VerificaDatos(){
-        if("".equals(TamanoText.getText()) || "".equals(RequerimientosText.getText())){
+        if("".equals(RequerimientosText.getText())){
             return false;
         }
         return true;

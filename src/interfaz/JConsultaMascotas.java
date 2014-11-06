@@ -89,6 +89,11 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(0)));
 
         BuscarButton.setText("Buscar");
+        BuscarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarButtonActionPerformed(evt);
+            }
+        });
 
         CantidadText.setText(" Cantidad :");
 
@@ -190,6 +195,10 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         int posicion = TipoCombo.getSelectedIndex();
         RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(posicion)));
     }//GEN-LAST:event_TipoComboActionPerformed
+
+    private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarButtonActionPerformed
 
     /**
      * @param args the command line arguments

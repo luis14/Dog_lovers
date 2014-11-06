@@ -52,7 +52,7 @@ public class ModeloTablas {
             if(Administrador.ListaDeMascotas.get(i).getTamanio().equals(Tamanio) || Administrador.ListaDeMascotas.get(i).getTamanio().equals("Cualquiera") ){
                 contador++; 
             } 
-            if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip)){
+            if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip) || Administrador.ListaDeMascotas.get(i).getChip().equals("")){
                 contador++; 
             }
             if(Administrador.ListaDeMascotas.get(i).getRaza().equals(Raza) || Administrador.ListaDeMascotas.get(i).getRaza().equals("Cualquiera")){
