@@ -27,7 +27,7 @@ public class ModeloTablas {
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
             if(Administrador.ListaDeMascotas.get(i).getUsuario() == usuario && Administrador.ListaDeMascotas.get(i).getEstado().equals(estado))
-            modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
+                modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
         } 
         
         return modeloMascotas;

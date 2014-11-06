@@ -4,7 +4,7 @@ import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
 public class JUsuario extends javax.swing.JFrame {
-
+    
     public JUsuario() {
         initComponents();
         setLocationRelativeTo(null);
@@ -119,7 +119,7 @@ public class JUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
         if(VerificaUsuario()){
             JControl control = new JControl();

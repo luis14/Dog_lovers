@@ -1,6 +1,7 @@
 package interfaz;
 
 import Administrador.Administrador;
+import Administrador.ModeloTablas;
 import javax.swing.ImageIcon;
 
 public class JControl extends javax.swing.JFrame {
@@ -53,9 +54,10 @@ public class JControl extends javax.swing.JFrame {
         MascotasEncontradasButton = new javax.swing.JButton();
         CantidadLabel = new javax.swing.JLabel();
         LogoItem = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel1 = new javax.swing.JLabel();
         TelLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TablaInicio = new javax.swing.JTable();
         Menu = new javax.swing.JMenuBar();
         Registro = new javax.swing.JMenu();
         MascotaItem = new javax.swing.JMenuItem();
@@ -111,9 +113,19 @@ public class JControl extends javax.swing.JFrame {
 
         MascotasPerdidasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830314_Help.png"))); // NOI18N
         MascotasPerdidasButton.setText("Mascotas Perdidas");
+        MascotasPerdidasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MascotasPerdidasButtonActionPerformed(evt);
+            }
+        });
 
         MascotasEncontradasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         MascotasEncontradasButton.setText("Mascota Encontrada");
+        MascotasEncontradasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MascotasEncontradasButtonActionPerformed(evt);
+            }
+        });
 
         CantidadLabel.setText("Cantidad :");
 
@@ -123,58 +135,60 @@ public class JControl extends javax.swing.JFrame {
 
         TelLabel1.setText("Telefono");
 
+        TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(1));
+        TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        jScrollPane2.setViewportView(TablaInicio);
+
         javax.swing.GroupLayout PrincipalPanelLayout = new javax.swing.GroupLayout(PrincipalPanel);
         PrincipalPanel.setLayout(PrincipalPanelLayout);
         PrincipalPanelLayout.setHorizontalGroup(
             PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrincipalPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PrincipalPanelLayout.createSequentialGroup()
                         .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PerfilLabel)
                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                .addGap(23, 23, 23)
+                                .addGap(10, 10, 10)
+                                .addComponent(FotoLabel)
+                                .addGap(34, 34, 34)
                                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(DatosActualesLabel)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(MascotasPerdidasButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(MascotasEncontradasButton))
-                                    .addComponent(PerfilLabel)
+                                        .addComponent(NombreLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NombreLabel1))
                                     .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(FotoLabel)
-                                        .addGap(34, 34, 34)
-                                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addComponent(NombreLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(NombreLabel1))
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addComponent(ApellidoLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ApellidoLabel1))
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addComponent(UsernameLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(UsernameLabel1))
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addComponent(CorreoLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(CorreoLabel1))
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(TelLabel1))))))
+                                        .addComponent(ApellidoLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ApellidoLabel1))
+                                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
+                                        .addComponent(UsernameLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(UsernameLabel1))
+                                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
+                                        .addComponent(CorreoLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CorreoLabel1))
+                                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TelLabel1))))
                             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(CantidadLabel)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
+                                .addGap(12, 12, 12)
+                                .addComponent(DatosActualesLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(MascotasPerdidasButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(MascotasEncontradasButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LogoItem, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTabbedPane1)))
+                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CantidadLabel)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1048, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PrincipalPanelLayout.setVerticalGroup(
@@ -214,8 +228,8 @@ public class JControl extends javax.swing.JFrame {
                             .addComponent(MascotasEncontradasButton)))
                     .addGroup(PrincipalPanelLayout.createSequentialGroup()
                         .addComponent(LogoItem, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 45, Short.MAX_VALUE)))
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CantidadLabel)
                 .addContainerGap())
@@ -459,6 +473,18 @@ public class JControl extends javax.swing.JFrame {
         consultaCasaCuna.setVisible(true);
     }//GEN-LAST:event_CasaCunaItem2ActionPerformed
 
+    private void MascotasPerdidasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasPerdidasButtonActionPerformed
+        // TODO add your handling code here:
+        TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(1));
+    }//GEN-LAST:event_MascotasPerdidasButtonActionPerformed
+
+    private void MascotasEncontradasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasEncontradasButtonActionPerformed
+        // TODO add your handling code here:
+        TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado"));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(1));
+    }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
@@ -496,6 +522,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JPanel PrincipalPanel;
     private javax.swing.JMenu Registro;
     private javax.swing.JMenuItem SalirItem;
+    private javax.swing.JTable TablaInicio;
     private javax.swing.JLabel TelLabel1;
     private javax.swing.JMenuItem TiposMascotasItem;
     private javax.swing.JMenuItem TiposRazasItem;
@@ -503,7 +530,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel UsernameLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
