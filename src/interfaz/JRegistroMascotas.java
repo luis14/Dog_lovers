@@ -362,10 +362,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RazaComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RazaComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RazaComboActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -413,6 +409,10 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         int posicion = TipoCombo.getSelectedIndex();
         RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(posicion)));
     }//GEN-LAST:event_TipoComboActionPerformed
+
+    private void RazaComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RazaComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RazaComboActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargarButton;

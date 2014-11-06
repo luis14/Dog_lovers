@@ -52,8 +52,13 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         jLabel1.setText("Consulta De Casa Cuna");
 
         TipoCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeTipos()));
+        TipoCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoComboActionPerformed(evt);
+            }
+        });
 
-        RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(0)));
 
         TamanioCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequenio", "Mediano", "Grande", "Cualquiera" }));
 
@@ -102,17 +107,17 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                             .addComponent(TipoLabel))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RazaLabel))
-                        .addGap(18, 18, 18)
+                            .addComponent(RazaLabel)
+                            .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TamanioCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Tamanio))
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(DonacionDeAlimentoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(34, 34, 34)
                                 .addComponent(BuscarButton))
                             .addComponent(donacionLabel))))
                 .addContainerGap(43, Short.MAX_VALUE))
@@ -144,6 +149,11 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TipoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoComboActionPerformed
+        int posicion = TipoCombo.getSelectedIndex();
+        RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(posicion)));
+    }//GEN-LAST:event_TipoComboActionPerformed
 
     /**
      * @param args the command line arguments
