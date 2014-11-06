@@ -133,6 +133,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Casa Cuna"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CasaCunaItem2ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="AdoptanteItem2">
               <Properties>
@@ -141,6 +144,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Adoptante"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdoptanteItem2ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ListaNegraItem">
               <Properties>
@@ -154,6 +160,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Donaciones"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DonacionesItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

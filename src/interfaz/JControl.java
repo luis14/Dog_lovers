@@ -305,10 +305,20 @@ public class JControl extends javax.swing.JFrame {
 
         CasaCunaItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830410_home-16.png"))); // NOI18N
         CasaCunaItem2.setText("Casa Cuna");
+        CasaCunaItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CasaCunaItem2ActionPerformed(evt);
+            }
+        });
         Consultas.add(CasaCunaItem2);
 
         AdoptanteItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684212_preferences-desktop-user.png"))); // NOI18N
         AdoptanteItem2.setText("Adoptante");
+        AdoptanteItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdoptanteItem2ActionPerformed(evt);
+            }
+        });
         Consultas.add(AdoptanteItem2);
 
         ListaNegraItem.setText("Lista Negra");
@@ -320,6 +330,11 @@ public class JControl extends javax.swing.JFrame {
         Consultas.add(ListaNegraItem);
 
         DonacionesItem.setText("Donaciones");
+        DonacionesItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonacionesItemActionPerformed(evt);
+            }
+        });
         Consultas.add(DonacionesItem);
 
         Menu.add(Consultas);
@@ -381,7 +396,8 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_MascotasItemActionPerformed
 
     private void MascotasItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasItem1ActionPerformed
-        // TODO add your handling code here:
+        JConsultaMascotas consultaMascota = new JConsultaMascotas(); 
+        consultaMascota.setVisible(true);
     }//GEN-LAST:event_MascotasItem1ActionPerformed
 
     private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
@@ -427,6 +443,21 @@ public class JControl extends javax.swing.JFrame {
             asiciacion.setVisible(true);
         }
     }//GEN-LAST:event_AsociacionActionPerformed
+
+    private void DonacionesItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonacionesItemActionPerformed
+       // JDonaciones donaciones = new JDonaciones(); 
+       // donaciones.setVisible(true);
+    }//GEN-LAST:event_DonacionesItemActionPerformed
+
+    private void AdoptanteItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItem2ActionPerformed
+        JConsultaAdoptantes consultaAdoptantes = new JConsultaAdoptantes(); 
+        consultaAdoptantes.setVisible(true);
+    }//GEN-LAST:event_AdoptanteItem2ActionPerformed
+
+    private void CasaCunaItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItem2ActionPerformed
+        JConsultaCasaCuna consultaCasaCuna = new JConsultaCasaCuna(); 
+        consultaCasaCuna.setVisible(true);
+    }//GEN-LAST:event_CasaCunaItem2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
