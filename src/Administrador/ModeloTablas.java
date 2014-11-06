@@ -43,19 +43,19 @@ public class ModeloTablas {
             if(Administrador.ListaDeMascotas.get(i).getEstado().equals(Estado)){
                 contador++; 
             } 
-            if(Administrador.ListaDeMascotas.get(i).getColor().equals(Color)){
+            if(Administrador.ListaDeMascotas.get(i).getColor().equals(Color) || Administrador.ListaDeMascotas.get(i).getColor().equals("Cualquiera") ){
                 contador++;
             }
-            if(Administrador.ListaDeMascotas.get(i).getTipo().equals(Tipo)){
+            if(Administrador.ListaDeMascotas.get(i).getTipo().equals(Tipo) || Administrador.ListaDeMascotas.get(i).getTipo().equals("Cualquiera") ){
                 contador++;
             } 
-            if(Administrador.ListaDeMascotas.get(i).getTamanio().equals(Tamanio)){
+            if(Administrador.ListaDeMascotas.get(i).getTamanio().equals(Tamanio) || Administrador.ListaDeMascotas.get(i).getTamanio().equals("Cualquiera") ){
                 contador++; 
             } 
             if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip)){
                 contador++; 
             }
-            if(Administrador.ListaDeMascotas.get(i).getRaza().equals(Raza)){
+            if(Administrador.ListaDeMascotas.get(i).getRaza().equals(Raza) || Administrador.ListaDeMascotas.get(i).getRaza().equals("Cualquiera")){
                 contador++; 
             }
             if(contador == 6){

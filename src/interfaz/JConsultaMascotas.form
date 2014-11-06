@@ -40,10 +40,10 @@
                               <Component id="TipoCombo" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="TamanioCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="ChipCombo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="RazaCombo" min="-2" pref="110" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chipTextField" min="-2" pref="116" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="BuscarButton" min="-2" pref="87" max="-2" attributes="0"/>
                           </Group>
@@ -67,9 +67,9 @@
                   <Component id="ColorCombo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="TipoCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="TamanioCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="ChipCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="RazaCombo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="BuscarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chipTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="395" max="-2" attributes="0"/>
@@ -156,18 +156,6 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ChipCombo">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JComboBox" name="RazaCombo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -188,6 +176,12 @@
     <Component class="javax.swing.JLabel" name="CantidadText">
       <Properties>
         <Property name="text" type="java.lang.String" value=" Cantidad :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="chipTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Chip"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
   </SubComponents>
