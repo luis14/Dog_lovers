@@ -25,8 +25,8 @@ public class Administrador {
     }
     
     public static void RegistrarMascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido, 
-                                        String estado, String tamanio, Usuario usuario, String chip){ 
-        Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, estado, tamanio, usuario, chip); 
+                                        String estado, String tamanio, Usuario usuario, String chip, String raza){ 
+        Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, estado, tamanio, usuario, chip, raza); 
         ListaDeMascotas.add(mascota);
     }
    

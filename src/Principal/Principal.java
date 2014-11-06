@@ -13,33 +13,93 @@ public class Principal {
         Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com");
         Administrador.RegistrarUsuario("Luis", "Alonso", "Luis", "1212121212",  "123",true, "LuisAlonso@yahoo.com");
         
-        Administrador.RegistrarMascota("Chester", "Perro", "Golden", null, "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "12");
-        Administrador.RegistrarMascota("Bark", "Perro", "Negro", null, "Encontrado", "Pequenio", Administrador.ListaDeUsuarios.get(1), null);
-        Administrador.RegistrarMascota("Mark", "Perro", "White", null, "Perdido", "Pequenio", Administrador.ListaDeUsuarios.get(2), "563");
+        Administrador.RegistrarMascota("Chester", "Perro", "Golden", "04/04/2014", "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "12", "Golden Retriever"); 
+        Administrador.RegistrarMascota("Mark", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequenio", Administrador.ListaDeUsuarios.get(2), "563", "Poodle");
         
-        Administrador.RegistrarCasaCuna("Perros", "Golden", true , "small", "ninguno", Administrador.ListaDeUsuarios.get(0) , "2234251"); 
+        Administrador.RegistrarMascota("Pepito", "Perro", "Negro", "02/10/2014", "Encontrado", "Pequenio", Administrador.ListaDeUsuarios.get(1), null, "Rottwieler");
+        Administrador.RegistrarMascota("Bark", "Perro", "Gris", "04/11/2014", "Encontrado", "Grande", Administrador.ListaDeUsuarios.get(1), null, "Husky");
+        
+        Administrador.RegistrarCasaCuna("Perro", "Golden Retriever", true , "Pequenio", "ninguno", Administrador.ListaDeUsuarios.get(0) , "2234251");  
+        Administrador.RegistrarCasaCuna("Gato", "Any", false, "Pequenio", "ninguno", Administrador.ListaDeUsuarios.get(1), "8833241");
         
         Administrador.RegistrarAdoptante("Miuyin", "miuyinyong@yahoo.com", "88223422", "Santa Anna", "100 metros", false, Administrador.ListaDeUsuarios.get(0));
         
         Administrador.RegistrarColores("Blanco");
         Administrador.RegistrarColores("Negro");
-        Administrador.RegistrarColores("Cafe"); 
+        Administrador.RegistrarColores("Cafe");  
         Administrador.RegistrarColores("Golden");  
+        Administrador.RegistrarColores("Gris");
+        Administrador.RegistrarColores("Any"); 
+        Administrador.RegistrarColores("Other");
         
         Administrador.RegistrarTipoMascotas("Perro");
-        Administrador.RegistrarTipoMascotas("Gato"); 
-        Administrador.RegistrarTipoMascotas("Caballos"); 
-        Administrador.RegistrarTipoMascotas("Loras");  
+        Administrador.RegistrarTipoMascotas("Gato");  
+        Administrador.RegistrarTipoMascotas("Hamster"); 
+        Administrador.RegistrarTipoMascotas("Conejo"); 
+        Administrador.RegistrarTipoMascotas("Caballos");   
+        Administrador.RegistrarTipoMascotas("Any"); 
+        Administrador.RegistrarTipoMascotas("Other");
         //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getId());
         //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getNombre());
         
         Administrador.RegistrarTipoRazas(0, "Golden Retriever"); 
         Administrador.RegistrarTipoRazas(0, "Poodle");
         Administrador.RegistrarTipoRazas(0, "Chiwawa"); 
-        Administrador.RegistrarTipoRazas(0, "Yorkie"); 
-        Administrador.RegistrarTipoRazas(0, "Shitzu");
+        Administrador.RegistrarTipoRazas(0, "Yorkie Terrier"); 
+        Administrador.RegistrarTipoRazas(0, "Shitzu");  
+        Administrador.RegistrarTipoRazas(0, "Bulldog"); 
+        Administrador.RegistrarTipoRazas(0, "Labrador Retriever");  
+        Administrador.RegistrarTipoRazas(0, "Bull Terrier"); 
+        Administrador.RegistrarTipoRazas(0, "Pug");  
+        Administrador.RegistrarTipoRazas(0, "Husky"); 
+        Administrador.RegistrarTipoRazas(0, "Rottwieler");
+        Administrador.RegistrarTipoRazas(0, "Cocker Spaniel"); 
+        Administrador.RegistrarTipoRazas(0, "Collie");  
+        Administrador.RegistrarTipoRazas(0, "Shetland Sheepdog"); 
+        Administrador.RegistrarTipoRazas(0, "Akita");  
+        Administrador.RegistrarTipoRazas(0, "Fox Terrier"); 
+        Administrador.RegistrarTipoRazas(0, "Any"); 
+        Administrador.RegistrarTipoRazas(0, "Other"); 
         
-        //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getTipoDeRazas().get(0));
+        Administrador.RegistrarTipoRazas(1, "SnowShoe");   
+        Administrador.RegistrarTipoRazas(1, "Tonkinese");  
+        Administrador.RegistrarTipoRazas(1, "Somali"); 
+        Administrador.RegistrarTipoRazas(1, "Oriental"); 
+        Administrador.RegistrarTipoRazas(1, "Persian"); 
+        Administrador.RegistrarTipoRazas(1, "Munchkin");  
+        Administrador.RegistrarTipoRazas(1, "Bombay");  
+        Administrador.RegistrarTipoRazas(1, "Garfield"); 
+        Administrador.RegistrarTipoRazas(1, "Any"); 
+        Administrador.RegistrarTipoRazas(1, "Other"); 
+        
+        Administrador.RegistrarTipoRazas(2, "Syrian"); 
+        Administrador.RegistrarTipoRazas(2, "Russian"); 
+        Administrador.RegistrarTipoRazas(2, "Roborovski Dwarf");
+        Administrador.RegistrarTipoRazas(2, "Chinese");   
+        Administrador.RegistrarTipoRazas(2, "Any"); 
+        Administrador.RegistrarTipoRazas(2, "Other"); 
+        
+        Administrador.RegistrarTipoRazas(3, "Holland Lop");  
+        Administrador.RegistrarTipoRazas(3, "Mini Lop"); 
+        Administrador.RegistrarTipoRazas(3, "Lionhead rabbit");
+        Administrador.RegistrarTipoRazas(3, "Rex rabbit"); 
+        Administrador.RegistrarTipoRazas(3, "Dutch rabbit"); 
+        Administrador.RegistrarTipoRazas(3, "Miniature Lop"); 
+        Administrador.RegistrarTipoRazas(3, "Any"); 
+        Administrador.RegistrarTipoRazas(3, "Other"); 
+        
+        Administrador.RegistrarTipoRazas(4, "Arabian"); 
+        Administrador.RegistrarTipoRazas(4, "Thoroughbred"); 
+        Administrador.RegistrarTipoRazas(4, "Andalusian");
+        Administrador.RegistrarTipoRazas(4, "Mustang"); 
+        Administrador.RegistrarTipoRazas(4, "Miniature lop");
+        Administrador.RegistrarTipoRazas(4, "Percheron");
+        Administrador.RegistrarTipoRazas(4, "Fjord"); 
+        Administrador.RegistrarTipoRazas(4, "Falabella");
+        Administrador.RegistrarTipoRazas(4, "Mongolian"); 
+        Administrador.RegistrarTipoRazas(4, "Any"); 
+        Administrador.RegistrarTipoRazas(4, "Other"); 
+        
     }
     
 }

@@ -373,7 +373,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         if(VerificaMascota()){
             Administrador.RegistrarMascota(NombreLabel.getText(), "TipoCombo.getSelectedItem()",
                     "ColorCombo.getSelectedItem()",FechaText.getText(),Estado(),TamanlText.getText(),
-                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), Chip());
+                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), Chip(), "RazaCombo.getSelectedItem()");
             dispose();
         }else{
             jLabel1.setVisible(true);
