@@ -102,7 +102,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
         ColorLabel.setText("Color:");
 
-        ColorCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ColorCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.ColoresToArray()));
 
         CargarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410329443_go-top-16.png"))); // NOI18N
         CargarButton.setText("Cargar imagen");

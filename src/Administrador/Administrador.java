@@ -87,5 +87,9 @@ public class Administrador {
             nombresDeTipo.add(ListaDeTiposMascotas.get(i).getNombre());
         }
         return nombresDeTipo.toArray(); 
+    } 
+    
+    public static Object[] ColoresToArray(){ 
+        return ListaDeColores.toArray();
     }
 }
