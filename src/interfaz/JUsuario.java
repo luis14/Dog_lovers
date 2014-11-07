@@ -71,6 +71,14 @@ public class JUsuario extends javax.swing.JFrame {
         LogInButton.setForeground(new java.awt.Color(0, 153, 0));
         LogInButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410683128_key_16.png"))); // NOI18N
         LogInButton.setText("Iniciar Sesión");
+        LogInButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LogInButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LogInButtonMouseExited(evt);
+            }
+        });
         LogInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogInButtonActionPerformed(evt);
@@ -173,6 +181,16 @@ public class JUsuario extends javax.swing.JFrame {
         registro.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInButtonMouseEntered
+        // TODO add your handling code here:
+        LogInButton.setFont(new java.awt.Font("Tahoma", 1, 13));
+    }//GEN-LAST:event_LogInButtonMouseEntered
+
+    private void LogInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInButtonMouseExited
+        // TODO add your handling code here:
+        LogInButton.setFont(new java.awt.Font("Tahoma", 1, 11));
+    }//GEN-LAST:event_LogInButtonMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ContraLabel;

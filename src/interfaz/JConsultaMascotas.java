@@ -34,30 +34,27 @@ public class JConsultaMascotas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TablaConsultaMascotas = new javax.swing.JTable();
         EstadoCombo = new javax.swing.JComboBox();
         TipoCombo = new javax.swing.JComboBox();
         ColorCombo = new javax.swing.JComboBox();
         TamanioCombo = new javax.swing.JComboBox();
         RazaCombo = new javax.swing.JComboBox();
         BuscarButton = new javax.swing.JButton();
-        CantidadText = new javax.swing.JLabel();
-        chipTextField = new javax.swing.JTextField();
         estadoLabel = new javax.swing.JLabel();
         colorLabel = new javax.swing.JLabel();
         TipoLabel = new javax.swing.JLabel();
         Tamanio = new javax.swing.JLabel();
         RazaLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaConsultaMascotas = new javax.swing.JTable();
+        cantidadMascotas = new javax.swing.JLabel();
+        chipTextField = new javax.swing.JTextField();
+        todosButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Consulta De Mascotas");
-
-        TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas());
-        TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
-        jScrollPane1.setViewportView(TablaConsultaMascotas);
 
         EstadoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perdido", "Encontrado", "Identificado", "Encontrado", "En adopcion", "Adoptado" }));
 
@@ -86,11 +83,6 @@ public class JConsultaMascotas extends javax.swing.JFrame {
             }
         });
 
-        CantidadText.setText(" Cantidad :");
-
-        chipTextField.setText("Chip");
-        chipTextField.setToolTipText("");
-
         estadoLabel.setText("Estado:");
         estadoLabel.setToolTipText("");
 
@@ -105,6 +97,21 @@ public class JConsultaMascotas extends javax.swing.JFrame {
 
         RazaLabel.setText("Raza:");
 
+        TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas());
+        TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        jScrollPane1.setViewportView(TablaConsultaMascotas);
+
+        cantidadMascotas.setText("Cantidad: ");
+
+        chipTextField.setText("Chip");
+
+        todosButton.setText("Todos");
+        todosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,35 +119,38 @@ public class JConsultaMascotas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CantidadText)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(estadoLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(colorLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TipoLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TamanioCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Tamanio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(chipTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(BuscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(RazaLabel))))
-                .addGap(0, 50, Short.MAX_VALUE))
+                    .addComponent(cantidadMascotas)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(estadoLabel))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(colorLabel))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TipoLabel))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(TamanioCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Tamanio))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(chipTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(RazaLabel))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(BuscarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                .addComponent(todosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1)))
+                .addGap(0, 66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,22 +163,22 @@ public class JConsultaMascotas extends javax.swing.JFrame {
                     .addComponent(colorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TipoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Tamanio)
-                    .addComponent(RazaLabel))
+                    .addComponent(RazaLabel)
+                    .addComponent(todosButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chipTextField)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TamanioCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BuscarButton)))
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TamanioCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarButton)
+                    .addComponent(chipTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(CantidadText)
-                .addGap(20, 20, 20))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cantidadMascotas)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,10 +194,16 @@ public class JConsultaMascotas extends javax.swing.JFrame {
     }//GEN-LAST:event_TipoComboActionPerformed
 
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
-        TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas((String)EstadoCombo.getSelectedItem(), (String)ColorCombo.getSelectedItem(), 
-                                        (String)TipoCombo.getSelectedItem(), (String)TamanioCombo.getSelectedItem(), (String)RazaCombo.getSelectedItem()));
+        TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas(EstadoCombo.getSelectedItem().toString(), ColorCombo.getSelectedItem().toString(), 
+                                       TipoCombo.getSelectedItem().toString(), TamanioCombo.getSelectedItem().toString(), RazaCombo.getSelectedItem().toString()));
         TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_BuscarButtonActionPerformed
+
+    private void todosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosButtonActionPerformed
+        // TODO add your handling code here:
+         TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas());
+         TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_todosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,7 +242,6 @@ public class JConsultaMascotas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarButton;
-    private javax.swing.JLabel CantidadText;
     private javax.swing.JComboBox ColorCombo;
     private javax.swing.JComboBox EstadoCombo;
     private javax.swing.JComboBox RazaCombo;
@@ -236,10 +251,12 @@ public class JConsultaMascotas extends javax.swing.JFrame {
     private javax.swing.JComboBox TamanioCombo;
     private javax.swing.JComboBox TipoCombo;
     private javax.swing.JLabel TipoLabel;
+    private javax.swing.JLabel cantidadMascotas;
     private javax.swing.JTextField chipTextField;
     private javax.swing.JLabel colorLabel;
     private javax.swing.JLabel estadoLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton todosButton;
     // End of variables declaration//GEN-END:variables
 }

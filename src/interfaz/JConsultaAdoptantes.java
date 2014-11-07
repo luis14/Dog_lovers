@@ -35,11 +35,12 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         CalificacionCombo = new javax.swing.JComboBox();
         BuscarButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaAdoptantes = new javax.swing.JTable();
         CantidadText = new javax.swing.JLabel();
         CalificacionLabel = new javax.swing.JLabel();
+        todosButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Consultas De Adoptantes");
@@ -48,14 +49,21 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
 
         BuscarButton.setText("Buscar");
 
-        jTable1.setModel(ModeloTablas.tablaAdoptantes());
-        jTable1.setAutoCreateRowSorter(true); // Para ordenar las tablas
-        jScrollPane1.setViewportView(jTable1);
+        tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
+        tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        jScrollPane1.setViewportView(tablaAdoptantes);
 
         CantidadText.setText(" Cantidad :");
 
         CalificacionLabel.setText("Calificacion");
         CalificacionLabel.setToolTipText("");
+
+        todosButton.setText("Todos");
+        todosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,7 +77,9 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(CalificacionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(BuscarButton))
+                        .addComponent(BuscarButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(todosButton))
                     .addComponent(jLabel1)
                     .addComponent(CalificacionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(63, Short.MAX_VALUE))
@@ -84,7 +94,8 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CalificacionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BuscarButton))
+                    .addComponent(BuscarButton)
+                    .addComponent(todosButton))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -94,6 +105,12 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void todosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosButtonActionPerformed
+        // TODO add your handling code here:
+        tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
+        tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_todosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,6 +155,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
     private javax.swing.JLabel CantidadText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaAdoptantes;
+    private javax.swing.JButton todosButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -46,8 +46,9 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         Tamanio = new javax.swing.JLabel();
         RazaLabel = new javax.swing.JLabel();
         donacionLabel = new javax.swing.JLabel();
+        todosButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Consulta De Casa Cuna");
@@ -88,6 +89,13 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
 
         donacionLabel.setText("Para donativos:");
 
+        todosButton.setText("Todos");
+        todosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +123,9 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(DonacionDeAlimentoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
-                                .addComponent(BuscarButton))
+                                .addComponent(BuscarButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(todosButton))
                             .addComponent(donacionLabel))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
@@ -136,7 +146,8 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                     .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TamanioCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DonacionDeAlimentoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BuscarButton))
+                    .addComponent(BuscarButton)
+                    .addComponent(todosButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -157,6 +168,12 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                 (String)RazaCombo.getSelectedItem(),(String)DonacionDeAlimentoCombo.getSelectedItem()));
         TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_BuscarButtonActionPerformed
+
+    private void todosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosButtonActionPerformed
+        // TODO add your handling code here:
+        TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna());
+        TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_todosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,5 +224,6 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
     private javax.swing.JLabel donacionLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton todosButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -50,6 +50,8 @@
                               <Component id="DonacionDeAlimentoCombo" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Component id="BuscarButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="todosButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="donacionLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -78,6 +80,7 @@
                   <Component id="TamanioCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="DonacionDeAlimentoCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BuscarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="todosButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="10" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="382" max="-2" attributes="0"/>
@@ -181,6 +184,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Para donativos:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="todosButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Todos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="todosButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
