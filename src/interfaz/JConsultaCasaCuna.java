@@ -5,7 +5,8 @@
  */
 package interfaz;
 
-import Administrador.Administrador;
+import Administrador.Administrador; 
+import Administrador.ModeloTablas;
 
 /**
  *
@@ -39,7 +40,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         DonacionDeAlimentoCombo = new javax.swing.JComboBox();
         BuscarButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaCasaCuna = new javax.swing.JTable();
         CantidadText = new javax.swing.JLabel();
         TipoLabel = new javax.swing.JLabel();
         Tamanio = new javax.swing.JLabel();
@@ -65,19 +66,15 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         DonacionDeAlimentoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No", "Cualquiera" }));
 
         BuscarButton.setText("Buscar");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        BuscarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarButtonActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        });
+
+        TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna());
+        TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        jScrollPane1.setViewportView(TablaCasaCuna);
 
         CantidadText.setText(" Cantidad :");
 
@@ -155,6 +152,12 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(posicion)));
     }//GEN-LAST:event_TipoComboActionPerformed
 
+    private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
+        TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna((String)TipoCombo.getSelectedItem(), (String)TamanioCombo.getSelectedItem(), 
+                (String)RazaCombo.getSelectedItem(),(String)DonacionDeAlimentoCombo.getSelectedItem()));
+        TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_BuscarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,6 +199,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
     private javax.swing.JComboBox DonacionDeAlimentoCombo;
     private javax.swing.JComboBox RazaCombo;
     private javax.swing.JLabel RazaLabel;
+    private javax.swing.JTable TablaCasaCuna;
     private javax.swing.JLabel Tamanio;
     private javax.swing.JComboBox TamanioCombo;
     private javax.swing.JComboBox TipoCombo;
@@ -203,6 +207,5 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
     private javax.swing.JLabel donacionLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

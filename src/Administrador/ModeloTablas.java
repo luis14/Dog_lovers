@@ -33,7 +33,7 @@ public class ModeloTablas {
         return modeloMascotas;
     } 
       
-       public static DefaultTableModel tablaMascotas(String Estado, String Color, String Tipo, String Tamanio, String Chip, String Raza){ 
+       public static DefaultTableModel tablaMascotas(String Estado, String Color, String Tipo, String Tamanio, String Raza){ 
         String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);  
@@ -52,13 +52,13 @@ public class ModeloTablas {
             if(Administrador.ListaDeMascotas.get(i).getTamanio().equals(Tamanio) || Administrador.ListaDeMascotas.get(i).getTamanio().equals("Cualquiera") ){
                 contador++; 
             } 
-            if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip) || Administrador.ListaDeMascotas.get(i).getChip().equals("")){
+           /* if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip) || Administrador.ListaDeMascotas.get(i).getChip().equals("")){
                 contador++; 
-            }
+            }*/
             if(Administrador.ListaDeMascotas.get(i).getRaza().equals(Raza) || Administrador.ListaDeMascotas.get(i).getRaza().equals("Cualquiera")){
                 contador++; 
             }
-            if(contador == 6){
+            if(contador == 5){
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
             }
         }  
@@ -117,22 +117,25 @@ public class ModeloTablas {
         return modeloCasaCuna;
     } 
     
-     public static DefaultTableModel tablaCasaCuna(String Tipo, String Tamanio, String Raza){ 
+     public static DefaultTableModel tablaCasaCuna(String Tipo, String Tamanio, String Raza, String Alimentacion){ 
         String titulos[] = {"ID","Tipo", "Raza", "Tamanio", "NecesitaAlimentacion", "Telefono", "Requerimientos"};  
         String informacion[][] = {}; 
         modeloCasaCuna = new DefaultTableModel(informacion, titulos);  
         for(int i = 0; i < Administrador.ListaDeCasaCuna.size(); i++){  
             int contador = 0; 
-            if(Administrador.ListaDeCasaCuna.get(i).getTipo().equals(Tipo)){
+            if(Administrador.ListaDeCasaCuna.get(i).getTipo().equals(Tipo) || Administrador.ListaDeCasaCuna.get(i).getTipo().equals("Cualquiera") ){
                 contador++;
             } 
-            if(Administrador.ListaDeCasaCuna.get(i).getTamanio().equals(Tamanio)){
+            if(Administrador.ListaDeCasaCuna.get(i).getTamanio().equals(Tamanio) || Administrador.ListaDeCasaCuna.get(i).getTamanio().equals("Cualquiera")){
                 contador++;
             } 
-            if(Administrador.ListaDeCasaCuna.get(i).getRaza().equals(Raza)){ 
+            if(Administrador.ListaDeCasaCuna.get(i).getRaza().equals(Raza) || Administrador.ListaDeCasaCuna.get(i).getRaza().equals("Culaquiera")){ 
                 contador++; 
-            }  
-            if(contador == 3){
+            }   
+            if(Administrador.ListaDeCasaCuna.get(i).getNecesitaAlimentacion().equals(Alimentacion) || Administrador.ListaDeCasaCuna.get(i).getNecesitaAlimentacion().equals("Cualquiera")){
+                contador++;
+            }
+            if(contador == 4){
                 modeloCasaCuna.addRow(Administrador.ListaDeCasaCuna.get(i).arreglo());
             }
             
