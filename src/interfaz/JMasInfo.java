@@ -5,6 +5,8 @@
  */
 package interfaz;
 
+import Administrador.Administrador;
+
 /**
  *
  * @author Santiago
@@ -16,6 +18,19 @@ public class JMasInfo extends javax.swing.JFrame {
      */
     public JMasInfo() {
         initComponents();
+    }
+    
+    private void actualizarDatosEnVentana(int ID){
+        pNombreLabel.setText(Administrador.ListaDeMascotas.get(ID).getNombre());
+        pTipoLabel.setText(Administrador.ListaDeMascotas.get(ID).getTipo());
+        pRazaLabel.setText(Administrador.ListaDeMascotas.get(ID).getRaza());
+        pChipLabel.setText(Administrador.ListaDeMascotas.get(ID).getChip());
+        pColorLabel.setText(Administrador.ListaDeMascotas.get(ID).getColor());
+        pRecompensaLabel.setText(Administrador.ListaDeMascotas.get(ID).getMontoDeRecompensa());
+        pTamanioLabel.setText(Administrador.ListaDeMascotas.get(ID).getTamanio());
+        pReportadorLabel.setText(Administrador.ListaDeMascotas.get(ID).getUsuario().getNombre() +
+                                Administrador.ListaDeMascotas.get(ID).getUsuario().getApellido());
+        pFechaLabel.setText(Administrador.ListaDeMascotas.get(ID).getFechaDeEncontradoPerdido()); 
     }
 
     /**
