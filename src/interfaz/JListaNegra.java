@@ -24,7 +24,7 @@ public class JListaNegra extends javax.swing.JFrame {
         FiltroTextField = new javax.swing.JTextField();
         ActualizarFiltroButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaListaNegra = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -49,10 +49,15 @@ public class JListaNegra extends javax.swing.JFrame {
         });
 
         ActualizarFiltroButton.setText("Buscar");
+        ActualizarFiltroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarFiltroButtonActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(ModeloTablas.tablaListaNegra());
-        jTable1.setAutoCreateRowSorter(true); // Para ordenar las tablas
-        jScrollPane1.setViewportView(jTable1);
+        TablaListaNegra.setModel(ModeloTablas.tablaListaNegra());
+        TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        jScrollPane1.setViewportView(TablaListaNegra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,13 +109,18 @@ public class JListaNegra extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FiltroTextFieldActionPerformed
 
+    private void ActualizarFiltroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarFiltroButtonActionPerformed
+        //TablaListaNegra.setModel(ModeloTablas.tablaListaNegraConFiltro(FiltroTextField.getText()));
+        //TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_ActualizarFiltroButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarFiltroButton;
     private javax.swing.JTextField FiltroTextField;
+    private javax.swing.JTable TablaListaNegra;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

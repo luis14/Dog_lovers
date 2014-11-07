@@ -1,6 +1,8 @@
 package Administrador;
 
 import javax.swing.table.DefaultTableModel;
+import Administrador.Adoptante;
+import java.util.ArrayList;
 
 public class ModeloTablas { 
     private static DefaultTableModel modeloMascotas; 
@@ -187,6 +189,38 @@ public class ModeloTablas {
         }
         return modeloAdoptantes; 
     }   
+     
+      public static DefaultTableModel tablaListaNegraConFiltro(String StringBuscando){
+        String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"}; 
+        String informacion[][] = {}; 
+        modeloAdoptantes= new DefaultTableModel(informacion, titulos);  
+        ArrayList<Adoptante> ListaCopia = Administrador.ListaDeAdoptantes; 
+        for(int i = 0; i< StringBuscando.length(); i++){
+            int k = 0; 
+            while(k < ListaCopia.size()){
+                if(Character.toLowerCase(ListaCopia.get(k).getNombre().charAt(i)) == Character.toLowerCase(StringBuscando.charAt(i)) 
+                        && ListaCopia.get(k).getReportado() == true) { 
+                    i++;
+                }  
+                else{ 
+                    int indice = ListaCopia.indexOf(ListaCopia.get(k)); 
+                    ListaCopia.remove(ListaCopia.get(k)); 
+                    if(indice > k){
+                        k++;
+                    }
+                    
+                }
+                
+            }
+        }
+        for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
+            if(Administrador.ListaDeAdoptantes.get(i).getReportado() == true){
+                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
+            }     
+        }
+        return modeloAdoptantes; 
+    }   
+    
      
      public static DefaultTableModel tablaDeDonaciones(){
          String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
