@@ -87,6 +87,9 @@ public class JControl extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        PrincipalPanel.setBackground(new java.awt.Color(0, 153, 0));
+        PrincipalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         CorreoLabel1.setText("Correo");
 
         CorreoLabel.setText("Correo :");
@@ -188,7 +191,7 @@ public class JControl extends javax.swing.JFrame {
                         .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CantidadLabel)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1048, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                        .addGap(0, 7, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PrincipalPanelLayout.setVerticalGroup(
