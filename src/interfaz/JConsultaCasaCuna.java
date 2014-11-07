@@ -60,7 +60,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
 
         RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(0)));
 
-        TamanioCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequenio", "Mediano", "Grande", "Cualquiera" }));
+        TamanioCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande", "Cualquiera" }));
 
         DonacionDeAlimentoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No", "Cualquiera" }));
 

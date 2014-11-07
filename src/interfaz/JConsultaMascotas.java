@@ -84,7 +84,7 @@ public class JConsultaMascotas extends javax.swing.JFrame {
             }
         });
 
-        TamanioCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequenio", "Mediano", "Grande", "Cualquiera" }));
+        TamanioCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande", "Cualquiera" }));
 
         RazaCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.HacerArrayDeRazas(0)));
 
