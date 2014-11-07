@@ -211,7 +211,7 @@ public class Mascota {
     }
     
     public String[] arreglo(){
-        String[]msg = {Integer.toString(getId()), getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
+        String[]msg = {Integer.toString(getId()), getNombre(), getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
         return msg;
     }
     

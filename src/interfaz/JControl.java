@@ -136,7 +136,7 @@ public class JControl extends javax.swing.JFrame {
         TelLabel1.setText("Telefono");
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(1));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
         TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane2.setViewportView(TablaInicio);
 
@@ -476,13 +476,13 @@ public class JControl extends javax.swing.JFrame {
     private void MascotasPerdidasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasPerdidasButtonActionPerformed
         // TODO add your handling code here:
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(1));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
     }//GEN-LAST:event_MascotasPerdidasButtonActionPerformed
 
     private void MascotasEncontradasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasEncontradasButtonActionPerformed
         // TODO add your handling code here:
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(1));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
     }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

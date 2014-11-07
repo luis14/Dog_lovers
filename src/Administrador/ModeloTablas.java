@@ -11,7 +11,7 @@ public class ModeloTablas {
     
     
     public static DefaultTableModel tablaMascotas(){ 
-        String titulos[] = {"ID", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){
@@ -22,7 +22,7 @@ public class ModeloTablas {
     }  
     
       public static DefaultTableModel tablaMascotas(Usuario usuario, String estado){ 
-        String titulos[] = {"ID", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
@@ -34,7 +34,7 @@ public class ModeloTablas {
     } 
       
        public static DefaultTableModel tablaMascotas(String Estado, String Color, String Tipo, String Tamanio, String Chip, String Raza){ 
-        String titulos[] = {"ID","Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);  
         //ArrayList<Mascota> tipodemascota = Administrador.ListaDeMascotas;
@@ -68,7 +68,7 @@ public class ModeloTablas {
     }  
        
        public static DefaultTableModel tablaMatch(int id){ 
-        String titulos[] = {"ID", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamanio", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos); 
         String ColorDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getColor(); 
@@ -179,7 +179,7 @@ public class ModeloTablas {
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
             if(Administrador.ListaDeAdoptantes.get(i).getReportado() == true){
-                modeloCasaCuna.addRow(Administrador.ListaDeCasaCuna.get(i).arreglo()); 
+                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
             }     
         }
         return modeloAdoptantes; 

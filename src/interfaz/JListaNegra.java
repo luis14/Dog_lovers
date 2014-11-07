@@ -1,6 +1,8 @@
 package interfaz;
 
-import javax.swing.ImageIcon;
+import javax.swing.ImageIcon; 
+import Administrador.Administrador;
+import Administrador.ModeloTablas;
 
 public class JListaNegra extends javax.swing.JFrame {
 
@@ -48,17 +50,8 @@ public class JListaNegra extends javax.swing.JFrame {
 
         ActualizarFiltroButton.setText("Buscar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        jTable1.setModel(ModeloTablas.tablaListaNegra());
+        jTable1.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
