@@ -500,6 +500,9 @@
                   <Connection code="ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), &quot;Perdido&quot;)" type="code"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaInicioMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

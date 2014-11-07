@@ -141,6 +141,11 @@ public class JControl extends javax.swing.JFrame {
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
         TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaInicioMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TablaInicio);
 
         javax.swing.GroupLayout PrincipalPanelLayout = new javax.swing.GroupLayout(PrincipalPanel);
@@ -487,6 +492,11 @@ public class JControl extends javax.swing.JFrame {
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
     }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
+
+    private void TablaInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaInicioMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TablaInicioMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
