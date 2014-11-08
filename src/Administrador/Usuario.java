@@ -3,10 +3,6 @@ package Administrador;
 import java.util.ArrayList;
 
 public class Usuario {
-
-    public static Object get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     private String Nombre;
     private String Apellido;
@@ -20,6 +16,10 @@ public class Usuario {
     private boolean adoptante;
     private boolean casaCuna;
     private boolean asociacion;
+    private static int CasaCunaActual;
+    private static int AdoptanteActual;
+    private static int TipoActual;
+    private static int RazaActual;
     
     public Usuario(String Nombre, String Apellido, String Username, String Telefono,
                    String Contrasenia, boolean esAdmin, String correo){ 
@@ -35,6 +35,43 @@ public class Usuario {
         this.casaCuna = false;
         id = ++cantidadDeUsuarios;   
     } 
+
+    public static Object get(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getCasaCunaActual() {
+        return CasaCunaActual;
+    }
+
+    public void setCasaCunaActual(int aCasaCunaActual) {
+        CasaCunaActual = aCasaCunaActual;
+    }
+
+    public int getAdoptanteActual() {
+        return AdoptanteActual;
+    }
+
+    public void setAdoptanteActual(int aAdoptanteActual) {
+        AdoptanteActual = aAdoptanteActual;
+    }
+
+    public int getTipoActual() {
+        return TipoActual;
+    }
+
+    public void setTipoActual(int aTipoActual) {
+        TipoActual = aTipoActual;
+    }
+
+    public int getRazaActual() {
+        return RazaActual;
+    }
+
+    public void setRazaActual(int aRazaActual) {
+        RazaActual = aRazaActual;
+    }
+    
     
     public String getNombre() {
         return Nombre;
@@ -138,6 +175,10 @@ public class Usuario {
 
     public void setAsociacion(boolean asociacion) {
         this.asociacion = asociacion;
+    }
+
+    public void getCasaCunaActual(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

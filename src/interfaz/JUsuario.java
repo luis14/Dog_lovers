@@ -170,7 +170,9 @@ public class JUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
-        if(VerificaUsuario()){
+        if(VerificaUsuario() != -1){
+            System.out.println(VerificaUsuario());
+            Administrador.setUsuarioActual(VerificaUsuario());
             JControl control = new JControl();
             control.setVisible(true);
             dispose();
@@ -219,15 +221,14 @@ public class JUsuario extends javax.swing.JFrame {
     private javax.swing.JButton registrarButton;
     // End of variables declaration//GEN-END:variables
 
-    private boolean VerificaUsuario(){
+    private int VerificaUsuario(){
         for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){
             if(UsuarioText.getText().equals(Administrador.ListaDeUsuarios.get(i).getUsername()) &&
                ContraText.getText().equals(Administrador.ListaDeUsuarios.get(i).getContrasenia())){
-                Administrador.setUsuarioActual(i);
-                return true;
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 }
 

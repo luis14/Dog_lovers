@@ -3,6 +3,7 @@ package interfaz;
 import Administrador.Administrador;
 import Administrador.ModeloTablas;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class JControl extends javax.swing.JFrame {
 
@@ -39,25 +40,27 @@ public class JControl extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         PrincipalPanel = new javax.swing.JPanel();
-        CorreoLabel1 = new javax.swing.JLabel();
-        CorreoLabel = new javax.swing.JLabel();
-        UsernameLabel1 = new javax.swing.JLabel();
-        UsernameLabel = new javax.swing.JLabel();
-        ApellidoLabel1 = new javax.swing.JLabel();
-        ApellidoLabel = new javax.swing.JLabel();
-        NombreLabel1 = new javax.swing.JLabel();
-        NombreLabel = new javax.swing.JLabel();
-        FotoLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         PerfilLabel = new javax.swing.JLabel();
+        FotoLabel = new javax.swing.JLabel();
+        NombreLabel = new javax.swing.JLabel();
+        ApellidoLabel = new javax.swing.JLabel();
+        UsernameLabel = new javax.swing.JLabel();
+        CorreoLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        TelLabel1 = new javax.swing.JLabel();
+        CorreoLabel1 = new javax.swing.JLabel();
+        UsernameLabel1 = new javax.swing.JLabel();
+        ApellidoLabel1 = new javax.swing.JLabel();
+        NombreLabel1 = new javax.swing.JLabel();
+        LogoItem = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         DatosActualesLabel = new javax.swing.JLabel();
         MascotasPerdidasButton = new javax.swing.JButton();
         MascotasEncontradasButton = new javax.swing.JButton();
-        CantidadLabel = new javax.swing.JLabel();
-        LogoItem = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        TelLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaInicio = new javax.swing.JTable();
+        CantidadLabel = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         Registro = new javax.swing.JMenu();
         MascotaItem = new javax.swing.JMenuItem();
@@ -90,30 +93,139 @@ public class JControl extends javax.swing.JFrame {
         PrincipalPanel.setBackground(new java.awt.Color(0, 153, 0));
         PrincipalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        CorreoLabel1.setText("Correo");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        CorreoLabel.setText("Correo :");
-
-        UsernameLabel1.setText("Username");
-
-        UsernameLabel.setText("Username :");
-
-        ApellidoLabel1.setText("Apellido");
-
-        ApellidoLabel.setText("Apellido : ");
-
-        NombreLabel1.setText("Nombre");
-
-        NombreLabel.setText("Nombre :");
+        PerfilLabel.setBackground(new java.awt.Color(0, 0, 0));
+        PerfilLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        PerfilLabel.setForeground(new java.awt.Color(0, 0, 0));
+        PerfilLabel.setText("Perfil de Usuario");
 
         FotoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414706716_user_male2-128.png"))); // NOI18N
 
-        PerfilLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        PerfilLabel.setText("Perfil de Usuario");
+        NombreLabel.setBackground(new java.awt.Color(0, 0, 0));
+        NombreLabel.setForeground(new java.awt.Color(0, 0, 0));
+        NombreLabel.setText("Nombre :");
+
+        ApellidoLabel.setBackground(new java.awt.Color(0, 0, 0));
+        ApellidoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        ApellidoLabel.setText("Apellido : ");
+
+        UsernameLabel.setBackground(new java.awt.Color(0, 0, 0));
+        UsernameLabel.setForeground(new java.awt.Color(0, 0, 0));
+        UsernameLabel.setText("Username :");
+
+        CorreoLabel.setBackground(new java.awt.Color(0, 0, 0));
+        CorreoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        CorreoLabel.setText("Correo :");
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Teléfono :");
+
+        TelLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        TelLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        TelLabel1.setText("Telefono");
+
+        CorreoLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        CorreoLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        CorreoLabel1.setText("Correo");
+
+        UsernameLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        UsernameLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        UsernameLabel1.setText("Username");
+
+        ApellidoLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        ApellidoLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        ApellidoLabel1.setText("Apellido");
+
+        NombreLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        NombreLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        NombreLabel1.setText("Nombre");
+
+        LogoItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10755057_847539941933847_199279157_n - copia (4).jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PerfilLabel)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(FotoLabel)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(NombreLabel)
+                                .addGap(28, 28, 28)
+                                .addComponent(NombreLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(CorreoLabel)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(UsernameLabel)
+                                    .addComponent(ApellidoLabel))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(ApellidoLabel1))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CorreoLabel1)
+                                            .addComponent(TelLabel1)
+                                            .addComponent(UsernameLabel1))))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LogoItem, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LogoItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PerfilLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(NombreLabel)
+                                    .addComponent(NombreLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ApellidoLabel)
+                                    .addComponent(ApellidoLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(UsernameLabel)
+                                    .addComponent(UsernameLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(CorreoLabel)
+                                    .addComponent(CorreoLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(TelLabel1)))
+                            .addComponent(FotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         DatosActualesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        DatosActualesLabel.setForeground(new java.awt.Color(0, 0, 0));
         DatosActualesLabel.setText("Datos Actuales");
 
+        MascotasPerdidasButton.setBackground(new java.awt.Color(0, 153, 0));
+        MascotasPerdidasButton.setForeground(new java.awt.Color(0, 0, 0));
         MascotasPerdidasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830314_Help.png"))); // NOI18N
         MascotasPerdidasButton.setText("Mascotas Perdidas");
         MascotasPerdidasButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +234,8 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        MascotasEncontradasButton.setBackground(new java.awt.Color(0, 153, 0));
+        MascotasEncontradasButton.setForeground(new java.awt.Color(0, 0, 0));
         MascotasEncontradasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         MascotasEncontradasButton.setText("Mascota Encontrada");
         MascotasEncontradasButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,14 +243,6 @@ public class JControl extends javax.swing.JFrame {
                 MascotasEncontradasButtonActionPerformed(evt);
             }
         });
-
-        CantidadLabel.setText("Cantidad :");
-
-        LogoItem.setText("Logo");
-
-        jLabel1.setText("Teléfono :");
-
-        TelLabel1.setText("Telefono");
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
@@ -148,99 +254,64 @@ public class JControl extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TablaInicio);
 
+        CantidadLabel.setText("Cantidad :");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DatosActualesLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MascotasEncontradasButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MascotasPerdidasButton)
+                .addGap(462, 462, 462))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(CantidadLabel))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DatosActualesLabel)
+                    .addComponent(MascotasEncontradasButton)
+                    .addComponent(MascotasPerdidasButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CantidadLabel)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout PrincipalPanelLayout = new javax.swing.GroupLayout(PrincipalPanel);
         PrincipalPanel.setLayout(PrincipalPanelLayout);
         PrincipalPanelLayout.setHorizontalGroup(
             PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PerfilLabel)
-                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(FotoLabel)
-                                .addGap(34, 34, 34)
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                        .addComponent(NombreLabel)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(NombreLabel1))
-                                    .addComponent(jLabel1)
-                                    .addComponent(CorreoLabel)
-                                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(UsernameLabel)
-                                            .addComponent(ApellidoLabel))
-                                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addGap(17, 17, 17)
-                                                .addComponent(ApellidoLabel1))
-                                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(CorreoLabel1)
-                                                    .addComponent(UsernameLabel1)
-                                                    .addComponent(TelLabel1)))))))
-                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(DatosActualesLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(MascotasPerdidasButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(MascotasEncontradasButton)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LogoItem, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CantidadLabel)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1048, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 7, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 792, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PrincipalPanelLayout.setVerticalGroup(
             PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(PerfilLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(NombreLabel)
-                                    .addComponent(NombreLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ApellidoLabel)
-                                    .addComponent(ApellidoLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(UsernameLabel)
-                                    .addComponent(UsernameLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CorreoLabel)
-                                    .addComponent(CorreoLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(TelLabel1)))
-                            .addComponent(FotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DatosActualesLabel)
-                            .addComponent(MascotasPerdidasButton)
-                            .addComponent(MascotasEncontradasButton)))
-                    .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                        .addComponent(LogoItem, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CantidadLabel)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
         );
 
         Registro.setText("Registrar");
@@ -300,6 +371,11 @@ public class JControl extends javax.swing.JFrame {
 
         CasaCunaItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830410_home-16.png"))); // NOI18N
         CasaCunaItem1.setText("Casa Cuna");
+        CasaCunaItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CasaCunaItem1ActionPerformed(evt);
+            }
+        });
         Editar.add(CasaCunaItem1);
 
         AdoptanteItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684212_preferences-desktop-user.png"))); // NOI18N
@@ -402,7 +478,7 @@ public class JControl extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PrincipalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -414,7 +490,7 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_MascotaItemActionPerformed
 
     private void MascotasItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasItemActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_MascotasItemActionPerformed
 
     private void MascotasItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasItem1ActionPerformed
@@ -428,10 +504,10 @@ public class JControl extends javax.swing.JFrame {
 
     private void CasaCunaItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItemActionPerformed
         if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna())){
-            JCasaCuna casacuna = new JCasaCuna();
+            JCasaCuna casacuna = new JCasaCuna(false);
             casacuna.setVisible(true);
         }else{
-            
+            JOptionPane.showMessageDialog(null,"Ya estas registrado/n como Casa Cuna");
         }
     }//GEN-LAST:event_CasaCunaItemActionPerformed
 
@@ -498,6 +574,15 @@ public class JControl extends javax.swing.JFrame {
         
     }//GEN-LAST:event_TablaInicioMouseClicked
 
+    private void CasaCunaItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItem1ActionPerformed
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna()){
+        JCasaCuna casaCuna = new JCasaCuna(true);
+        casaCuna.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No estas registrado/n como Casa Cuna");
+        }
+    }//GEN-LAST:event_CasaCunaItem1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
@@ -542,6 +627,8 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel UsernameLabel1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;

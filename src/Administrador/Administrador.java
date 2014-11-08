@@ -101,4 +101,5 @@ public class Administrador {
     public static Object[] ColoresToArray(){ 
         return ListaDeColores.toArray();
     }
+    
 }

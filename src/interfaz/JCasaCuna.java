@@ -5,14 +5,43 @@ import javax.swing.ImageIcon;
 
 public class JCasaCuna extends javax.swing.JFrame {
 
-    public JCasaCuna() {
+    public JCasaCuna(boolean editar) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Casa Cuna");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+        if(editar){
+            DatosEditar();
+            System.out.println("Si");
+        }
     }
 
+    private void DatosEditar(){
+        switch(Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).getTamanio()){
+            case "Pequeño":
+                TipoCombo.setSelectedIndex(0);
+                break;
+            case "Mediano":
+                TipoCombo.setSelectedIndex(1);
+                break;
+            case "Grande":
+                TipoCombo.setSelectedIndex(2);
+                break;
+        }
+        switch (Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).getNecesitaAlimentacion()){
+            case "Si":
+                DanacionSiRadioButton.setSelected(true);
+                break;
+            case "No":
+                DonacionNoRadioButton.setSelected(true);
+                break;
+        }
+        TipoCombo.setSelectedIndex(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTipoActual());
+        RazaCombo.setSelectedIndex(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getRazaActual());
+        RequerimientosText.setText(Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).getRequerimientos());
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -140,18 +169,19 @@ public class JCasaCuna extends javax.swing.JFrame {
                             .addComponent(DonacionLabel)
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(TipoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(RazaLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(92, 92, 92))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(TipoLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addComponent(TamañoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(CancelarButton)
@@ -228,6 +258,9 @@ public class JCasaCuna extends javax.swing.JFrame {
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
             Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCuna(true);
+            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCunaActual(Administrador.ListaDeCasaCuna.size() - 1);
+            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTipoActual(TipoCombo.getSelectedIndex());
+            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setRazaActual(RazaCombo.getSelectedIndex());
             dispose();
         }else{
             ErrorLabel.setVisible(true);
