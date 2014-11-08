@@ -13,7 +13,7 @@ public class ModeloTablas {
     
     
     public static DefaultTableModel tablaMascotas(){ 
-        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){
@@ -24,7 +24,7 @@ public class ModeloTablas {
     }  
     
       public static DefaultTableModel tablaMascotas(Usuario usuario, String estado){ 
-        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
@@ -36,30 +36,42 @@ public class ModeloTablas {
     } 
       
        public static DefaultTableModel tablaMascotas(String Estado, String Color, String Tipo, String Tamanio, String Raza){ 
-        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);  
         //ArrayList<Mascota> tipodemascota = Administrador.ListaDeMascotas;
-        for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){  
+        for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){   
+            System.out.print("Contador es: "); 
+            System.out.print(i);
+            System.out.println(Administrador.ListaDeMascotas.get(i).getNombre()); 
+            System.out.println("****");
             int contador = 0;
             if(Administrador.ListaDeMascotas.get(i).getEstado().equals(Estado)){
+                System.out.println("Estado es igual");
                 contador++; 
             } 
             if(Administrador.ListaDeMascotas.get(i).getColor().equals(Color) || Administrador.ListaDeMascotas.get(i).getColor().equals("Cualquiera") ){
+                System.out.println("Color es igual");
                 contador++;
             }
             if(Administrador.ListaDeMascotas.get(i).getTipo().equals(Tipo) || Administrador.ListaDeMascotas.get(i).getTipo().equals("Cualquiera") ){
+                System.out.println("Tipo es igual");
                 contador++;
             } 
             if(Administrador.ListaDeMascotas.get(i).getTamanio().equals(Tamanio) || Administrador.ListaDeMascotas.get(i).getTamanio().equals("Cualquiera") ){
+                System.out.println("Tamaño es igual");
                 contador++; 
             } 
            /* if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip) || Administrador.ListaDeMascotas.get(i).getChip().equals("")){
                 contador++; 
             }*/
             if(Administrador.ListaDeMascotas.get(i).getRaza().equals(Raza) || Administrador.ListaDeMascotas.get(i).getRaza().equals("Cualquiera")){
+                System.out.println("Raza es igual");
                 contador++; 
-            }
+            } 
+            System.out.print("Contador es: ");
+            System.out.println(contador);
+            System.out.println("---------------");
             if(contador == 5){
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
             }
@@ -70,7 +82,7 @@ public class ModeloTablas {
     }  
        
        public static DefaultTableModel tablaMatch(int id){ 
-        String titulos[] = {"ID", "Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
+        String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos); 
         String ColorDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getColor(); 
@@ -196,12 +208,14 @@ public class ModeloTablas {
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);  
         ArrayList<Adoptante> ListaCopia = Administrador.ListaDeAdoptantes; 
         for(int i = 0; i< StringBuscando.length(); i++){
-            int k = 0; 
-            while(k < ListaCopia.size()){
-                if(Character.toLowerCase(ListaCopia.get(k).getNombre().charAt(i)) == Character.toLowerCase(StringBuscando.charAt(i)) 
-                        && ListaCopia.get(k).getReportado() == true) { 
-                    i++;
-                }  
+            int k = 0;  
+            while(k < ListaCopia.size()){ 
+                if(ListaCopia.get(k).getNombre().length() >= i) {
+                    if(Character.toLowerCase(ListaCopia.get(k).getNombre().charAt(i)) == Character.toLowerCase(StringBuscando.charAt(i)) 
+                         && ListaCopia.get(k).getReportado() == true) {
+                        i++;
+                    }  
+                }
                 else{ 
                     int indice = ListaCopia.indexOf(ListaCopia.get(k)); 
                     ListaCopia.remove(ListaCopia.get(k)); 
@@ -211,13 +225,14 @@ public class ModeloTablas {
                     
                 }
                 
-            }
+            } 
+        } 
+        int posicionEnLista;
+        for(int contador = 0; contador < ListaCopia.size(); contador++){
+           posicionEnLista = Administrador.ListaDeAdoptantes.indexOf(ListaCopia.get(contador)); 
+           modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(posicionEnLista).arreglo());
         }
-        for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
-            if(Administrador.ListaDeAdoptantes.get(i).getReportado() == true){
-                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
-            }     
-        }
+
         return modeloAdoptantes; 
     }   
     
