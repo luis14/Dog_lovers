@@ -25,6 +25,7 @@ public class JListaNegra extends javax.swing.JFrame {
         ActualizarFiltroButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaListaNegra = new javax.swing.JTable();
+        TodosButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -59,6 +60,13 @@ public class JListaNegra extends javax.swing.JFrame {
         TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane1.setViewportView(TablaListaNegra);
 
+        TodosButton.setText("Todos");
+        TodosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TodosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,9 +82,12 @@ public class JListaNegra extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel1)
-                                .addComponent(FiltroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(86, 86, 86)
-                            .addComponent(ActualizarFiltroButton))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(FiltroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(ActualizarFiltroButton)))
+                            .addGap(18, 18, 18)
+                            .addComponent(TodosButton))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
@@ -88,7 +99,8 @@ public class JListaNegra extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FiltroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ActualizarFiltroButton))
+                    .addComponent(ActualizarFiltroButton)
+                    .addComponent(TodosButton))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -102,6 +114,8 @@ public class JListaNegra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        TablaListaNegra.setModel(ModeloTablas.tablaListaNegra());
+        TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -110,14 +124,20 @@ public class JListaNegra extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroTextFieldActionPerformed
 
     private void ActualizarFiltroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarFiltroButtonActionPerformed
-       // TablaListaNegra.setModel(ModeloTablas.tablaListaNegraConFiltro(FiltroTextField.getText()));
-       // TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaListaNegra.setModel(ModeloTablas.TablafiltroListaNegra(FiltroTextField.getText()));
+        TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_ActualizarFiltroButtonActionPerformed
+
+    private void TodosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosButtonActionPerformed
+        TablaListaNegra.setModel(ModeloTablas.tablaListaNegra());
+        TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_TodosButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarFiltroButton;
     private javax.swing.JTextField FiltroTextField;
     private javax.swing.JTable TablaListaNegra;
+    private javax.swing.JButton TodosButton;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

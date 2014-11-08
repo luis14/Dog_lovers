@@ -34,11 +34,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="FiltroTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="ActualizarFiltroButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                          <Component id="ActualizarFiltroButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="TodosButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" alignment="0" min="-2" pref="692" max="-2" attributes="0"/>
                   </Group>
@@ -56,6 +60,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="FiltroTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ActualizarFiltroButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TodosButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
@@ -129,5 +134,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="TodosButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Todos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TodosButtonActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

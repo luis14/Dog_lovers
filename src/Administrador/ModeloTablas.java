@@ -201,40 +201,37 @@ public class ModeloTablas {
         }
         return modeloAdoptantes; 
     }   
-     
-      public static DefaultTableModel tablaListaNegraConFiltro(String StringBuscando){
-        String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"}; 
-        String informacion[][] = {}; 
-        modeloAdoptantes= new DefaultTableModel(informacion, titulos);  
-        ArrayList<Adoptante> ListaCopia = Administrador.ListaDeAdoptantes; 
-        for(int i = 0; i< StringBuscando.length(); i++){
-            int k = 0;  
-            while(k < ListaCopia.size()){ 
-                if(ListaCopia.get(k).getNombre().length() >= i) {
-                    if(Character.toLowerCase(ListaCopia.get(k).getNombre().charAt(i)) == Character.toLowerCase(StringBuscando.charAt(i)) 
-                         && ListaCopia.get(k).getReportado() == true) {
-                        i++;
-                    }  
-                }
-                else{ 
-                    int indice = ListaCopia.indexOf(ListaCopia.get(k)); 
-                    ListaCopia.remove(ListaCopia.get(k)); 
-                    if(indice > k){
-                        k++;
-                    }
-                    
-                }
-                
-            } 
-        } 
-        int posicionEnLista;
-        for(int contador = 0; contador < ListaCopia.size(); contador++){
-           posicionEnLista = Administrador.ListaDeAdoptantes.indexOf(ListaCopia.get(contador)); 
-           modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(posicionEnLista).arreglo());
-        }
-
-        return modeloAdoptantes; 
-    }   
+        
+    
+     public static DefaultTableModel TablafiltroListaNegra(String stringBuscando){ 
+	String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"};  
+	String informacion[][] = {};  
+	ArrayList<Adoptante> lista = Administrador.ListaDeAdoptantes;
+        modeloAdoptantes = new DefaultTableModel(informacion, titulos);  
+	for(int i = 0; i < stringBuscando.length(); i++){ 
+		int k = 0;
+		while(k < lista.size()){
+			if(Character.toLowerCase(stringBuscando.charAt(i)) == Character.toLowerCase(lista.get(k).getNombre().charAt(i)) 
+					&& lista.get(k).getReportado() == true){
+				k++;
+			} 
+			else{
+                            int indice = lista.indexOf(lista.get(k));
+                            lista.remove(lista.get(k));  
+                            if(indice > k){ 
+                               	k++;
+                            }
+			}
+		}
+	}
+	int posicionEnLista = 0 ; 
+	for(int i = 0; i < lista.size(); i++){
+		posicionEnLista = Administrador.ListaDeAdoptantes.indexOf(lista.get(i)); 
+		modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(posicionEnLista).arreglo());
+		//System.out.println(Administrador.ListaDeAdoptantes.get(posicionEnLista).getNombre());
+	}
+	return modeloAdoptantes; 	
+     }
     
      
      public static DefaultTableModel tablaDeDonaciones(){
