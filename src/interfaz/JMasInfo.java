@@ -20,7 +20,7 @@ public class JMasInfo extends javax.swing.JFrame {
         initComponents();
     }
     
-    private void actualizarDatosEnVentana(int ID){
+    public void actualizarDatosEnVentana(int ID){
         pNombreLabel.setText(Administrador.ListaDeMascotas.get(ID).getNombre());
         pTipoLabel.setText(Administrador.ListaDeMascotas.get(ID).getTipo());
         pRazaLabel.setText(Administrador.ListaDeMascotas.get(ID).getRaza());
