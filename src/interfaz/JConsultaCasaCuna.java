@@ -75,6 +75,11 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
 
         TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna());
         TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaCasaCuna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaCasaCunaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaCasaCuna);
 
         CantidadText.setText(" Cantidad :");
@@ -120,13 +125,13 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                             .addComponent(Tamanio))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(donacionLabel)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(DonacionDeAlimentoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
                                 .addComponent(BuscarButton)
                                 .addGap(18, 18, 18)
-                                .addComponent(todosButton))
-                            .addComponent(donacionLabel))))
+                                .addComponent(todosButton)))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -174,6 +179,14 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna());
         TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_todosButtonActionPerformed
+
+    private void TablaCasaCunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaCasaCunaMouseClicked
+        int fila = TablaCasaCuna.getSelectedRow();
+        String idAnimal = TablaCasaCuna.getValueAt(fila ,0).toString();
+        JMasInfo ventEmergente = new JMasInfo();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal));
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaCasaCunaMouseClicked
 
     /**
      * @param args the command line arguments
