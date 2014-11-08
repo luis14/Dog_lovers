@@ -45,9 +45,14 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Consultas De Adoptantes");
 
-        CalificacionCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
+        CalificacionCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0","1", "2", "3", "4", "5" }));
 
         BuscarButton.setText("Buscar");
+        BuscarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarButtonActionPerformed(evt);
+            }
+        });
 
         tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
         tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
@@ -111,6 +116,11 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
         tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_todosButtonActionPerformed
+
+    private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
+       // tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes((String)CalificacionCombo.getSelectedItem()));
+       // tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_BuscarButtonActionPerformed
 
     /**
      * @param args the command line arguments

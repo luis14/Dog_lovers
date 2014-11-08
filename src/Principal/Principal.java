@@ -23,6 +23,15 @@ public class Principal {
         Administrador.RegistrarCasaCuna("Gato", "Any", false, "Pequeño", "ninguno", Administrador.ListaDeUsuarios.get(1), "8833241");
         
         Administrador.RegistrarAdoptante("Miuyin", "miuyinyong@yahoo.com", "88223422", "Santa Anna", "100 metros", true, Administrador.ListaDeUsuarios.get(0));
+        Administrador.RegistrarAdoptante("Santiago", "SantiMendez@yahoo.com", "9284921", "Coronado", "500 metros", false, Administrador.ListaDeUsuarios.get(1));
+        Administrador.RegistrarAdoptante("Kevin", "Kevin@yahoo.com", "703244921", "Coronado", "200 metros", true, Administrador.ListaDeUsuarios.get(2)); 
+        Administrador.RegistrarAdoptante("Luis", "LuisAlonsez@yahoo.com", "2031424", "Palmares", "300 metros", false, Administrador.ListaDeUsuarios.get(3));  
+        
+        Administrador.RegistrarAsociacion("Paws and Claws", "Reescatar animales", "1234B", "23982028", "pawsnclaws@gmail.com", "Facebook/PawsnClaws"); 
+        Administrador.RegistrarAsociacion("Rescue Shelter", "Reescatar animales", "239A05", "3940285", "rescueshelter@gmail.com", "Facebook/RescueShelter");
+        Administrador.RegistrarAsociacion("ASPCA", "Animal Welfare", "90285C", "9083253", "aspca@gmail.com", "Facebook/aspca"); 
+        Administrador.RegistrarAsociacion("Animal People", "Para el maltrato de animales", "18G0", "10003428", "animalpeople@gmail.com", "Facebook/animalpeople"); 
+        Administrador.RegistrarAsociacion("BirdLife International", "Rescatar aves", "902B", "70239583", "birdLife@gmail.com", "Facebook/BirdLife");
         
         Administrador.RegistrarColores("Blanco");
         Administrador.RegistrarColores("Negro");

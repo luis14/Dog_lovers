@@ -37,9 +37,13 @@ public class Adoptante {
      * @return the calificacion
      */ 
     
-    public String getCalificacion() { 
+    public String getStringCalificacion() { 
         String Calificacion = Integer.toString(calificacion);
         return Calificacion;
+    } 
+    
+     public int getCalificacion() { 
+        return calificacion;
     }
 
     /**
@@ -183,10 +187,19 @@ public class Adoptante {
      
      public Boolean getListaNegra(){
          return reportado;
+     } 
+     
+     public String getStringListaNegra(){ 
+         if(reportado == true){ 
+             return "Si" ;
+         } 
+         else{ 
+             return "No";
+         }
      }
     
      public String[] arreglo(){
-        String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getCalificacion()}; 
+        String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(), getStringCalificacion()}; 
         return msg;
     } 
      
