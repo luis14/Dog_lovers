@@ -118,8 +118,8 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
     }//GEN-LAST:event_todosButtonActionPerformed
 
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
-       // tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes((String)CalificacionCombo.getSelectedItem()));
-       // tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+       tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes((String)CalificacionCombo.getSelectedItem()));
+       tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_BuscarButtonActionPerformed
 
     /**

@@ -162,7 +162,7 @@ public class ModeloTablas {
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
             if(Administrador.ListaDeAdoptantes.get(i).getStringCalificacion().equals(Calificacion)){
-                modeloCasaCuna.addRow(Administrador.ListaDeCasaCuna.get(i).arreglo()); 
+                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
             }     
         }
         return modeloAdoptantes; 
