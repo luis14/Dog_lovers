@@ -54,7 +54,7 @@ public class JAsociacion extends javax.swing.JFrame {
         AceptarButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         AsociacionLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         AsociacionLabel.setText("Asociación");

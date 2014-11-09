@@ -41,7 +41,7 @@ public class JAdoptante extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         AdoptanteLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         AdoptanteLabel.setText("Adoptante");

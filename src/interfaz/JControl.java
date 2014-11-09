@@ -16,9 +16,7 @@ public class JControl extends javax.swing.JFrame {
         setTitle("Pefil de Usuario");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
         if(!esAdmin()){
-            TiposRazasItem.setVisible(false);
-            TiposMascotasItem.setVisible(false);
-            AdminItem.setVisible(false);
+            Configuracion.setVisible(false);   
         }
     }
     
@@ -74,17 +72,18 @@ public class JControl extends javax.swing.JFrame {
         CasaCunaItem1 = new javax.swing.JMenuItem();
         AdoptanteItem1 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        TiposRazasItem = new javax.swing.JMenuItem();
-        TiposMascotasItem = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
         MascotasItem1 = new javax.swing.JMenuItem();
         CasaCunaItem2 = new javax.swing.JMenuItem();
         AdoptanteItem2 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         ListaNegraItem = new javax.swing.JMenuItem();
         DonacionesItem = new javax.swing.JMenuItem();
         Configuracion = new javax.swing.JMenu();
         FechaItem = new javax.swing.JMenuItem();
         AdminItem = new javax.swing.JMenuItem();
+        TiposRazasItem = new javax.swing.JMenuItem();
+        TiposMascotasItem = new javax.swing.JMenuItem();
         Opciones = new javax.swing.JMenu();
         CerrarItem = new javax.swing.JMenuItem();
         SalirItem = new javax.swing.JMenuItem();
@@ -404,22 +403,6 @@ public class JControl extends javax.swing.JFrame {
         });
         Editar.add(jMenuItem1);
 
-        TiposRazasItem.setText("Tipos de Razas");
-        TiposRazasItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TiposRazasItemActionPerformed(evt);
-            }
-        });
-        Editar.add(TiposRazasItem);
-
-        TiposMascotasItem.setText("Tipos de Mascotas");
-        TiposMascotasItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TiposMascotasItemActionPerformed(evt);
-            }
-        });
-        Editar.add(TiposMascotasItem);
-
         Menu.add(Editar);
 
         Consultas.setText("Consultas");
@@ -450,6 +433,15 @@ public class JControl extends javax.swing.JFrame {
             }
         });
         Consultas.add(AdoptanteItem2);
+
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415538969_user-group-16.png"))); // NOI18N
+        jMenuItem2.setText("Asociación");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        Consultas.add(jMenuItem2);
 
         ListaNegraItem.setText("Lista Negra");
         ListaNegraItem.addActionListener(new java.awt.event.ActionListener() {
@@ -483,6 +475,22 @@ public class JControl extends javax.swing.JFrame {
             }
         });
         Configuracion.add(AdminItem);
+
+        TiposRazasItem.setText("Tipos de Razas");
+        TiposRazasItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TiposRazasItemActionPerformed(evt);
+            }
+        });
+        Configuracion.add(TiposRazasItem);
+
+        TiposMascotasItem.setText("Tipos de Mascotas");
+        TiposMascotasItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TiposMascotasItemActionPerformed(evt);
+            }
+        });
+        Configuracion.add(TiposMascotasItem);
 
         Menu.add(Configuracion);
 
@@ -658,6 +666,11 @@ public class JControl extends javax.swing.JFrame {
         editarAdmins.setVisible(true);
     }//GEN-LAST:event_AdminItemActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        JConsultaAsociaciones asociacion = new JConsultaAsociaciones();
+        asociacion.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
@@ -704,6 +717,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel UsernameLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
