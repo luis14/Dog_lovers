@@ -300,7 +300,7 @@
     <Component class="javax.swing.JComboBox" name="Tama&#xf1;oCombo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Peque&#xf1;o&quot;, &quot;Mediano&quot;, &quot;Grande&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel(Administrador.TamanioToArray())" type="code"/>
         </Property>
       </Properties>
     </Component>

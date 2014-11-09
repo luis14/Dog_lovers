@@ -14,10 +14,14 @@ public class Administrador {
     public static ArrayList<Usuario> ListaDeUsuarios = new ArrayList<>(); 
     public static ArrayList<String> ListaDeColores = new ArrayList<>(); 
     public static ArrayList<Asociacion> ListaDeAsociaciones = new ArrayList<>(); 
-    public static ArrayList<Donaciones> ListaDeDonaciones = new ArrayList<>(); 
-    public static int UsuarioActual;
+    public static ArrayList<Donaciones> ListaDeDonaciones = new ArrayList<>();  
+    public static ArrayList<String> ListaDeTamanios = new ArrayList<>(); 
+    public static ArrayList<String> ListaDeEstados = new ArrayList<>();  
     
-    // REGISTRO 
+    public static int UsuarioActual;
+    //*********************************************
+    //                  REGISTROS                 *
+    //*********************************************
     
     public static void RegistrarUsuario(String Nombre, String Apellido, String Username,String Telefono,
                                         String Contrasenia, boolean esAdmin, String Correo){
@@ -68,6 +72,14 @@ public class Administrador {
         ListaDeColores.add(color);
     }
     
+    public static void RegistrarEstados(String estado){
+        ListaDeEstados.add(estado);
+    }
+    
+    public static void RegistrarTamanio(String tamanio){
+        ListaDeTamanios.add(tamanio);
+    }
+    
     public static int getUsuarioActual() {
         return UsuarioActual;
     }
@@ -75,11 +87,14 @@ public class Administrador {
     public static void setUsuarioActual(int aUsuarioActual) {
         UsuarioActual = aUsuarioActual;
     }
-    
 
     public static void RegistrarMascota(String text, Object selectedItem, Object selectedItem0, Object selectedItem1, String text0, String estado, String text1, Usuario get) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }  
+    
+    //***************************************
+    //          Arrays para ComboBox        * 
+    //*************************************** 
     
     public static Object[] HacerArrayDeTipos(){  
         ArrayList<String> nombresDeTipo = new ArrayList<>(); 
@@ -97,9 +112,15 @@ public class Administrador {
         return nombresDeRazas.toArray();
     }
             
-            
     public static Object[] ColoresToArray(){ 
         return ListaDeColores.toArray();
     }
     
+    public static Object[] TamanioToArray(){
+        return ListaDeTamanios.toArray();
+    } 
+    
+    public static Object[] EstadosToArray(){
+        return ListaDeEstados.toArray(); 
+    }
 }

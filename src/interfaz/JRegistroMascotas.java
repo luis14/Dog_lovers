@@ -204,7 +204,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
             }
         });
 
-        TamañoCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande", "Cualquiera" }));
+        TamañoCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.TamanioToArray()));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

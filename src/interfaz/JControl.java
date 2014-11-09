@@ -301,7 +301,7 @@ public class JControl extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 792, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 802, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PrincipalPanelLayout.setVerticalGroup(
@@ -380,6 +380,11 @@ public class JControl extends javax.swing.JFrame {
 
         AdoptanteItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684212_preferences-desktop-user.png"))); // NOI18N
         AdoptanteItem1.setText("Adoptante");
+        AdoptanteItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdoptanteItem1ActionPerformed(evt);
+            }
+        });
         Editar.add(AdoptanteItem1);
 
         TiposRazasItem.setText("Tipos de Razas");
@@ -582,6 +587,10 @@ public class JControl extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"No estas registrado/n como Casa Cuna");
         }
     }//GEN-LAST:event_CasaCunaItem1ActionPerformed
+
+    private void AdoptanteItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AdoptanteItem1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;

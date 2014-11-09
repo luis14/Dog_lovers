@@ -39,7 +39,17 @@ public class Principal {
         Administrador.RegistrarColores("Golden");  
         Administrador.RegistrarColores("Gris"); 
         Administrador.RegistrarColores("Otro"); 
-        Administrador.RegistrarColores("Cualquiera");
+        Administrador.RegistrarColores("Cualquiera"); 
+        
+        Administrador.RegistrarEstados("Perdido"); 
+        Administrador.RegistrarEstados("Encontrado"); 
+        Administrador.RegistrarEstados("Identificado");  
+        Administrador.RegistrarEstados("En Adopción"); 
+        Administrador.RegistrarEstados("Adoptado");  
+        
+        Administrador.RegistrarTamanio("Pequeño");
+        Administrador.RegistrarEstados("Mediano"); 
+        Administrador.RegistrarEstados("Grande"); 
         
         Administrador.RegistrarTipoMascotas("Perro");
         Administrador.RegistrarTipoMascotas("Gato");  
@@ -48,8 +58,6 @@ public class Principal {
         Administrador.RegistrarTipoMascotas("Caballo");   
         Administrador.RegistrarTipoMascotas("Otro");
         Administrador.RegistrarTipoMascotas("Cualquiera"); 
-        //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getId());
-        //System.out.println(Administrador.ListaDeTiposMascotas.get(0).getNombre());
         
         Administrador.RegistrarTipoRazas(0, "Golden Retriever"); 
         Administrador.RegistrarTipoRazas(0, "Poodle");

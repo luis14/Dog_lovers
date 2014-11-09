@@ -205,32 +205,14 @@ public class ModeloTablas {
     
      public static DefaultTableModel TablafiltroListaNegra(String stringBuscando){ 
 	String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"};  
-	String informacion[][] = {};  
-	ArrayList<Adoptante> lista = Administrador.ListaDeAdoptantes;
+	String informacion[][] = {}; 
         modeloAdoptantes = new DefaultTableModel(informacion, titulos);  
-	for(int i = 0; i < stringBuscando.length(); i++){ 
-		int k = 0;
-		while(k < lista.size()){
-			if(Character.toLowerCase(stringBuscando.charAt(i)) == Character.toLowerCase(lista.get(k).getNombre().charAt(i)) 
-					&& lista.get(k).getReportado() == true){
-				k++;
-			} 
-			else{
-                            int indice = lista.indexOf(lista.get(k));
-                            lista.remove(lista.get(k));  
-                            if(indice > k){ 
-                               	k++;
-                            }
-			}
-		}
-	}
-	int posicionEnLista = 0 ; 
-	for(int i = 0; i < lista.size(); i++){
-		posicionEnLista = Administrador.ListaDeAdoptantes.indexOf(lista.get(i)); 
-		modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(posicionEnLista).arreglo());
-		//System.out.println(Administrador.ListaDeAdoptantes.get(posicionEnLista).getNombre());
-	}
-	return modeloAdoptantes; 	
+	for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){
+            if(Administrador.ListaDeAdoptantes.get(i).getNombre().toLowerCase().equals(stringBuscando.toLowerCase())){
+                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
+            }	
+        } 
+        return modeloAdoptantes; 
      }
     
      
