@@ -191,7 +191,7 @@ public class JAsociacion extends javax.swing.JFrame {
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
         if(VerificaDatos()){
-            if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
+            if(!Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
                     Administrador.RegistrarAsociacion(NombreText.getText(), MissionText.getText(),
                             CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacion(true);

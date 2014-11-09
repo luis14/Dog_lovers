@@ -585,8 +585,8 @@ public class JControl extends javax.swing.JFrame {
 
     private void AsociacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsociacionActionPerformed
         if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion())){
-            JAsociacion asiciacion = new JAsociacion(false);
-            asiciacion.setVisible(true);
+            JAsociacion asociacion = new JAsociacion(false);
+            asociacion.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null,"Ya estas registrado como Asociación");
         }
@@ -643,7 +643,7 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_AdoptanteItem1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion())){
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
             JAsociacion asiciacion = new JAsociacion(true);
             asiciacion.setVisible(true);
         }else{
