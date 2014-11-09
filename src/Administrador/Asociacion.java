@@ -15,16 +15,18 @@ public class Asociacion {
     private String telefono; 
     private String correo;  
     private String paginaWeb; 
+    private Usuario usuario;
     private int id;   
     private static int cantidadDeUsuarios = 0; 
 
-    public Asociacion(String nombre, String mission, String cedulaJuridica, String telefono, String correo, String paginaWeb){ 
+    public Asociacion(String nombre, String mission, String cedulaJuridica, String telefono, String correo, String paginaWeb, Usuario usuario){ 
         this.nombre = nombre; 
         this.mission = mission; 
         this.cedulaJuridica = cedulaJuridica; 
         this.telefono = telefono; 
         this.correo = correo; 
-        this.paginaWeb = paginaWeb; 
+        this.paginaWeb = paginaWeb;  
+        this.usuario = usuario;
         id = ++cantidadDeUsuarios; 
         
     }

@@ -47,37 +47,25 @@ public class ModeloTablas {
         modeloMascotas = new DefaultTableModel(informacion, titulos);  
         int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){   
-            System.out.print("Contador es: "); 
-            System.out.print(i);
-            System.out.println(Administrador.ListaDeMascotas.get(i).getNombre()); 
-            System.out.println("****");
             int contador = 0;
             if(Administrador.ListaDeMascotas.get(i).getEstado().equals(Estado)){
-                System.out.println("Estado es igual"); 
                 contador++; 
             } 
             if(Administrador.ListaDeMascotas.get(i).getColor().equals(Color) || Administrador.ListaDeMascotas.get(i).getColor().equals("Cualquiera") ){
-                System.out.println("Color es igual");
                 contador++;
             }
             if(Administrador.ListaDeMascotas.get(i).getTipo().equals(Tipo) || Administrador.ListaDeMascotas.get(i).getTipo().equals("Cualquiera") ){
-                System.out.println("Tipo es igual");
                 contador++;
             } 
             if(Administrador.ListaDeMascotas.get(i).getTamanio().equals(Tamanio) || Administrador.ListaDeMascotas.get(i).getTamanio().equals("Cualquiera") ){
-                System.out.println("Tamaño es igual");
                 contador++; 
             } 
            /* if(Administrador.ListaDeMascotas.get(i).getChip().equals(Chip) || Administrador.ListaDeMascotas.get(i).getChip().equals("")){
                 contador++; 
             }*/
             if(Administrador.ListaDeMascotas.get(i).getRaza().equals(Raza) || Administrador.ListaDeMascotas.get(i).getRaza().equals("Cualquiera")){
-                System.out.println("Raza es igual");
                 contador++; 
             } 
-            System.out.print("Contador es: ");
-            System.out.println(contador);
-            System.out.println("---------------");
             if(contador == 5){
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
                 contadorParaInterfaz++;
@@ -289,7 +277,25 @@ public class ModeloTablas {
          } 
          contadorUniversal = contadorParaInterfaz; 
          return modeloDonaciones;
+     }  
+     
+     public static DefaultTableModel tablaDeDonaciones(String Nombre){
+         String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
+         String informacion[][] = {}; 
+         modeloDonaciones = new DefaultTableModel(informacion, titulos); 
+         int contadorParaInterfaz = 0; 
+         for(int i = 0; i < Administrador.ListaDeDonaciones.size() ; i++){ 
+             if(Nombre.toLowerCase().equals(Administrador.ListaDeDonaciones.get(i).getUsuarioName().toLowerCase()) 
+                     || Nombre.toLowerCase().equals(Administrador.ListaDeDonaciones.get(i).getAsociacionName().toLowerCase())){
+                 modeloDonaciones.addRow(Administrador.ListaDeDonaciones.get(i).arreglo());
+                 contadorParaInterfaz++;
+                 
+             }
+         } 
+         contadorUniversal = contadorParaInterfaz; 
+         return modeloDonaciones;
      } 
+     
      
       public static DefaultTableModel tablaDeDonacionesTotales(){
          String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 

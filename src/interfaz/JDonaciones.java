@@ -32,8 +32,7 @@ public class JDonaciones extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        AsociacionTextField = new javax.swing.JTextField();
-        PersonaTextField1 = new javax.swing.JTextField();
+        FiltroText = new javax.swing.JTextField();
         AsociacionButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaDonaciones = new javax.swing.JTable();
@@ -47,17 +46,10 @@ public class JDonaciones extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Donaciones ");
 
-        AsociacionTextField.setText("Asociacion");
-        AsociacionTextField.addActionListener(new java.awt.event.ActionListener() {
+        FiltroText.setText("Asociacion / Donante");
+        FiltroText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AsociacionTextFieldActionPerformed(evt);
-            }
-        });
-
-        PersonaTextField1.setText("Donante");
-        PersonaTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PersonaTextField1ActionPerformed(evt);
+                FiltroTextActionPerformed(evt);
             }
         });
 
@@ -78,6 +70,11 @@ public class JDonaciones extends javax.swing.JFrame {
         jButton1.setText("Monto Totales");
 
         jButton2.setText("Todos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         CantidadLabel.setText("Cantidad");
 
@@ -89,21 +86,20 @@ public class JDonaciones extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(AsociacionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(PersonaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(AsociacionButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(CantidadText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CantidadLabel)))
+                        .addComponent(CantidadLabel))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(AsociacionButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton2))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -113,34 +109,37 @@ public class JDonaciones extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AsociacionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PersonaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AsociacionButton)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(AsociacionButton)
+                    .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CantidadText)
                     .addComponent(CantidadLabel))
-                .addContainerGap())
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AsociacionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsociacionTextFieldActionPerformed
+    private void FiltroTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FiltroTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AsociacionTextFieldActionPerformed
-
-    private void PersonaTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonaTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PersonaTextField1ActionPerformed
+    }//GEN-LAST:event_FiltroTextActionPerformed
 
     private void AsociacionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsociacionButtonActionPerformed
-        // TODO add your handling code here:
+        TablaDonaciones.setModel(ModeloTablas.tablaDeDonaciones(FiltroText.getText()));
+        TablaDonaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_AsociacionButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        TablaDonaciones.setModel(ModeloTablas.tablaDeDonaciones());
+        TablaDonaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,10 +179,9 @@ public class JDonaciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsociacionButton;
-    private javax.swing.JTextField AsociacionTextField;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
-    private javax.swing.JTextField PersonaTextField1;
+    private javax.swing.JTextField FiltroText;
     private javax.swing.JTable TablaDonaciones;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

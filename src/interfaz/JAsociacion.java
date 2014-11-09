@@ -186,7 +186,7 @@ public class JAsociacion extends javax.swing.JFrame {
         if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
             if(VerificaDatos()){
                 Administrador.RegistrarAsociacion(NombreText.getText(), MissionText.getText(),
-                        CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText());
+                        CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
                 Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacion(true);
                 Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacionActual(Administrador.ListaDeAsociaciones.size()-1);
                 dispose();

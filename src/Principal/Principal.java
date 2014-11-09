@@ -12,7 +12,8 @@ public class Principal {
         Administrador.RegistrarUsuario("Santiago", "Mendez", "Santi", "111222111", "123", false, "SanitMendez@yahoo.com");
         Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com");
         Administrador.RegistrarUsuario("Luis", "Alonso", "Luis", "1212121212",  "123",true, "LuisAlonso@yahoo.com");
-        
+        Administrador.RegistrarUsuario("Marie", "Chang", "May", "90274194",  "123",true, "Marie@yahoo.com"); 
+         
         Administrador.RegistrarMascota("Chester", "Perro", "Golden", "04/04/2014", "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "12", "Golden Retriever"); 
         Administrador.RegistrarMascota("Mark", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(2), "563", "Poodle");
         
@@ -27,11 +28,11 @@ public class Principal {
         Administrador.RegistrarAdoptante("Kevin", "Kevin@yahoo.com", "703244921", "Coronado", "200 metros", true, Administrador.ListaDeUsuarios.get(2)); 
         Administrador.RegistrarAdoptante("Luis", "LuisAlonsez@yahoo.com", "2031424", "Palmares", "300 metros", false, Administrador.ListaDeUsuarios.get(3));  
         
-        Administrador.RegistrarAsociacion("Paws and Claws", "Reescatar animales", "1234B", "23982028", "pawsnclaws@gmail.com", "Facebook/PawsnClaws"); 
-        Administrador.RegistrarAsociacion("Rescue Shelter", "Reescatar animales", "239A05", "3940285", "rescueshelter@gmail.com", "Facebook/RescueShelter");
-        Administrador.RegistrarAsociacion("ASPCA", "Animal Welfare", "90285C", "9083253", "aspca@gmail.com", "Facebook/aspca"); 
-        Administrador.RegistrarAsociacion("Animal People", "Para el maltrato de animales", "18G0", "10003428", "animalpeople@gmail.com", "Facebook/animalpeople"); 
-        Administrador.RegistrarAsociacion("BirdLife International", "Rescatar aves", "902B", "70239583", "birdLife@gmail.com", "Facebook/BirdLife");
+        Administrador.RegistrarAsociacion("Paws and Claws", "Reescatar animales", "1234B", "23982028", "pawsnclaws@gmail.com", "Facebook/PawsnClaws", Administrador.ListaDeUsuarios.get(0)); 
+        Administrador.RegistrarAsociacion("Rescue Shelter", "Reescatar animales", "239A05", "3940285", "rescueshelter@gmail.com", "Facebook/RescueShelter", Administrador.ListaDeUsuarios.get(1));
+        Administrador.RegistrarAsociacion("ASPCA", "Animal Welfare", "90285C", "9083253", "aspca@gmail.com", "Facebook/aspca", Administrador.ListaDeUsuarios.get(2)); 
+        Administrador.RegistrarAsociacion("Animal People", "Para el maltrato de animales", "18G0", "10003428", "animalpeople@gmail.com", "Facebook/animalpeople", Administrador.ListaDeUsuarios.get(3)); 
+        Administrador.RegistrarAsociacion("BirdLife International", "Rescatar aves", "902B", "70239583", "birdLife@gmail.com", "Facebook/BirdLife", Administrador.ListaDeUsuarios.get(4));
         
         Administrador.RegistrarDonacion(Administrador.ListaDeUsuarios.get(0), Administrador.ListaDeAsociaciones.get(0), 10000, "09/11/2014");
         

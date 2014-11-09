@@ -9,7 +9,8 @@ public class JControl extends javax.swing.JFrame {
 
     public JControl() {
         initComponents();
-        DatosUsuario();
+        DatosUsuario(); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Pefil de Usuario");
@@ -60,6 +61,7 @@ public class JControl extends javax.swing.JFrame {
         MascotasEncontradasButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaInicio = new javax.swing.JTable();
+        CantidadText = new javax.swing.JLabel();
         CantidadLabel = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         Registro = new javax.swing.JMenu();
@@ -255,7 +257,9 @@ public class JControl extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TablaInicio);
 
-        CantidadLabel.setText("Cantidad :");
+        CantidadText.setText("Cantidad :");
+
+        CantidadLabel.setText("Cantidad");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -270,13 +274,13 @@ public class JControl extends javax.swing.JFrame {
                 .addComponent(MascotasPerdidasButton)
                 .addGap(462, 462, 462))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(CantidadText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CantidadLabel))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -290,7 +294,9 @@ public class JControl extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CantidadLabel)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CantidadText)
+                    .addComponent(CantidadLabel))
                 .addContainerGap())
         );
 
@@ -471,6 +477,11 @@ public class JControl extends javax.swing.JFrame {
 
         AdminItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312443_user-worker-boss.png"))); // NOI18N
         AdminItem.setText("Administrador");
+        AdminItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminItemActionPerformed(evt);
+            }
+        });
         Configuracion.add(AdminItem);
 
         Menu.add(Configuracion);
@@ -642,6 +653,11 @@ public class JControl extends javax.swing.JFrame {
         editarRaza.setVisible(true);
     }//GEN-LAST:event_TiposRazasItemActionPerformed
 
+    private void AdminItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminItemActionPerformed
+        JEditarAdmins editarAdmins = new JEditarAdmins(); 
+        editarAdmins.setVisible(true);
+    }//GEN-LAST:event_AdminItemActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
@@ -651,6 +667,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel ApellidoLabel1;
     private javax.swing.JMenuItem Asociacion;
     private javax.swing.JLabel CantidadLabel;
+    private javax.swing.JLabel CantidadText;
     private javax.swing.JMenuItem CasaCunaItem;
     private javax.swing.JMenuItem CasaCunaItem1;
     private javax.swing.JMenuItem CasaCunaItem2;

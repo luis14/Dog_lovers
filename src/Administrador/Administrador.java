@@ -43,8 +43,8 @@ public class Administrador {
     }  
     
     public static void RegistrarAsociacion(String nombre, String mission,
-            String cedulaJuridica, String telefono, String correo, String paginaWeb){  
-        Asociacion asociacion = new Asociacion(nombre, mission, cedulaJuridica, telefono, correo, paginaWeb);  
+            String cedulaJuridica, String telefono, String correo, String paginaWeb, Usuario usuario){  
+        Asociacion asociacion = new Asociacion(nombre, mission, cedulaJuridica, telefono, correo, paginaWeb, usuario);  
         ListaDeAsociaciones.add(asociacion);
         
     } 
@@ -79,14 +79,6 @@ public class Administrador {
     
     public static void RegistrarTamanio(String tamanio){
         ListaDeTamanios.add(tamanio);
-    }
-    
-    public static int getUsuarioActual() {
-        return UsuarioActual;
-    }
-
-    public static void setUsuarioActual(int aUsuarioActual) {
-        UsuarioActual = aUsuarioActual;
     }
 
     public static void RegistrarMascota(String text, Object selectedItem, Object selectedItem0, Object selectedItem1, String text0, String estado, String text1, Usuario get) {
@@ -123,5 +115,14 @@ public class Administrador {
     
     public static Object[] EstadosToArray(){
         return ListaDeEstados.toArray(); 
+    } 
+    
+        
+    public static int getUsuarioActual() {
+        return UsuarioActual;
+    }
+
+    public static void setUsuarioActual(int aUsuarioActual) {
+        UsuarioActual = aUsuarioActual;
     }
 }
