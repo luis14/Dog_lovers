@@ -83,7 +83,7 @@ public class Donaciones {
     }
     
     public String[] arreglo(){ 
-        String[] msg = {getUsuarioName(), getAsociacionName(), Integer.toString(monto), getFecha()}; 
+        String[] msg = {getUsuarioName(), getAsociacionName(), getFecha(), Integer.toString(monto)}; 
         return msg;
     }
 }

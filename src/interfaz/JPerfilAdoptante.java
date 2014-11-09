@@ -131,6 +131,11 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
 
         ReportarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415536063_Cancel.png"))); // NOI18N
         ReportarButton.setText("Reportar Usuario");
+        ReportarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReportarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -288,6 +293,10 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
         estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
     }//GEN-LAST:event_estrella5MouseClicked
+
+    private void ReportarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReportarButtonActionPerformed
 
     /**
      * @param args the command line arguments

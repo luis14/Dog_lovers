@@ -19,6 +19,7 @@ public class Administrador {
     public static ArrayList<String> ListaDeEstados = new ArrayList<>();  
     
     public static int UsuarioActual;
+    
     //*********************************************
     //                  REGISTROS                 *
     //*********************************************

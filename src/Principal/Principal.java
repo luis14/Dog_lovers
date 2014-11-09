@@ -33,6 +33,8 @@ public class Principal {
         Administrador.RegistrarAsociacion("Animal People", "Para el maltrato de animales", "18G0", "10003428", "animalpeople@gmail.com", "Facebook/animalpeople"); 
         Administrador.RegistrarAsociacion("BirdLife International", "Rescatar aves", "902B", "70239583", "birdLife@gmail.com", "Facebook/BirdLife");
         
+        Administrador.RegistrarDonacion(Administrador.ListaDeUsuarios.get(0), Administrador.ListaDeAsociaciones.get(0), 10000, "09/11/2014");
+        
         Administrador.RegistrarColores("Blanco");
         Administrador.RegistrarColores("Negro");
         Administrador.RegistrarColores("Cafe");  

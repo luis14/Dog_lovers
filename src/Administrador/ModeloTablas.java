@@ -250,13 +250,16 @@ public class ModeloTablas {
          String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
+         for(int i = 0; i < Administrador.ListaDeDonaciones.size() ; i++){
+             modeloDonaciones.addRow(Administrador.ListaDeDonaciones.get(i).arreglo());
+         }
          return modeloDonaciones;
      }
      
      public static String getContadorUniversal() {
-		String contadorUni = Integer.toString(contadorUniversal);
-		return contadorUni;
-	}
+	String contadorUni = Integer.toString(contadorUniversal);
+	return contadorUni;
+    }
      
 }
     

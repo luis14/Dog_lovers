@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package interfaz;
-
+import Administrador.ModeloTablas;
 /**
  *
  * @author miuyin
@@ -15,7 +15,8 @@ public class JDonaciones extends javax.swing.JFrame {
      * Creates new form Donaciones
      */
     public JDonaciones() {
-        initComponents();
+        initComponents(); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Donaciones"); 
@@ -34,10 +35,12 @@ public class JDonaciones extends javax.swing.JFrame {
         AsociacionTextField = new javax.swing.JTextField();
         PersonaTextField1 = new javax.swing.JTextField();
         AsociacionButton = new javax.swing.JButton();
-        TipoDeBusqueda = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaDonaciones = new javax.swing.JTable();
         CantidadText = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        CantidadLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,22 +69,17 @@ public class JDonaciones extends javax.swing.JFrame {
             }
         });
 
-        TipoDeBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        TablaDonaciones.setModel(ModeloTablas.tablaDeDonaciones());
+        TablaDonaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        jScrollPane1.setViewportView(TablaDonaciones);
 
         CantidadText.setText(" Cantidad :");
+
+        jButton1.setText("Monto Totales");
+
+        jButton2.setText("Todos");
+
+        CantidadLabel.setText("Cantidad");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,14 +91,19 @@ public class JDonaciones extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(TipoDeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
                         .addComponent(AsociacionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(PersonaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(AsociacionButton))
-                    .addComponent(CantidadText))
+                        .addGap(18, 18, 18)
+                        .addComponent(AsociacionButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CantidadText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CantidadLabel)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -113,11 +116,14 @@ public class JDonaciones extends javax.swing.JFrame {
                     .addComponent(AsociacionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PersonaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AsociacionButton)
-                    .addComponent(TipoDeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(CantidadText)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CantidadText)
+                    .addComponent(CantidadLabel))
                 .addContainerGap())
         );
 
@@ -175,11 +181,13 @@ public class JDonaciones extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsociacionButton;
     private javax.swing.JTextField AsociacionTextField;
+    private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
     private javax.swing.JTextField PersonaTextField1;
-    private javax.swing.JComboBox TipoDeBusqueda;
+    private javax.swing.JTable TablaDonaciones;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
