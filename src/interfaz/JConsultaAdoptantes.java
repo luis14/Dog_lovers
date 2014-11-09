@@ -49,6 +49,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
 
         CalificacionCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0","1", "2", "3", "4", "5" }));
 
+        BuscarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         BuscarButton.setText("Buscar");
         BuscarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +66,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         CalificacionLabel.setText("Calificacion");
         CalificacionLabel.setToolTipText("");
 
+        todosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415536799_list-16.png"))); // NOI18N
         todosButton.setText("Todos");
         todosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +101,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(CalificacionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)

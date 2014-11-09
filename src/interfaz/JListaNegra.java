@@ -51,6 +51,7 @@ public class JListaNegra extends javax.swing.JFrame {
             }
         });
 
+        ActualizarFiltroButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         ActualizarFiltroButton.setText("Buscar");
         ActualizarFiltroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +63,7 @@ public class JListaNegra extends javax.swing.JFrame {
         TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane1.setViewportView(TablaListaNegra);
 
+        TodosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415536799_list-16.png"))); // NOI18N
         TodosButton.setText("Todos");
         TodosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

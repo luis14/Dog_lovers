@@ -129,6 +129,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         ComentarioArea.setRows(5);
         jScrollPane1.setViewportView(ComentarioArea);
 
+        ReportarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415536063_Cancel.png"))); // NOI18N
         ReportarButton.setText("Reportar Usuario");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,7 +173,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(122, 122, 122)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(CalificarLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(estrella1)
@@ -183,13 +184,10 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(estrella4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(estrella5)
-                                        .addContainerGap(120, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(ComentarioLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ReportarButton, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(estrella5))
+                                    .addComponent(ComentarioLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ReportarButton, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,7 +238,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                             .addComponent(EspacioLabel)
                             .addComponent(EspacioLabel1)
                             .addComponent(ReportarButton))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
