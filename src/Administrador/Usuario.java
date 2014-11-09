@@ -3,7 +3,7 @@ package Administrador;
 import java.util.ArrayList;
 
 public class Usuario {
-    
+
     private String Nombre;
     private String Apellido;
     private String Username;
@@ -18,6 +18,7 @@ public class Usuario {
     private boolean asociacion;
     private static int CasaCunaActual;
     private static int AdoptanteActual;
+    private static int AsociacionActual;
     private static int TipoActual;
     private static int RazaActual;
     
@@ -56,6 +57,14 @@ public class Usuario {
         AdoptanteActual = aAdoptanteActual;
     }
 
+    public int getAsociacionActual() {
+        return AsociacionActual;
+    }
+    
+    public void setAsociacionActual(int aAsociacionActual) {
+        AsociacionActual = aAsociacionActual;
+    }
+    
     public int getTipoActual() {
         return TipoActual;
     }

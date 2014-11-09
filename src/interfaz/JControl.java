@@ -71,6 +71,7 @@ public class JControl extends javax.swing.JFrame {
         MascotasItem = new javax.swing.JMenuItem();
         CasaCunaItem1 = new javax.swing.JMenuItem();
         AdoptanteItem1 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         TiposRazasItem = new javax.swing.JMenuItem();
         TiposMascotasItem = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
@@ -387,6 +388,14 @@ public class JControl extends javax.swing.JFrame {
         });
         Editar.add(AdoptanteItem1);
 
+        jMenuItem1.setText("Asociación");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Editar.add(jMenuItem1);
+
         TiposRazasItem.setText("Tipos de Razas");
         Editar.add(TiposRazasItem);
 
@@ -542,8 +551,10 @@ public class JControl extends javax.swing.JFrame {
 
     private void AsociacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsociacionActionPerformed
         if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion())){
-            JAsociacion asiciacion = new JAsociacion();
+            JAsociacion asiciacion = new JAsociacion(false);
             asiciacion.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya estas registrado como Asociación");
         }
     }//GEN-LAST:event_AsociacionActionPerformed
 
@@ -597,6 +608,15 @@ public class JControl extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AdoptanteItem1ActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion())){
+            JAsociacion asiciacion = new JAsociacion(true);
+            asiciacion.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No estas registrado como Asociación");
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
@@ -641,6 +661,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel UsernameLabel1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

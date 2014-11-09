@@ -5,14 +5,26 @@ import javax.swing.ImageIcon;
 
 public class JAsociacion extends javax.swing.JFrame {
 
-    public JAsociacion() {
+    public JAsociacion(boolean editar) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Asociación");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+        if(editar){
+            DatosEditar();
+        }
     }
 
+    private void DatosEditar(){
+        NombreText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getNombre());
+        MissionText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getMission());
+        CedulaText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getCedulaJuridica());
+        TelefonoText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getTelefono());
+        CorreoText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getCorreo());
+        PaginaText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getPaginaWeb());   
+    }
+    
     private boolean VerificaDatos(){
         return !("".equals(NombreText.getText()) || "".equals(CedulaText.getText()) ||
                 "".equals(CorreoText.getText()) || "".equals(MissionText.getText()) ||
@@ -61,7 +73,7 @@ public class JAsociacion extends javax.swing.JFrame {
 
         jLabel5.setText("Correo de la Asociación :");
 
-        jLabel6.setText("Página wed de la Asociación");
+        jLabel6.setText("Página web de la Asociación");
 
         CancelarButton.setText("Cancelar");
         CancelarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,12 +114,14 @@ public class JAsociacion extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(PaginaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6)))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(PaginaText, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6))))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AsociacionLabel)
@@ -129,8 +143,8 @@ public class JAsociacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(PaginaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
@@ -167,13 +181,28 @@ public class JAsociacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        if(VerificaDatos()){
-            Administrador.RegistrarAsociacion(NombreText.getText(), MissionText.getText(),
-                    CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText());
-            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacion(true);
-            dispose();
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
+            if(VerificaDatos()){
+                Administrador.RegistrarAsociacion(NombreText.getText(), MissionText.getText(),
+                        CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacion(true);
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacionActual(Administrador.ListaDeAsociaciones.size()-1);
+                dispose();
+            }else{
+                jLabel7.setVisible(true);
+            }
         }else{
-            jLabel7.setVisible(true);
+            if(VerificaDatos()){
+                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setNombre(NombreText.getText());
+                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setMission(MissionText.getText());
+                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setCedulaJuridica(CedulaText.getText());
+                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setTelefono(TelefonoText.getText());
+                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setCorreo(CorreoText.getText());
+                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setPaginaWeb(PaginaText.getText());
+                dispose();
+            }else{
+                jLabel7.setVisible(true);
+            }
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
 
