@@ -3,6 +3,7 @@ package Administrador;
 
 import java.util.Date; 
 import java.util.ArrayList;
+import javax.swing.Icon;
 
 public class Mascota { 
     private String nombre;  
@@ -17,6 +18,7 @@ public class Mascota {
     private String tamanio; 
     private Usuario usuario;  
     private String Descripcion;
+    private Icon imagen;
     private int id;  
     private static int cantidadDeMascotas= 0; 
 
@@ -33,6 +35,7 @@ public class Mascota {
         this.raza = raza;
         this.montoDeRecompensa = Recompensa;
         this.Descripcion = Descripcion;
+        this.imagen = null;
         id = ++cantidadDeMascotas; 
     } 
     
@@ -148,6 +151,13 @@ public class Mascota {
 
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
+    }
+    
+    public Icon getImagen() {
+	return imagen;
+    }
+    public void setImagen(Icon Image) {
+	imagen = Image;
     }
     
 }
