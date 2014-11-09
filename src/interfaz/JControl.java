@@ -550,7 +550,7 @@ public class JControl extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MascotaItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotaItemActionPerformed
-        JRegistroMascotas mascota = new JRegistroMascotas();
+        JRegistroMascotas mascota = new JRegistroMascotas(-1);
         mascota.setVisible(true);
     }//GEN-LAST:event_MascotaItemActionPerformed
 
@@ -694,7 +694,7 @@ public class JControl extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int fila = TablaInicio.getSelectedRow();  
         String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
-        JRegistroMascotas registroMascotas = new JRegistroMascotas(); //Integer.parseInt(idUsuario)-1
+        JRegistroMascotas registroMascotas = new JRegistroMascotas(Integer.parseInt(idUsuario)-1);
         registroMascotas.setVisible(true); 
     }//GEN-LAST:event_jButton1ActionPerformed
 

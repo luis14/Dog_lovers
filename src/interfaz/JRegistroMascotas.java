@@ -4,19 +4,45 @@ import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
 public class JRegistroMascotas extends javax.swing.JFrame {
-    
-    private int tipo = 0;
 
-    public JRegistroMascotas() {
+    private int MascotaEscogida;
+    
+    public JRegistroMascotas(int MascotaEscogida){
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Registro de Mascotas");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
     }
+    
+    private void DatosEditar(int MascotaEscogida){
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual) == Administrador.ListaDeMascotas.get(MascotaEscogida).getUsuario()){
+            TipoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getTipo());
+            RazaCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getRaza());
+            TipoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getTipo());
+            NombreText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getNombre());
+            if("".equals(Administrador.ListaDeMascotas.get(MascotaEscogida).getChip())){
+                jRadioButton2.setSelected(true);
+            }else{
+                jRadioButton1.setSelected(true);
+                ChipText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getChip());
+            }
+            ColorCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getColor());
+            TamañoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getTamanio());
+            if("Encontrado".equals(Administrador.ListaDeMascotas.get(MascotaEscogida).getEstado())){
+                PerdidoRadio.setSelected(true);
+            }else{
+                EncontradoRadio.setSelected(true);
+            }
+            FechaText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getFechaDeEncontradoPerdido());
+            RecompensaText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getMontoDeRecompensa());
+            //DescripcionText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).);
+            this.MascotaEscogida = MascotaEscogida;
+        }
+    }
  
     private boolean VerificaMascota(){
-        if("".equals(NombreText.getText()) || "".equals(LugarText.getText()) ||
+        if("".equals(NombreText.getText()) ||
            "".equals(FechaText.getText()) || "".equals(DescripcionText.getText())){
             return false;
         }
@@ -57,14 +83,10 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         PerdidoRadio = new javax.swing.JRadioButton();
         EncontradoRadio = new javax.swing.JRadioButton();
-        jLabel9 = new javax.swing.JLabel();
-        LugarText = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         FechaText = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         RecompensaText = new javax.swing.JTextField();
-        ColonesRadio = new javax.swing.JRadioButton();
-        DolaresRadio = new javax.swing.JRadioButton();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DescripcionText = new javax.swing.JTextArea();
@@ -127,29 +149,11 @@ public class JRegistroMascotas extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setText("Lugar:");
-
-        LugarText.setText("Lugar donde fue perdido o encontrado");
-
         jLabel10.setText("Fecha:");
 
         FechaText.setText("Fecha en la que fue perdido o encontrado");
 
         jLabel11.setText("Recompensa:");
-
-        ColonesRadio.setText("Colones");
-        ColonesRadio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ColonesRadioActionPerformed(evt);
-            }
-        });
-
-        DolaresRadio.setText("Dolares");
-        DolaresRadio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DolaresRadioActionPerformed(evt);
-            }
-        });
 
         jLabel12.setText("Descripción:");
 
@@ -227,7 +231,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jRadioButton2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ChipText, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                        .addComponent(ChipText)
                                         .addGap(35, 35, 35))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,31 +252,24 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel11)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel12))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(ColonesRadio)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(DolaresRadio))
-                                            .addComponent(RecompensaText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(FechaText)
-                                            .addComponent(LugarText, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(FechaText, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(15, 15, 15))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(PerdidoRadio)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(EncontradoRadio))))
+                                                .addComponent(EncontradoRadio))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(RecompensaText, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))))
                                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(NombreLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(TipoLabel)
                                         .addGap(22, 22, 22)
@@ -280,7 +277,11 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(RazaLabel)
                                         .addGap(18, 18, 18)
-                                        .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(NombreLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(10, 10, 10))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -304,17 +305,32 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(RazaLabel)
-                            .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(RazaCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FechaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
                         .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NombreLabel)
-                            .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ChipLabel)
-                            .addComponent(ChipText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)
+                            .addComponent(RecompensaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(PerdidoRadio)
+                        .addComponent(EncontradoRadio)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ChipLabel)
+                                    .addComponent(ChipText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jRadioButton1)
+                                    .addComponent(jRadioButton2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel12)))
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ColorLabel)
@@ -331,30 +347,8 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(CargarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(PerdidoRadio)
-                            .addComponent(EncontradoRadio))
-                        .addGap(7, 7, 7)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(LugarText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(FechaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(RecompensaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ColonesRadio)
-                            .addComponent(DolaresRadio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)))
                 .addGap(1, 1, 1)
@@ -390,14 +384,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         PerdidoRadio.setSelected(false);
     }//GEN-LAST:event_EncontradoRadioActionPerformed
 
-    private void ColonesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColonesRadioActionPerformed
-        DolaresRadio.setSelected(false);
-    }//GEN-LAST:event_ColonesRadioActionPerformed
-
-    private void DolaresRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DolaresRadioActionPerformed
-        ColonesRadio.setSelected(false);
-    }//GEN-LAST:event_DolaresRadioActionPerformed
-
     private void ChipTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChipTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ChipTextActionPerformed
@@ -423,16 +409,13 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private javax.swing.JButton CargarButton;
     private javax.swing.JLabel ChipLabel;
     private javax.swing.JTextField ChipText;
-    private javax.swing.JRadioButton ColonesRadio;
     private javax.swing.JComboBox ColorCombo;
     private javax.swing.JLabel ColorLabel;
     private javax.swing.JTextArea DescripcionText;
-    private javax.swing.JRadioButton DolaresRadio;
     private javax.swing.JLabel EmailLabel;
     private javax.swing.JRadioButton EncontradoRadio;
     private javax.swing.JTextField FechaText;
     private javax.swing.JLabel ImagenLabel;
-    private javax.swing.JTextField LugarText;
     private javax.swing.JLabel NombreLabel;
     private javax.swing.JTextField NombreText;
     private javax.swing.JRadioButton PerdidoRadio;
@@ -450,7 +433,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
