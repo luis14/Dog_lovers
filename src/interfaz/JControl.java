@@ -3,7 +3,8 @@ package interfaz;
 import Administrador.Administrador;
 import Administrador.ModeloTablas;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane; 
+import interfaz.JMatch;
 
 public class JControl extends javax.swing.JFrame {
 
@@ -260,6 +261,11 @@ public class JControl extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
         jButton2.setText("Match");
         jButton2.setEnabled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -686,8 +692,19 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        int fila = TablaInicio.getSelectedRow();  
+        String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
+        JRegistroMascotas registroMascotas = new JRegistroMascotas(); //Integer.parseInt(idUsuario)-1
+        registroMascotas.setVisible(true); 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int fila = TablaInicio.getSelectedRow();  
+        String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
+        JMatch match = new JMatch(Integer.parseInt(idUsuario)-1); 
+        match.setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;

@@ -15,12 +15,14 @@ public class JMatch extends javax.swing.JFrame {
     /**
      * Creates new form JMatch
      */
-    public JMatch() {
+    public JMatch(int idMascota) {
         initComponents();
         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Match");
+        setTitle("Match"); 
+        TablaMatch.setModel(ModeloTablas.tablaMatch(idMascota)); 
+        TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }
 
     /**
