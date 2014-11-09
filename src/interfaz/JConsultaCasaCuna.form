@@ -27,7 +27,11 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="CantidadText" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="CantidadText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="CantidadLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="jScrollPane1" alignment="0" min="-2" pref="779" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -85,7 +89,10 @@
               <EmptySpace pref="10" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="382" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="CantidadText" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="CantidadText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CantidadLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -174,7 +181,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Tamanio">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tamanio"/>
+        <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
@@ -195,6 +202,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="todosButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="CantidadLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cantidad"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

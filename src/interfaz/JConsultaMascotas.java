@@ -18,7 +18,7 @@ public class JConsultaMascotas extends javax.swing.JFrame {
      */
     public JConsultaMascotas() {
         initComponents();
-        initComponents();
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Consulta De Mascotas");
@@ -47,9 +47,10 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         RazaLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaConsultaMascotas = new javax.swing.JTable();
-        cantidadMascotas = new javax.swing.JLabel();
+        CantidadText = new javax.swing.JLabel();
         chipTextField = new javax.swing.JTextField();
         todosButton = new javax.swing.JButton();
+        CantidadLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -92,7 +93,7 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         TipoLabel.setText("Tipo:");
         TipoLabel.setToolTipText("");
 
-        Tamanio.setText("Tamanio");
+        Tamanio.setText("Tamaño");
         Tamanio.setToolTipText("");
 
         RazaLabel.setText("Raza:");
@@ -101,7 +102,7 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane1.setViewportView(TablaConsultaMascotas);
 
-        cantidadMascotas.setText("Cantidad: ");
+        CantidadText.setText("Cantidad: ");
 
         chipTextField.setText("Chip");
 
@@ -112,6 +113,8 @@ public class JConsultaMascotas extends javax.swing.JFrame {
             }
         });
 
+        CantidadLabel.setText("Cantidad");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,7 +122,10 @@ public class JConsultaMascotas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cantidadMascotas)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CantidadText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CantidadLabel))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel1)
                         .addGroup(layout.createSequentialGroup()
@@ -177,7 +183,9 @@ public class JConsultaMascotas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cantidadMascotas)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CantidadText)
+                    .addComponent(CantidadLabel))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -242,6 +250,8 @@ public class JConsultaMascotas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarButton;
+    private javax.swing.JLabel CantidadLabel;
+    private javax.swing.JLabel CantidadText;
     private javax.swing.JComboBox ColorCombo;
     private javax.swing.JComboBox EstadoCombo;
     private javax.swing.JComboBox RazaCombo;
@@ -251,7 +261,6 @@ public class JConsultaMascotas extends javax.swing.JFrame {
     private javax.swing.JComboBox TamanioCombo;
     private javax.swing.JComboBox TipoCombo;
     private javax.swing.JLabel TipoLabel;
-    private javax.swing.JLabel cantidadMascotas;
     private javax.swing.JTextField chipTextField;
     private javax.swing.JLabel colorLabel;
     private javax.swing.JLabel estadoLabel;

@@ -26,7 +26,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="cantidadMascotas" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="CantidadText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="CantidadLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
@@ -98,7 +102,10 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="cantidadMascotas" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="CantidadText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CantidadLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -182,7 +189,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Tamanio">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tamanio"/>
+        <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
@@ -210,7 +217,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="cantidadMascotas">
+    <Component class="javax.swing.JLabel" name="CantidadText">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cantidad: "/>
       </Properties>
@@ -227,6 +234,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="todosButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="CantidadLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cantidad"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

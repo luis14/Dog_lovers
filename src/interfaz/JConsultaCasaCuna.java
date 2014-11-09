@@ -19,6 +19,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
      */
     public JConsultaCasaCuna() {
         initComponents(); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Lista Negra");
@@ -47,6 +48,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         RazaLabel = new javax.swing.JLabel();
         donacionLabel = new javax.swing.JLabel();
         todosButton = new javax.swing.JButton();
+        CantidadLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,7 +89,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         TipoLabel.setText("Tipo:");
         TipoLabel.setToolTipText("");
 
-        Tamanio.setText("Tamanio");
+        Tamanio.setText("Tamaño");
         Tamanio.setToolTipText("");
 
         RazaLabel.setText("Raza:");
@@ -101,6 +103,8 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
             }
         });
 
+        CantidadLabel.setText("Cantidad");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,7 +113,10 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(CantidadText)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CantidadText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CantidadLabel))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +163,9 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(CantidadText)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CantidadText)
+                    .addComponent(CantidadLabel))
                 .addGap(27, 27, 27))
         );
 
@@ -225,6 +234,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarButton;
+    private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
     private javax.swing.JComboBox DonacionDeAlimentoCombo;
     private javax.swing.JComboBox RazaCombo;

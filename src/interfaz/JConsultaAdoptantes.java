@@ -17,6 +17,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
      */
     public JConsultaAdoptantes() {
         initComponents(); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Consulta De Adoptantes");
@@ -39,6 +40,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         CantidadText = new javax.swing.JLabel();
         CalificacionLabel = new javax.swing.JLabel();
         todosButton = new javax.swing.JButton();
+        CantidadLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -70,6 +72,8 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
             }
         });
 
+        CantidadLabel.setText("Cantidad");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,7 +81,10 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CantidadText)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CantidadText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CantidadLabel))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 766, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(CalificacionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -104,7 +111,9 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(CantidadText)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CantidadText)
+                    .addComponent(CantidadLabel))
                 .addGap(31, 31, 31))
         );
 
@@ -162,6 +171,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
     private javax.swing.JButton BuscarButton;
     private javax.swing.JComboBox CalificacionCombo;
     private javax.swing.JLabel CalificacionLabel;
+    private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

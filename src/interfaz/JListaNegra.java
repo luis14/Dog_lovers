@@ -7,7 +7,8 @@ import Administrador.ModeloTablas;
 public class JListaNegra extends javax.swing.JFrame {
 
     public JListaNegra() {
-        initComponents();
+        initComponents(); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Lista Negra");
@@ -26,6 +27,7 @@ public class JListaNegra extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaListaNegra = new javax.swing.JTable();
         TodosButton = new javax.swing.JButton();
+        CantidadLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -42,7 +44,7 @@ public class JListaNegra extends javax.swing.JFrame {
             }
         });
 
-        FiltroTextField.setText("Filtro");
+        FiltroTextField.setText("Nombre");
         FiltroTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FiltroTextFieldActionPerformed(evt);
@@ -67,6 +69,8 @@ public class JListaNegra extends javax.swing.JFrame {
             }
         });
 
+        CantidadLabel.setText("Cantidad");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,7 +80,9 @@ public class JListaNegra extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(534, 534, 534)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CantidadLabel)
+                        .addGap(490, 490, 490)
                         .addComponent(jButton2))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -89,7 +95,7 @@ public class JListaNegra extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(TodosButton))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +112,8 @@ public class JListaNegra extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(CantidadLabel))
                 .addGap(44, 44, 44))
         );
 
@@ -135,6 +142,7 @@ public class JListaNegra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarFiltroButton;
+    private javax.swing.JLabel CantidadLabel;
     private javax.swing.JTextField FiltroTextField;
     private javax.swing.JTable TablaListaNegra;
     private javax.swing.JButton TodosButton;

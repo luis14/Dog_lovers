@@ -9,17 +9,20 @@ public class ModeloTablas {
     private static DefaultTableModel modeloCasaCuna; 
     private static DefaultTableModel modeloAdoptantes;  
     private static DefaultTableModel modeloUsuarios;  
-    private static DefaultTableModel modeloDonaciones;
+    private static DefaultTableModel modeloDonaciones; 
+    private static int contadorUniversal; 
     
     
     public static DefaultTableModel tablaMascotas(){ 
         String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
-        modeloMascotas = new DefaultTableModel(informacion, titulos);
+        modeloMascotas = new DefaultTableModel(informacion, titulos); 
+        int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){
-            modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
+            modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo()); 
+            contadorParaInterfaz++;
         } 
-        
+        contadorUniversal = contadorParaInterfaz;
         return modeloMascotas;
     }  
     
@@ -27,11 +30,13 @@ public class ModeloTablas {
         String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);
+        int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
             if(Administrador.ListaDeMascotas.get(i).getUsuario() == usuario && Administrador.ListaDeMascotas.get(i).getEstado().equals(estado))
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
+                    contadorParaInterfaz++;
         } 
-        
+        contadorUniversal = contadorParaInterfaz;
         return modeloMascotas;
     } 
       
@@ -39,7 +44,7 @@ public class ModeloTablas {
         String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {}; 
         modeloMascotas = new DefaultTableModel(informacion, titulos);  
-        //ArrayList<Mascota> tipodemascota = Administrador.ListaDeMascotas;
+        int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){   
             System.out.print("Contador es: "); 
             System.out.print(i);
@@ -47,7 +52,7 @@ public class ModeloTablas {
             System.out.println("****");
             int contador = 0;
             if(Administrador.ListaDeMascotas.get(i).getEstado().equals(Estado)){
-                System.out.println("Estado es igual");
+                System.out.println("Estado es igual"); 
                 contador++; 
             } 
             if(Administrador.ListaDeMascotas.get(i).getColor().equals(Color) || Administrador.ListaDeMascotas.get(i).getColor().equals("Cualquiera") ){
@@ -74,16 +79,19 @@ public class ModeloTablas {
             System.out.println("---------------");
             if(contador == 5){
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
+                contadorParaInterfaz++;
             }
         }  
         
+        contadorUniversal = contadorParaInterfaz;
         return modeloMascotas;
         
     }  
        
        public static DefaultTableModel tablaMatch(int id){ 
         String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
-        String informacion[][] = {}; 
+        String informacion[][] = {};  
+        int contadorParaInterfaz = 0;
         modeloMascotas = new DefaultTableModel(informacion, titulos); 
         String ColorDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getColor(); 
         String ChipDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getChip(); 
@@ -113,21 +121,25 @@ public class ModeloTablas {
                contador++; 
            } 
            if(contador >=3 && encontrado == true){ 
-              modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());  
+              modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo()); 
+              contadorParaInterfaz++;
            }
             
         } 
-        
+        contadorUniversal = contadorParaInterfaz;
         return modeloMascotas;
     } 
     
     public static DefaultTableModel tablaCasaCuna(){  
         String titulos[] = {"ID", "Tipo", "Raza", "Tamaño", "NecesitaAlimentacion", "Telefono", "Requerimientos"}; 
         String informacion[][] = {}; 
+        int contadorParaInterfaz = 0;
         modeloCasaCuna= new DefaultTableModel(informacion, titulos);
         for(int i = 0; i < Administrador.ListaDeCasaCuna.size(); i++){
             modeloCasaCuna.addRow(Administrador.ListaDeCasaCuna.get(i).arreglo());
+            contadorParaInterfaz++;
         }
+        contadorUniversal = contadorParaInterfaz;
         return modeloCasaCuna;
     } 
     
@@ -135,6 +147,7 @@ public class ModeloTablas {
         String titulos[] = {"ID","Tipo", "Raza", "Tamaño", "NecesitaAlimentacion", "Telefono", "Requerimientos"};  
         String informacion[][] = {}; 
         modeloCasaCuna = new DefaultTableModel(informacion, titulos);  
+        int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeCasaCuna.size(); i++){  
             int contador = 0; 
             if(Administrador.ListaDeCasaCuna.get(i).getTipo().equals(Tipo) || Administrador.ListaDeCasaCuna.get(i).getTipo().equals("Cualquiera") ){
@@ -151,19 +164,24 @@ public class ModeloTablas {
             }
             if(contador == 4){
                 modeloCasaCuna.addRow(Administrador.ListaDeCasaCuna.get(i).arreglo());
+                contadorParaInterfaz++;
             }
             
-        } 
+        }  
+        contadorUniversal = contadorParaInterfaz;
         return modeloCasaCuna;
     } 
     
     public static DefaultTableModel tablaAdoptantes(){
         String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
-        String informacion[][] = {}; 
+        String informacion[][] = {};  
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
+        int contadorParaInterfaz = 0; 
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){
             modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo());
-        }
+            contadorParaInterfaz++; 
+        } 
+        contadorUniversal = contadorParaInterfaz;
         return modeloAdoptantes; 
     } 
     
@@ -172,33 +190,42 @@ public class ModeloTablas {
         String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
         String informacion[][] = {}; 
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
+        int contadorParaInterfaz = 0; 
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
             if(Administrador.ListaDeAdoptantes.get(i).getStringCalificacion().equals(Calificacion)){
                 modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
+                contadorParaInterfaz++;
             }     
         }
+        contadorUniversal = contadorParaInterfaz;
         return modeloAdoptantes; 
     }  
      
      public static DefaultTableModel tablaUsuarios(){ 
          String titulos[] = {"ID","Nombre", "Apellido", "Usuario", "Correo", "Telefono", "Si es Admin"}; 
-         String informacion[][] = {}; 
+         String informacion[][] = {};  
+         modeloUsuarios= new DefaultTableModel(informacion, titulos);
+         int contadorParaInterfaz = 0; 
          for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){ 
-                modeloUsuarios.addRow(Administrador.ListaDeUsuarios.get(i).arreglo());    
+                modeloUsuarios.addRow(Administrador.ListaDeUsuarios.get(i).arreglo()); 
+                contadorParaInterfaz++;
         }
-        return modeloUsuarios; 
-         
+        contadorUniversal = contadorParaInterfaz;
+        return modeloUsuarios;    
      }
      
      public static DefaultTableModel tablaListaNegra(){
         String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"}; 
         String informacion[][] = {}; 
-        modeloAdoptantes= new DefaultTableModel(informacion, titulos);
+        modeloAdoptantes= new DefaultTableModel(informacion, titulos); 
+        int contadorParaInterfaz = 0; 
         for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){ 
             if(Administrador.ListaDeAdoptantes.get(i).getReportado() == true){
-                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
+                modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo());
+                contadorParaInterfaz++;
             }     
         }
+        contadorUniversal = contadorParaInterfaz;
         return modeloAdoptantes; 
     }   
         
@@ -206,12 +233,15 @@ public class ModeloTablas {
      public static DefaultTableModel TablafiltroListaNegra(String stringBuscando){ 
 	String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"};  
 	String informacion[][] = {}; 
-        modeloAdoptantes = new DefaultTableModel(informacion, titulos);  
+        modeloAdoptantes = new DefaultTableModel(informacion, titulos); 
+        int contadorParaInterfaz = 0; 
 	for(int i = 0; i < Administrador.ListaDeAdoptantes.size(); i++){
             if(Administrador.ListaDeAdoptantes.get(i).getNombre().toLowerCase().equals(stringBuscando.toLowerCase())){
                 modeloAdoptantes.addRow(Administrador.ListaDeAdoptantes.get(i).arreglo()); 
+                contadorParaInterfaz++;
             }	
         } 
+        contadorUniversal = contadorParaInterfaz;
         return modeloAdoptantes; 
      }
     
@@ -222,6 +252,11 @@ public class ModeloTablas {
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
          return modeloDonaciones;
      }
+     
+     public static String getContadorUniversal() {
+		String contadorUni = Integer.toString(contadorUniversal);
+		return contadorUni;
+	}
      
 }
     

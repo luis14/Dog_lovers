@@ -46,10 +46,12 @@ public class Principal {
         Administrador.RegistrarEstados("Identificado");  
         Administrador.RegistrarEstados("En Adopción"); 
         Administrador.RegistrarEstados("Adoptado");  
+        Administrador.RegistrarEstados("Recuperado");  
         
         Administrador.RegistrarTamanio("Pequeño");
-        Administrador.RegistrarEstados("Mediano"); 
-        Administrador.RegistrarEstados("Grande"); 
+        Administrador.RegistrarTamanio("Mediano"); 
+        Administrador.RegistrarTamanio("Grande");  
+        Administrador.RegistrarTamanio("Cualquiera");
         
         Administrador.RegistrarTipoMascotas("Perro");
         Administrador.RegistrarTipoMascotas("Gato");  
