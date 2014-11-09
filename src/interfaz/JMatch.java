@@ -40,10 +40,10 @@ public class JMatch extends javax.swing.JFrame {
         CantidadText = new javax.swing.JLabel();
         CantidadLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Consulta De Mascotas");
+        jLabel1.setText("Match");
 
         TablaMatch.setModel(ModeloTablas.tablaMatch(0));
         jScrollPane1.setViewportView(TablaMatch);
