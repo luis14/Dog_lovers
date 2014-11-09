@@ -13,7 +13,6 @@ public class JCasaCuna extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
         if(editar){
             DatosEditar();
-            System.out.println("Si");
         }
     }
 
@@ -247,23 +246,42 @@ public class JCasaCuna extends javax.swing.JFrame {
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
         boolean donacion;
-        if(DanacionSiRadioButton.isSelected()){
-            donacion = true;
+        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna())){
+            if(DanacionSiRadioButton.isSelected()){
+                donacion = true;
+            }else{
+                donacion = false;
+            }
+            if(VerificaDatos()){
+                Administrador.RegistrarCasaCuna((String)TipoCombo.getSelectedItem(), (String)RazaCombo.getSelectedItem(),
+                        donacion, (String)TamañoCombo.getSelectedItem(), RequerimientosText.getText(), 
+                        Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
+                        Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCuna(true);
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCunaActual(Administrador.ListaDeCasaCuna.size() - 1);
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTipoActual(TipoCombo.getSelectedIndex());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setRazaActual(RazaCombo.getSelectedIndex());
+                dispose();
+            }else{
+                ErrorLabel.setVisible(true);
+            }
         }else{
-            donacion = false;
-        }
-        if(VerificaDatos()){
-            Administrador.RegistrarCasaCuna((String)TipoCombo.getSelectedItem(), (String)RazaCombo.getSelectedItem(),
-                    donacion, (String)TamañoCombo.getSelectedItem(), RequerimientosText.getText(), 
-                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
-                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
-            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCuna(true);
-            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCunaActual(Administrador.ListaDeCasaCuna.size() - 1);
-            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTipoActual(TipoCombo.getSelectedIndex());
-            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setRazaActual(RazaCombo.getSelectedIndex());
-            dispose();
-        }else{
-            ErrorLabel.setVisible(true);
+            if(VerificaDatos()){
+                if(DanacionSiRadioButton.isSelected()){
+                    donacion = true;
+                }else{
+                    donacion = false;
+                }
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTipoActual(TipoCombo.getSelectedIndex());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setRazaActual(RazaCombo.getSelectedIndex());
+                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setTamanio( (String)TamañoCombo.getSelectedItem());
+                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setNecesitaAlimentacion(donacion);
+                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setTipo((String)TipoCombo.getSelectedItem());
+                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setRaza((String)RazaCombo.getSelectedItem());
+                dispose();
+            }else{
+                ErrorLabel.setVisible(true);
+            }
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
 

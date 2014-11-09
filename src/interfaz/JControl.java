@@ -512,7 +512,7 @@ public class JControl extends javax.swing.JFrame {
             JCasaCuna casacuna = new JCasaCuna(false);
             casacuna.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null,"Ya estas registrado/n como Casa Cuna");
+            JOptionPane.showMessageDialog(null,"Ya estas registrado como Casa Cuna");
         }
     }//GEN-LAST:event_CasaCunaItemActionPerformed
 
@@ -528,10 +528,10 @@ public class JControl extends javax.swing.JFrame {
 
     private void AdoptanteItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItemActionPerformed
         if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante())){
-            JAdoptante adoptante = new JAdoptante();
+            JAdoptante adoptante = new JAdoptante(false);
             adoptante.setVisible(true);
         }else{
-            
+            JOptionPane.showMessageDialog(null,"Ya estas registrado como Adoptante");
         }
     }//GEN-LAST:event_AdoptanteItemActionPerformed
 
@@ -584,12 +584,17 @@ public class JControl extends javax.swing.JFrame {
         JCasaCuna casaCuna = new JCasaCuna(true);
         casaCuna.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null,"No estas registrado/n como Casa Cuna");
+            JOptionPane.showMessageDialog(null,"No estas registrado como Casa Cuna");
         }
     }//GEN-LAST:event_CasaCunaItem1ActionPerformed
 
     private void AdoptanteItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItem1ActionPerformed
-        // TODO add your handling code here:
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante()){
+            JAdoptante adoptante = new JAdoptante(true);
+            adoptante.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No estas registrado como Adoptante");
+        }
     }//GEN-LAST:event_AdoptanteItem1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,12 +5,20 @@ import javax.swing.ImageIcon;
 
 public class JAdoptante extends javax.swing.JFrame {
 
-    public JAdoptante() {
+    public JAdoptante(boolean editar) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Adoptante");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+        if(editar){
+            DatosEditar();
+        }
+    }
+    
+    private void DatosEditar(){
+        jTextArea1.setText(Administrador.ListaDeAdoptantes.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAdoptanteActual()).getLugarDeResidencia());
+        jTextArea2.setText(Administrador.ListaDeAdoptantes.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAdoptanteActual()).getCantidadDeEsapcio());
     }
     
     private boolean VerificaDatos(){
@@ -132,16 +140,27 @@ public class JAdoptante extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelarLabelActionPerformed
 
     private void AceptarLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarLabelActionPerformed
-        if(VerificaDatos()){
-            Administrador.RegistrarAdoptante(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getNombre(),
-                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo(),
-                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono(),
-                    jTextArea1.getText(), jTextArea2.getText(), false,
-                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
-            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAdoptante(true);
-            dispose();
+        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante())){
+            if(VerificaDatos()){
+                Administrador.RegistrarAdoptante(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getNombre(),
+                        Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo(),
+                        Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono(),
+                        jTextArea1.getText(), jTextArea2.getText(), false,
+                        Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAdoptante(true);
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAdoptanteActual(Administrador.ListaDeAdoptantes.size()-1);
+                dispose();
+            }else{
+                jLabel3.setVisible(true);
+            }
         }else{
-            jLabel3.setVisible(true);
+            if(VerificaDatos()){
+                Administrador.ListaDeAdoptantes.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAdoptanteActual()).setLugarDeResidencia(jTextArea1.getText());
+                Administrador.ListaDeAdoptantes.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAdoptanteActual()).setCantidadDeEsapcio(jTextArea2.getText());
+                dispose();
+            }else{
+                jLabel3.setVisible(true);
+            }
         }
     }//GEN-LAST:event_AceptarLabelActionPerformed
 
