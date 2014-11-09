@@ -44,6 +44,7 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         });
 
         tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
+        tablaAdoptantes.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane1.setViewportView(tablaAdoptantes);
 

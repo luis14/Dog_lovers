@@ -50,6 +50,7 @@ public class JListaNegra extends javax.swing.JFrame {
         });
 
         TablaListaNegra.setModel(ModeloTablas.tablaListaNegra());
+        TablaListaNegra.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane1.setViewportView(TablaListaNegra);
 

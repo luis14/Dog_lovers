@@ -115,7 +115,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaListaNegra.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>
         </Component>
       </SubComponents>

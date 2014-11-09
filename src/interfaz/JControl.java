@@ -102,49 +102,38 @@ public class JControl extends javax.swing.JFrame {
 
         PerfilLabel.setBackground(new java.awt.Color(0, 0, 0));
         PerfilLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        PerfilLabel.setForeground(new java.awt.Color(0, 0, 0));
         PerfilLabel.setText("Perfil de Usuario");
 
         FotoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414706716_user_male2-128.png"))); // NOI18N
 
         NombreLabel.setBackground(new java.awt.Color(0, 0, 0));
-        NombreLabel.setForeground(new java.awt.Color(0, 0, 0));
         NombreLabel.setText("Nombre :");
 
         ApellidoLabel.setBackground(new java.awt.Color(0, 0, 0));
-        ApellidoLabel.setForeground(new java.awt.Color(0, 0, 0));
         ApellidoLabel.setText("Apellido : ");
 
         UsernameLabel.setBackground(new java.awt.Color(0, 0, 0));
-        UsernameLabel.setForeground(new java.awt.Color(0, 0, 0));
         UsernameLabel.setText("Username :");
 
         CorreoLabel.setBackground(new java.awt.Color(0, 0, 0));
-        CorreoLabel.setForeground(new java.awt.Color(0, 0, 0));
         CorreoLabel.setText("Correo :");
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Teléfono :");
 
         TelLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        TelLabel1.setForeground(new java.awt.Color(0, 0, 0));
         TelLabel1.setText("Telefono");
 
         CorreoLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        CorreoLabel1.setForeground(new java.awt.Color(0, 0, 0));
         CorreoLabel1.setText("Correo");
 
         UsernameLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        UsernameLabel1.setForeground(new java.awt.Color(0, 0, 0));
         UsernameLabel1.setText("Username");
 
         ApellidoLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        ApellidoLabel1.setForeground(new java.awt.Color(0, 0, 0));
         ApellidoLabel1.setText("Apellido");
 
         NombreLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        NombreLabel1.setForeground(new java.awt.Color(0, 0, 0));
         NombreLabel1.setText("Nombre");
 
         LogoItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10755057_847539941933847_199279157_n - copia (4).jpg"))); // NOI18N
@@ -225,11 +214,9 @@ public class JControl extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         DatosActualesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        DatosActualesLabel.setForeground(new java.awt.Color(0, 0, 0));
         DatosActualesLabel.setText("Datos Actuales");
 
         MascotasPerdidasButton.setBackground(new java.awt.Color(0, 153, 0));
-        MascotasPerdidasButton.setForeground(new java.awt.Color(0, 0, 0));
         MascotasPerdidasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830314_Help.png"))); // NOI18N
         MascotasPerdidasButton.setText("Mascotas Perdidas");
         MascotasPerdidasButton.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +226,6 @@ public class JControl extends javax.swing.JFrame {
         });
 
         MascotasEncontradasButton.setBackground(new java.awt.Color(0, 153, 0));
-        MascotasEncontradasButton.setForeground(new java.awt.Color(0, 0, 0));
         MascotasEncontradasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         MascotasEncontradasButton.setText("Mascota Encontrada");
         MascotasEncontradasButton.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +236,7 @@ public class JControl extends javax.swing.JFrame {
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
+        TablaInicio.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas
         TablaInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -263,7 +250,6 @@ public class JControl extends javax.swing.JFrame {
         CantidadLabel.setText("Cantidad");
 
         jButton1.setBackground(new java.awt.Color(0, 153, 0));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Editar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,7 +258,6 @@ public class JControl extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Match");
         jButton2.setEnabled(false);
 

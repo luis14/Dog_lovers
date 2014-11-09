@@ -67,6 +67,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         });
 
         TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna());
+        TablaCasaCuna.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
         TablaCasaCuna.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

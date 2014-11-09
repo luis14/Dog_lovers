@@ -112,7 +112,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tablaAdoptantes.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>
         </Component>
       </SubComponents>

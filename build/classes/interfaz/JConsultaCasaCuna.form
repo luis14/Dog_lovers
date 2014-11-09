@@ -166,7 +166,7 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaCasaCunaMouseClicked"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaCasaCuna.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>
         </Component>
       </SubComponents>

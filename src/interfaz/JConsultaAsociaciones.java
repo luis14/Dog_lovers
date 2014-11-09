@@ -58,6 +58,7 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
         CantidadText.setText(" Cantidad :");
 
         TablaAsociaciones.setModel(ModeloTablas.tablaAsociaiones());
+        TablaAsociaciones.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
         jScrollPane2.setViewportView(TablaAsociaciones);
 
