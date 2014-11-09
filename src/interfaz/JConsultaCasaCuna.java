@@ -22,7 +22,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Lista Negra");
+        setTitle("Consulta Casa Cunas");
     }
 
     /**

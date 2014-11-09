@@ -19,6 +19,9 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
     public JConsultaAsociaciones() {
         initComponents(); 
         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Consulta De Asociaciones");
     }
 
     /**

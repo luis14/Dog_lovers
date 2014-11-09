@@ -207,13 +207,44 @@ public class ModeloTablas {
          String informacion[][] = {};  
          modeloUsuarios= new DefaultTableModel(informacion, titulos);
          int contadorParaInterfaz = 0; 
-         for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){ 
+         for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){  
                 modeloUsuarios.addRow(Administrador.ListaDeUsuarios.get(i).arreglo()); 
                 contadorParaInterfaz++;
         }
         contadorUniversal = contadorParaInterfaz;
         return modeloUsuarios;    
-     }
+     } 
+     
+      public static DefaultTableModel tablaUsuariosAdmins(){ 
+         String titulos[] = {"ID","Nombre", "Apellido", "Usuario", "Correo", "Telefono", "Si es Admin"}; 
+         String informacion[][] = {};  
+         modeloUsuarios= new DefaultTableModel(informacion, titulos);
+         int contadorParaInterfaz = 0; 
+         for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){  
+             if(Administrador.ListaDeUsuarios.get(i).getEsAdmin() == false){
+                modeloUsuarios.addRow(Administrador.ListaDeUsuarios.get(i).arreglo()); 
+                contadorParaInterfaz++;
+             }
+        }
+        contadorUniversal = contadorParaInterfaz;
+        return modeloUsuarios;    
+     } 
+      
+       public static DefaultTableModel tablaUsuariosAdmins(String Nombre){ 
+         String titulos[] = {"ID","Nombre", "Apellido", "Usuario", "Correo", "Telefono", "Si es Admin"}; 
+         String informacion[][] = {};  
+         modeloUsuarios= new DefaultTableModel(informacion, titulos);
+         int contadorParaInterfaz = 0; 
+         for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){  
+             if(Administrador.ListaDeUsuarios.get(i).getEsAdmin() == false && Nombre.toLowerCase().equals(Administrador.ListaDeUsuarios.get(i).getNombre().toLowerCase())){
+                modeloUsuarios.addRow(Administrador.ListaDeUsuarios.get(i).arreglo()); 
+                contadorParaInterfaz++;
+             }
+        }
+        contadorUniversal = contadorParaInterfaz;
+        return modeloUsuarios;    
+     } 
+      
      
      public static DefaultTableModel tablaListaNegra(){
         String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"}; 
