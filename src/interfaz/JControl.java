@@ -627,13 +627,15 @@ public class JControl extends javax.swing.JFrame {
     private void MascotasPerdidasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasPerdidasButtonActionPerformed
         matchButton.setEnabled(true);
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2)); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_MascotasPerdidasButtonActionPerformed
 
     private void MascotasEncontradasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasEncontradasButtonActionPerformed
         matchButton.setEnabled(false);
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2)); 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
 
     private void TablaInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaInicioMouseClicked

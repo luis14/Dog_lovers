@@ -113,12 +113,14 @@ public class JListaNegra extends javax.swing.JFrame {
 
     private void ActualizarFiltroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarFiltroButtonActionPerformed
         TablaListaNegra.setModel(ModeloTablas.TablafiltroListaNegra(FiltroTextField.getText()));
-        TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_ActualizarFiltroButtonActionPerformed
 
     private void TodosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosButtonActionPerformed
         TablaListaNegra.setModel(ModeloTablas.tablaListaNegra());
         TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_TodosButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

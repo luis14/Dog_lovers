@@ -112,12 +112,14 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
     private void todosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosButtonActionPerformed
         // TODO add your handling code here:
         tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
-        tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_todosButtonActionPerformed
 
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
        tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes((String)CalificacionCombo.getSelectedItem()));
        tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+       CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_BuscarButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

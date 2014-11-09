@@ -136,12 +136,14 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
 
     private void BuscarBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBottonActionPerformed
         TablaAsociaciones.setModel(ModeloTablas.tablaAsociaiones(FiltroText.getText()));
-        TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_BuscarBottonActionPerformed
 
     private void TodosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosButtonActionPerformed
         TablaAsociaciones.setModel(ModeloTablas.tablaAsociaiones());
         TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_TodosButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

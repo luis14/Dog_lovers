@@ -214,12 +214,13 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas(EstadoCombo.getSelectedItem().toString(), ColorCombo.getSelectedItem().toString(), 
                                        TipoCombo.getSelectedItem().toString(), TamanioCombo.getSelectedItem().toString(), RazaCombo.getSelectedItem().toString()));
         TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_BuscarButtonActionPerformed
 
     private void todosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosButtonActionPerformed
-        // TODO add your handling code here:
          TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas());
          TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_todosButtonActionPerformed
 
     private void TablaConsultaMascotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaConsultaMascotasMouseClicked
@@ -232,8 +233,9 @@ public class JConsultaMascotas extends javax.swing.JFrame {
 
     private void BuscarChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarChipActionPerformed
         TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotasChip(chipTextField.getText()));
-       // TablaConsultaMascotas.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
-      //  TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaConsultaMascotas.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
+        TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_BuscarChipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

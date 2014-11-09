@@ -173,13 +173,14 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
         TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna((String)TipoCombo.getSelectedItem(), (String)TamanioCombo.getSelectedItem(), 
                 (String)RazaCombo.getSelectedItem(),(String)DonacionDeAlimentoCombo.getSelectedItem()));
-        TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_BuscarButtonActionPerformed
 
     private void todosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosButtonActionPerformed
-        // TODO add your handling code here:
         TablaCasaCuna.setModel(ModeloTablas.tablaCasaCuna());
         TablaCasaCuna.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_todosButtonActionPerformed
 
     private void TablaCasaCunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaCasaCunaMouseClicked
