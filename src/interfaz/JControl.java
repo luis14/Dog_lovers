@@ -62,8 +62,8 @@ public class JControl extends javax.swing.JFrame {
         TablaInicio = new javax.swing.JTable();
         CantidadText = new javax.swing.JLabel();
         CantidadLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        editarButton = new javax.swing.JButton();
+        matchButton = new javax.swing.JButton();
         Menu = new javax.swing.JMenuBar();
         Registro = new javax.swing.JMenu();
         MascotaItem = new javax.swing.JMenuItem();
@@ -250,20 +250,20 @@ public class JControl extends javax.swing.JFrame {
 
         CantidadLabel.setText("Cantidad");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 0));
-        jButton1.setText("Editar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        editarButton.setBackground(new java.awt.Color(0, 153, 0));
+        editarButton.setText("Editar");
+        editarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                editarButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 0));
-        jButton2.setText("Match");
-        jButton2.setEnabled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        matchButton.setBackground(new java.awt.Color(0, 153, 0));
+        matchButton.setText("Match");
+        matchButton.setEnabled(false);
+        matchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                matchButtonActionPerformed(evt);
             }
         });
 
@@ -282,9 +282,9 @@ public class JControl extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(MascotasPerdidasButton)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jButton2)
+                            .addComponent(matchButton)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1))
+                            .addComponent(editarButton))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addGap(60, 60, 60)
                             .addComponent(CantidadText)
@@ -305,8 +305,8 @@ public class JControl extends javax.swing.JFrame {
                         .addComponent(DatosActualesLabel)
                         .addComponent(MascotasEncontradasButton)
                         .addComponent(MascotasPerdidasButton))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(editarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(matchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(5, 5, 5)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -625,13 +625,13 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_CasaCunaItem2ActionPerformed
 
     private void MascotasPerdidasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasPerdidasButtonActionPerformed
-        jButton2.setEnabled(true);
+        matchButton.setEnabled(true);
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
     }//GEN-LAST:event_MascotasPerdidasButtonActionPerformed
 
     private void MascotasEncontradasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasEncontradasButtonActionPerformed
-        jButton2.setEnabled(false);
+        matchButton.setEnabled(false);
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
     }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
@@ -691,20 +691,23 @@ public class JControl extends javax.swing.JFrame {
         asociacion.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
         int fila = TablaInicio.getSelectedRow();  
         String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
         JRegistroMascotas registroMascotas = new JRegistroMascotas(Integer.parseInt(idUsuario)-1);
         registroMascotas.setVisible(true); 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_editarButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int fila = TablaInicio.getSelectedRow();  
-        String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
-        JMatch match = new JMatch(Integer.parseInt(idUsuario)-1); 
-        match.setVisible(true);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void matchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchButtonActionPerformed
+        int fila = TablaInicio.getSelectedRow();
+        if(fila == -1){
+            JOptionPane.showMessageDialog(null,"¡No has seleccionado ninguna mascota perdida para hacer match!");
+        }else{
+            String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
+            JMatch match = new JMatch(Integer.parseInt(idUsuario)-1); 
+            match.setVisible(true);
+        }
+    }//GEN-LAST:event_matchButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
@@ -750,8 +753,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JMenuItem TiposRazasItem;
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel UsernameLabel1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton editarButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -760,5 +762,6 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JButton matchButton;
     // End of variables declaration//GEN-END:variables
 }
