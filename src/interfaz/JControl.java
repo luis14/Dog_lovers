@@ -349,6 +349,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Registro.add(AdoptanteItem);
 
+        Asociacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415538969_user-group-16.png"))); // NOI18N
         Asociacion.setText("Asociación");
         Asociacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -388,6 +389,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Editar.add(AdoptanteItem1);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415538969_user-group-16.png"))); // NOI18N
         jMenuItem1.setText("Asociación");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,6 +459,7 @@ public class JControl extends javax.swing.JFrame {
         FechaItem.setText("Fecha");
         Configuracion.add(FechaItem);
 
+        AdminItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312443_user-worker-boss.png"))); // NOI18N
         AdminItem.setText("Administrador");
         Configuracion.add(AdminItem);
 
@@ -464,6 +467,7 @@ public class JControl extends javax.swing.JFrame {
 
         Opciones.setText("Opciones");
 
+        CerrarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415539221_Log Out.png"))); // NOI18N
         CerrarItem.setText("Cerrar Sesión ");
         CerrarItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -472,6 +476,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Opciones.add(CerrarItem);
 
+        SalirItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312667_button_cancel.png"))); // NOI18N
         SalirItem.setText("Salir");
         SalirItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
