@@ -692,10 +692,14 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
-        int fila = TablaInicio.getSelectedRow();  
-        String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
-        JRegistroMascotas registroMascotas = new JRegistroMascotas(Integer.parseInt(idUsuario)-1);
-        registroMascotas.setVisible(true); 
+        int fila = TablaInicio.getSelectedRow();
+        if(fila == -1){
+            JOptionPane.showMessageDialog(null,"¡No has seleccionado ninguna mascota perdida para hacer match!");
+        }else{
+            String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
+            JRegistroMascotas registroMascotas = new JRegistroMascotas(Integer.parseInt(idUsuario)-1);
+            registroMascotas.setVisible(true);
+        }    
     }//GEN-LAST:event_editarButtonActionPerformed
 
     private void matchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchButtonActionPerformed
