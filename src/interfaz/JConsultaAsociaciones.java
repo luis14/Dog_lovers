@@ -35,6 +35,7 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
         FiltroText = new javax.swing.JTextField();
         BuscarBotton = new javax.swing.JButton();
         CantidadLabel = new javax.swing.JLabel();
+        TodosButton = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,6 +78,13 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
 
         CantidadLabel.setText("Cantidad");
 
+        TodosButton.setText("Todos");
+        TodosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TodosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,14 +94,17 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TituloText)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BuscarBotton))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(CantidadText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CantidadLabel)))
+                        .addComponent(CantidadLabel))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BuscarBotton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TodosButton))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -104,7 +115,8 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BuscarBotton))
+                    .addComponent(BuscarBotton)
+                    .addComponent(TodosButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -126,6 +138,11 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
         TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_BuscarBottonActionPerformed
 
+    private void TodosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosButtonActionPerformed
+        TablaAsociaciones.setModel(ModeloTablas.tablaAsociaiones());
+        TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_TodosButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarBotton;
     private javax.swing.JLabel CantidadLabel;
@@ -133,6 +150,7 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
     private javax.swing.JTextField FiltroText;
     private javax.swing.JTable TablaAsociaciones;
     private javax.swing.JLabel TituloText;
+    private javax.swing.JButton TodosButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

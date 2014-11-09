@@ -1,6 +1,7 @@
 package interfaz;
 
-import Administrador.ModeloTablas;
+import Administrador.ModeloTablas; 
+import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
 public class JEditarAdmins extends javax.swing.JFrame {
@@ -51,6 +52,11 @@ public class JEditarAdmins extends javax.swing.JFrame {
         CanitdadLabel.setText("Cantidad");
 
         jButton1.setText("Hacer Admin");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,6 +107,14 @@ public class JEditarAdmins extends javax.swing.JFrame {
         TablaAdmins.setModel(ModeloTablas.tablaUsuariosAdmins(FiltroText.getText()));
         TablaAdmins.setAutoCreateRowSorter(true); // Para ordenar las tablas    
     }//GEN-LAST:event_BuscarButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int fila = TablaAdmins.getSelectedRow(); 
+        String idUsuario = TablaAdmins.getValueAt(fila, 0).toString();  
+        Administrador.ListaDeUsuarios.get(Integer.parseInt(idUsuario)-1).setEsAdmin(true); 
+        TablaAdmins.setModel(ModeloTablas.tablaUsuariosAdmins());
+        TablaAdmins.setAutoCreateRowSorter(true); // Para ordenar las tablas
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarButton;
