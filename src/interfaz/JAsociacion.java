@@ -5,6 +5,8 @@ import javax.swing.ImageIcon;
 
 public class JAsociacion extends javax.swing.JFrame {
 
+    private int asociacion;
+    
     public JAsociacion(boolean editar) {
         initComponents();
         setLocationRelativeTo(null);
@@ -17,12 +19,17 @@ public class JAsociacion extends javax.swing.JFrame {
     }
 
     private void DatosEditar(){
-        NombreText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getNombre());
-        MissionText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getMission());
-        CedulaText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getCedulaJuridica());
-        TelefonoText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getTelefono());
-        CorreoText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getCorreo());
-        PaginaText.setText(Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).getPaginaWeb());   
+        for(int i = 0; i < Administrador.ListaDeAsociaciones.size(); i ++){
+            if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual) == Administrador.ListaDeAsociaciones.get(i).getUsuario()){
+                NombreText.setText(Administrador.ListaDeAsociaciones.get(i).getNombre());
+                MissionText.setText(Administrador.ListaDeAsociaciones.get(i).getMission());
+                CedulaText.setText(Administrador.ListaDeAsociaciones.get(i).getCedulaJuridica());
+                TelefonoText.setText(Administrador.ListaDeAsociaciones.get(i).getTelefono());
+                CorreoText.setText(Administrador.ListaDeAsociaciones.get(i).getCorreo());
+                PaginaText.setText(Administrador.ListaDeAsociaciones.get(i).getPaginaWeb()); 
+                this.asociacion = i;
+            }
+        }
     }
     
     private boolean VerificaDatos(){
@@ -183,28 +190,23 @@ public class JAsociacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
-            if(VerificaDatos()){
-                Administrador.RegistrarAsociacion(NombreText.getText(), MissionText.getText(),
-                        CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacion(true);
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacionActual(Administrador.ListaDeAsociaciones.size()-1);
-                dispose();
+        if(VerificaDatos()){
+            if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
+                    Administrador.RegistrarAsociacion(NombreText.getText(), MissionText.getText(),
+                            CedulaText.getText(), TelefonoText.getText(), CorreoText.getText(), PaginaText.getText(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
+                    Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAsociacion(true);
+                    dispose();
             }else{
-                jLabel7.setVisible(true);
+                Administrador.ListaDeAsociaciones.get(asociacion).setNombre(NombreText.getText());
+                Administrador.ListaDeAsociaciones.get(asociacion).setMission(MissionText.getText());
+                Administrador.ListaDeAsociaciones.get(asociacion).setCedulaJuridica(CedulaText.getText());
+                Administrador.ListaDeAsociaciones.get(asociacion).setTelefono(TelefonoText.getText());
+                Administrador.ListaDeAsociaciones.get(asociacion).setCorreo(CorreoText.getText());
+                Administrador.ListaDeAsociaciones.get(asociacion).setPaginaWeb(PaginaText.getText());
+                dispose();
             }
         }else{
-            if(VerificaDatos()){
-                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setNombre(NombreText.getText());
-                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setMission(MissionText.getText());
-                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setCedulaJuridica(CedulaText.getText());
-                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setTelefono(TelefonoText.getText());
-                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setCorreo(CorreoText.getText());
-                Administrador.ListaDeAsociaciones.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getAsociacionActual()).setPaginaWeb(PaginaText.getText());
-                dispose();
-            }else{
-                jLabel7.setVisible(true);
-            }
+            jLabel7.setVisible(true);
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
 

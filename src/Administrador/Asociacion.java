@@ -1,13 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Administrador;
-/**
- *
- * @author miuyin
- */
+
 public class Asociacion {
     private String nombre; 
     private String mission; 
@@ -30,86 +22,50 @@ public class Asociacion {
         id = ++cantidadDeUsuarios; 
         
     }
-    /**
-     * @return the nombre
-     */ 
     public String getNombre() {
         return nombre;
     }
-
-    /**
-     * @param nombre the nombre to set
-     */
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    /**
-     * @return the mission
-     */
+    
     public String getMission() {
         return mission;
     }
-
-    /**
-     * @param mission the mission to set
-     */
+    
     public void setMission(String mission) {
         this.mission = mission;
     }
-
-    /**
-     * @return the cedulaJuridica
-     */
+    
     public String getCedulaJuridica() {
         return cedulaJuridica;
     }
 
-    /**
-     * @param cedulaJuridica the cedulaJuridica to set
-     */
     public void setCedulaJuridica(String cedulaJuridica) {
         this.cedulaJuridica = cedulaJuridica;
     }
 
-    /**
-     * @return the telefono
-     */
     public String getTelefono() {
         return telefono;
     }
 
-    /**
-     * @param telefono the telefono to set
-     */
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    /**
-     * @return the correo
-     */
     public String getCorreo() {
         return correo;
     }
 
-    /**
-     * @param correo the correo to set
-     */
     public void setCorreo(String correo) {
         this.correo = correo;
     }
 
-    /**
-     * @return the paginaWeb
-     */
     public String getPaginaWeb() {
         return paginaWeb;
     }
 
-    /**
-     * @param paginaWeb the paginaWeb to set
-     */
     public void setPaginaWeb(String paginaWeb) {
         this.paginaWeb = paginaWeb;
     }
@@ -123,18 +79,19 @@ public class Asociacion {
         return msg;
      }
 
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(int id) {
         this.id = id;
     }
-    
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

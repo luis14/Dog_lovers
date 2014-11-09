@@ -16,6 +16,16 @@ public class Principal {
         Administrador.ListaDeUsuarios.get(0).setCasaCuna(true);
         Administrador.ListaDeUsuarios.get(1).setCasaCuna(true);
         
+        Administrador.ListaDeUsuarios.get(0).setAdoptante(true);
+        Administrador.ListaDeUsuarios.get(1).setAdoptante(true);
+        Administrador.ListaDeUsuarios.get(2).setAdoptante(true);
+        Administrador.ListaDeUsuarios.get(3).setAdoptante(true);
+        
+        Administrador.ListaDeUsuarios.get(0).setAsociacion(true);
+        Administrador.ListaDeUsuarios.get(1).setAsociacion(true);
+        Administrador.ListaDeUsuarios.get(2).setAsociacion(true);
+        Administrador.ListaDeUsuarios.get(3).setAsociacion(true);
+        
         Administrador.RegistrarMascota("Chester", "Perro", "Golden", "04/04/2014", "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "12", "Golden Retriever"); 
         Administrador.RegistrarMascota("Mark", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(2), "563", "Poodle");
         
