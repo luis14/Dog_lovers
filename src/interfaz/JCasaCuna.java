@@ -5,6 +5,8 @@ import javax.swing.ImageIcon;
 
 public class JCasaCuna extends javax.swing.JFrame {
 
+    private int casaCuna;
+    
     public JCasaCuna(boolean editar) {
         initComponents();
         setLocationRelativeTo(null);
@@ -17,28 +19,23 @@ public class JCasaCuna extends javax.swing.JFrame {
     }
 
     private void DatosEditar(){
-        switch(Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).getTamanio()){
-            case "Pequeño":
-                TipoCombo.setSelectedIndex(0);
-                break;
-            case "Mediano":
-                TipoCombo.setSelectedIndex(1);
-                break;
-            case "Grande":
-                TipoCombo.setSelectedIndex(2);
-                break;
-        }
-        switch (Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).getNecesitaAlimentacion()){
-            case "Si":
-                DanacionSiRadioButton.setSelected(true);
-                break;
-            case "No":
-                DonacionNoRadioButton.setSelected(true);
-                break;
-        }
-        TipoCombo.setSelectedIndex(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTipoActual());
-        RazaCombo.setSelectedIndex(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getRazaActual());
-        RequerimientosText.setText(Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).getRequerimientos());
+        for(int i = 0; i <Administrador.ListaDeCasaCuna.size(); i ++){
+            if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual) == Administrador.ListaDeCasaCuna.get(i).getUsuario()){
+                switch (Administrador.ListaDeCasaCuna.get(i).getNecesitaAlimentacion()){
+                    case "Si":
+                        DanacionSiRadioButton.setSelected(true);
+                        break;
+                    case "No":
+                        DonacionNoRadioButton.setSelected(true);
+                        break;
+                }
+                TamañoCombo.setSelectedItem((Object)Administrador.ListaDeCasaCuna.get(i).getTamanio());
+                TipoCombo.setSelectedItem((Object)Administrador.ListaDeCasaCuna.get(i).getTipo());
+                RazaCombo.setSelectedItem((Object)Administrador.ListaDeCasaCuna.get(i).getRaza());
+                RequerimientosText.setText(Administrador.ListaDeCasaCuna.get(i).getRequerimientos());
+                this.casaCuna = i;
+            }
+        }     
     }
     
     @SuppressWarnings("unchecked")
@@ -246,43 +243,24 @@ public class JCasaCuna extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelarButtonActionPerformed
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        boolean donacion;
-        if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna())){
-            if(DanacionSiRadioButton.isSelected()){
-                donacion = true;
-            }else{
-                donacion = false;
-            }
-            if(VerificaDatos()){
+        if(VerificaDatos()){
+            if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna())){
                 Administrador.RegistrarCasaCuna((String)TipoCombo.getSelectedItem(), (String)RazaCombo.getSelectedItem(),
-                        donacion, (String)TamañoCombo.getSelectedItem(), RequerimientosText.getText(), 
+                        DanacionSiRadioButton.isSelected(), (String)TamañoCombo.getSelectedItem(), RequerimientosText.getText(), 
                         Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), 
                         Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
                 Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCuna(true);
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCasaCunaActual(Administrador.ListaDeCasaCuna.size() - 1);
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTipoActual(TipoCombo.getSelectedIndex());
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setRazaActual(RazaCombo.getSelectedIndex());
                 dispose();
             }else{
-                ErrorLabel.setVisible(true);
+                Administrador.ListaDeCasaCuna.get(casaCuna).setTamanio( (String)TamañoCombo.getSelectedItem());
+                Administrador.ListaDeCasaCuna.get(casaCuna).setNecesitaAlimentacion(DanacionSiRadioButton.isSelected());
+                Administrador.ListaDeCasaCuna.get(casaCuna).setTipo((String)TipoCombo.getSelectedItem());
+                Administrador.ListaDeCasaCuna.get(casaCuna).setRaza((String)RazaCombo.getSelectedItem());
+                Administrador.ListaDeCasaCuna.get(casaCuna).setRequerimientos(RequerimientosText.getText());
+                dispose();
             }
         }else{
-            if(VerificaDatos()){
-                if(DanacionSiRadioButton.isSelected()){
-                    donacion = true;
-                }else{
-                    donacion = false;
-                }
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTipoActual(TipoCombo.getSelectedIndex());
-                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setRazaActual(RazaCombo.getSelectedIndex());
-                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setTamanio( (String)TamañoCombo.getSelectedItem());
-                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setNecesitaAlimentacion(donacion);
-                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setTipo((String)TipoCombo.getSelectedItem());
-                Administrador.ListaDeCasaCuna.get(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCasaCunaActual()).setRaza((String)RazaCombo.getSelectedItem());
-                dispose();
-            }else{
-                ErrorLabel.setVisible(true);
-            }
+            ErrorLabel.setVisible(true);
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
 

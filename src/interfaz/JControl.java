@@ -626,8 +626,8 @@ public class JControl extends javax.swing.JFrame {
 
     private void CasaCunaItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItem1ActionPerformed
         if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna()){
-        JCasaCuna casaCuna = new JCasaCuna(true);
-        casaCuna.setVisible(true);
+            JCasaCuna casaCuna = new JCasaCuna(true);
+            casaCuna.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null,"No estas registrado como Casa Cuna");
         }
