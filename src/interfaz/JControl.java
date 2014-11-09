@@ -399,9 +399,19 @@ public class JControl extends javax.swing.JFrame {
         Editar.add(jMenuItem1);
 
         TiposRazasItem.setText("Tipos de Razas");
+        TiposRazasItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TiposRazasItemActionPerformed(evt);
+            }
+        });
         Editar.add(TiposRazasItem);
 
         TiposMascotasItem.setText("Tipos de Mascotas");
+        TiposMascotasItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TiposMascotasItemActionPerformed(evt);
+            }
+        });
         Editar.add(TiposMascotasItem);
 
         Menu.add(Editar);
@@ -621,6 +631,16 @@ public class JControl extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"No estas registrado como Asociación");
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void TiposMascotasItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TiposMascotasItemActionPerformed
+        JEditarTipos editarTipos = new JEditarTipos(); 
+        editarTipos.setVisible(true);
+    }//GEN-LAST:event_TiposMascotasItemActionPerformed
+
+    private void TiposRazasItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TiposRazasItemActionPerformed
+        JEditarRaza editarRaza = new JEditarRaza(); 
+        editarRaza.setVisible(true);
+    }//GEN-LAST:event_TiposRazasItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;

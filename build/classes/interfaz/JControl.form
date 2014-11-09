@@ -122,11 +122,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipos de Razas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TiposRazasItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="TiposMascotasItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipos de Mascotas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TiposMascotasItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
