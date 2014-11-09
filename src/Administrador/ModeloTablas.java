@@ -33,9 +33,10 @@ public class ModeloTablas {
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
-            if(Administrador.ListaDeMascotas.get(i).getUsuario() == usuario && Administrador.ListaDeMascotas.get(i).getEstado().equals(estado))
+            if(Administrador.ListaDeMascotas.get(i).getUsuario() == usuario && Administrador.ListaDeMascotas.get(i).getEstado().equals(estado)){
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
-                    contadorParaInterfaz++;
+                    contadorParaInterfaz++; 
+            }
         } 
         contadorUniversal = contadorParaInterfaz;
         return modeloMascotas;
@@ -75,7 +76,22 @@ public class ModeloTablas {
         contadorUniversal = contadorParaInterfaz;
         return modeloMascotas;
         
-    }  
+    } 
+       
+      public static DefaultTableModel tablaMascotasChip(String chip){ 
+        String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
+        String informacion[][] = {}; 
+        modeloMascotas = new DefaultTableModel(informacion, titulos);
+        int contadorParaInterfaz = 0;
+        for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
+            if(Administrador.ListaDeMascotas.get(i).getChip().toLowerCase().equals(chip.toLowerCase())){
+                modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
+                    contadorParaInterfaz++; 
+            }
+        } 
+        contadorUniversal = contadorParaInterfaz;
+        return modeloMascotas;
+    }
        
        public static DefaultTableModel tablaMatch(int id){ 
         String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
