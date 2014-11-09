@@ -37,7 +37,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
             jComboBox1.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getEstado());
             FechaText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getFechaDeEncontradoPerdido());
             RecompensaText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getMontoDeRecompensa());
-            //DescripcionText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).);
+            DescripcionText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getDescripcion());
             this.MascotaEscogida = MascotaEscogida;
         }
     }
@@ -211,7 +211,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jRadioButton2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ChipText)
+                                        .addComponent(ChipText, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                                         .addGap(35, 35, 35))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,9 +348,8 @@ public class JRegistroMascotas extends javax.swing.JFrame {
             if(MascotaEscogida == -1){
                 Administrador.RegistrarMascota(NombreLabel.getText(), (String)TipoCombo.getSelectedItem(),
                         (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)jComboBox1.getSelectedItem(), 
-                        (String)TamañoCombo.getSelectedItem(),
-                        Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), Chip(), (
-                        String)RazaCombo.getSelectedItem());
+                        (String)TamañoCombo.getSelectedItem(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
+                        Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText());
                 dispose();
             }else{
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
@@ -362,7 +361,8 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTamanio((String)TamañoCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setEstado((String)jComboBox1.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setFechaDeEncontradoPerdido(FechaText.getText());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setMontoDeRecompensa(RecompensaText.getText());  
+                Administrador.ListaDeMascotas.get(MascotaEscogida).setMontoDeRecompensa(RecompensaText.getText()); 
+                Administrador.ListaDeMascotas.get(MascotaEscogida).setDescripcion(DescripcionText.getText()); 
                 dispose();
             }
         }else{

@@ -30,9 +30,9 @@ public class Administrador {
         ListaDeUsuarios.add(usuario);
     }
     
-    public static void RegistrarMascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido, 
-                                        String estado, String tamanio, Usuario usuario, String chip, String raza){ 
-        Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, estado, tamanio, usuario, chip, raza); 
+    public static void RegistrarMascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido,String estado, 
+                                        String tamanio, Usuario usuario, String chip, String raza,String Recompensa, String Descripcion){ 
+        Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, Recompensa, estado, tamanio, usuario, chip, raza, Descripcion); 
         ListaDeMascotas.add(mascota);
     }
    
