@@ -2,6 +2,7 @@ package interfaz;
 
 import Administrador.Administrador;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class JRegistroMascotas extends javax.swing.JFrame {
 
@@ -34,7 +35,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
             }
             ColorCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getColor());
             TamañoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getTamanio());
-            jComboBox1.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getEstado());
+            EstadoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getEstado());
             FechaText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getFechaDeEncontradoPerdido());
             RecompensaText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getMontoDeRecompensa());
             DescripcionText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getDescripcion());
@@ -90,7 +91,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         jRadioButton2 = new javax.swing.JRadioButton();
         TipoCombo = new javax.swing.JComboBox();
         TamañoCombo = new javax.swing.JComboBox();
-        jComboBox1 = new javax.swing.JComboBox();
+        EstadoCombo = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -188,7 +189,12 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
         TamañoCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.TamanioToArray()));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(Administrador.EstadosToArray()));
+        EstadoCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.EstadosToArray()));
+        EstadoCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadoComboActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -243,7 +249,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(RecompensaText, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
-                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -283,7 +289,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RazaLabel)
@@ -347,11 +353,11 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         if(VerificaMascota()){
             if(MascotaEscogida == -1){
                 Administrador.RegistrarMascota(NombreLabel.getText(), (String)TipoCombo.getSelectedItem(),
-                        (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)jComboBox1.getSelectedItem(), 
+                        (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)EstadoCombo.getSelectedItem(), 
                         (String)TamañoCombo.getSelectedItem(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
                         Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText());
                 dispose();
-            }else{
+            }else{ 
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setRaza((String)RazaCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
@@ -359,7 +365,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setChip(Chip());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setColor((String)ColorCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTamanio((String)TamañoCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setEstado((String)jComboBox1.getSelectedItem());
+                Administrador.ListaDeMascotas.get(MascotaEscogida).setEstado((String)EstadoCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setFechaDeEncontradoPerdido(FechaText.getText());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setMontoDeRecompensa(RecompensaText.getText()); 
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setDescripcion(DescripcionText.getText()); 
@@ -393,6 +399,17 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_RazaComboActionPerformed
 
+    private void EstadoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoComboActionPerformed
+          String Estado;
+                Estado = (String)EstadoCombo.getSelectedItem(); 
+                boolean Verdad; 
+                Verdad = Estado.equals("Identificado");
+                if(Verdad){
+                    JIdentificado identificado = new JIdentificado(); 
+                    identificado.setVisible(true); 
+                } 
+    }//GEN-LAST:event_EstadoComboActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargarButton;
     private javax.swing.JLabel ChipLabel;
@@ -401,6 +418,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private javax.swing.JLabel ColorLabel;
     private javax.swing.JTextArea DescripcionText;
     private javax.swing.JLabel EmailLabel;
+    private javax.swing.JComboBox EstadoCombo;
     private javax.swing.JTextField FechaText;
     private javax.swing.JLabel ImagenLabel;
     private javax.swing.JLabel NombreLabel;
@@ -413,7 +431,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private javax.swing.JLabel TipoLabel;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
