@@ -15,6 +15,8 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
         if(MascotaEscogida >= 0){
             DatosEditar(MascotaEscogida);
+        }else{
+            this.MascotaEscogida = MascotaEscogida;
         }
     }
     

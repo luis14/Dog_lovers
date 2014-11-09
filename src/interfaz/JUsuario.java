@@ -171,7 +171,6 @@ public class JUsuario extends javax.swing.JFrame {
     
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
         if(VerificaUsuario() != -1){
-            System.out.println(VerificaUsuario());
             Administrador.setUsuarioActual(VerificaUsuario());
             JControl control = new JControl();
             control.setVisible(true);
