@@ -694,7 +694,7 @@ public class JControl extends javax.swing.JFrame {
     private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
         int fila = TablaInicio.getSelectedRow();
         if(fila == -1){
-            JOptionPane.showMessageDialog(null,"¡No has seleccionado ninguna mascota perdida para hacer match!");
+            JOptionPane.showMessageDialog(null,"¡No has seleccionado ninguna mascota para editar!");
         }else{
             String idUsuario = TablaInicio.getValueAt(fila, 0).toString(); 
             JRegistroMascotas registroMascotas = new JRegistroMascotas(Integer.parseInt(idUsuario)-1);
