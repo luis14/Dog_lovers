@@ -6,7 +6,9 @@
 package interfaz;
 
 import Administrador.Administrador;
+import java.awt.Color;
 import java.awt.MouseInfo;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -21,6 +23,7 @@ public class JMasInfo extends javax.swing.JFrame {
         initComponents();
         setLocation((int) MouseInfo.getPointerInfo().getLocation().getX() - 20,
                     (int) MouseInfo.getPointerInfo().getLocation().getY() - 35 );
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.blue, 2));
     }
     
     public void actualizarDatosEnVentana(int ID){
