@@ -31,16 +31,6 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="104" pref="104" max="-2" attributes="0"/>
-                      <Component id="imgLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
-                      <Component id="NombreLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
-                      <Component id="pNombreLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
                       <Component id="tipoLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
@@ -94,6 +84,16 @@
                       <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
                       <Component id="pFechaLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="NombreLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+                      <Component id="pNombreLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="imgLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
@@ -102,9 +102,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Component id="imgLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="NombreLabel1" min="-2" max="-2" attributes="0"/>
                   <Component id="pNombreLabel" min="-2" max="-2" attributes="0"/>
@@ -153,7 +153,7 @@
                   <Component id="FechaLabel" min="-2" max="-2" attributes="0"/>
                   <Component id="pFechaLabel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -161,7 +161,9 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="imgLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Imagen"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/Mascotas sin foto.png"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="java.awt.Label" name="NombreLabel1">
