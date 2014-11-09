@@ -221,6 +221,9 @@
               <Connection code="ModeloTablas.tablaMascotas()" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaConsultaMascotasMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaConsultaMascotas.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>

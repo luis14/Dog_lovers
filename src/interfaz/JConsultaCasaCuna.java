@@ -186,7 +186,7 @@ public class JConsultaCasaCuna extends javax.swing.JFrame {
         int fila = TablaCasaCuna.getSelectedRow();
         String idAnimal = TablaCasaCuna.getValueAt(fila ,0).toString();
         JMasInfo ventEmergente = new JMasInfo();
-        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal));
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal)-1);
         ventEmergente.setVisible(true);
     }//GEN-LAST:event_TablaCasaCunaMouseClicked
 

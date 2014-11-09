@@ -631,8 +631,11 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
 
     private void TablaInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaInicioMouseClicked
-        // TODO add your handling code here:
-        
+        int fila = TablaInicio.getSelectedRow();
+        String idAnimal = TablaInicio.getValueAt(fila ,0).toString();
+        JMasInfo ventEmergente = new JMasInfo();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal)-1);
+        ventEmergente.setVisible(true);
     }//GEN-LAST:event_TablaInicioMouseClicked
 
     private void CasaCunaItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItem1ActionPerformed

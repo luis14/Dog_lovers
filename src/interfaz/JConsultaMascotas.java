@@ -88,6 +88,11 @@ public class JConsultaMascotas extends javax.swing.JFrame {
         TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas());
         TablaConsultaMascotas.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaConsultaMascotas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaConsultaMascotasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaConsultaMascotas);
 
         CantidadText.setText("Cantidad: ");
@@ -205,6 +210,14 @@ public class JConsultaMascotas extends javax.swing.JFrame {
          TablaConsultaMascotas.setModel(ModeloTablas.tablaMascotas());
          TablaConsultaMascotas.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }//GEN-LAST:event_todosButtonActionPerformed
+
+    private void TablaConsultaMascotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaConsultaMascotasMouseClicked
+        int fila = TablaConsultaMascotas.getSelectedRow();
+        String idAnimal = TablaConsultaMascotas.getValueAt(fila ,0).toString();
+        JMasInfo ventEmergente = new JMasInfo();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaConsultaMascotasMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarButton;
