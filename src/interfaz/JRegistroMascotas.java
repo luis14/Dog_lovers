@@ -376,10 +376,12 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         jRadioButton2.setSelected(false);
+        ChipText.setEnabled(true);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         jRadioButton1.setSelected(false);
+        ChipText.setEnabled(false);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void TipoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoComboActionPerformed
