@@ -84,7 +84,7 @@ public class ModeloTablas {
         modeloMascotas = new DefaultTableModel(informacion, titulos);
         int contadorParaInterfaz = 0;
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
-            if(Administrador.ListaDeMascotas.get(i).getChip().toLowerCase().equals(chip.toLowerCase())){
+            if(Administrador.ListaDeMascotas.get(i).getChip().equals(chip)){
                 modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo());
                     contadorParaInterfaz++; 
             }
