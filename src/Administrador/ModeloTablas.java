@@ -10,6 +10,7 @@ public class ModeloTablas {
     private static DefaultTableModel modeloAdoptantes;  
     private static DefaultTableModel modeloUsuarios;  
     private static DefaultTableModel modeloDonaciones; 
+    private static DefaultTableModel modeloAsociaciones; 
     private static int contadorUniversal; 
     
     
@@ -250,11 +251,55 @@ public class ModeloTablas {
          String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
+         int contadorParaInterfaz = 0; 
          for(int i = 0; i < Administrador.ListaDeDonaciones.size() ; i++){
              modeloDonaciones.addRow(Administrador.ListaDeDonaciones.get(i).arreglo());
-         }
+             contadorParaInterfaz++;
+         } 
+         contadorUniversal = contadorParaInterfaz; 
+         return modeloDonaciones;
+     } 
+     
+      public static DefaultTableModel tablaDeDonacionesTotales(){
+         String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
+         String informacion[][] = {}; 
+         modeloDonaciones = new DefaultTableModel(informacion, titulos);  
+         int contadorParaInterfaz = 0; 
+         for(int i = 0; i < Administrador.ListaDeDonaciones.size() ; i++){
+             modeloDonaciones.addRow(Administrador.ListaDeDonaciones.get(i).arreglo()); 
+             contadorParaInterfaz++; 
+         } 
+         contadorUniversal = contadorParaInterfaz; 
          return modeloDonaciones;
      }
+      
+      public static DefaultTableModel tablaAsociaiones(){
+          String titulos[]= {"ID", "Nombre", "Missión", "Cedula Jurídica","Telefono", "Correo", "Pagina Web"};
+          String informacion[][] = {}; 
+          modeloAsociaciones = new DefaultTableModel(informacion, titulos); 
+          int contadorParaInterfaz = 0; 
+          for(int i = 0; i < Administrador.ListaDeAsociaciones.size(); i++){
+              modeloAsociaciones.addRow(Administrador.ListaDeAsociaciones.get(i).arreglo()); 
+              contadorParaInterfaz++; 
+          }
+          contadorUniversal = contadorParaInterfaz; 
+          return modeloAsociaciones;
+      }
+      
+       public static DefaultTableModel tablaAsociaiones(String Nombre){
+          String titulos[]= {"ID", "Nombre", "Missión", "Cedula Jurídica","Telefono", "Correo", "Pagina Web"};
+          String informacion[][] = {}; 
+          int contadorParaInterfaz = 0; 
+          modeloAsociaciones = new DefaultTableModel(informacion, titulos); 
+          for(int i = 0; i < Administrador.ListaDeAsociaciones.size(); i++){ 
+              if(Nombre.toLowerCase().equals(Administrador.ListaDeAsociaciones.get(i).getNombre().toLowerCase())){
+                  modeloAsociaciones.addRow(Administrador.ListaDeAsociaciones.get(i).arreglo()); 
+                  contadorParaInterfaz++; 
+              }
+          } 
+          contadorUniversal = contadorParaInterfaz; 
+          return modeloAsociaciones;
+      }
      
      public static String getContadorUniversal() {
 	String contadorUni = Integer.toString(contadorUniversal);
