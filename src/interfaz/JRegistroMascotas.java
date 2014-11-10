@@ -59,7 +59,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         if(jRadioButton1.isSelected()){
             return ChipText.getText();
         }else{
-            return null;
+            return " ";
         }
     }
     
@@ -429,7 +429,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         jRadioButton1.setSelected(false);
-        ChipText.setText("");
+        ChipText.setText(" ");
         ChipText.setEnabled(false);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
@@ -444,9 +444,9 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
     private void EstadoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoComboActionPerformed
         if(EstadoCombo.getSelectedIndex() == 1){
-            NombreText.setText("");
+            NombreText.setText(" ");
             NombreText.setEditable(false);
-            RecompensaText.setText("");
+            RecompensaText.setText(" ");
             RecompensaText.setEditable(false);
         }else{
             NombreText.setEditable(true);

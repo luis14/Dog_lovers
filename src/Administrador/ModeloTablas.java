@@ -113,7 +113,7 @@ public class ModeloTablas {
            if(ColorDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getColor())){
                contador++; 
            } 
-           if(ChipDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getChip())){
+           if(ChipDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getChip()) || ChipDeMascotaMatch.equals(" ")){
                contador++; 
            } 
            if(TipoDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getTipo())){
