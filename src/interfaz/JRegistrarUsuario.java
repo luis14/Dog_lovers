@@ -1,18 +1,34 @@
 package interfaz;
 
 import Administrador.Administrador;
+import interfaz.JControl;
 import javax.swing.ImageIcon;
 
 public class JRegistrarUsuario extends javax.swing.JFrame {
-
-    public JRegistrarUsuario() {
+    
+    private final boolean editar;
+    
+    public JRegistrarUsuario(boolean editar) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Registro de Usuario");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+        if(editar){
+            DatosEditar();
+        }
+        this.editar = editar;
     }
 
+    private void DatosEditar(){
+        NombreText.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getNombre());
+        ApellidoText.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getApellido());
+        UsernameText.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getUsername());
+        TelText.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
+        ContraText.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getContrasenia());
+        CorreoText.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo());
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -257,18 +273,37 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
         if(VerificaUsuario()){
-            Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
-                                           TelText.getText(), ContraText.getText(),false, CorreoText.getText(),null);
-            JUsuario usuario = new JUsuario();
-            usuario.setVisible(true);
-            dispose();
+            if(editar){
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setNombre(NombreText.getText());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setApellido(ApellidoText.getText());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setUsername(UsernameText.getText());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTelefono(TelText.getText());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setContrasenia(ContraText.getText());
+                Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCorreo(CorreoText.getText());
+                JControl.NombreLabel1.setText(NombreText.getText());
+                JControl.ApellidoLabel1.setText(ApellidoText.getText());
+                JControl.UsernameLabel1.setText(UsernameText.getText());
+                JControl.CorreoLabel1.setText(CorreoText.getText());
+                JControl.TelLabel1.setText(TelText.getText());
+                dispose();
+            }else{
+                Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
+                        TelText.getText(), ContraText.getText(),false, CorreoText.getText(),null);
+                JUsuario usuario = new JUsuario();
+                usuario.setVisible(true);
+                dispose();
+            }
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
 
     private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
-        JUsuario usuario = new JUsuario();
-        usuario.setVisible(true);
-        dispose();
+        if(editar){
+            dispose();
+        }else{
+            JUsuario usuario = new JUsuario();
+            usuario.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_AtrasButtonActionPerformed
 
     private void ApellidoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApellidoTextActionPerformed

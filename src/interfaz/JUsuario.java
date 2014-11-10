@@ -186,7 +186,7 @@ public class JUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_UsuarioTextActionPerformed
 
     private void registrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarButtonActionPerformed
-        JRegistrarUsuario  registro = new JRegistrarUsuario();
+        JRegistrarUsuario  registro = new JRegistrarUsuario(false);
         registro.setVisible(true);
         dispose();
     }//GEN-LAST:event_registrarButtonActionPerformed

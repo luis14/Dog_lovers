@@ -59,6 +59,7 @@ public class JControl extends javax.swing.JFrame {
         NombreLabel1 = new javax.swing.JLabel();
         LogoItem = new javax.swing.JLabel();
         fotoButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         DatosActualesLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -150,6 +151,13 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Editar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -157,7 +165,10 @@ public class JControl extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PerfilLabel)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PerfilLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(FotoLabel)
@@ -189,7 +200,7 @@ public class JControl extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(fotoButton)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LogoItem, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addComponent(LogoItem, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -201,7 +212,9 @@ public class JControl extends javax.swing.JFrame {
                         .addComponent(LogoItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(PerfilLabel)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PerfilLabel)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -304,7 +317,7 @@ public class JControl extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(editarButton))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -766,6 +779,11 @@ public class JControl extends javax.swing.JFrame {
         fecha.setVisible(true);
     }//GEN-LAST:event_FechaItemActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JRegistrarUsuario  registro = new JRegistrarUsuario(true);
+        registro.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarButton;
     private javax.swing.JMenuItem AdminItem;
@@ -773,7 +791,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JMenuItem AdoptanteItem1;
     private javax.swing.JMenuItem AdoptanteItem2;
     private javax.swing.JLabel ApellidoLabel;
-    private javax.swing.JLabel ApellidoLabel1;
+    public static javax.swing.JLabel ApellidoLabel1;
     private javax.swing.JMenuItem Asociacion;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
@@ -784,7 +802,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JMenu Configuracion;
     private javax.swing.JMenu Consultas;
     private javax.swing.JLabel CorreoLabel;
-    private javax.swing.JLabel CorreoLabel1;
+    public static javax.swing.JLabel CorreoLabel1;
     private javax.swing.JLabel DatosActualesLabel;
     private javax.swing.JMenuItem DonacionesItem;
     private javax.swing.JMenu Editar;
@@ -797,20 +815,21 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JMenuItem MascotasItem1;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel NombreLabel;
-    private javax.swing.JLabel NombreLabel1;
+    public static javax.swing.JLabel NombreLabel1;
     private javax.swing.JMenu Opciones;
     private javax.swing.JLabel PerfilLabel;
     private javax.swing.JPanel PrincipalPanel;
     private javax.swing.JMenu Registro;
     private javax.swing.JMenuItem SalirItem;
     private javax.swing.JTable TablaInicio;
-    private javax.swing.JLabel TelLabel1;
+    public static javax.swing.JLabel TelLabel1;
     private javax.swing.JMenuItem TiposMascotasItem;
     private javax.swing.JMenuItem TiposRazasItem;
     private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JLabel UsernameLabel1;
+    public static javax.swing.JLabel UsernameLabel1;
     private javax.swing.JButton editarButton;
     private javax.swing.JButton fotoButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
