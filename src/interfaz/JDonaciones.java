@@ -1,6 +1,7 @@
 package interfaz;
 
-import Administrador.ModeloTablas;
+import Administrador.ModeloTablas; 
+import Administrador.Administrador;
 
 public class JDonaciones extends javax.swing.JFrame {
 
@@ -22,9 +23,10 @@ public class JDonaciones extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaDonaciones = new javax.swing.JTable();
         CantidadText = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        MontoToalButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         CantidadLabel = new javax.swing.JLabel();
+        AsociacionesCombo = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -52,7 +54,12 @@ public class JDonaciones extends javax.swing.JFrame {
 
         CantidadText.setText(" Cantidad :");
 
-        jButton1.setText("Monto Totales");
+        MontoToalButton.setText("Monto Total");
+        MontoToalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MontoToalButtonActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Todos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -63,31 +70,32 @@ public class JDonaciones extends javax.swing.JFrame {
 
         CantidadLabel.setText("Cantidad");
 
+        AsociacionesCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.hacerArrayDeAsociaciones()));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addContainerGap()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(AsociacionButton)
-                                    .addGap(308, 308, 308)
-                                    .addComponent(jButton1)
+                                    .addGap(171, 171, 171)
+                                    .addComponent(AsociacionesCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jButton2)
-                                    .addGap(3, 3, 3))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel1)))
+                                    .addComponent(MontoToalButton)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jButton2))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(3, 3, 3))
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(CantidadText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CantidadLabel)))
@@ -102,8 +110,9 @@ public class JDonaciones extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FiltroText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AsociacionButton)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(MontoToalButton)
+                    .addComponent(jButton2)
+                    .addComponent(AsociacionesCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -131,14 +140,21 @@ public class JDonaciones extends javax.swing.JFrame {
         TablaDonaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_jButton2ActionPerformed
+ 
+    private void MontoToalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MontoToalButtonActionPerformed
+        TablaDonaciones.setModel(ModeloTablas.tablaDeDonacionesTotalesS((String)AsociacionesCombo.getSelectedItem()));
+        TablaDonaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+    }//GEN-LAST:event_MontoToalButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsociacionButton;
+    private javax.swing.JComboBox AsociacionesCombo;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
     private javax.swing.JTextField FiltroText;
+    private javax.swing.JButton MontoToalButton;
     private javax.swing.JTable TablaDonaciones;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

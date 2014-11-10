@@ -106,6 +106,14 @@ public class Administrador {
             nombresDeRazas.add(ListaDeTiposMascotas.get(Index).getTipoDeRazas().get(i));
         }
         return nombresDeRazas.toArray();
+    } 
+    
+     public static Object[] hacerArrayDeAsociaciones(){
+        ArrayList<String> nombresDeAsociaciones = new ArrayList<>(); 
+        for(int i = 0; i < ListaDeAsociaciones.size(); i++){
+            nombresDeAsociaciones.add(ListaDeAsociaciones.get(i).getNombre());
+        } 
+        return nombresDeAsociaciones.toArray();
     }
             
     public static Object[] ColoresToArray(){ 
@@ -127,5 +135,6 @@ public class Administrador {
 
     public static void setUsuarioActual(int aUsuarioActual) {
         UsuarioActual = aUsuarioActual;
-    }
+    } 
+    
 }

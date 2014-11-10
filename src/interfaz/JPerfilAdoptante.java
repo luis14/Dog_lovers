@@ -341,7 +341,9 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
     }//GEN-LAST:event_ReportarButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Administrador.ListaDeAdoptantes.get(ID).setCalificacion(Integer.parseInt(estrellas));
+        int calificacionPasada = Administrador.ListaDeAdoptantes.get(ID).getCalificacion(); 
+        int promedio = (calificacionPasada + Integer.parseInt(estrellas))/2;
+        Administrador.ListaDeAdoptantes.get(ID).setCalificacion(promedio);
         if(!"".equals(ComentarioArea.getText())){
             Administrador.ListaDeAdoptantes.get(ID).setNotas(ComentarioArea.getText());
         }
