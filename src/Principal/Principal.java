@@ -12,7 +12,11 @@ public class Principal {
         Administrador.RegistrarUsuario("Santiago", "Mendez", "santi", "86664191", "123", false, "santiago1096@gmail.com",null);
         Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com",null);
         Administrador.RegistrarUsuario("Luis", "Alonso", "Luis", "1212121212",  "123",true, "LuisAlonso@yahoo.com",null);
-        Administrador.RegistrarUsuario("Marie", "Chang", "May", "90274194",  "123",true, "Marie@yahoo.com",null); 
+        Administrador.RegistrarUsuario("Marie", "Chang", "May", "90274194",  "123", false, "Marie@yahoo.com",null);   
+        Administrador.RegistrarUsuario("Lin", "Wong", "Lina", "88231194",  "123",false, "kcscr@yahoo.com" ,null); 
+        Administrador.RegistrarUsuario("William", "Yong", "Wiko", "88611466",  "123", false, "wyongsing@yahoo.com", null); 
+        Administrador.RegistrarUsuario("Rumiko", "Inoue", "Rumi", "22324357",  "123",false, "rumichaninoue@yahoo.com",null);   
+        
         Administrador.ListaDeUsuarios.get(0).setCasaCuna(true);
         Administrador.ListaDeUsuarios.get(1).setCasaCuna(true);
         
@@ -30,10 +34,15 @@ public class Principal {
         Administrador.RegistrarMascota("Mark", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(2), "563", "Poodle", "2000", "Es muy tranquilo",null);
         Administrador.RegistrarMascota("Billy", "Perro", "Negro", "28/10/2014", "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "53", "Poodle", "2000", "Es muy tranquilo",null);
         Administrador.RegistrarMascota("Meli", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(3), "23", "Shitzu", "500", "Es muy obediente",null);
+        Administrador.RegistrarMascota("Mimi", "Hamster", "Blanco", "10/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(3), " ", "Syrian", "500", "Es muy lindo",null);
+        
+        Administrador.RegistrarMascota(" ", "Perro", "Blanco", "30/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(0), "24", "Shitzu", " ", "Es muy calmado",null);
+        Administrador.RegistrarMascota(" ", "Perro", "Negro", "02/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(1), "4", "Rottwieler", " ", "Ladra mucho por la noche",null);
+        Administrador.RegistrarMascota(" ", "Perro", "Gris", "04/11/2014", "Encontrado", "Grande", Administrador.ListaDeUsuarios.get(1), " ", "Husky", " ", "Le gusta pasear",null);
+        Administrador.RegistrarMascota(" ", "Perro", "Blanco", "29/11/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(4), "23", "Shitzu", " ", "Es muy callado",null);
+        Administrador.RegistrarMascota(" ", "Perro", "Negro", "02/11/2014", "Encontrado", "Grande", Administrador.ListaDeUsuarios.get(5), "53", "Poodle", " ", "No hace mucho",null);
+        Administrador.RegistrarMascota(" ", "Hamster", "Blanco", "20/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(0), " ", "Syrian", " ", "Parece una bolita",null);
 
-        Administrador.RegistrarMascota("Mimi", "Perro", "Blanco", "30/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(0), "23", "Shitzu", "500", "Es muy calmado",null);
-        Administrador.RegistrarMascota("Pepito", "Perro", "Negro", "02/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(1), " ", "Rottwieler", "3000", "Ladra mucho por la noche",null);
-        Administrador.RegistrarMascota("Bark", "Perro", "Gris", "04/11/2014", "Encontrado", "Grande", Administrador.ListaDeUsuarios.get(1), " ", "Husky", "4000", "Le gusta pasear",null);
         
         Administrador.RegistrarCasaCuna("Perro", "Golden Retriever", true , "Pequeño", "ninguno", Administrador.ListaDeUsuarios.get(0) , "2234251");  
         Administrador.RegistrarCasaCuna("Gato", "Any", false, "Pequeño", "ninguno", Administrador.ListaDeUsuarios.get(1), "8833241");

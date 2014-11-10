@@ -113,18 +113,16 @@ public class ModeloTablas {
            if(ChipDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getChip()) || ChipDeMascotaMatch.equals(" ")){
                contador++; 
            } 
-           if(TipoDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getTipo())){
-               contador++; 
-           } 
            if(TamanioDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getTamanio())){
                contador++; 
-           } 
-           if(RazaDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getRaza())){
-               contador++; 
-           } 
-           if(contador >=3 && encontrado == true){ 
-              modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo()); 
-              contadorParaInterfaz++;
+           }  
+           if(contador >=1 && encontrado == true){  
+               if(TipoDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getTipo())){
+                   if(RazaDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getRaza())){
+                        modeloMascotas.addRow(Administrador.ListaDeMascotas.get(i).arreglo()); 
+                        contadorParaInterfaz++;
+                      }   
+                }
            }
             
         } 

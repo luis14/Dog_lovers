@@ -252,7 +252,9 @@ public class JControl extends javax.swing.JFrame {
         DatosActualesLabel.setText("Datos Actuales");
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
+        matchButton.setEnabled(true);
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3));
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         TablaInicio.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas
         TablaInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -321,7 +323,7 @@ public class JControl extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(editarButton))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
