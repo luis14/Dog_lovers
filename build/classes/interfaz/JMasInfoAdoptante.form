@@ -29,7 +29,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Component id="notasLabel" min="-2" max="-2" attributes="0"/>
                   <Component id="ImgLabel" min="-2" pref="210" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -47,13 +49,23 @@
                           <Component id="pTelefonoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="pReportadoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="pCorreoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pCalificacionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pResidenciaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="pNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pResidenciaLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="estrella1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="estrella2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="estrella3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="estrella4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="estrella5" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,7 +76,7 @@
               <Component id="ImgLabel" min="-2" pref="159" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="NombreLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                       <Component id="telefonoLabel" min="-2" max="-2" attributes="0"/>
@@ -72,14 +84,8 @@
                       <Component id="reporteLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                       <Component id="correoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="calificacionLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="residenciaLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="tamanioLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="pNombreLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                       <Component id="pTelefonoLabel" min="-2" max="-2" attributes="0"/>
@@ -87,15 +93,37 @@
                       <Component id="pReportadoLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                       <Component id="pCorreoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="pCalificacionLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="residenciaLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tamanioLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Component id="pResidenciaLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="pEspacioLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="calificacionLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="estrella4" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="estrella5" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="estrella1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="estrella3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="estrella2" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="notasLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="114" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -159,12 +187,6 @@
         <Property name="text" type="java.lang.String" value="Residencia"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="pCalificacionLabel">
-      <Properties>
-        <Property name="name" type="java.lang.String" value="" noResource="true"/>
-        <Property name="text" type="java.lang.String" value="Calificaci&#xf3;n"/>
-      </Properties>
-    </Component>
     <Component class="java.awt.Label" name="pCorreoLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Correo:"/>
@@ -185,5 +207,63 @@
         <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="estrella1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/star off.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="estrella2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/star off.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="estrella3">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/star off.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="estrella4">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/star off.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="estrella5">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/star off.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="notasLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Notas:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="NotasTextArea">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="lineWrap" type="boolean" value="true"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

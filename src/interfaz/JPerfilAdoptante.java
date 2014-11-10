@@ -16,7 +16,11 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         setTitle("Pefil de Adoptante");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
         DatosUsuario(AdoptanteEscogido);
-
+        estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
     }
 
     private void DatosUsuario(int Adoptante){
@@ -227,7 +231,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(13, 13, 13)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

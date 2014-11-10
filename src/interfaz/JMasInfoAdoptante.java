@@ -9,6 +9,7 @@ import Administrador.Administrador;
 import java.awt.Color;
 import java.awt.MouseInfo;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -38,11 +39,49 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
         pTelefonoLabel.setText(Administrador.ListaDeAdoptantes.get(ID).getTelefono());
         pReportadoLabel.setText(Administrador.ListaDeAdoptantes.get(ID).getStringListaNegra());
         pCorreoLabel.setText(Administrador.ListaDeAdoptantes.get(ID).getCorreo());
-        pCalificacionLabel.setText(Administrador.ListaDeAdoptantes.get(ID).getStringCalificacion());
         pResidenciaLabel.setText(Administrador.ListaDeAdoptantes.get(ID).getLugarDeResidencia());
         pEspacioLabel.setText(Administrador.ListaDeAdoptantes.get(ID).getCantidadDeEsapcio());
         if(Administrador.ListaDeAdoptantes.get(ID).getImagen() != null){
             ImgLabel.setIcon(Administrador.ListaDeAdoptantes.get(ID).getImagen());
+        }
+        NotasTextArea.setText(Administrador.ListaDeAdoptantes.get(ID).getNotas());
+        int calificacion = Administrador.ListaDeAdoptantes.get(ID).getCalificacion();
+        if(calificacion <= 0){
+            estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        }else if(calificacion <= 1){
+            estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        }else if(calificacion <= 2){
+            estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        }else if(calificacion <= 3){
+            estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+            estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        }else if(calificacion <= 4){
+            estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
+        }else{
+            estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella3.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella4.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
+            estrella5.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star-iconx24.png")));
         }
     }
     /**
@@ -64,11 +103,18 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
         tamanioLabel = new java.awt.Label();
         pEspacioLabel = new java.awt.Label();
         pResidenciaLabel = new java.awt.Label();
-        pCalificacionLabel = new java.awt.Label();
         pCorreoLabel = new java.awt.Label();
         pTelefonoLabel = new java.awt.Label();
         pReportadoLabel = new java.awt.Label();
         pNombreLabel = new java.awt.Label();
+        estrella1 = new javax.swing.JLabel();
+        estrella2 = new javax.swing.JLabel();
+        estrella3 = new javax.swing.JLabel();
+        estrella4 = new javax.swing.JLabel();
+        estrella5 = new javax.swing.JLabel();
+        notasLabel = new java.awt.Label();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        NotasTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -104,9 +150,6 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
         pResidenciaLabel.setName(""); // NOI18N
         pResidenciaLabel.setText("Residencia");
 
-        pCalificacionLabel.setName(""); // NOI18N
-        pCalificacionLabel.setText("Calificación");
-
         pCorreoLabel.setText("Correo:");
 
         pTelefonoLabel.setText("Teléfono");
@@ -115,13 +158,34 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
 
         pNombreLabel.setText("Nombre");
 
+        estrella1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/star off.png"))); // NOI18N
+
+        estrella2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/star off.png"))); // NOI18N
+
+        estrella3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/star off.png"))); // NOI18N
+
+        estrella4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/star off.png"))); // NOI18N
+
+        estrella5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/star off.png"))); // NOI18N
+
+        notasLabel.setName(""); // NOI18N
+        notasLabel.setText("Notas:");
+
+        NotasTextArea.setEditable(false);
+        NotasTextArea.setColumns(20);
+        NotasTextArea.setLineWrap(true);
+        NotasTextArea.setRows(5);
+        jScrollPane1.setViewportView(NotasTextArea);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(notasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,10 +202,19 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
                             .addComponent(pTelefonoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pReportadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pCorreoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pCalificacionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pNombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pResidenciaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pNombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(72, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(estrella1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(estrella2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(estrella3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(estrella4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(estrella5)))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,13 +230,7 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(reporteLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(correoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(calificacionLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(residenciaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(tamanioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(correoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pNombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
@@ -171,14 +238,31 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(pReportadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(pCorreoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(pCalificacionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
+                        .addComponent(pCorreoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(residenciaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tamanioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(pResidenciaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pEspacioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calificacionLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(estrella4)
+                        .addComponent(estrella5)
+                        .addComponent(estrella1)
+                        .addComponent(estrella3))
+                    .addComponent(estrella2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(notasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -226,9 +310,16 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ImgLabel;
     private java.awt.Label NombreLabel1;
+    private javax.swing.JTextArea NotasTextArea;
     private java.awt.Label calificacionLabel1;
     private java.awt.Label correoLabel;
-    private java.awt.Label pCalificacionLabel;
+    private javax.swing.JLabel estrella1;
+    private javax.swing.JLabel estrella2;
+    private javax.swing.JLabel estrella3;
+    private javax.swing.JLabel estrella4;
+    private javax.swing.JLabel estrella5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private java.awt.Label notasLabel;
     private java.awt.Label pCorreoLabel;
     private java.awt.Label pEspacioLabel;
     private java.awt.Label pNombreLabel;
