@@ -21,7 +21,7 @@ public class JMatch extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Match"); 
-        TablaMatch.setModel(ModeloTablas.tablaMatch(idMascota)); 
+        TablaMatch.setModel(ModeloTablas.tablaMatch(idMascota, "Encontrado")); 
         TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas
     }
 
@@ -45,7 +45,7 @@ public class JMatch extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Match");
 
-        TablaMatch.setModel(ModeloTablas.tablaMatch(0));
+        TablaMatch.setModel(ModeloTablas.tablaMatch(0, "Encontrado"));
         jScrollPane1.setViewportView(TablaMatch);
 
         CantidadText.setText("Cantidad");

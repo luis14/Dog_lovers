@@ -438,7 +438,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                 boolean Verdad; 
                 Verdad = Estado.equals("Identificado");
                 if(Verdad){
-                    JIdentificado identificado = new JIdentificado(); 
+                    JIdentificado identificado = new JIdentificado(MascotaEscogida); 
                     identificado.setVisible(true); 
                 } 
     }//GEN-LAST:event_EstadoComboActionPerformed

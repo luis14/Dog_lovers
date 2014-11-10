@@ -93,7 +93,7 @@ public class ModeloTablas {
         return modeloMascotas;
     }
        
-       public static DefaultTableModel tablaMatch(int id){ 
+       public static DefaultTableModel tablaMatch(int id, String estadoOpuesto){ 
         String titulos[] = {"ID", "Fecha","Nombre", "Estado", "Color", "Tipo", "Tamaño", "Chip", "Raza"}; 
         String informacion[][] = {};  
         int contadorParaInterfaz = 0;
@@ -107,7 +107,7 @@ public class ModeloTablas {
         for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
            int contador = 0;  
            Boolean encontrado = false; 
-           if(Administrador.ListaDeMascotas.get(i).getEstado().equals("Encontrado")){ 
+           if(Administrador.ListaDeMascotas.get(i).getEstado().equals(estadoOpuesto)){ 
                encontrado = true;
            }
            if(ColorDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getColor())){
