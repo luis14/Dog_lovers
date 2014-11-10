@@ -387,7 +387,8 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                 Administrador.RegistrarMascota(NombreLabel.getText(), (String)TipoCombo.getSelectedItem(),
                         (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)EstadoCombo.getSelectedItem(), 
                         (String)TamañoCombo.getSelectedItem(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
-                        Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText());
+                        Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText(),
+                        img);
                 dispose();
             }else{ 
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
