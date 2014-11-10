@@ -598,7 +598,7 @@ public class JControl extends javax.swing.JFrame {
             JCasaCuna casacuna = new JCasaCuna(false);
             casacuna.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null,"Ya estas registrado como Casa Cuna");
+            JOptionPane.showMessageDialog(null,"Ya esta registrado como Casa Cuna");
         }
     }//GEN-LAST:event_CasaCunaItemActionPerformed
 
@@ -617,7 +617,7 @@ public class JControl extends javax.swing.JFrame {
             JAdoptante adoptante = new JAdoptante(false);
             adoptante.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null,"Ya estas registrado como Adoptante");
+            JOptionPane.showMessageDialog(null,"Ya esta registrado como Adoptante");
         }
     }//GEN-LAST:event_AdoptanteItemActionPerformed
 
@@ -631,7 +631,7 @@ public class JControl extends javax.swing.JFrame {
             JAsociacion asociacion = new JAsociacion(false);
             asociacion.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null,"Ya estas registrado como Asociación");
+            JOptionPane.showMessageDialog(null,"Ya esta registrado como Asociación");
         }
     }//GEN-LAST:event_AsociacionActionPerformed
 

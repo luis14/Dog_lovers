@@ -123,6 +123,12 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
         NombreLabel.setText("Nombre:");
 
+        NombreText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreTextActionPerformed(evt);
+            }
+        });
+
         ChipLabel.setText("Chip:");
 
         ChipText.addActionListener(new java.awt.event.ActionListener() {
@@ -149,9 +155,16 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
         jLabel10.setText("Fecha:");
 
-        FechaText.setText("Fecha en la que fue perdido o encontrado");
+        FechaText.setText("dd/mm/yyyy");
 
         jLabel11.setText("Recompensa:");
+
+        RecompensaText.setText("Monto");
+        RecompensaText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RecompensaTextActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("Descripción:");
 
@@ -277,10 +290,11 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                                                 .addComponent(jLabel11)
                                                 .addComponent(jLabel10))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(FechaText, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(RecompensaText, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(EstadoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(RecompensaText)
+                                                .addComponent(FechaText, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                                            .addGap(117, 117, 117)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,7 +404,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     private void registrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarButtonActionPerformed
         if(VerificaMascota()){
             if(MascotaEscogida == -1){
-                Administrador.RegistrarMascota(NombreLabel.getText(), (String)TipoCombo.getSelectedItem(),
+                Administrador.RegistrarMascota(NombreText.getText(), (String)TipoCombo.getSelectedItem(),
                         (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)EstadoCombo.getSelectedItem(), 
                         (String)TamañoCombo.getSelectedItem(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
                         Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText(),
@@ -469,6 +483,14 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         img = imagen;
 	ImgLabel.setIcon(imagen);
     }//GEN-LAST:event_CargarButtonActionPerformed
+
+    private void NombreTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreTextActionPerformed
+
+    private void RecompensaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecompensaTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RecompensaTextActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargarButton;
