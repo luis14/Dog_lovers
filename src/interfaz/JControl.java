@@ -703,6 +703,13 @@ public class JControl extends javax.swing.JFrame {
         img = imagen;
 	FotoLabel.setIcon(imagen);
         Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setImagen(img);
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante()){
+            int adoptante = 0;
+            while(Administrador.ListaDeAdoptantes.get(adoptante).getUsuario() != Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual)){
+                adoptante++;
+            }
+            Administrador.ListaDeAdoptantes.get(adoptante).setImagen(img);
+        }
     }//GEN-LAST:event_fotoButtonActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

@@ -27,7 +27,9 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         ResidenciaLabel1.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getLugarDeResidencia());
         EspacioLabel1.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getCantidadDeEsapcio());
         ComentariosTextArea.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getNotas());
-        FotoAdLabel.setIcon(Administrador.ListaDeAdoptantes.get(Adoptante).getImagen());
+        if(Administrador.ListaDeAdoptantes.get(Adoptante).getImagen() != null){
+            FotoAdLabel.setIcon(Administrador.ListaDeAdoptantes.get(Adoptante).getImagen());
+        }
         if(Administrador.ListaDeAdoptantes.get(Adoptante).getReportado()){
             ErrorLabel.setVisible(true);
         }

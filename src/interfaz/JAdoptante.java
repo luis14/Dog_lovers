@@ -150,11 +150,11 @@ public class JAdoptante extends javax.swing.JFrame {
         if(VerificaDatos()){
             if(!(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante())){
                     Administrador.RegistrarAdoptante(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getNombre(),
-                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo(),
-                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono(),
-                            ResidenciaTextArea.getText(), EspacioTextArea.getText(), false,
-                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
-                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getImagen());
+                                                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo(),
+                                                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono(),
+                                                     ResidenciaTextArea.getText(), EspacioTextArea.getText(), false,
+                                                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
+                                                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getImagen());
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAdoptante(true);
                     dispose();
             }else{
