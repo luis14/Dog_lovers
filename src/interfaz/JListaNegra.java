@@ -52,6 +52,11 @@ public class JListaNegra extends javax.swing.JFrame {
         TablaListaNegra.setModel(ModeloTablas.tablaListaNegra());
         TablaListaNegra.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaListaNegra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaListaNegraMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaListaNegra);
 
         TodosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415536799_list-16.png"))); // NOI18N
@@ -122,6 +127,14 @@ public class JListaNegra extends javax.swing.JFrame {
         TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas
         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_TodosButtonActionPerformed
+
+    private void TablaListaNegraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaListaNegraMouseClicked
+        int fila = TablaListaNegra.getSelectedRow();
+        String idAdoptante = TablaListaNegra.getValueAt(fila ,0).toString();
+        JMasInfoAdoptante ventEmergente = new JMasInfoAdoptante();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAdoptante)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaListaNegraMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarFiltroButton;

@@ -29,6 +29,11 @@ public class JMatch extends javax.swing.JFrame {
         jLabel1.setText("Match");
 
         TablaMatch.setModel(ModeloTablas.tablaMatch(0, "Encontrado"));
+        TablaMatch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaMatchMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaMatch);
 
         CantidadText.setText("Cantidad");
@@ -66,6 +71,14 @@ public class JMatch extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TablaMatchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMatchMouseClicked
+        int fila = TablaMatch.getSelectedRow();
+        String idAnimal = TablaMatch.getValueAt(fila ,0).toString();
+        JMasInfo ventEmergente = new JMasInfo();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaMatchMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

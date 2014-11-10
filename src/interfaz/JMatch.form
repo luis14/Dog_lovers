@@ -77,6 +77,9 @@
               <Connection code="ModeloTablas.tablaMatch(0, &quot;Encontrado&quot;)" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaMatchMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

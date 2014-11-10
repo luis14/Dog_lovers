@@ -29,7 +29,7 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
                         (int) MouseInfo.getPointerInfo().getLocation().getY() - 200 );
         }else{
             setLocation((int) MouseInfo.getPointerInfo().getLocation().getX() - 20,
-                        (int) MouseInfo.getPointerInfo().getLocation().getY() - 450 );
+                        (int) MouseInfo.getPointerInfo().getLocation().getY() - 400 );
         }
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.blue, 2));
     }
@@ -72,6 +72,11 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+        });
 
         ImgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414706716_user_male2-128.png"))); // NOI18N
@@ -136,7 +141,7 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
                             .addComponent(pCalificacionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pResidenciaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pNombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,6 +183,10 @@ public class JMasInfoAdoptante extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        dispose();
+    }//GEN-LAST:event_formMouseExited
 
     /**
      * @param args the command line arguments

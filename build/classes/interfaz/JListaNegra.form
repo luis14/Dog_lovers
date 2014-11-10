@@ -114,6 +114,9 @@
               <Connection code="ModeloTablas.tablaListaNegra()" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaListaNegraMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaListaNegra.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaListaNegra.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>

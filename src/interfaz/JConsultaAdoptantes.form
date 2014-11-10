@@ -119,6 +119,9 @@
               <Connection code="ModeloTablas.tablaAdoptantes()" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaAdoptantesMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tablaAdoptantes.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>

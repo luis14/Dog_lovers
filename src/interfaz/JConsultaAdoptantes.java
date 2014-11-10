@@ -48,6 +48,11 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
         tablaAdoptantes.setModel(ModeloTablas.tablaAdoptantes());
         tablaAdoptantes.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         tablaAdoptantes.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        tablaAdoptantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaAdoptantesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaAdoptantes);
 
         CantidadText.setText(" Cantidad :");
@@ -147,6 +152,14 @@ public class JConsultaAdoptantes extends javax.swing.JFrame {
             PerfilAdoptante.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tablaAdoptantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAdoptantesMouseClicked
+        int fila = tablaAdoptantes.getSelectedRow();
+        String idAdoptante = tablaAdoptantes.getValueAt(fila ,0).toString();
+        JMasInfoAdoptante ventEmergente = new JMasInfoAdoptante();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAdoptante)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_tablaAdoptantesMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarButton;
