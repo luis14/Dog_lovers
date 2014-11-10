@@ -132,7 +132,7 @@ public class JMatchIdentificados extends javax.swing.JFrame {
                 dispose(); 
             } 
             else{ 
-               JOptionPane.showMessageDialog(null,"Muhas Gracias!");
+               JOptionPane.showMessageDialog(null,"Muchas Gracias!");
                dispose();
             } 
         }

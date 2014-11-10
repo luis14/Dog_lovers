@@ -131,7 +131,7 @@ public class ModeloTablas {
     } 
     
     public static DefaultTableModel tablaCasaCuna(){  
-        String titulos[] = {"ID", "Tipo", "Raza", "Tamaño", "NecesitaAlimentacion", "Telefono", "Requerimientos"}; 
+        String titulos[] = {"ID", "Tipo", "Raza", "Tamaño", "Necesita Alimentacion", "Telefono", "Requerimientos"}; 
         String informacion[][] = {}; 
         int contadorParaInterfaz = 0;
         modeloCasaCuna= new DefaultTableModel(informacion, titulos);
@@ -144,7 +144,7 @@ public class ModeloTablas {
     } 
     
      public static DefaultTableModel tablaCasaCuna(String Tipo, String Tamanio, String Raza, String Alimentacion){ 
-        String titulos[] = {"ID","Tipo", "Raza", "Tamaño", "NecesitaAlimentacion", "Telefono", "Requerimientos"};  
+        String titulos[] = {"ID","Tipo", "Raza", "Tamaño", "Necesita Alimentacion", "Telefono", "Requerimientos"};  
         String informacion[][] = {}; 
         modeloCasaCuna = new DefaultTableModel(informacion, titulos);  
         int contadorParaInterfaz = 0;
@@ -173,7 +173,7 @@ public class ModeloTablas {
     } 
     
     public static DefaultTableModel tablaAdoptantes(){
-        String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
+        String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificación"}; 
         String informacion[][] = {};  
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         int contadorParaInterfaz = 0; 
@@ -187,7 +187,7 @@ public class ModeloTablas {
     
  
      public static DefaultTableModel tablaAdoptantes(String Calificacion){
-        String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificacion"}; 
+        String titulos[] = { "ID","Nombre", "Telefono", "Correo", "Lista Negra", "Calificación"}; 
         String informacion[][] = {}; 
         modeloAdoptantes= new DefaultTableModel(informacion, titulos);
         int contadorParaInterfaz = 0; 
@@ -262,7 +262,7 @@ public class ModeloTablas {
         
     
      public static DefaultTableModel TablafiltroListaNegra(String stringBuscando){ 
-	String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificacion"};  
+	String titulos[] = {"ID", "Nombre", "Telefono", "Correo", "Calificación"};  
 	String informacion[][] = {}; 
         modeloAdoptantes = new DefaultTableModel(informacion, titulos); 
         int contadorParaInterfaz = 0; 
@@ -278,7 +278,7 @@ public class ModeloTablas {
     
      
      public static DefaultTableModel tablaDeDonaciones(){
-         String titulos[]= {"Donante", "Asociacion", "Monto"}; 
+         String titulos[]= {"Donante", "Asociación", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
          int contadorParaInterfaz = 0; 
@@ -291,7 +291,7 @@ public class ModeloTablas {
      }  
      
      public static DefaultTableModel tablaDeDonaciones(String Nombre){
-         String titulos[]= {"Donante", "Asociacion", "Monto"}; 
+         String titulos[]= {"Donante", "Asociación", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
          int contadorParaInterfaz = 0; 
@@ -309,7 +309,7 @@ public class ModeloTablas {
      
      
       public static DefaultTableModel tablaDeDonacionesTotalesS(String Asociación){
-         String titulos[]= { "Asociacion", "Monto"}; 
+         String titulos[]= { "Asociación", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos);  
          int montoTotal = 0;
