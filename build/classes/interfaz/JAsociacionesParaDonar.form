@@ -80,6 +80,12 @@
               <Connection code="ModeloTablas.tablaAsociaiones()" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaAsociasMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaAsocias.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaAsocias.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

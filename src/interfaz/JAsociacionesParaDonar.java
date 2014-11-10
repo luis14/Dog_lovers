@@ -43,6 +43,13 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         TablaAsocias.setModel(ModeloTablas.tablaAsociaiones());
+        TablaAsocias.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
+        TablaAsocias.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaAsocias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaAsociasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaAsocias);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -119,6 +126,14 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
     private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed
         dispose();
     }//GEN-LAST:event_CancelarButtonActionPerformed
+
+    private void TablaAsociasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaAsociasMouseClicked
+        int fila = TablaAsocias.getSelectedRow();
+        String idAsociacion = TablaAsocias.getValueAt(fila ,0).toString();
+        JInfoAsociacion ventEmergente = new JInfoAsociacion();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAsociacion)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaAsociasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

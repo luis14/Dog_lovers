@@ -54,6 +54,13 @@ public class JMatchIdentificados extends javax.swing.JFrame {
         Titulo.setText("Por Favor Escoga la mascota Identificada");
 
         TablaIdentificado.setModel(ModeloTablas.tablaMatch(0, "Perdido"));
+        TablaIdentificado.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
+        TablaIdentificado.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaIdentificado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaIdentificadoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaIdentificado);
 
         AceptarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
@@ -134,6 +141,14 @@ public class JMatchIdentificados extends javax.swing.JFrame {
     private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed
         dispose(); 
     }//GEN-LAST:event_CancelarButtonActionPerformed
+
+    private void TablaIdentificadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaIdentificadoMouseClicked
+        int fila = TablaIdentificado.getSelectedRow();
+        String idAnimal = TablaIdentificado.getValueAt(fila ,0).toString();
+        JMasInfo ventEmergente = new JMasInfo();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAnimal)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaIdentificadoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
