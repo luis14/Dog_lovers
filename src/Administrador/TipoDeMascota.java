@@ -2,17 +2,20 @@ package Administrador;
 
 import java.util.ArrayList; 
 
-public class TipoDeMascota { 
+public class TipoDeMascota {   
+    // Función que contiene todos los métodos y atributos para Tipo De Mascota
     private static int cantidadTipoDeMascotas = 0; 
     private final int id; 
     private ArrayList<String> TipoDeRazas = new ArrayList<>();  
     private String Nombre;
     
+    //Constructor
     public TipoDeMascota(String Nombre){
         this.Nombre = Nombre; 
         id = cantidadTipoDeMascotas++;
     } 
     
+    //Setter y getters
     public void agregarTipoDeRaza(String Raza){
         TipoDeRazas.add(Raza);  
     }  

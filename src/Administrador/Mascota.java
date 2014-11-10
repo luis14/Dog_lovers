@@ -5,7 +5,8 @@ import java.util.Date;
 import java.util.ArrayList;
 import javax.swing.Icon;
 
-public class Mascota { 
+public class Mascota {  
+    // Función que contiene todos los métodos y atributos para Mascota
     private String nombre;  
     private String tipo; 
     private String raza; 
@@ -22,6 +23,7 @@ public class Mascota {
     private int id;  
     private static int cantidadDeMascotas= 0; 
 
+    //Constructor 
     public Mascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido,String Recompensa,
                     String estado, String tamanio, Usuario usuario, String Chip, String raza, String Descripcion,
                     Icon Imagen){
@@ -40,6 +42,7 @@ public class Mascota {
         id = ++cantidadDeMascotas; 
     } 
     
+    //Setters y Getters 
     public String getNombre() {
         return nombre;
     }
@@ -140,11 +143,6 @@ public class Mascota {
         String ID = Integer.toString(id);
         return ID; 
     }
-    
-    public String[] arreglo(){
-        String[]msg = {Integer.toString(getId()), getFechaDeEncontradoPerdido(), getNombre(), getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
-        return msg;
-    }
 
     public String getDescripcion() {
         return Descripcion;
@@ -161,4 +159,9 @@ public class Mascota {
 	imagen = Image;
     }
     
+     // Función que crea un arreglo para hacer el modelo de tabla
+    public String[] arreglo(){
+        String[]msg = {Integer.toString(getId()), getFechaDeEncontradoPerdido(), getNombre(), getEstado(), getColor(), getTipo(), getTamanio(), getChip(), getRaza()};
+        return msg;
+    }
 }

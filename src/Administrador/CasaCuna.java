@@ -1,7 +1,8 @@
 package Administrador; 
 
 
-public class CasaCuna { 
+public class CasaCuna {  
+    // Función que contiene todos los métodos y atributos para Casa Cuna
     private String tipo;  
     private String raza; 
     private Boolean necesitaAlimentacion; 
@@ -12,6 +13,7 @@ public class CasaCuna {
     private int id;  
     private static int cantidadDeCasaCunas = 0; 
 
+    //Constructor
     public CasaCuna(String tipo, String raza, Boolean necesitaAlimentacion, 
             String Tamanio, String requerimientos, Usuario Usuario, String Telefono){
         this.tipo = tipo; 
@@ -22,7 +24,10 @@ public class CasaCuna {
         this.Usuario = Usuario;
         this.telefono = Telefono; 
         id = ++cantidadDeCasaCunas; 
-    }
+    } 
+    
+    // Setters y Getters 
+    
     /**
      * @return the tipo
      */
@@ -145,6 +150,7 @@ public class CasaCuna {
         return ID; 
     } 
     
+    // Función que crea un arreglo para hacer el modelo de tabla
     public String[] arreglo(){
         String[]msg = {Integer.toString(getId()), getTipo(), getRaza(), getTamanio(), getNecesitaAlimentacion(), getTelefono(),getRequerimientos()};
         return msg;

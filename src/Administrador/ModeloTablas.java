@@ -5,6 +5,7 @@ import Administrador.Adoptante;
 import java.util.ArrayList;
 
 public class ModeloTablas { 
+    // Clase que tiene todas los métodos y atributos para hacer los modelo de tablas 
     private static DefaultTableModel modeloMascotas; 
     private static DefaultTableModel modeloCasaCuna; 
     private static DefaultTableModel modeloAdoptantes;  

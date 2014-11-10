@@ -1,6 +1,7 @@
 package Administrador;
 
-public class Asociacion {
+public class Asociacion { 
+    // Función que contiene todos los métodos y atributos para Asociación
     private String nombre; 
     private String mission; 
     private String cedulaJuridica; 
@@ -11,6 +12,7 @@ public class Asociacion {
     private int id;   
     private static int cantidadDeUsuarios = 0; 
 
+    // Constructor
     public Asociacion(String nombre, String mission, String cedulaJuridica, String telefono, String correo, String paginaWeb, Usuario usuario){ 
         this.nombre = nombre; 
         this.mission = mission; 
@@ -21,7 +23,10 @@ public class Asociacion {
         this.usuario = usuario;
         id = ++cantidadDeUsuarios; 
         
-    }
+    } 
+    
+    //Setters y Getters 
+    
     public String getNombre() {
         return nombre;
     }
@@ -73,11 +78,6 @@ public class Asociacion {
     public int getCantidadDeClientes(){
         return cantidadDeUsuarios; 
     }  
-     
-    public String[] arreglo(){
-        String msg[]= {Integer.toString(getId()), getNombre(), getMission(), getCedulaJuridica(),getTelefono(), getCorreo(), getPaginaWeb()}; 
-        return msg;
-     }
 
     public int getId() {
         return id;
@@ -93,5 +93,11 @@ public class Asociacion {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    } 
+    
+    // Función que crea un arreglo para hacer el modelo de tabla
+    public String[] arreglo(){
+        String msg[]= {Integer.toString(getId()), getNombre(), getMission(), getCedulaJuridica(),getTelefono(), getCorreo(), getPaginaWeb()}; 
+        return msg;
     }
 }

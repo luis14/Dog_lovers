@@ -7,7 +7,7 @@ import javax.swing.Icon;
 
 
 public class Administrador {
-  
+ 
     public static ArrayList<TipoDeMascota> ListaDeTiposMascotas = new ArrayList<>();
     public static ArrayList<Adoptante> ListaDeAdoptantes = new ArrayList<>();
     public static ArrayList<CasaCuna> ListaDeCasaCuna = new ArrayList<>();

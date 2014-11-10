@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.Icon;
 
 public class Usuario {
-
+    // Función que contiene todos los métodos y atributos para Usuario
     private String Nombre;
     private String Apellido;
     private String Username;
@@ -19,6 +19,7 @@ public class Usuario {
     private boolean casaCuna;
     private boolean asociacion;
     
+    //Constructor
     public Usuario(String Nombre, String Apellido, String Username, String Telefono,
                    String Contrasenia, boolean esAdmin, String correo,Icon Image){ 
         this.Nombre = Nombre; 
@@ -35,6 +36,7 @@ public class Usuario {
         id = ++cantidadDeUsuarios;   
     } 
 
+    //Setter y Getters
     public static Object get(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -113,11 +115,6 @@ public class Usuario {
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
     } 
-    
-    public String[] arreglo(){
-        String msg[] = {Integer.toString(getId()),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono(), printEsAdmin()}; 
-        return msg;
-    }
 
     public boolean isAdoptante() {
         return adoptante;
@@ -153,4 +150,9 @@ public class Usuario {
 	this.Imagen = Image;
     }
     
+    // Función que crea un arreglo para hacer el modelo de tabla
+    public String[] arreglo(){
+        String msg[] = {Integer.toString(getId()),getNombre(), getApellido(), getUsername(), getCorreo(), getTelefono(), printEsAdmin()}; 
+        return msg;
+    }
 }

@@ -3,7 +3,8 @@ package Administrador;
 import java.util.ArrayList; 
 import javax.swing.Icon;
 
-public class Adoptante { 
+public class Adoptante {  
+    // Función que contiene todos los métodos y atributos para Adoptante
     private int calificacion; 
     private String correo; 
     private String telefono; 
@@ -17,6 +18,7 @@ public class Adoptante {
     private int id;  
     private static int cantidadDeAdoptantes = 0; 
 
+    // Contructor 
     public Adoptante(String nombre, String correo, String telefono, String lugarDeResidencia, String cantidadDeEspacio,
                      Boolean reportado, Usuario usuario,Icon Image){ 
         this.nombre = nombre; 
@@ -30,6 +32,8 @@ public class Adoptante {
         id = ++cantidadDeAdoptantes; 
     }
 
+    // Setters y Getters 
+    
     public String getStringCalificacion() { 
         String Calificacion = null;
         if(calificacion == 0){
@@ -145,12 +149,6 @@ public class Adoptante {
         else{ 
             return "No";
         }
-    }
-    
-    public String[] arreglo(){
-       String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(),
-                      getStringCalificacion()}; 
-       return msg;
     } 
     
     public Icon getImagen() {
@@ -158,5 +156,12 @@ public class Adoptante {
     }
     public void setImagen(Icon Image) {
 	this.Imagen = Image;
+    } 
+    
+    // Función que crea un arreglo para hacer el modelo de tabla
+    public String[] arreglo(){
+       String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(),
+                      getStringCalificacion()}; 
+       return msg;
     }
 }
