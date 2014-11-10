@@ -10,7 +10,8 @@ public class JMatch extends javax.swing.JFrame {
         setTitle("Match"); 
         TablaMatch.setModel(ModeloTablas.tablaMatch(idMascota, "Encontrado")); 
         TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas 
-        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal()); 
+        TablaMatch.removeColumn(TablaMatch.getColumnModel().getColumn(2)); 
     }
 
     @SuppressWarnings("unchecked")
@@ -29,6 +30,8 @@ public class JMatch extends javax.swing.JFrame {
         jLabel1.setText("Match");
 
         TablaMatch.setModel(ModeloTablas.tablaMatch(0, "Encontrado"));
+        TablaMatch.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
+        TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas
         TablaMatch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TablaMatchMouseClicked(evt);

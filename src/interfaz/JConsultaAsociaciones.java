@@ -75,6 +75,7 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
             }
         });
 
+        BuscarBotton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         BuscarBotton.setText("Buscar");
         BuscarBotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +85,7 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
 
         CantidadLabel.setText("Cantidad");
 
+        TodosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415536799_list-16.png"))); // NOI18N
         TodosButton.setText("Todos");
         TodosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

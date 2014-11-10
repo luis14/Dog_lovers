@@ -140,6 +140,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="BuscarBotton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/1410328586_search.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
@@ -153,6 +156,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="TodosButton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/1415536799_list-16.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Todos"/>
       </Properties>
       <Events>

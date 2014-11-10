@@ -151,6 +151,7 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         jButton1.setText("Editar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,7 +252,9 @@ public class JControl extends javax.swing.JFrame {
         DatosActualesLabel.setText("Datos Actuales");
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
+        matchButton.setEnabled(true);
+        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3));
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         TablaInicio.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas
         TablaInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -266,6 +269,7 @@ public class JControl extends javax.swing.JFrame {
         CantidadLabel.setText("Cantidad");
 
         editarButton.setBackground(new java.awt.Color(0, 153, 0));
+        editarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         editarButton.setText("Editar");
         editarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +278,7 @@ public class JControl extends javax.swing.JFrame {
         });
 
         matchButton.setBackground(new java.awt.Color(0, 153, 0));
+        matchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415673004_plugin.png"))); // NOI18N
         matchButton.setText("Match");
         matchButton.setEnabled(false);
         matchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -284,6 +289,7 @@ public class JControl extends javax.swing.JFrame {
 
         EstadosCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.EstadosToArray()));
 
+        ActualizarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410683419_refresh.png"))); // NOI18N
         ActualizarButton.setText("Actualizar");
         ActualizarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -317,7 +323,7 @@ public class JControl extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(editarButton))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,6 +481,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Consultas.add(jMenuItem2);
 
+        ListaNegraItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672800_list-16.png"))); // NOI18N
         ListaNegraItem.setText("Lista Negra");
         ListaNegraItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -483,6 +490,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Consultas.add(ListaNegraItem);
 
+        DonacionesItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415662971_donate.png"))); // NOI18N
         DonacionesItem.setText("Donaciones");
         DonacionesItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -513,6 +521,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Configuracion.add(AdminItem);
 
+        TiposRazasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672611_animals-15-16.png"))); // NOI18N
         TiposRazasItem.setText("Tipos de Razas");
         TiposRazasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -521,6 +530,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Configuracion.add(TiposRazasItem);
 
+        TiposMascotasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672727_animals-01-16.png"))); // NOI18N
         TiposMascotasItem.setText("Tipos de Mascotas");
         TiposMascotasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

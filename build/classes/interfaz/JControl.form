@@ -160,6 +160,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ListaNegraItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415672800_list-16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Lista Negra"/>
               </Properties>
               <Events>
@@ -168,6 +171,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="DonacionesItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415662971_donate.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Donaciones"/>
               </Properties>
               <Events>
@@ -205,6 +211,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="TiposRazasItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415672611_animals-15-16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Tipos de Razas"/>
               </Properties>
               <Events>
@@ -213,6 +222,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="TiposMascotasItem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415672727_animals-01-16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Tipos de Mascotas"/>
               </Properties>
               <Events>
@@ -582,6 +594,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415669037_05_Edit_16x16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
@@ -633,7 +648,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="120" max="32767" attributes="0"/>
+                      <EmptySpace pref="130" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -682,7 +697,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="TablaInicio">
                   <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));&#xa;TablaInicio.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas">
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="matchButton.setEnabled(true);&#xa;TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3)); &#xa;CantidadLabel.setText(ModeloTablas.getContadorUniversal());&#xa;TablaInicio.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaInicio.setAutoCreateRowSorter(true); // Para ordenar las tablas">
                       <Connection code="ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), &quot;Perdido&quot;)" type="code"/>
                     </Property>
                   </Properties>
@@ -707,6 +722,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415669037_05_Edit_16x16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
@@ -717,6 +735,9 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1415673004_plugin.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Match"/>
               </Properties>
@@ -736,6 +757,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="ActualizarButton">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/1410683419_refresh.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
               <Events>
