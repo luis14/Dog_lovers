@@ -61,14 +61,14 @@ public class JControl extends javax.swing.JFrame {
         fotoButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         DatosActualesLabel = new javax.swing.JLabel();
-        MascotasPerdidasButton = new javax.swing.JButton();
-        MascotasEncontradasButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaInicio = new javax.swing.JTable();
         CantidadText = new javax.swing.JLabel();
         CantidadLabel = new javax.swing.JLabel();
         editarButton = new javax.swing.JButton();
         matchButton = new javax.swing.JButton();
+        EstadosCombo = new javax.swing.JComboBox();
+        ActualizarButton = new javax.swing.JButton();
         Menu = new javax.swing.JMenuBar();
         Registro = new javax.swing.JMenu();
         MascotaItem = new javax.swing.JMenuItem();
@@ -237,24 +237,6 @@ public class JControl extends javax.swing.JFrame {
         DatosActualesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         DatosActualesLabel.setText("Datos Actuales");
 
-        MascotasPerdidasButton.setBackground(new java.awt.Color(0, 153, 0));
-        MascotasPerdidasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830314_Help.png"))); // NOI18N
-        MascotasPerdidasButton.setText("Mascotas Perdidas");
-        MascotasPerdidasButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MascotasPerdidasButtonActionPerformed(evt);
-            }
-        });
-
-        MascotasEncontradasButton.setBackground(new java.awt.Color(0, 153, 0));
-        MascotasEncontradasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
-        MascotasEncontradasButton.setText("Mascota Encontrada");
-        MascotasEncontradasButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MascotasEncontradasButtonActionPerformed(evt);
-            }
-        });
-
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
         TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2));
         TablaInicio.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
@@ -287,46 +269,55 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        EstadosCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.EstadosToArray()));
+
+        ActualizarButton.setText("Actualizar");
+        ActualizarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(DatosActualesLabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(MascotasEncontradasButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(MascotasPerdidasButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(matchButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(editarButton))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGap(60, 60, 60)
-                            .addComponent(CantidadText)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(CantidadLabel)
-                            .addGap(603, 603, 603)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(DatosActualesLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EstadosCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(CantidadText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CantidadLabel))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(ActualizarButton)
+                                .addGap(165, 165, 165)
+                                .addComponent(matchButton)
+                                .addGap(29, 29, 29)
+                                .addComponent(editarButton))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(DatosActualesLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(DatosActualesLabel)
-                        .addComponent(MascotasEncontradasButton)
-                        .addComponent(MascotasPerdidasButton))
-                    .addComponent(editarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                    .addComponent(matchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(editarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(matchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(EstadosCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ActualizarButton)))
                 .addGap(5, 5, 5)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -631,20 +622,6 @@ public class JControl extends javax.swing.JFrame {
         consultaCasaCuna.setVisible(true);
     }//GEN-LAST:event_CasaCunaItem2ActionPerformed
 
-    private void MascotasPerdidasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasPerdidasButtonActionPerformed
-        matchButton.setEnabled(true);
-        TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2)); 
-        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
-    }//GEN-LAST:event_MascotasPerdidasButtonActionPerformed
-
-    private void MascotasEncontradasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasEncontradasButtonActionPerformed
-        matchButton.setEnabled(false);
-        TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado"));
-        TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2)); 
-        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
-    }//GEN-LAST:event_MascotasEncontradasButtonActionPerformed
-
     private void TablaInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaInicioMouseClicked
         int fila = TablaInicio.getSelectedRow();
         String idAnimal = TablaInicio.getValueAt(fila ,0).toString();
@@ -739,7 +716,48 @@ public class JControl extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CasaCunaItem1ActionPerformed
 
+    private void ActualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarButtonActionPerformed
+        String estadoEscogido = (String)EstadosCombo.getSelectedItem();
+        if(estadoEscogido.equals("Encontrado")){
+            matchButton.setEnabled(false);
+            TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Encontrado")); 
+            TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3)); 
+            TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(2)); 
+            CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        } 
+         if(estadoEscogido.equals("Perdido")){
+            matchButton.setEnabled(true);
+            TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
+            TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3)); 
+            CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+         } 
+          if(estadoEscogido.equals("Identificado")){
+            matchButton.setEnabled(false);
+            TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Identificado"));
+            TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3)); 
+            CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        }  
+         if(estadoEscogido.equals("En Adopción")){
+            matchButton.setEnabled(false);
+            TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "En Adopción"));
+            TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3)); 
+            CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        }  
+         if(estadoEscogido.equals("Adoptado")){
+            matchButton.setEnabled(false);
+            TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Adoptado"));
+            TablaInicio.removeColumn(TablaInicio.getColumnModel().getColumn(3)); 
+            CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        } 
+           if(estadoEscogido.equals("Recuperado")){
+            matchButton.setEnabled(false);
+            TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Recuperado"));
+            CantidadLabel.setText(ModeloTablas.getContadorUniversal());
+        } 
+    }//GEN-LAST:event_ActualizarButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ActualizarButton;
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
     private javax.swing.JMenuItem AdoptanteItem1;
@@ -760,14 +778,13 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel DatosActualesLabel;
     private javax.swing.JMenuItem DonacionesItem;
     private javax.swing.JMenu Editar;
+    private javax.swing.JComboBox EstadosCombo;
     private javax.swing.JMenuItem FechaItem;
     private javax.swing.JLabel FotoLabel;
     private javax.swing.JMenuItem ListaNegraItem;
     private javax.swing.JLabel LogoItem;
     private javax.swing.JMenuItem MascotaItem;
-    private javax.swing.JButton MascotasEncontradasButton;
     private javax.swing.JMenuItem MascotasItem1;
-    private javax.swing.JButton MascotasPerdidasButton;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel NombreLabel;
     private javax.swing.JLabel NombreLabel1;
