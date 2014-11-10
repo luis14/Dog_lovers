@@ -1,7 +1,8 @@
 package interfaz;
 
-import Administrador.ModeloTablas;
+import Administrador.Calendario;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class JFecha extends javax.swing.JFrame {
 
@@ -28,14 +29,13 @@ public class JFecha extends javax.swing.JFrame {
         AceptarButtonFecha = new javax.swing.JButton();
         cancelarButtonFecha = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         FechaLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         FechaLabel.setText("Fecha");
 
         AnioLabel.setText("Año:");
 
-        AnioText.setText("Año");
         AnioText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AnioTextActionPerformed(evt);
@@ -44,11 +44,8 @@ public class JFecha extends javax.swing.JFrame {
 
         MesLabel.setText("Mes:");
 
-        MesText.setText("Mes");
-
         DiaLabel.setText("Día:");
 
-        DiaText.setText("Día");
         DiaText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DiaTextActionPerformed(evt);
@@ -59,9 +56,19 @@ public class JFecha extends javax.swing.JFrame {
 
         AceptarButtonFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
         AceptarButtonFecha.setText("Aceptar");
+        AceptarButtonFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarButtonFechaActionPerformed(evt);
+            }
+        });
 
         cancelarButtonFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312667_button_cancel.png"))); // NOI18N
         cancelarButtonFecha.setText("Cancelar");
+        cancelarButtonFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarButtonFechaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,9 +115,10 @@ public class JFecha extends javax.swing.JFrame {
                     .addComponent(MesText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DiaLabel)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(DiaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DiaLabel)
+                        .addComponent(DiaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(AceptarButtonFecha)
                         .addComponent(cancelarButtonFecha)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -126,6 +134,21 @@ public class JFecha extends javax.swing.JFrame {
     private void DiaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DiaTextActionPerformed
+
+    private void cancelarButtonFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarButtonFechaActionPerformed
+        dispose();
+    }//GEN-LAST:event_cancelarButtonFechaActionPerformed
+
+    private void AceptarButtonFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonFechaActionPerformed
+        try{
+            Calendario.setFecha(Integer.valueOf(AnioText.getText()),
+                                Integer.valueOf(MesText.getText()),
+                                Integer.valueOf(DiaText.getText()));
+            dispose();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Los espacios deben estar llenos y ser numeros enteros");
+        }
+    }//GEN-LAST:event_AceptarButtonFechaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButtonFecha;

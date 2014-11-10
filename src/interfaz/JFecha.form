@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -74,9 +74,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="DiaLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="DiaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="DiaText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="AceptarButtonFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cancelarButtonFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -101,9 +103,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="AnioText">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnioTextActionPerformed"/>
       </Events>
@@ -114,9 +113,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="MesText">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mes"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="DiaLabel">
       <Properties>
@@ -124,9 +120,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="DiaText">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="D&#xed;a"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DiaTextActionPerformed"/>
       </Events>
@@ -143,6 +136,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AceptarButtonFechaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cancelarButtonFecha">
       <Properties>
@@ -151,6 +147,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarButtonFechaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
