@@ -3,6 +3,7 @@ package Administrador;
 
 import java.util.ArrayList; 
 import java.util.Date;  
+import javax.swing.Icon;
 
 
 public class Administrador {
@@ -32,7 +33,7 @@ public class Administrador {
     
     public static void RegistrarMascota(String nombre, String tipo, String Color, String FechaDeEcontradoPerdido,String estado, 
                                         String tamanio, Usuario usuario, String chip, String raza,String Recompensa, String Descripcion){ 
-        Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, Recompensa, estado, tamanio, usuario, chip, raza, Descripcion); 
+        Mascota mascota = new Mascota(nombre, tipo, Color, FechaDeEcontradoPerdido, Recompensa,estado, tamanio, usuario, chip, raza, Descripcion); 
         ListaDeMascotas.add(mascota);
     }
    
