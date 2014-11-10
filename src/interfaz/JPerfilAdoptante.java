@@ -21,14 +21,15 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
 
     private void DatosUsuario(int Adoptante){
         Estrella(Administrador.ListaDeAdoptantes.get(Adoptante).getCalificacion());
-        jLabel2.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getNombre());
+        NombreLabel.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getNombre());
         TelefonoAdLabel1.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getTelefono());
         EmailAdLabel1.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getCorreo());
         ResidenciaLabel1.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getLugarDeResidencia());
         EspacioLabel1.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getCantidadDeEsapcio());
-        jTextArea2.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getNotas());
+        ComentariosTextArea.setText(Administrador.ListaDeAdoptantes.get(Adoptante).getNotas());
+        FotoAdLabel.setIcon(Administrador.ListaDeAdoptantes.get(Adoptante).getImagen());
         if(Administrador.ListaDeAdoptantes.get(Adoptante).getReportado()){
-            jLabel1.setVisible(true);
+            ErrorLabel.setVisible(true);
         }
         this.ID = Adoptante;
     }            
@@ -48,7 +49,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         ResidenciaLabel1 = new javax.swing.JLabel();
         EspacioLabel = new javax.swing.JLabel();
         EspacioLabel1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        ErrorLabel = new javax.swing.JLabel();
         CalificarLabel = new javax.swing.JLabel();
         estrella1 = new javax.swing.JLabel();
         estrella2 = new javax.swing.JLabel();
@@ -60,10 +61,10 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         ComentarioArea = new javax.swing.JTextArea();
         ReportarButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        NombreLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        ComentariosTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -90,10 +91,10 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
 
         EspacioLabel1.setText("Espacio");
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Usuario en lista negra");
-        jLabel1.setVisible(false);
+        ErrorLabel.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        ErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        ErrorLabel.setText("Usuario en lista negra");
+        ErrorLabel.setVisible(false);
 
         CalificarLabel.setText("Calificar:");
 
@@ -153,13 +154,13 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Nombre");
+        NombreLabel.setText("Nombre");
 
         jLabel3.setText("Comentarios :");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        ComentariosTextArea.setColumns(20);
+        ComentariosTextArea.setRows(5);
+        jScrollPane3.setViewportView(ComentariosTextArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,34 +171,38 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(PerfilAd)
-                            .addComponent(FotoAdLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(NombreAdLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(TelefonoAdLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TelefonoAdLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(EmailAdLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(EmailAdLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(EspacioLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(EspacioLabel1))
+                            .addComponent(NombreAdLabel)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(ResidenciaLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResidenciaLabel1)))
+                                .addComponent(FotoAdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(7, 7, 7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TelefonoAdLabel)
+                                    .addComponent(EmailAdLabel))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addComponent(EmailAdLabel1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(NombreLabel)
+                                            .addComponent(TelefonoAdLabel1)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ResidenciaLabel)
+                                    .addComponent(EspacioLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(EspacioLabel1)
+                                    .addComponent(ResidenciaLabel1))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
-                                .addComponent(jLabel1))
+                                .addComponent(ErrorLabel))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ReportarButton))
@@ -230,7 +235,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PerfilAd)
-                    .addComponent(jLabel1))
+                    .addComponent(ErrorLabel))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -252,11 +257,11 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(FotoAdLabel)
+                        .addComponent(FotoAdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NombreAdLabel)
-                            .addComponent(jLabel2))
+                            .addComponent(NombreLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TelefonoAdLabel)
@@ -330,7 +335,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
 
     private void ReportarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportarButtonActionPerformed
         Administrador.ListaDeAdoptantes.get(ID).setReportado(true);
-        jLabel1.setVisible(true);
+        ErrorLabel.setVisible(true);
     }//GEN-LAST:event_ReportarButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -345,12 +350,15 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
     private javax.swing.JLabel CalificarLabel;
     private javax.swing.JTextArea ComentarioArea;
     private javax.swing.JLabel ComentarioLabel;
+    private javax.swing.JTextArea ComentariosTextArea;
     private javax.swing.JLabel EmailAdLabel;
     private javax.swing.JLabel EmailAdLabel1;
+    private javax.swing.JLabel ErrorLabel;
     private javax.swing.JLabel EspacioLabel;
     private javax.swing.JLabel EspacioLabel1;
     private javax.swing.JLabel FotoAdLabel;
     private javax.swing.JLabel NombreAdLabel;
+    private javax.swing.JLabel NombreLabel;
     private javax.swing.JLabel PerfilAd;
     private javax.swing.JButton ReportarButton;
     private javax.swing.JLabel ResidenciaLabel;
@@ -363,12 +371,9 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
     private javax.swing.JLabel estrella4;
     private javax.swing.JLabel estrella5;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 
     private void Estrella(int calificacion){
