@@ -99,12 +99,13 @@ public class JMatchIdentificados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        int fila = TablaIdentificado.getSelectedRow(); 
+        int fila = TablaIdentificado.getSelectedRow();  
         String idUsuario = TablaIdentificado.getValueAt(fila, 0).toString();   
         if(!(Administrador.ListaDeMascotas.get(Integer.parseInt(idUsuario)).getMontoDeRecompensa().equals(" "))){
-            JRecompensa recompensa = new JRecompensa(); 
+            int monto = Integer.parseInt(Administrador.ListaDeMascotas.get(Integer.parseInt(idUsuario)-1).getMontoDeRecompensa());
+            JRecompensa recompensa = new JRecompensa(monto); 
             recompensa.setVisible(true);
-            dispose();
+            dispose(); 
         } 
         else{ 
             JOptionPane.showMessageDialog(null,"Muhas Gracias!");
