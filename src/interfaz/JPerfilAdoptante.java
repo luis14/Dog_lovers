@@ -15,6 +15,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Pefil de Adoptante");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
+        ErrorLabel.setVisible(false);
         DatosUsuario(AdoptanteEscogido);
         estrella1.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
         estrella2.setIcon(new ImageIcon(JPerfilAdoptante.class.getResource("/Imagenes/star off.png")));
@@ -66,7 +67,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ComentarioArea = new javax.swing.JTextArea();
         ReportarButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        AceptarButton = new javax.swing.JButton();
         NombreLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -153,11 +154,11 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
-        jButton1.setText("Aceptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AceptarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
+        AceptarButton.setText("Aceptar");
+        AceptarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AceptarButtonActionPerformed(evt);
             }
         });
 
@@ -165,6 +166,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
 
         jLabel3.setText("Comentarios :");
 
+        ComentariosTextArea.setEditable(false);
         ComentariosTextArea.setColumns(20);
         ComentariosTextArea.setRows(5);
         jScrollPane3.setViewportView(ComentariosTextArea);
@@ -229,7 +231,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                                         .addComponent(estrella5))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(AceptarButton)
                                 .addGap(13, 13, 13)))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
@@ -258,7 +260,7 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
+                        .addComponent(AceptarButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(FotoAdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,17 +344,16 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
         ErrorLabel.setVisible(true);
     }//GEN-LAST:event_ReportarButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int calificacionPasada = Administrador.ListaDeAdoptantes.get(ID).getCalificacion(); 
-        int promedio = (calificacionPasada + Integer.parseInt(estrellas))/2;
-        Administrador.ListaDeAdoptantes.get(ID).setCalificacion(promedio);
+    private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
+        Administrador.ListaDeAdoptantes.get(ID).setCalificacion(Integer.parseInt(estrellas));
         if(!"".equals(ComentarioArea.getText())){
             Administrador.ListaDeAdoptantes.get(ID).setNotas(ComentarioArea.getText());
         }
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AceptarButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AceptarButton;
     private javax.swing.JLabel CalificarLabel;
     private javax.swing.JTextArea ComentarioArea;
     private javax.swing.JLabel ComentarioLabel;
@@ -376,7 +377,6 @@ public class JPerfilAdoptante extends javax.swing.JFrame {
     private javax.swing.JLabel estrella3;
     private javax.swing.JLabel estrella4;
     private javax.swing.JLabel estrella5;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

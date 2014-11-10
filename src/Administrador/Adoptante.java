@@ -5,13 +5,15 @@ import javax.swing.Icon;
 
 public class Adoptante {  
     // Función que contiene todos los métodos y atributos para Adoptante
+    private int calificacionTotal;
+    private int cantCalificaciones;
     private int calificacion; 
     private String correo; 
     private String telefono; 
     private String lugarDeResidencia; 
     private String cantidadDeEsapcio; 
     private Boolean reportado; 
-    private String notas; 
+    private String notas = ""; 
     private Usuario usuario;  
     private String nombre;
     private Icon Imagen = null;
@@ -39,7 +41,7 @@ public class Adoptante {
         if(calificacion == 0){
             Calificacion = "No está calificado";
         } else if(calificacion == 1){
-            Calificacion = "Muy malo.";
+            Calificacion = "Muy malo";
         } else if(calificacion == 2){
             Calificacion = "Regular";
         } else if(calificacion == 3){
@@ -47,7 +49,7 @@ public class Adoptante {
         } else if(calificacion == 4){
             Calificacion = "Bueno";
         } else if(calificacion == 5){
-            Calificacion = "Muy bueno.";
+            Calificacion = "Muy bueno";
         } 
         return Calificacion;
     } 
@@ -57,7 +59,11 @@ public class Adoptante {
     }
 
     public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
+        cantCalificaciones++;
+        calificacionTotal += calificacion;
+        int promedio;
+        promedio = calificacionTotal/cantCalificaciones;
+        this.calificacion = promedio;
     }
 
     public String getCorreo() {
@@ -106,7 +112,7 @@ public class Adoptante {
     }
 
     public void setNotas(String notas) {
-        this.notas += notas + "\n";
+        this.notas += "- " + notas + "\n";
     }
 
     public Usuario getUsuario() {

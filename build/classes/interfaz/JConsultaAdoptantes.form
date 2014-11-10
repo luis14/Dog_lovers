@@ -26,7 +26,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="CalificacionLabel" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
@@ -39,8 +39,8 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="CalificacionCombo" min="-2" pref="92" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="CalificacionCombo" min="-2" pref="145" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="BuscarButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
     <Component class="javax.swing.JComboBox" name="CalificacionCombo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;0&quot;,&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;No est&#xe1; calificado&quot;,&quot;Muy malo&quot;, &quot;Regular&quot;,&#xa;    &quot;Normal&quot;, &quot;Bueno&quot;, &quot;Muy bueno&quot; })" type="code"/>
         </Property>
       </Properties>
     </Component>
