@@ -120,6 +120,9 @@
               <Connection code="ModeloTablas.tablaAsociaiones()" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablaAsociacionesMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TablaAsociaciones.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos&#xa;TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas"/>
           </AuxValues>

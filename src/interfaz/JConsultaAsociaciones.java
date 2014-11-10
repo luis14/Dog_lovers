@@ -60,6 +60,11 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
         TablaAsociaciones.setModel(ModeloTablas.tablaAsociaiones());
         TablaAsociaciones.getTableHeader().setReorderingAllowed(false); //no permite mover los titulos
         TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaAsociaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaAsociacionesMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TablaAsociaciones);
 
         FiltroText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -145,6 +150,14 @@ public class JConsultaAsociaciones extends javax.swing.JFrame {
         TablaAsociaciones.setAutoCreateRowSorter(true); // Para ordenar las tablas
         CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }//GEN-LAST:event_TodosButtonActionPerformed
+
+    private void TablaAsociacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaAsociacionesMouseClicked
+        int fila = TablaAsociaciones.getSelectedRow();
+        String idAsociacion = TablaAsociaciones.getValueAt(fila ,0).toString();
+        JInfoAsociacion ventEmergente = new JInfoAsociacion();
+        ventEmergente.actualizarDatosEnVentana(Integer.valueOf(idAsociacion)-1);
+        ventEmergente.setVisible(true);
+    }//GEN-LAST:event_TablaAsociacionesMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarBotton;
