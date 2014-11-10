@@ -76,7 +76,6 @@ public class JControl extends javax.swing.JFrame {
         AdoptanteItem = new javax.swing.JMenuItem();
         Asociacion = new javax.swing.JMenuItem();
         Editar = new javax.swing.JMenu();
-        MascotasItem = new javax.swing.JMenuItem();
         CasaCunaItem1 = new javax.swing.JMenuItem();
         AdoptanteItem1 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -405,15 +404,6 @@ public class JControl extends javax.swing.JFrame {
 
         Editar.setText("Editar");
 
-        MascotasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830492_Pets.png"))); // NOI18N
-        MascotasItem.setText("Mascotas");
-        MascotasItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MascotasItemActionPerformed(evt);
-            }
-        });
-        Editar.add(MascotasItem);
-
         CasaCunaItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830410_home-16.png"))); // NOI18N
         CasaCunaItem1.setText("Casa Cuna");
         CasaCunaItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -575,10 +565,6 @@ public class JControl extends javax.swing.JFrame {
         mascota.setVisible(true);
     }//GEN-LAST:event_MascotaItemActionPerformed
 
-    private void MascotasItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasItemActionPerformed
-        
-    }//GEN-LAST:event_MascotasItemActionPerformed
-
     private void MascotasItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascotasItem1ActionPerformed
         JConsultaMascotas consultaMascota = new JConsultaMascotas(); 
         consultaMascota.setVisible(true);
@@ -667,33 +653,6 @@ public class JControl extends javax.swing.JFrame {
         ventEmergente.setVisible(true);
     }//GEN-LAST:event_TablaInicioMouseClicked
 
-    private void CasaCunaItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItem1ActionPerformed
-        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna()){
-            JCasaCuna casaCuna = new JCasaCuna(true);
-            casaCuna.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(null,"No estas registrado como Casa Cuna");
-        }
-    }//GEN-LAST:event_CasaCunaItem1ActionPerformed
-
-    private void AdoptanteItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItem1ActionPerformed
-        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante()){
-            JAdoptante adoptante = new JAdoptante(true);
-            adoptante.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(null,"No estas registrado como Adoptante");
-        }
-    }//GEN-LAST:event_AdoptanteItem1ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
-            JAsociacion asiciacion = new JAsociacion(true);
-            asiciacion.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(null,"No estas registrado como Asociación");
-        }
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void TiposMascotasItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TiposMascotasItemActionPerformed
         JEditarTipos editarTipos = new JEditarTipos(); 
         editarTipos.setVisible(true);
@@ -746,6 +705,33 @@ public class JControl extends javax.swing.JFrame {
         Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setImagen(img);
     }//GEN-LAST:event_fotoButtonActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAsociacion()){
+            JAsociacion asiciacion = new JAsociacion(true);
+            asiciacion.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No estas registrado como Asociación");
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void AdoptanteItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdoptanteItem1ActionPerformed
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante()){
+            JAdoptante adoptante = new JAdoptante(true);
+            adoptante.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No estas registrado como Adoptante");
+        }
+    }//GEN-LAST:event_AdoptanteItem1ActionPerformed
+
+    private void CasaCunaItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaCunaItem1ActionPerformed
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isCasaCuna()){
+            JCasaCuna casaCuna = new JCasaCuna(true);
+            casaCuna.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No estas registrado como Casa Cuna");
+        }
+    }//GEN-LAST:event_CasaCunaItem1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdminItem;
     private javax.swing.JMenuItem AdoptanteItem;
@@ -773,7 +759,6 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel LogoItem;
     private javax.swing.JMenuItem MascotaItem;
     private javax.swing.JButton MascotasEncontradasButton;
-    private javax.swing.JMenuItem MascotasItem;
     private javax.swing.JMenuItem MascotasItem1;
     private javax.swing.JButton MascotasPerdidasButton;
     private javax.swing.JMenuBar Menu;
