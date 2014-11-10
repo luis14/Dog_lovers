@@ -31,7 +31,20 @@ public class Adoptante {
     }
 
     public String getStringCalificacion() { 
-        String Calificacion = Integer.toString(calificacion);
+        String Calificacion = null;
+        if(calificacion == 0){
+            Calificacion = "No está calificado";
+        } else if(calificacion == 1){
+            Calificacion = "Muy malo.";
+        } else if(calificacion == 2){
+            Calificacion = "Regular";
+        } else if(calificacion == 3){
+            Calificacion = "Normal";
+        } else if(calificacion == 4){
+            Calificacion = "Bueno";
+        } else if(calificacion == 5){
+            Calificacion = "Muy bueno.";
+        } 
         return Calificacion;
     } 
     
@@ -135,7 +148,8 @@ public class Adoptante {
     }
     
     public String[] arreglo(){
-       String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(), getStringCalificacion()}; 
+       String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(),
+                      getStringCalificacion()}; 
        return msg;
     } 
     

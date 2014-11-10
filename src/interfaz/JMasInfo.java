@@ -93,6 +93,7 @@ public class JMasInfo extends javax.swing.JFrame {
             }
         });
 
+        imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mascotas sin foto.png"))); // NOI18N
 
         NombreLabel1.setText("Nombre: ");
@@ -117,7 +118,7 @@ public class JMasInfo extends javax.swing.JFrame {
         recompensaLabel.setText("Recompensa:");
 
         tamanioLabel.setName(""); // NOI18N
-        tamanioLabel.setText("Tamanio: ");
+        tamanioLabel.setText("Tamaño: ");
 
         reportadorLabel1.setName(""); // NOI18N
         reportadorLabel1.setText("Reportado por: ");
@@ -137,7 +138,7 @@ public class JMasInfo extends javax.swing.JFrame {
         pRecompensaLabel.setText("Recompensa");
 
         pTamanioLabel.setName(""); // NOI18N
-        pTamanioLabel.setText("Tamanio");
+        pTamanioLabel.setText("Tamaño");
 
         pReportadorLabel.setName(""); // NOI18N
         pReportadorLabel.setText("Reportador");
