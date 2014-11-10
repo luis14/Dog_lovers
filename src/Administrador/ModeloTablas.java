@@ -293,7 +293,7 @@ public class ModeloTablas {
      }  
      
      public static DefaultTableModel tablaDeDonaciones(String Nombre){
-         String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
+         String titulos[]= {"Donante", "Asociacion", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
          int contadorParaInterfaz = 0; 
@@ -310,16 +310,20 @@ public class ModeloTablas {
      } 
      
      
-      public static DefaultTableModel tablaDeDonacionesTotales(){
-         String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
+      public static DefaultTableModel tablaDeDonacionesTotalesS(String Asociación){
+         String titulos[]= { "Asociacion", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos);  
-         int contadorParaInterfaz = 0; 
-         for(int i = 0; i < Administrador.ListaDeDonaciones.size() ; i++){
-             modeloDonaciones.addRow(Administrador.ListaDeDonaciones.get(i).arreglo()); 
-             contadorParaInterfaz++; 
-         } 
-         contadorUniversal = contadorParaInterfaz; 
+         int montoTotal = 0;
+         for(int i = 0; i < Administrador.ListaDeDonaciones.size() ; i++){ 
+             if(Administrador.ListaDeDonaciones.get(i).getAsociacionName().equals(Asociación)){
+                 montoTotal += Administrador.ListaDeDonaciones.get(i).getMonto();  
+                 Administrador.ListaDeDonaciones.get(i);
+             } 
+         }   
+         String[] asociacion = {Asociación, Integer.toString(montoTotal)};
+         modeloDonaciones.addRow(asociacion);
+         contadorUniversal = 1; 
          return modeloDonaciones;
      }
       
