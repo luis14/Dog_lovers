@@ -151,6 +151,7 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         jButton1.setText("Editar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,6 +267,7 @@ public class JControl extends javax.swing.JFrame {
         CantidadLabel.setText("Cantidad");
 
         editarButton.setBackground(new java.awt.Color(0, 153, 0));
+        editarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         editarButton.setText("Editar");
         editarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,6 +286,7 @@ public class JControl extends javax.swing.JFrame {
 
         EstadosCombo.setModel(new javax.swing.DefaultComboBoxModel(Administrador.EstadosToArray()));
 
+        ActualizarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410683419_refresh.png"))); // NOI18N
         ActualizarButton.setText("Actualizar");
         ActualizarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

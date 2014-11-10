@@ -26,10 +26,10 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="RecolectarButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="DonarButton" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="DonarButton" min="-2" pref="96" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -50,7 +50,7 @@
                   <Component id="RecolectarButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="DonarButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,6 +66,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="RecolectarButton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/1415662973_money.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Recolectar"/>
       </Properties>
       <Events>
@@ -74,6 +77,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="DonarButton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/1415662971_donate.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Donar"/>
       </Properties>
       <Events>

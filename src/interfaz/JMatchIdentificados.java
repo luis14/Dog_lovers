@@ -56,6 +56,7 @@ public class JMatchIdentificados extends javax.swing.JFrame {
         TablaIdentificado.setModel(ModeloTablas.tablaMatch(0, "Perdido"));
         jScrollPane1.setViewportView(TablaIdentificado);
 
+        AceptarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410684280_Check.png"))); // NOI18N
         AceptarButton.setText("Aceptar");
         AceptarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +64,7 @@ public class JMatchIdentificados extends javax.swing.JFrame {
             }
         });
 
+        CancelarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312667_button_cancel.png"))); // NOI18N
         CancelarButton.setText("Cancelar");
         CancelarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

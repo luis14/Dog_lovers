@@ -40,6 +40,7 @@ public class JRecompensa extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Que desea hacer con su recompensa?");
 
+        RecolectarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415662973_money.png"))); // NOI18N
         RecolectarButton.setText("Recolectar");
         RecolectarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +48,7 @@ public class JRecompensa extends javax.swing.JFrame {
             }
         });
 
+        DonarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415662971_donate.png"))); // NOI18N
         DonarButton.setText("Donar");
         DonarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,10 +63,10 @@ public class JRecompensa extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(41, 41, 41)
                         .addComponent(RecolectarButton)
-                        .addGap(84, 84, 84)
-                        .addComponent(DonarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(55, 55, 55)
+                        .addComponent(DonarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel1)))
@@ -79,7 +81,7 @@ public class JRecompensa extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RecolectarButton)
                     .addComponent(DonarButton))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();

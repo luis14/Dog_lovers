@@ -40,6 +40,7 @@ public class JEditarAdmins extends javax.swing.JFrame {
         FiltroText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FiltroText.setText("Nombre");
 
+        BuscarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410328586_search.png"))); // NOI18N
         BuscarButton.setText("Buscar");
         BuscarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +52,7 @@ public class JEditarAdmins extends javax.swing.JFrame {
 
         CanitdadLabel.setText("Cantidad");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312443_user-worker-boss.png"))); // NOI18N
         jButton1.setText("Hacer Admin");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
