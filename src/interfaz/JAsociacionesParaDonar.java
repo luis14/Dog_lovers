@@ -7,6 +7,7 @@ package interfaz;
 
 import Administrador.ModeloTablas;
 import Administrador.Administrador;
+import javax.swing.JOptionPane;
 /**
  *
  * @author miuyin
@@ -37,6 +38,7 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
         TablaAsocias = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         DonarButton = new javax.swing.JButton();
+        CancelarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -50,6 +52,13 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
         DonarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DonarButtonActionPerformed(evt);
+            }
+        });
+
+        CancelarButton.setText("Cancelar");
+        CancelarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarButtonActionPerformed(evt);
             }
         });
 
@@ -70,6 +79,8 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
                         .addGap(0, 65, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(CancelarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DonarButton)))
                 .addContainerGap())
         );
@@ -81,7 +92,9 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(DonarButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DonarButton)
+                    .addComponent(CancelarButton))
                 .addContainerGap())
         );
 
@@ -89,15 +102,25 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DonarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonarButtonActionPerformed
-        int fila = TablaAsocias.getSelectedRow(); 
+        int fila = TablaAsocias.getSelectedRow();  
+        if(fila == -1){
+           JOptionPane.showMessageDialog(null,"¡No ha seleccionado ninguna asociación");
+        }  
+        else{ 
         String idAsociación = TablaAsocias.getValueAt(fila, 0).toString(); 
         Administrador.RegistrarDonacion(Administrador.ListaDeUsuarios.get(Administrador.getUsuarioActual()), 
                 Administrador.ListaDeAsociaciones.get(Integer.parseInt(idAsociación)-1), monto); 
-        dispose();
+        dispose(); 
+        }
     }//GEN-LAST:event_DonarButtonActionPerformed
+
+    private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed
+        dispose();
+    }//GEN-LAST:event_CancelarButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CancelarButton;
     private javax.swing.JButton DonarButton;
     private javax.swing.JTable TablaAsocias;
     private javax.swing.JLabel jLabel1;

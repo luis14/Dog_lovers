@@ -390,7 +390,15 @@ public class JRegistroMascotas extends javax.swing.JFrame {
                         Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText(),
                         img);
                 dispose();
-            }else{ 
+            }else{  
+                String Estado;
+                Estado = (String)EstadoCombo.getSelectedItem(); 
+                boolean Verdad; 
+                Verdad = Estado.equals("Identificado");
+                if(Verdad){
+                    JIdentificado identificado = new JIdentificado(MascotaEscogida); 
+                    identificado.setVisible(true); 
+                } 
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setRaza((String)RazaCombo.getSelectedItem());
                 Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
@@ -433,14 +441,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     }//GEN-LAST:event_RazaComboActionPerformed
 
     private void EstadoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoComboActionPerformed
-          String Estado;
-                Estado = (String)EstadoCombo.getSelectedItem(); 
-                boolean Verdad; 
-                Verdad = Estado.equals("Identificado");
-                if(Verdad){
-                    JIdentificado identificado = new JIdentificado(MascotaEscogida); 
-                    identificado.setVisible(true); 
-                } 
+   
     }//GEN-LAST:event_EstadoComboActionPerformed
 
     private void CargarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarButtonActionPerformed

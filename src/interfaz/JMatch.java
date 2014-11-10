@@ -17,12 +17,12 @@ public class JMatch extends javax.swing.JFrame {
      */
     public JMatch(int idMascota) {
         initComponents();
-        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Match"); 
         TablaMatch.setModel(ModeloTablas.tablaMatch(idMascota, "Encontrado")); 
-        TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas
+        TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas 
+        CantidadLabel.setText(ModeloTablas.getContadorUniversal());
     }
 
     /**

@@ -42,6 +42,7 @@ public class JMatchIdentificados extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaIdentificado = new javax.swing.JTable();
         AceptarButton = new javax.swing.JButton();
+        CancelarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -62,6 +63,13 @@ public class JMatchIdentificados extends javax.swing.JFrame {
             }
         });
 
+        CancelarButton.setText("Cancelar");
+        CancelarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,6 +85,8 @@ public class JMatchIdentificados extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(CantidadLabel)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CancelarButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(AceptarButton))))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
@@ -91,7 +101,8 @@ public class JMatchIdentificados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CantidadText)
                     .addComponent(CantidadLabel)
-                    .addComponent(AceptarButton))
+                    .addComponent(AceptarButton)
+                    .addComponent(CancelarButton))
                 .addGap(18, 18, 18))
         );
 
@@ -99,23 +110,33 @@ public class JMatchIdentificados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
-        int fila = TablaIdentificado.getSelectedRow();  
-        String idUsuario = TablaIdentificado.getValueAt(fila, 0).toString();   
-        if(!(Administrador.ListaDeMascotas.get(Integer.parseInt(idUsuario)).getMontoDeRecompensa().equals(" "))){
-            int monto = Integer.parseInt(Administrador.ListaDeMascotas.get(Integer.parseInt(idUsuario)-1).getMontoDeRecompensa());
-            JRecompensa recompensa = new JRecompensa(monto); 
-            recompensa.setVisible(true);
-            dispose(); 
-        } 
-        else{ 
-            JOptionPane.showMessageDialog(null,"Muhas Gracias!");
-            dispose();
+        int fila = TablaIdentificado.getSelectedRow();    
+        if(fila == -1){
+            JOptionPane.showMessageDialog(null,"¡No ha seleccionado ninguna mascota");
+        }  
+        else{
+            String idUsuario = TablaIdentificado.getValueAt(fila, 0).toString();    
+            if(!(Administrador.ListaDeMascotas.get(Integer.parseInt(idUsuario)).getMontoDeRecompensa().equals(" "))){ 
+                int monto = Integer.parseInt(Administrador.ListaDeMascotas.get(Integer.parseInt(idUsuario)-1).getMontoDeRecompensa());
+                JRecompensa recompensa = new JRecompensa(monto); 
+                recompensa.setVisible(true);
+                dispose(); 
+            } 
+            else{ 
+               JOptionPane.showMessageDialog(null,"Muhas Gracias!");
+               dispose();
+            } 
         }
     }//GEN-LAST:event_AceptarButtonActionPerformed
+
+    private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed
+        dispose(); 
+    }//GEN-LAST:event_CancelarButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarButton;
+    private javax.swing.JButton CancelarButton;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
     private javax.swing.JTable TablaIdentificado;

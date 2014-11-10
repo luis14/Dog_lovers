@@ -27,8 +27,11 @@ public class Principal {
         Administrador.ListaDeUsuarios.get(3).setAsociacion(true);
         
         Administrador.RegistrarMascota("Chester", "Perro", "Golden", "04/04/2014", "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "12", "Golden Retriever", "1000", "Es muy peludo",null); 
-        Administrador.RegistrarMascota("Mark", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(2), "563", "Poodle", "2000", "Es muy tranuilo",null);
-        
+        Administrador.RegistrarMascota("Mark", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(2), "563", "Poodle", "2000", "Es muy tranquilo",null);
+        Administrador.RegistrarMascota("Billy", "Perro", "Negro", "28/10/2014", "Perdido", "Grande", Administrador.ListaDeUsuarios.get(0), "53", "Poodle", "2000", "Es muy tranquilo",null);
+        Administrador.RegistrarMascota("Meli", "Perro", "Blanco", "29/10/2014", "Perdido", "Pequeño", Administrador.ListaDeUsuarios.get(3), "23", "Shitzu", "500", "Es muy obediente",null);
+
+        Administrador.RegistrarMascota("Mimi", "Perro", "Blanco", "30/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(0), "23", "Shitzu", "500", "Es muy calmado",null);
         Administrador.RegistrarMascota("Pepito", "Perro", "Negro", "02/10/2014", "Encontrado", "Pequeño", Administrador.ListaDeUsuarios.get(1), " ", "Rottwieler", "3000", "Ladra mucho por la noche",null);
         Administrador.RegistrarMascota("Bark", "Perro", "Gris", "04/11/2014", "Encontrado", "Grande", Administrador.ListaDeUsuarios.get(1), " ", "Husky", "4000", "Le gusta pasear",null);
         
