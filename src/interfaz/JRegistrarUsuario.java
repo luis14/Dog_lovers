@@ -280,6 +280,15 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
                 Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setTelefono(TelText.getText());
                 Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setContrasenia(ContraText.getText());
                 Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setCorreo(CorreoText.getText());
+                if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).isAdoptante()){
+                    int adoptante = 0;
+                    while(Administrador.ListaDeAdoptantes.get(adoptante).getUsuario() != Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual)){
+                        adoptante++;
+                    }
+                    Administrador.ListaDeAdoptantes.get(adoptante).setNombre(NombreText.getText());
+                    Administrador.ListaDeAdoptantes.get(adoptante).setCorreo(CorreoText.getText());
+                    Administrador.ListaDeAdoptantes.get(adoptante).setTelefono(TelText.getText());
+                }
                 JControl.NombreLabel1.setText(NombreText.getText());
                 JControl.ApellidoLabel1.setText(ApellidoText.getText());
                 JControl.UsernameLabel1.setText(UsernameText.getText());

@@ -59,7 +59,7 @@ public class JControl extends javax.swing.JFrame {
         NombreLabel1 = new javax.swing.JLabel();
         LogoItem = new javax.swing.JLabel();
         fotoButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        EditarButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         DatosActualesLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -84,7 +84,7 @@ public class JControl extends javax.swing.JFrame {
         MascotasItem1 = new javax.swing.JMenuItem();
         CasaCunaItem2 = new javax.swing.JMenuItem();
         AdoptanteItem2 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        AsociacionMenuItem = new javax.swing.JMenuItem();
         ListaNegraItem = new javax.swing.JMenuItem();
         DonacionesItem = new javax.swing.JMenuItem();
         Configuracion = new javax.swing.JMenu();
@@ -151,11 +151,11 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
-        jButton1.setText("Editar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        EditarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
+        EditarButton.setText("Editar");
+        EditarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                EditarButtonActionPerformed(evt);
             }
         });
 
@@ -169,7 +169,7 @@ public class JControl extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(PerfilLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1))
+                        .addComponent(EditarButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(FotoLabel)
@@ -215,7 +215,7 @@ public class JControl extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PerfilLabel)
-                            .addComponent(jButton1))
+                            .addComponent(EditarButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -472,14 +472,14 @@ public class JControl extends javax.swing.JFrame {
         });
         Consultas.add(AdoptanteItem2);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415538969_user-group-16.png"))); // NOI18N
-        jMenuItem2.setText("Asociación");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        AsociacionMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415538969_user-group-16.png"))); // NOI18N
+        AsociacionMenuItem.setText("Asociación");
+        AsociacionMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                AsociacionMenuItemActionPerformed(evt);
             }
         });
-        Consultas.add(jMenuItem2);
+        Consultas.add(AsociacionMenuItem);
 
         ListaNegraItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672800_list-16.png"))); // NOI18N
         ListaNegraItem.setText("Lista Negra");
@@ -673,10 +673,10 @@ public class JControl extends javax.swing.JFrame {
         editarAdmins.setVisible(true);
     }//GEN-LAST:event_AdminItemActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void AsociacionMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsociacionMenuItemActionPerformed
         JConsultaAsociaciones asociacion = new JConsultaAsociaciones();
         asociacion.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_AsociacionMenuItemActionPerformed
 
     private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
         int fila = TablaInicio.getSelectedRow();
@@ -789,10 +789,10 @@ public class JControl extends javax.swing.JFrame {
         fecha.setVisible(true);
     }//GEN-LAST:event_FechaItemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void EditarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarButtonActionPerformed
         JRegistrarUsuario  registro = new JRegistrarUsuario(true);
         registro.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_EditarButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarButton;
@@ -803,6 +803,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel ApellidoLabel;
     public static javax.swing.JLabel ApellidoLabel1;
     private javax.swing.JMenuItem Asociacion;
+    private javax.swing.JMenuItem AsociacionMenuItem;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JLabel CantidadText;
     private javax.swing.JMenuItem CasaCunaItem;
@@ -816,6 +817,7 @@ public class JControl extends javax.swing.JFrame {
     private javax.swing.JLabel DatosActualesLabel;
     private javax.swing.JMenuItem DonacionesItem;
     private javax.swing.JMenu Editar;
+    private javax.swing.JButton EditarButton;
     private javax.swing.JComboBox EstadosCombo;
     private javax.swing.JMenuItem FechaItem;
     private javax.swing.JLabel FotoLabel;
@@ -839,10 +841,8 @@ public class JControl extends javax.swing.JFrame {
     public static javax.swing.JLabel UsernameLabel1;
     private javax.swing.JButton editarButton;
     private javax.swing.JButton fotoButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
