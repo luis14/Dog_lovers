@@ -276,6 +276,7 @@ public class JControl extends javax.swing.JFrame {
         });
 
         matchButton.setBackground(new java.awt.Color(0, 153, 0));
+        matchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415673004_plugin.png"))); // NOI18N
         matchButton.setText("Match");
         matchButton.setEnabled(false);
         matchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -478,6 +479,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Consultas.add(jMenuItem2);
 
+        ListaNegraItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672800_list-16.png"))); // NOI18N
         ListaNegraItem.setText("Lista Negra");
         ListaNegraItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -486,6 +488,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Consultas.add(ListaNegraItem);
 
+        DonacionesItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415662971_donate.png"))); // NOI18N
         DonacionesItem.setText("Donaciones");
         DonacionesItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,6 +519,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Configuracion.add(AdminItem);
 
+        TiposRazasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672611_animals-15-16.png"))); // NOI18N
         TiposRazasItem.setText("Tipos de Razas");
         TiposRazasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -524,6 +528,7 @@ public class JControl extends javax.swing.JFrame {
         });
         Configuracion.add(TiposRazasItem);
 
+        TiposMascotasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415672727_animals-01-16.png"))); // NOI18N
         TiposMascotasItem.setText("Tipos de Mascotas");
         TiposMascotasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
