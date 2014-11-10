@@ -49,8 +49,7 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     }
  
     private boolean VerificaMascota(){
-        if("".equals(NombreText.getText()) || "".equals(FechaText.getText()) ||
-           "".equals(DescripcionText.getText())){
+        if("".equals(FechaText.getText()) || "".equals(DescripcionText.getText())){
             return false;
         }
         return true;
@@ -444,11 +443,14 @@ public class JRegistroMascotas extends javax.swing.JFrame {
     }//GEN-LAST:event_RazaComboActionPerformed
 
     private void EstadoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoComboActionPerformed
-        if(EstadoCombo.getSelectedIndex() == 1);{
+        if(EstadoCombo.getSelectedIndex() == 1){
             NombreText.setText("");
             NombreText.setEditable(false);
             RecompensaText.setText("");
             RecompensaText.setEditable(false);
+        }else{
+            NombreText.setEditable(true);
+            RecompensaText.setEditable(true);
         }
     }//GEN-LAST:event_EstadoComboActionPerformed
 
