@@ -484,6 +484,11 @@ public class JControl extends javax.swing.JFrame {
 
         FechaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414830523_date_task.png"))); // NOI18N
         FechaItem.setText("Fecha");
+        FechaItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FechaItemActionPerformed(evt);
+            }
+        });
         Configuracion.add(FechaItem);
 
         AdminItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1410312443_user-worker-boss.png"))); // NOI18N
@@ -755,6 +760,11 @@ public class JControl extends javax.swing.JFrame {
             CantidadLabel.setText(ModeloTablas.getContadorUniversal());
         } 
     }//GEN-LAST:event_ActualizarButtonActionPerformed
+
+    private void FechaItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaItemActionPerformed
+        JFecha fecha = new JFecha();
+        fecha.setVisible(true);
+    }//GEN-LAST:event_FechaItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarButton;
