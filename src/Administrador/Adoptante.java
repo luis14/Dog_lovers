@@ -10,7 +10,7 @@ public class Adoptante {
     private String lugarDeResidencia; 
     private String cantidadDeEsapcio; 
     private Boolean reportado; 
-    private ArrayList<String>notas; 
+    private String notas; 
     private Usuario usuario;  
     private String nombre;
     private Icon Imagen = null;
@@ -84,12 +84,12 @@ public class Adoptante {
         this.reportado = reportado;
     }
 
-    public ArrayList<String> getNotas() {
+    public String getNotas() {
         return notas;
     }
 
     public void setNotas(String notas) {
-        this.notas.add(notas);
+        this.notas += notas + "\n";
     }
 
     public Usuario getUsuario() {
