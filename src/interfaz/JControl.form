@@ -354,34 +354,42 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="FotoLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="NombreLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="NombreLabel1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CorreoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="UsernameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ApellidoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                              <Component id="ApellidoLabel1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="NombreLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Component id="NombreLabel1" min="-2" max="-2" attributes="0"/>
                                           </Group>
+                                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CorreoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="CorreoLabel1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="TelLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="UsernameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="UsernameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="ApellidoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                                      <Component id="ApellidoLabel1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="CorreoLabel1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="TelLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="UsernameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fotoButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -397,12 +405,19 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="LogoItem" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="LogoItem" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Component id="PerfilLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="FotoLabel" min="-2" pref="137" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="NombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="NombreLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -427,13 +442,12 @@
                                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="TelLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="fotoButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="FotoLabel" min="-2" pref="137" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -543,6 +557,14 @@
                   <Image iconType="3" name="/Imagenes/10755057_847539941933847_199279157_n - copia (4).jpg"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="fotoButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cambiar imagen"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fotoButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

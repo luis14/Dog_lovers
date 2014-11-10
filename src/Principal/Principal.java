@@ -8,11 +8,11 @@ public class Principal {
     public static void main(String[] args) {
         JUsuario  usuario = new JUsuario();
         usuario.setVisible(true); 
-        Administrador.RegistrarUsuario("Miuyin", "Yong", "miumiu", "21212121", "123", false, "miuyinyong@yahoo.com");
-        Administrador.RegistrarUsuario("Santiago", "Mendez", "Santi", "111222111", "123", false, "SanitMendez@yahoo.com");
-        Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com");
-        Administrador.RegistrarUsuario("Luis", "Alonso", "Luis", "1212121212",  "123",true, "LuisAlonso@yahoo.com");
-        Administrador.RegistrarUsuario("Marie", "Chang", "May", "90274194",  "123",true, "Marie@yahoo.com"); 
+        Administrador.RegistrarUsuario("Miuyin", "Yong", "miumiu", "21212121", "123", false, "miuyinyong@yahoo.com",null);
+        Administrador.RegistrarUsuario("Santiago", "Mendez", "santi", "86664191", "123", false, "santiago1096@gmail.com",null);
+        Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com",null);
+        Administrador.RegistrarUsuario("Luis", "Alonso", "Luis", "1212121212",  "123",true, "LuisAlonso@yahoo.com",null);
+        Administrador.RegistrarUsuario("Marie", "Chang", "May", "90274194",  "123",true, "Marie@yahoo.com",null); 
         Administrador.ListaDeUsuarios.get(0).setCasaCuna(true);
         Administrador.ListaDeUsuarios.get(1).setCasaCuna(true);
         
@@ -38,10 +38,10 @@ public class Principal {
         Administrador.RegistrarCasaCuna("Perro", "Golden Retriever", true , "Pequeño", "ninguno", Administrador.ListaDeUsuarios.get(0) , "2234251");  
         Administrador.RegistrarCasaCuna("Gato", "Any", false, "Pequeño", "ninguno", Administrador.ListaDeUsuarios.get(1), "8833241");
         
-        Administrador.RegistrarAdoptante("Miuyin", "miuyinyong@yahoo.com", "88223422", "Santa Anna", "100 metros", true, Administrador.ListaDeUsuarios.get(0));
-        Administrador.RegistrarAdoptante("Santiago", "SantiMendez@yahoo.com", "9284921", "Coronado", "500 metros", false, Administrador.ListaDeUsuarios.get(1));
-        Administrador.RegistrarAdoptante("Kevin", "Kevin@yahoo.com", "703244921", "Coronado", "200 metros", true, Administrador.ListaDeUsuarios.get(2)); 
-        Administrador.RegistrarAdoptante("Luis", "LuisAlonsez@yahoo.com", "2031424", "Palmares", "300 metros", false, Administrador.ListaDeUsuarios.get(3));  
+        Administrador.RegistrarAdoptante("Miuyin", "miuyinyong@yahoo.com", "88223422", "Santa Anna", "100 metros", true, Administrador.ListaDeUsuarios.get(0),null);
+        Administrador.RegistrarAdoptante("Santiago", "SantiMendez@yahoo.com", "9284921", "Coronado", "500 metros", false, Administrador.ListaDeUsuarios.get(1),null);
+        Administrador.RegistrarAdoptante("Kevin", "Kevin@yahoo.com", "703244921", "Coronado", "200 metros", true, Administrador.ListaDeUsuarios.get(2),null); 
+        Administrador.RegistrarAdoptante("Luis", "LuisAlonsez@yahoo.com", "2031424", "Palmares", "300 metros", false, Administrador.ListaDeUsuarios.get(3),null);  
         
         Administrador.RegistrarAsociacion("Paws and Claws", "Reescatar animales", "1234B", "23982028", "pawsnclaws@gmail.com", "Facebook/PawsnClaws", Administrador.ListaDeUsuarios.get(0)); 
         Administrador.RegistrarAsociacion("Rescue Shelter", "Reescatar animales", "239A05", "3940285", "rescueshelter@gmail.com", "Facebook/RescueShelter", Administrador.ListaDeUsuarios.get(1));

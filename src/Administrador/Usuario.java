@@ -1,6 +1,7 @@
 package Administrador;
 
 import java.util.ArrayList;
+import javax.swing.Icon;
 
 public class Usuario {
 
@@ -10,6 +11,7 @@ public class Usuario {
     private String Contrasenia;
     private String Correo;
     private String Telefono;
+    private Icon Imagen = null;
     private boolean esAdmin;
     private int id;   
     private static int cantidadDeUsuarios = 0;   
@@ -18,7 +20,7 @@ public class Usuario {
     private boolean asociacion;
     
     public Usuario(String Nombre, String Apellido, String Username, String Telefono,
-                   String Contrasenia, boolean esAdmin, String correo){ 
+                   String Contrasenia, boolean esAdmin, String correo,Icon Image){ 
         this.Nombre = Nombre; 
         this.Apellido = Apellido; 
         this.Username =Username; 
@@ -29,6 +31,7 @@ public class Usuario {
         this.adoptante = false;
         this.asociacion = false;
         this.casaCuna = false;
+        this.Imagen = Image;
         id = ++cantidadDeUsuarios;   
     } 
 
@@ -142,6 +145,12 @@ public class Usuario {
 
     public void getCasaCunaActual(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public Icon getImagen() {
+	return Imagen;
+    }
+    public void setImagen(Icon Image) {
+	this.Imagen = Image;
     }
     
 }

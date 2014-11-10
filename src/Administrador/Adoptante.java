@@ -1,6 +1,7 @@
 package Administrador;
 
 import java.util.ArrayList; 
+import javax.swing.Icon;
 
 public class Adoptante { 
     private int calificacion; 
@@ -12,10 +13,12 @@ public class Adoptante {
     private ArrayList<String>notas; 
     private Usuario usuario;  
     private String nombre;
+    private Icon Imagen = null;
     private int id;  
     private static int cantidadDeAdoptantes = 0; 
 
-    public Adoptante(String nombre, String correo, String telefono, String lugarDeResidencia, String cantidadDeEspacio, Boolean reportado, Usuario usuario){ 
+    public Adoptante(String nombre, String correo, String telefono, String lugarDeResidencia, String cantidadDeEspacio,
+                     Boolean reportado, Usuario usuario,Icon Image){ 
         this.nombre = nombre; 
         this.correo = correo; 
         this.telefono = telefono; 
@@ -23,6 +26,7 @@ public class Adoptante {
         this.cantidadDeEsapcio = cantidadDeEspacio; 
         this.reportado = reportado; 
         this.usuario = usuario; 
+        this.Imagen = Image;
         id = ++cantidadDeAdoptantes; 
     }
 
@@ -117,22 +121,28 @@ public class Adoptante {
         return ID; 
     }  
      
-     public Boolean getListaNegra(){
-         return reportado;
-     } 
-     
-     public String getStringListaNegra(){ 
-         if(reportado == true){ 
-             return "Si" ;
-         } 
-         else{ 
-             return "No";
-         }
-     }
-    
-     public String[] arreglo(){
-        String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(), getStringCalificacion()}; 
-        return msg;
+    public Boolean getListaNegra(){
+        return reportado;
     } 
      
+    public String getStringListaNegra(){ 
+        if(reportado == true){ 
+            return "Si" ;
+        } 
+        else{ 
+            return "No";
+        }
+    }
+    
+    public String[] arreglo(){
+       String[]msg = {Integer.toString(getId()), getNombre(), getTelefono(), getCorreo(), getStringListaNegra(), getStringCalificacion()}; 
+       return msg;
+    } 
+    
+    public Icon getImagen() {
+	return Imagen;
+    }
+    public void setImagen(Icon Image) {
+	this.Imagen = Image;
+    }
 }

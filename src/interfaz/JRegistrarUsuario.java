@@ -258,7 +258,7 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
         if(VerificaUsuario()){
             Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
-                TelText.getText(), ContraText.getText(),false, CorreoText.getText());
+                                           TelText.getText(), ContraText.getText(),false, CorreoText.getText(),null);
             JUsuario usuario = new JUsuario();
             usuario.setVisible(true);
             dispose();

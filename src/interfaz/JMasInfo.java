@@ -21,8 +21,16 @@ public class JMasInfo extends javax.swing.JFrame {
      */
     public JMasInfo() {
         initComponents();
-        setLocation((int) MouseInfo.getPointerInfo().getLocation().getX() - 20,
-                    (int) MouseInfo.getPointerInfo().getLocation().getY() - 35 );
+        if(MouseInfo.getPointerInfo().getLocation().getY() < 250){
+            setLocation((int) MouseInfo.getPointerInfo().getLocation().getX() - 20,
+                        (int) MouseInfo.getPointerInfo().getLocation().getY() - 35 );
+        } else if(MouseInfo.getPointerInfo().getLocation().getY() < 450){
+            setLocation((int) MouseInfo.getPointerInfo().getLocation().getX() - 20,
+                        (int) MouseInfo.getPointerInfo().getLocation().getY() - 200 );
+        }else{
+            setLocation((int) MouseInfo.getPointerInfo().getLocation().getX() - 20,
+                        (int) MouseInfo.getPointerInfo().getLocation().getY() - 450 );
+        }
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.blue, 2));
     }
     

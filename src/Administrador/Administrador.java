@@ -26,8 +26,8 @@ public class Administrador {
     //*********************************************
     
     public static void RegistrarUsuario(String Nombre, String Apellido, String Username,String Telefono,
-                                        String Contrasenia, boolean esAdmin, String Correo){
-        Usuario usuario = new Usuario(Nombre, Apellido, Username, Telefono, Contrasenia, esAdmin, Correo); 
+                                        String Contrasenia, boolean esAdmin, String Correo,Icon Imagen){
+        Usuario usuario = new Usuario(Nombre, Apellido, Username, Telefono, Contrasenia, esAdmin, Correo,Imagen); 
         ListaDeUsuarios.add(usuario);
     }
     
@@ -62,8 +62,9 @@ public class Administrador {
     } 
     
     public static void RegistrarAdoptante(String nombre, String correo, String telefono, String lugarDeResidencia,
-                                          String cantidadDeEspacio, Boolean reportado, Usuario usuario){
-        Adoptante adoptante = new Adoptante(nombre, correo, telefono, lugarDeResidencia, cantidadDeEspacio, reportado, usuario); 
+                                          String cantidadDeEspacio, Boolean reportado, Usuario usuario, Icon Imagen){
+        Adoptante adoptante = new Adoptante(nombre, correo, telefono, lugarDeResidencia, cantidadDeEspacio,
+                                            reportado, usuario, Imagen); 
         ListaDeAdoptantes.add(adoptante);
     }
     

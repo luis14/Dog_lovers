@@ -21,15 +21,15 @@ public class JAdoptante extends javax.swing.JFrame {
     private void DatosEditar(){
         for(int i = 0; i <Administrador.ListaDeAdoptantes.size(); i ++){
             if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual) == Administrador.ListaDeAdoptantes.get(i).getUsuario()){
-                jTextArea1.setText(Administrador.ListaDeAdoptantes.get(i).getLugarDeResidencia());
-                jTextArea2.setText(Administrador.ListaDeAdoptantes.get(i).getCantidadDeEsapcio());
+                ResidenciaTextArea.setText(Administrador.ListaDeAdoptantes.get(i).getLugarDeResidencia());
+                EspacioTextArea.setText(Administrador.ListaDeAdoptantes.get(i).getCantidadDeEsapcio());
                 this.adoptante = i;
             }
         }
     }
     
     private boolean VerificaDatos(){
-        return !("".equals(jTextArea1.getText()) || "".equals(jTextArea2.getText()));
+        return !("".equals(ResidenciaTextArea.getText()) || "".equals(EspacioTextArea.getText()));
     }
 
     @SuppressWarnings("unchecked")
@@ -43,9 +43,9 @@ public class JAdoptante extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ResidenciaTextArea = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        EspacioTextArea = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -73,13 +73,13 @@ public class JAdoptante extends javax.swing.JFrame {
 
         jLabel2.setText("Cantidad de Espacio :");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ResidenciaTextArea.setColumns(20);
+        ResidenciaTextArea.setRows(5);
+        jScrollPane1.setViewportView(ResidenciaTextArea);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        EspacioTextArea.setColumns(20);
+        EspacioTextArea.setRows(5);
+        jScrollPane2.setViewportView(EspacioTextArea);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
@@ -152,13 +152,14 @@ public class JAdoptante extends javax.swing.JFrame {
                     Administrador.RegistrarAdoptante(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getNombre(),
                             Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo(),
                             Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono(),
-                            jTextArea1.getText(), jTextArea2.getText(), false,
-                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual));
+                            ResidenciaTextArea.getText(), EspacioTextArea.getText(), false,
+                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
+                            Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getImagen());
                     Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).setAdoptante(true);
                     dispose();
             }else{
-                    Administrador.ListaDeAdoptantes.get(adoptante).setLugarDeResidencia(jTextArea1.getText());
-                    Administrador.ListaDeAdoptantes.get(adoptante).setCantidadDeEsapcio(jTextArea2.getText());
+                    Administrador.ListaDeAdoptantes.get(adoptante).setLugarDeResidencia(ResidenciaTextArea.getText());
+                    Administrador.ListaDeAdoptantes.get(adoptante).setCantidadDeEsapcio(EspacioTextArea.getText());
                     dispose();
             }
         }else{
@@ -170,13 +171,13 @@ public class JAdoptante extends javax.swing.JFrame {
     private javax.swing.JButton AceptarLabel;
     private javax.swing.JLabel AdoptanteLabel;
     private javax.swing.JButton CancelarLabel;
+    private javax.swing.JTextArea EspacioTextArea;
+    private javax.swing.JTextArea ResidenciaTextArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }
