@@ -87,10 +87,10 @@ public class JAsociacionesParaDonar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DonarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonarButtonActionPerformed
-        int fila = TablaAsocias.getSelectedRow(); 
+      /*  int fila = TablaAsocias.getSelectedRow(); 
         String idAsociación = TablaAsocias.getValueAt(fila, 0).toString(); 
         Administrador.RegistrarDonacion(Administrador.ListaDeUsuarios.get(Administrador.getUsuarioActual()), 
-                Administrador.ListaDeAsociaciones.get(Integer.parseInt(idAsociación)), 90);
+                Administrador.ListaDeAsociaciones.get(Integer.parseInt(idAsociación)), 90);*/
     }//GEN-LAST:event_DonarButtonActionPerformed
 
 
