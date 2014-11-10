@@ -30,7 +30,6 @@ public class JRegistroMascotas extends javax.swing.JFrame {
         if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual) == Administrador.ListaDeMascotas.get(MascotaEscogida).getUsuario()){
             TipoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getTipo());
             RazaCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getRaza());
-            TipoCombo.setSelectedItem((Object)Administrador.ListaDeMascotas.get(MascotaEscogida).getTipo());
             NombreText.setText(Administrador.ListaDeMascotas.get(MascotaEscogida).getNombre());
             if("".equals(Administrador.ListaDeMascotas.get(MascotaEscogida).getChip())){
                 jRadioButton2.setSelected(true);
