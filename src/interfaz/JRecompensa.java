@@ -16,6 +16,8 @@ public class JRecompensa extends javax.swing.JFrame {
      */
     public JRecompensa() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false); 
     }
 
     /**

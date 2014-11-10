@@ -17,11 +17,10 @@ public class Donaciones {
     private int monto; 
     private String fecha; 
     
-    public Donaciones(Usuario usuario, Asociacion asociacion, int monto, String fecha){
+    public Donaciones(Usuario usuario, Asociacion asociacion, int monto){
         this.usuario = usuario; 
         this.asociacion = asociacion; 
         this.monto = monto; 
-        this.fecha = fecha; 
         
 }
 
@@ -68,22 +67,9 @@ public class Donaciones {
         this.monto = monto;
     }
 
-    /**
-     * @return the fecha
-     */
-    public String getFecha() {
-        return fecha;
-    }
-
-    /**
-     * @param fecha the fecha to set
-     */
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
     
     public String[] arreglo(){ 
-        String[] msg = {getUsuarioName(), getAsociacionName(), getFecha(), Integer.toString(monto)}; 
+        String[] msg = {getUsuarioName(), getAsociacionName(), Integer.toString(monto)}; 
         return msg;
     }
 }

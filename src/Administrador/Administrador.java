@@ -51,8 +51,8 @@ public class Administrador {
         
     } 
     
-    public static void RegistrarDonacion(Usuario usuario, Asociacion asociacion, int monto, String fecha){ 
-        Donaciones donaciones = new Donaciones(usuario, asociacion, monto, fecha);
+    public static void RegistrarDonacion(Usuario usuario, Asociacion asociacion, int monto){ 
+        Donaciones donaciones = new Donaciones(usuario, asociacion, monto);
         ListaDeDonaciones.add(donaciones);
     }
     

@@ -283,7 +283,7 @@ public class ModeloTablas {
     
      
      public static DefaultTableModel tablaDeDonaciones(){
-         String titulos[]= {"Donante", "Asociacion", "Fecha", "Monto"}; 
+         String titulos[]= {"Donante", "Asociacion", "Monto"}; 
          String informacion[][] = {}; 
          modeloDonaciones = new DefaultTableModel(informacion, titulos); 
          int contadorParaInterfaz = 0; 
