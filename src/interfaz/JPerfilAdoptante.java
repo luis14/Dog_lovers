@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class JPerfilAdoptante extends javax.swing.JFrame {
     
-    private String estrellas;
+    private String estrellas = "0";
     private int ID;
     
     public JPerfilAdoptante(int AdoptanteEscogido) {
