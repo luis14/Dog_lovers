@@ -1,5 +1,6 @@
 package interfaz;
 import Administrador.ModeloTablas; 
+import javax.swing.ImageIcon;
 
 public class JMatch extends javax.swing.JFrame {
 
@@ -8,6 +9,7 @@ public class JMatch extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Match"); 
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Mascota.jpg")).getImage());
         TablaMatch.setModel(ModeloTablas.tablaMatch(idMascota, "Encontrado")); 
         TablaMatch.setAutoCreateRowSorter(true); // Para ordenar las tablas 
         CantidadLabel.setText(ModeloTablas.getContadorUniversal()); 
