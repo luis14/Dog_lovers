@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class JRegistroMascotas extends javax.swing.JFrame {
 
@@ -403,37 +404,42 @@ public class JRegistroMascotas extends javax.swing.JFrame {
 
     private void registrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarButtonActionPerformed
         if(VerificaMascota()){
-            if(MascotaEscogida == -1){
-                Administrador.RegistrarMascota(NombreText.getText(), (String)TipoCombo.getSelectedItem(),
-                        (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)EstadoCombo.getSelectedItem(), 
-                        (String)TamañoCombo.getSelectedItem(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
-                        Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText(),
-                        img);
-                dispose();
-            }else{  
-                String Estado;
-                Estado = (String)EstadoCombo.getSelectedItem(); 
-                boolean Verdad; 
-                Verdad = Estado.equals("Identificado");
-                if(Verdad){
-                    JIdentificado identificado = new JIdentificado(MascotaEscogida); 
-                    identificado.setVisible(true); 
-                } 
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setRaza((String)RazaCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setNombre(NombreText.getText());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setChip(Chip());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setColor((String)ColorCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setTamanio((String)TamañoCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setEstado((String)EstadoCombo.getSelectedItem());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setFechaDeEncontradoPerdido(FechaText.getText());
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setMontoDeRecompensa(RecompensaText.getText()); 
-                Administrador.ListaDeMascotas.get(MascotaEscogida).setDescripcion(DescripcionText.getText()); 
-                if(ImgLabel.getIcon() != null){
-                    Administrador.ListaDeMascotas.get(MascotaEscogida).setImagen(ImgLabel.getIcon());
+            try{
+                int recompensa = Integer.valueOf(RecompensaText.getText());
+                if(MascotaEscogida == -1){
+                    Administrador.RegistrarMascota(NombreText.getText(), (String)TipoCombo.getSelectedItem(),
+                            (String)ColorCombo.getSelectedItem(),FechaText.getText(),(String)EstadoCombo.getSelectedItem(), 
+                            (String)TamañoCombo.getSelectedItem(), Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual),
+                            Chip(), (String)RazaCombo.getSelectedItem(), RecompensaText.getText(), DescripcionText.getText(),
+                            img);
+                    dispose();
+                }else{  
+                    String Estado;
+                    Estado = (String)EstadoCombo.getSelectedItem(); 
+                    boolean Verdad; 
+                    Verdad = Estado.equals("Identificado");
+                    if(Verdad){
+                        JIdentificado identificado = new JIdentificado(MascotaEscogida); 
+                        identificado.setVisible(true); 
+                    } 
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setRaza((String)RazaCombo.getSelectedItem());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setTipo((String)TipoCombo.getSelectedItem());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setNombre(NombreText.getText());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setChip(Chip());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setColor((String)ColorCombo.getSelectedItem());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setTamanio((String)TamañoCombo.getSelectedItem());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setEstado((String)EstadoCombo.getSelectedItem());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setFechaDeEncontradoPerdido(FechaText.getText());
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setMontoDeRecompensa(RecompensaText.getText()); 
+                    Administrador.ListaDeMascotas.get(MascotaEscogida).setDescripcion(DescripcionText.getText()); 
+                    if(ImgLabel.getIcon() != null){
+                        Administrador.ListaDeMascotas.get(MascotaEscogida).setImagen(ImgLabel.getIcon());
+                    }
+                    dispose();
                 }
-                dispose();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"La recompensa debe ser un número entero");
             }
         }else{
             errorLabel.setVisible(true);
