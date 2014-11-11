@@ -1,13 +1,14 @@
 package Principal;
 
 import Administrador.Administrador;
+import Administrador.EnviadorEmail;
 import interfaz.JUsuario;
 
 public class Principal {
 
     public static void main(String[] args) {
         JUsuario  usuario = new JUsuario();
-        usuario.setVisible(true); 
+        usuario.setVisible(true);
         Administrador.RegistrarUsuario("Miuyin", "Yong", "miumiu", "21212121", "123", false, "miuyinyong@yahoo.com",null);
         Administrador.RegistrarUsuario("Santiago", "Mendez", "santi", "86664191", "123", false, "santiago1096@gmail.com",null);
         Administrador.RegistrarUsuario("Kevin", "Quesada", "Kev","222111222",  "123", true, "KevinQ@yahoo.com",null);
@@ -145,7 +146,6 @@ public class Principal {
         Administrador.RegistrarTipoRazas(4, "Mongolian"); 
         Administrador.RegistrarTipoRazas(4, "Otro"); 
         Administrador.RegistrarTipoRazas(4, "Cualquiera"); 
-        
     }
     
 }
