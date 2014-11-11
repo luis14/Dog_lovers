@@ -100,7 +100,6 @@ public class JControl extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PrincipalPanel.setBackground(new java.awt.Color(0, 153, 0));
         PrincipalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -108,42 +107,54 @@ public class JControl extends javax.swing.JFrame {
 
         PerfilLabel.setBackground(new java.awt.Color(0, 0, 0));
         PerfilLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        PerfilLabel.setForeground(new java.awt.Color(0, 0, 0));
         PerfilLabel.setText("Perfil de Usuario");
 
         FotoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1414706716_user_male2-128.png"))); // NOI18N
 
         NombreLabel.setBackground(new java.awt.Color(0, 0, 0));
+        NombreLabel.setForeground(new java.awt.Color(0, 0, 0));
         NombreLabel.setText("Nombre :");
 
         ApellidoLabel.setBackground(new java.awt.Color(0, 0, 0));
+        ApellidoLabel.setForeground(new java.awt.Color(0, 0, 0));
         ApellidoLabel.setText("Apellido : ");
 
         UsernameLabel.setBackground(new java.awt.Color(0, 0, 0));
+        UsernameLabel.setForeground(new java.awt.Color(0, 0, 0));
         UsernameLabel.setText("Username :");
 
         CorreoLabel.setBackground(new java.awt.Color(0, 0, 0));
+        CorreoLabel.setForeground(new java.awt.Color(0, 0, 0));
         CorreoLabel.setText("Correo :");
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Teléfono :");
 
         TelLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        TelLabel1.setForeground(new java.awt.Color(0, 0, 0));
         TelLabel1.setText("Telefono");
 
         CorreoLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        CorreoLabel1.setForeground(new java.awt.Color(0, 0, 0));
         CorreoLabel1.setText("Correo");
 
         UsernameLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        UsernameLabel1.setForeground(new java.awt.Color(0, 0, 0));
         UsernameLabel1.setText("Username");
 
         ApellidoLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        ApellidoLabel1.setForeground(new java.awt.Color(0, 0, 0));
         ApellidoLabel1.setText("Apellido");
 
         NombreLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        NombreLabel1.setForeground(new java.awt.Color(0, 0, 0));
         NombreLabel1.setText("Nombre");
 
         LogoItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10755057_847539941933847_199279157_n - copia (4).jpg"))); // NOI18N
 
+        fotoButton.setForeground(new java.awt.Color(0, 0, 0));
         fotoButton.setText("Cambiar imagen");
         fotoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +162,7 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
+        EditarButton.setForeground(new java.awt.Color(0, 0, 0));
         EditarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         EditarButton.setText("Editar");
         EditarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -167,42 +179,36 @@ public class JControl extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(PerfilLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(EditarButton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(FotoLabel)
+                        .addComponent(FotoLabel))
+                    .addComponent(PerfilLabel))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EditarButton)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(NombreLabel)
+                        .addGap(28, 28, 28)
+                        .addComponent(NombreLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(CorreoLabel)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UsernameLabel)
+                            .addComponent(ApellidoLabel))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NombreLabel)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(NombreLabel1))
-                                    .addComponent(jLabel1)
-                                    .addComponent(CorreoLabel)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(UsernameLabel)
-                                            .addComponent(ApellidoLabel))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(17, 17, 17)
-                                                .addComponent(ApellidoLabel1))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(CorreoLabel1)
-                                                    .addComponent(TelLabel1)
-                                                    .addComponent(UsernameLabel1)))))))
+                                .addGap(17, 17, 17)
+                                .addComponent(ApellidoLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(fotoButton)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LogoItem, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
-                .addContainerGap())
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CorreoLabel1)
+                                    .addComponent(TelLabel1)
+                                    .addComponent(UsernameLabel1)))))
+                    .addComponent(fotoButton))
+                .addGap(52, 52, 52)
+                .addComponent(LogoItem, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,10 +223,8 @@ public class JControl extends javax.swing.JFrame {
                             .addComponent(PerfilLabel)
                             .addComponent(EditarButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(FotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 11, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(FotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(NombreLabel)
@@ -242,13 +246,14 @@ public class JControl extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addComponent(TelLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fotoButton))))))
+                                .addComponent(fotoButton)))
+                        .addGap(0, 11, Short.MAX_VALUE))))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         DatosActualesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        DatosActualesLabel.setForeground(new java.awt.Color(0, 0, 0));
         DatosActualesLabel.setText("Datos Actuales");
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
@@ -268,7 +273,6 @@ public class JControl extends javax.swing.JFrame {
 
         CantidadLabel.setText("Cantidad");
 
-        editarButton.setBackground(new java.awt.Color(0, 153, 0));
         editarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         editarButton.setText("Editar");
         editarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -277,7 +281,6 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
-        matchButton.setBackground(new java.awt.Color(0, 153, 0));
         matchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415673004_plugin.png"))); // NOI18N
         matchButton.setText("Match");
         matchButton.setEnabled(false);
@@ -323,7 +326,7 @@ public class JControl extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(editarButton))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,20 +354,18 @@ public class JControl extends javax.swing.JFrame {
         PrincipalPanelLayout.setHorizontalGroup(
             PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         PrincipalPanelLayout.setVerticalGroup(
             PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrincipalPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+                .addGap(0, 0, 0))
         );
 
         Registro.setText("Registrar");
@@ -573,7 +574,7 @@ public class JControl extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PrincipalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PrincipalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
