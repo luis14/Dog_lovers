@@ -103,7 +103,9 @@ public class JControl extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        PrincipalPanel.setBackground(new java.awt.Color(0, 153, 153));
         PrincipalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PrincipalPanel.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -157,7 +159,6 @@ public class JControl extends javax.swing.JFrame {
 
         LogoItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10755057_847539941933847_199279157_n - copia (4).jpg"))); // NOI18N
 
-        fotoButton.setForeground(new java.awt.Color(0, 0, 0));
         fotoButton.setText("Cambiar imagen");
         fotoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +166,6 @@ public class JControl extends javax.swing.JFrame {
             }
         });
 
-        EditarButton.setForeground(new java.awt.Color(0, 0, 0));
         EditarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1415669037_05_Edit_16x16.png"))); // NOI18N
         EditarButton.setText("Editar");
         EditarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -251,10 +251,11 @@ public class JControl extends javax.swing.JFrame {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
 
         DatosActualesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        DatosActualesLabel.setForeground(new java.awt.Color(0, 0, 0));
         DatosActualesLabel.setText("Datos Actuales");
 
         TablaInicio.setModel(ModeloTablas.tablaMascotas(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual), "Perdido"));
@@ -607,7 +608,7 @@ public class JControl extends javax.swing.JFrame {
     }//GEN-LAST:event_CasaCunaItemActionPerformed
 
     private void CerrarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarItemActionPerformed
-       JUsuario  usuario = new JUsuario();
+       Jusuario1  usuario = new Jusuario1();
        usuario.setVisible(true);
        dispose();
     }//GEN-LAST:event_CerrarItemActionPerformed

@@ -3,9 +3,9 @@ package interfaz;
 import Administrador.Administrador;
 import javax.swing.ImageIcon;
 
-public class JUsuario extends javax.swing.JFrame {
-    
-    public JUsuario() {
+public class Jusuario1 extends javax.swing.JFrame {
+
+    public Jusuario1() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -14,11 +14,23 @@ public class JUsuario extends javax.swing.JFrame {
         ErrorLabel.setVisible(false);
     }
     
+    
+    private int VerificaUsuario(){
+        for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){
+            if(UsuarioText.getText().equals(Administrador.ListaDeUsuarios.get(i).getUsername()) &&
+               ContraText.getText().equals(Administrador.ListaDeUsuarios.get(i).getContrasenia())){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         UsuarioLabel = new javax.swing.JLabel();
         ContraLabel = new javax.swing.JLabel();
         ContraText = new javax.swing.JPasswordField();
@@ -26,13 +38,12 @@ public class JUsuario extends javax.swing.JFrame {
         registrarButton = new javax.swing.JButton();
         LogInButton = new javax.swing.JButton();
         ErrorLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 102, 0));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10755057_847539941933847_199279157_n.jpg"))); // NOI18N
 
         UsuarioLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UsuarioLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,82 +103,80 @@ public class JUsuario extends javax.swing.JFrame {
         ErrorLabel.setForeground(new java.awt.Color(204, 0, 0));
         ErrorLabel.setText("Contraseña o Usuario Incorrecto");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10755057_847539941933847_199279157_n.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ErrorLabel)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(83, 83, 83)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(35, 35, 35)
                                     .addComponent(UsuarioLabel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(UsuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(ContraLabel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(ContraText, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(45, 45, 45)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LogInButton)
                             .addComponent(registrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registrarButton)
                     .addComponent(UsuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UsuarioLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LogInButton)
                     .addComponent(ContraText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ContraLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ErrorLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
-        if(VerificaUsuario() != -1){
-            Administrador.setUsuarioActual(VerificaUsuario());
-            JControl control = new JControl();
-            control.setVisible(true);
-            dispose();
-        }
-        else{
-            ErrorLabel.setVisible(true);
-        }
-    }//GEN-LAST:event_LogInButtonActionPerformed
 
     private void UsuarioTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsuarioTextActionPerformed
+
+    private void registrarButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseEntered
+        registrarButton.setFont(new java.awt.Font("Tahoma", 1, 13));
+    }//GEN-LAST:event_registrarButtonMouseEntered
+
+    private void registrarButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseExited
+        registrarButton.setFont(new java.awt.Font("Tahoma", 1, 11));
+    }//GEN-LAST:event_registrarButtonMouseExited
 
     private void registrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarButtonActionPerformed
         JRegistrarUsuario  registro = new JRegistrarUsuario(false);
@@ -183,13 +192,17 @@ public class JUsuario extends javax.swing.JFrame {
         LogInButton.setFont(new java.awt.Font("Tahoma", 1, 11));
     }//GEN-LAST:event_LogInButtonMouseExited
 
-    private void registrarButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseEntered
-        registrarButton.setFont(new java.awt.Font("Tahoma", 1, 13));
-    }//GEN-LAST:event_registrarButtonMouseEntered
-
-    private void registrarButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseExited
-        registrarButton.setFont(new java.awt.Font("Tahoma", 1, 11));
-    }//GEN-LAST:event_registrarButtonMouseExited
+    private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
+        if(VerificaUsuario() != -1){
+            Administrador.setUsuarioActual(VerificaUsuario());
+            JControl control = new JControl();
+            control.setVisible(true);
+            dispose();
+        }
+        else{
+            ErrorLabel.setVisible(true);
+        }
+    }//GEN-LAST:event_LogInButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ContraLabel;
@@ -199,18 +212,7 @@ public class JUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel UsuarioLabel;
     private javax.swing.JTextField UsuarioText;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton registrarButton;
     // End of variables declaration//GEN-END:variables
-
-    private int VerificaUsuario(){
-        for(int i = 0; i < Administrador.ListaDeUsuarios.size(); i++){
-            if(UsuarioText.getText().equals(Administrador.ListaDeUsuarios.get(i).getUsername()) &&
-               ContraText.getText().equals(Administrador.ListaDeUsuarios.get(i).getContrasenia())){
-                return i;
-            }
-        }
-        return -1;
-    }
 }
-

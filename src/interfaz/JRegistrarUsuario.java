@@ -54,6 +54,7 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         RegistroLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -284,7 +285,7 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
             }else{
                 Administrador.RegistrarUsuario(NombreText.getText(),ApellidoText.getText(),UsernameText.getText(),
                         TelText.getText(), ContraText.getText(),false, CorreoText.getText(),null);
-                JUsuario usuario = new JUsuario();
+                Jusuario1 usuario = new Jusuario1();
                 usuario.setVisible(true);
                 dispose();
             }
@@ -297,7 +298,7 @@ public class JRegistrarUsuario extends javax.swing.JFrame {
         if(editar){
             dispose();
         }else{
-            JUsuario usuario = new JUsuario();
+            Jusuario1 usuario = new Jusuario1();
             usuario.setVisible(true);
             dispose();
         }

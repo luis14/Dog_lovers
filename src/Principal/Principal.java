@@ -2,12 +2,12 @@ package Principal;
 
 import Administrador.Administrador;
 import Administrador.EnviadorEmail;
-import interfaz.JUsuario;
+import interfaz.Jusuario1;
 
 public class Principal {
 
     public static void main(String[] args) {
-        JUsuario  usuario = new JUsuario();
+        Jusuario1  usuario = new Jusuario1();
         usuario.setVisible(true);
         Administrador.RegistrarUsuario("Miuyin", "Yong", "miumiu", "21212121", "123", false, "miuyinyong@yahoo.com",null);
         Administrador.RegistrarUsuario("Santiago", "Mendez", "santi", "86664191", "123", false, "santiago1096@gmail.com",null);
