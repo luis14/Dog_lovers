@@ -1,6 +1,8 @@
 package interfaz;
 
+import Administrador.Administrador;
 import Administrador.Calendario;
+import Administrador.EnviadorEmail;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -147,6 +149,51 @@ public class JFecha extends javax.swing.JFrame {
             dispose();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Los espacios deben estar llenos y ser numeros enteros");
+        }
+        for(int id = 0; id < Administrador.ListaDeMascotas.size(); id++){
+            if(Administrador.ListaDeMascotas.get(id).getEstado().equals("Perdido")){
+               String ColorDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getColor(); 
+               String ChipDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getChip(); 
+               String TamanioDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getTamanio(); 
+               String TipoDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getTipo(); 
+               String RazaDeMascotaMatch = Administrador.ListaDeMascotas.get(id).getRaza(); 
+
+               for(int i = 0; i < Administrador.ListaDeMascotas.size(); i++){ 
+                  int contador = 0;  
+                  Boolean encontrado = false; 
+                  if(Administrador.ListaDeMascotas.get(i).getEstado().equals("Encontrado")){ 
+                      encontrado = true;
+                  }
+                  if(ColorDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getColor())){
+                      contador++; 
+                  } 
+                  if(ChipDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getChip()) || ChipDeMascotaMatch.equals(" ")){
+                      contador++; 
+                  } 
+                  if(TamanioDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getTamanio())){
+                      contador++; 
+                  }  
+                  if(contador >=1 && encontrado == true){  
+                      if(TipoDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getTipo())){
+                          if(RazaDeMascotaMatch.equals(Administrador.ListaDeMascotas.get(i).getRaza())){
+                                String correoMascotaPerdida = Administrador.ListaDeMascotas.get(id).getUsuario().getCorreo();
+                                String nombreMascotaPerdida = Administrador.ListaDeMascotas.get(id).getUsuario().getNombre() + " " +
+                                                              Administrador.ListaDeMascotas.get(id).getUsuario().getApellido();
+                                
+                                String correoMascotaEncontrada = Administrador.ListaDeMascotas.get(i).getUsuario().getCorreo();
+                                String nombreMascotaEncontrada = Administrador.ListaDeMascotas.get(i).getUsuario().getNombre() + " " +
+                                                                 Administrador.ListaDeMascotas.get(i).getUsuario().getApellido();
+                                
+                                EnviadorEmail enviaCorreoPerdida = new EnviadorEmail(correoMascotaPerdida,nombreMascotaPerdida);
+                                
+                                EnviadorEmail enviaCorreoEncontrada = new EnviadorEmail(correoMascotaEncontrada,nombreMascotaEncontrada);
+                                
+                            }   
+                      }
+                  }
+
+               }   
+            }
         }
     }//GEN-LAST:event_AceptarButtonFechaActionPerformed
 

@@ -27,9 +27,14 @@ public class EnviadorEmail {
 
     public EnviadorEmail(String mailReceptor, String persona) {
         this.mailReceptor = mailReceptor;
-        this.asunto = "Prueba cosita.";
-        this.cuerpo = ("Hola " + persona + "\n" + 
-            	"Que tal?" + "\n-\n" + "Proyecto POO, para una vida mejor :)");
+        this.asunto = "[PetMatch] - Informe.";
+        this.cuerpo = ("Buenas " + persona + ".\n" + 
+            	       "La siguiente es para informarle que hubo un Match en el programa PetMatch con caracteristicas muy parecidas a las de la mascota que reportó. "
+                       + "Por favor inicie sesión para verificar si es la mascota que reportó." + "\n"
+                       + "Muchas gracias." + "\n"
+                       + "\n-\n"
+                       + "[PetMatch]" + "\n"
+                       + "Proyecto POO, para una vida mejor :)");
 
         Properties props = new Properties();
         props.put("mail.smtp.user", miCorreo);
