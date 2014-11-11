@@ -35,6 +35,9 @@ public class JControl extends javax.swing.JFrame {
         UsernameLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getUsername());
         CorreoLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getCorreo());
         TelLabel1.setText(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getTelefono());
+        if(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getImagen() != null){
+            FotoLabel.setIcon(Administrador.ListaDeUsuarios.get(Administrador.UsuarioActual).getImagen());
+        }
     }
 
     @SuppressWarnings("unchecked")
